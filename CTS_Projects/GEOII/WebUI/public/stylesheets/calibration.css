@@ -1,0 +1,476 @@
+html{
+    overflow: hidden;
+}
+#contentdata #calibration_box .calibration_table{
+    width: 100%;
+}
+#contentdata{
+    margin-top:10px;
+}
+.calibration_table table {
+    width: 100%;
+    color: #FFF;
+    height: 50px;
+    border-style: solid;
+    border-color: #787878;
+    border-width: 1px 0px;
+}
+
+.calibration_table table td, th {
+    background-color: #424242;
+    border: 1px solid #787878;
+    border-top: none;
+    padding-left: 20px;
+}
+
+.calibration_table table td span {
+    color: #E4E4E4;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#calibration_box table {
+    width: 100%;
+    color: #FFF;
+    height: 50px;
+    border-style: solid;
+    border-color: #787878;
+    border-width: 1px 0px;
+}
+
+#calibration_box table td, th {
+    background-color: #424242;
+    border-top: none;
+    padding-left: 20px;
+}
+
+#calibration_box table td span {
+    color: #E4E4E4;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+
+.label {
+    color: #E4E4E4;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#select_calibration {
+    padding: 5px 0 30px;
+    color: #FFF;
+}
+
+#action_text {
+    height: 35px;
+    background-image: url("/images/Start_u169_normal.png");
+    word-wrap: break-word;
+    background-repeat: no-repeat;
+    /*width: 114px;*/
+    color: #E4E4E4;
+    font-family: Arial;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+#unlock_image{
+	float: left;
+    left: 14px;
+    position: relative;
+    top: 7px;
+}
+.parameters_unlock{
+    background-position: 160px -601px;
+    width: 78px;
+}
+
+#action_label {
+    float: left;
+    padding-top: 7px;
+    text-align: center;
+    width: 110px;
+}
+
+.calib_select {
+    padding-left: 40px;
+}
+
+#action_items {
+    padding: 10px 20px;
+}
+
+.action_buttons {
+    width: 130px;
+}
+
+.parameters_box {
+    height: 85px;
+    overflow: visible;
+    position: static;
+    top: 365px;
+    width: 100%;
+}
+
+#calibration_parameters_table {
+    width: 100%;
+    color: #FFF;
+    height: 85px;
+    border-style: solid;
+    border-color: #787878;
+    border-width: 1px 0px;
+}
+
+#calibration_parameters_table th {
+    background-color: #424242;
+    height: 40px;
+    padding: 0;
+    text-align: center;
+}
+
+#calibration_parameters_table td {
+    background-color: #515151 !important;
+    height: 40px;
+    padding: 0 !important;
+    text-align: center;
+}
+
+
+#oos_parameters_table {
+    width: 100%;
+    color: #FFF;
+    height: 65px;
+    border-style: solid;
+    border-color: #787878;
+    border-width: 1px 0px;
+	background-color: #424242;
+}
+
+
+
+.param_label {
+    color: #CFD638;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.calib_img {
+    padding-right: 2px;
+    position: relative;
+    top: 4px;
+}
+
+#status_message {
+    color: #FFF;
+    cursor: auto;
+    font-family: arial;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    right: 145px;
+    top: 91%;
+    z-index: 999;
+	
+}
+
+#calibration_process_text img {
+    float: right;
+    margin-top: 3px;
+    padding-left: 8px;
+}
+
+#calib_log_text {
+    display: none;
+    border: 1px solid #5C5C5C;
+    border-radius: 4px 4px 4px 4px;
+    box-shadow: 0 0 4px 0 #C1C1C1;
+    margin-top: 5px;
+    width: 343px;
+}
+
+#calib_log {
+    height: 55px;
+    width: 300px;
+}
+
+#calib_log_submit {
+    float: right;
+    padding-top: 10px;
+	width:100%;
+}
+
+#calib_log_submit span {
+    color: #FFFFFF;
+    font-family: arial;
+    font-size: 11px;
+    position: relative;
+    top: -6px;
+}
+
+.cancel_log {
+    color: #CFD638;
+    font-family: arial;
+    font-size: 12px;
+    position: relative;
+    text-decoration: none;
+	padding-right:10px
+}
+
+.disable_action_text {
+    cursor: default;
+}
+
+.island_legend {
+    display: none;
+    left: 40%;
+    position: absolute;
+    top: 30%;
+    width: 400px;
+}
+
+.edit_calib_params {
+    left: 40%;
+    position: absolute;
+    top: 42%;
+    width: 325px;
+    display: none;
+}
+
+#edit_legend_params {
+    width:270px;background-color:#363636;
+	border:1px solid #656565;
+	padding:15px 15px 10px 15px;
+}
+
+#island_legend_params td {
+    color: #E4E4E4;
+    font-family: Arial;
+    font-size: 13px !important;
+}
+
+#island_legend_params {
+    width: 100% !important;
+}
+
+
+#island_legend_params td#shunt {
+    background-color: #515151;
+}
+
+#island_legend_params .header {
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+#edit_legend_params .edit-param-header {
+    font-weight: bold;
+    padding-left: 5px;
+	float:left;color:#E4E4E4;
+	padding:0px 15px 0px 0px;
+	font-family:Arial;
+	font-size:13px;
+	font-style:normal;
+	font-weight:bold;
+	text-decoration:none;
+}
+
+
+.calibration_old_param {
+    padding: 2px 5px !important;
+}
+
+#params_submit {
+    border-bottom: medium none !important;
+    height: 30px;
+    text-align: right;
+}
+
+#params_submit span {
+    font-family: arial !important;
+    font-size: 12px !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    position: relative;
+    top: -5px;
+}
+
+#params_submit a {
+    color: #CFD638;
+    font-family: arial !important;
+    font-size: 12px;
+    position: relative;
+    text-decoration: none;
+    top: -4px;
+}
+
+.disable {
+	-moz-opacity: 0.4;
+	opacity:0.4;
+	filter: alpha(opacity=40);
+    cursor: default !important;
+}
+
+#pso_table_header {
+    width: 100px;
+    height: 48px;
+}
+
+.pso_calib_req {
+    background-image: url("/images/pso_calibration_req.png");
+    background-repeat: no-repeat;
+    font-family: Arial;
+    font-size: 13px;
+    height: 45px;
+    left: 45px;
+    position: relative;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.pso_calib_req span {
+    color: #424242 !important;
+    font-weight: bold !important;
+    position: relative;
+    right: 45px;
+    top: 14px;
+}
+.param_heading{
+    color: #CFD638;
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+	text-align: center;
+	padding: 5px 0px;
+    border-style: solid;
+    border-color: #787878;
+    border-width: 1px 0px;	
+}
+
+.status_box_width{
+	width: 49%;
+	height: 24px;
+	padding-top:10px;
+	border-right:1px solid #787878;
+	padding-bottom:0px;
+
+}
+.rx_status_box_width{
+	width: 33%;
+	height: 20px;
+	padding-top:10px;
+	border-right:1px solid #787878;
+	padding-bottom:0px;
+
+}
+.unlock_message{
+	position: relative;
+	float: 80px;
+}
+
+#calibration_status td{
+	cursor: pointer;
+}
+
+#calib_log_text {
+	display:none;
+	left:40%;
+	position:absolute;
+	top:42%;
+	width:325px;
+}
+/******** Lamp calibratoin ***********/
+#finished_button{
+	background-image: url('/images/check_small.png');
+	background-repeat:no-repeat;		
+	width:16px;
+	height:16px;
+	margin:5px;
+	margin-top:7px;
+	float:left;		
+}	
+.finished_label_style {
+font-family: Arial;
+font-size: 13px;
+font-weight: bold;
+font-style: normal;
+text-decoration: none;
+color: #F2F2F2;
+padding-right: 20px;
+}
+.overview_body{
+	width: 140px;
+    height:505px;
+}
+.disabled_buttons{
+	cursor:default !important;	
+}
+.user_key_input{
+    width:95px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.lamp_cal_content{
+    height: 457px;   
+}
+.lamp_cal_footer{
+
+
+}
+#battery_table table{
+    border-collapse: collapse;
+    width:100%;
+}
+#battery_table table thead th{
+   background-color: #363636;
+   border: #787878 1px solid;
+   color:#C3CF21;
+}
+#battery_table table td{
+    background-color: #424242;
+    border: #787878 1px solid;
+    color: #ffffff;
+    margin:0px;
+    padding:0px;
+}
+#battery_table table tr{
+    height:35px;
+}
+#battery_table table .column1{
+    width:150px;
+}
+
+#battery_table table .column2{
+    width:200px;
+}
+
+#ajax_spinner {
+    left: 600px;
+    position: absolute;
+    top: 0;
+    display:none;
+}
+#finish_msg{
+    position: relative;
+    top: -66px;
+}
+.gcp_not_used {
+	color:#A1A1A1;
+	font-family: Arial;
+	font-weight: bold;
+}

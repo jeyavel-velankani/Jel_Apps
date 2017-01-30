@@ -1,0 +1,28 @@
+<%= stylesheet_link_tag 'cdl.css' %>
+<%= javascript_include_tag 'jquery.form.js','cdl.js' %>
+    <div class="cdl_wrapper">
+    <% if @cdl_uploaded != nil %>
+        <input type="hidden" class="cdl_uploaded" value="<%=@cdl_uploaded%>"/>
+    <% end %>
+
+    <input type="hidden" id = 'cdl_filename' class="cdl_filename" value="<%= @file_name.to_s%>"/>
+
+    <% if PRODUCT_TYPE == PRODUCT_TYPE_GEO_OCE %>
+        <%= GenericHelper.toolbar({ 'cdl_qna' => 'displayqanda.png', 'cdl_prev' => 'Previousmouseover.png', 'cdl_next' => 'nextmouseover.png', 'cdl_start' => 'start_mouse_over.png','cdl_restart' => 'restart_mouse_over.png','cdl_remove' => 'Remove-CDL.png','cdl_upload' => 'Upload-CDL.png'})%>
+    <% else %>
+        <%= GenericHelper.toolbar({ 'cdl_qna' => 'displayqanda.png', 'cdl_prev' => 'Previousmouseover.png', 'cdl_next' => 'nextmouseover.png', 'cdl_start' => 'start_mouse_over.png','cdl_restart' => 'restart_mouse_over.png','cdl_remove' => 'Remove-CDL.png','cdl_view_cdl_log' => 'View-CDL-Log.png','cdl_upload' => 'Upload-CDL.png','cdl_download' => 'Downloadmouseover.png'})%>
+    <% end %>
+
+    <div id="cdlfilename"></div>
+    <div class="space">&nbsp;</div>
+    <div class='cdl_site_setup'>
+        <% if @cdl_uploaded != nil %>
+            <div id='cdl_upload_progress'><p> CDL Upload Percentage Complete: 0</p></div>
+        <% else %>
+
+        <%= render :partial=>'start' %>	
+
+        <% end %>
+    </div>
+    <%= render :partial=>'upload' %> 
+</div>

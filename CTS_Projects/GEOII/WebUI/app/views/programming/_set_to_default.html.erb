@@ -1,0 +1,14 @@
+<%=javascript_include_tag 'toolbar.js', 'set_to_default' %>
+<%= stylesheet_link_tag 'v_config.css'%>
+<%= GenericHelper.toolbar({ 'unlock' => 'unlock.png'},'unlock')%>
+<div class="v_config_wrapper">
+	<div class="v_config_generic_wrapper">
+		<div class="message_container">&nbsp;<span class="success_message"></span></div>
+		<input type='hidden' class='user_pres' value="<%= @user_presence%>" />
+	</div>
+	<div class='set_to_default_outer'>
+  	<div class='set_to_default'>
+        <div class='set_to_default_inner'>Set To Default</div>
+    </div>
+	</div>
+</div>

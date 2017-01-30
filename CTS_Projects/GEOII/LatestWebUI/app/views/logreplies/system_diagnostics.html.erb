@@ -1,0 +1,47 @@
+<div id='cause_remedy'></div>
+<div>
+  <% unless @log_events.empty? %>
+    <table width= "70%" cellspacing=0 class="logtable">
+      <thead>
+        <tr>
+          <%[["Date/Time", 'time'], ["Slot", 'slot'], ["Description", "info"], ["Code", "code"]].each do |v|%>
+            <th class="title" width="150"> <%=v[0]%>
+              <a href="<%=url_for({:action=>:sort_diagnostics, :sort_by=>v[1], :direction=>(@sort_order || 'asc')})%>" class="imager">
+                <% img = @sort_by == v[1] ? 'dn' : 'up'%>
+                <img src="/stylesheets/images/<%=img%>.png"/>
+              </a>
+            </th>
+          <%end%>
+        </tr>
+      </thead>
+      <tbody>
+        <% @log_events.each do |e| %>
+          <%_url = url_for({:action=>:detail_diagnostics, :byte=>e.byte, :bit => e.bit})%>
+          <tr>
+            <td class="trnwclass">
+              <%=h Time.at(e.time).strftime("%d-%b-%Y %H:%M:%S") %>
+            </td>
+            <td class="trnwclass" ><%=h e.slot %> </td>
+            <td class="trnwclass"><%=link_to "#{e.info}", "#", :class=>"menu_link_item", :onclick=>"javascript:request_cause_remedy('#{_url}');return false" %></td>
+            <td class="trnwclass"><%=h e.code%></td>
+          </tr>
+        <%end%>
+      </tbody>
+    </table>
+  <% end %>
+</div>
+
+<script>
+  function request_cause_remedy(_url){
+      $.ajax({
+        type: "get",
+        url: _url,
+        success: function(result){
+          $('#cause_remedy').html(result);
+        }
+    });
+    return false;
+  }
+
+  $('.logtable').flexigrid({width: "90%", height:'auto',striped:false})
+</script>

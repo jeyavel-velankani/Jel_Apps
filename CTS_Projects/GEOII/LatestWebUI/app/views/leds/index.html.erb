@@ -1,0 +1,61 @@
+<%=javascript_include_tag "leds.js"%>
+<%= stylesheet_link_tag 'leds.css'%>
+<input type="hidden" class="setup_type" value="lamps"/>
+<% (0..1).each do |col_i| %>
+	<div class="leds_container_wrapper">
+		<table>
+			<thead>
+				<tr>
+					<th class="num">#</th>
+					<th class="name">Name</th>
+					<th class="status">Status</th>
+					<th class="led">LED</th>
+				</tr>
+			</thead>
+			<tbody>
+				<% 
+
+				loop_start = col_i*8
+				loop_end = loop_start+7
+				(loop_start..loop_end).each do |i| 
+					
+					if @leds_ar[i]
+						name = @leds_ar[i][:name]
+						led = @leds_ar[i][:status_value]
+						status = @leds_ar[i][:status_text]
+
+						if led == 0
+							led = 'gray'
+						elsif led == 2 || led == 3
+							led = 'yellow'
+						else
+							led = 'green'
+						end
+					else
+						name = ''
+						led = 'gray'
+						status = ''
+					end
+
+					concat '<tr class="'+(i % 2 == 0 ? 'odd' : 'even')+'" id="'+(i).to_s+'">'
+					concat '<td class="num">'+(i+1).to_s+'</td>'
+					concat '<td class="name">'+name+'</td>'
+					concat '<td class="status">'+status+'</td>'
+					concat '<td class="led"><img src="/images/led/'+led+'.png"/></td>'
+					concat '</tr>'
+				 end 
+
+				 (0..6).each do |blank_row|
+				 	concat '<tr class="'+(blank_row % 2 == 0 ? 'even' : 'odd')+'" id="'+blank_row.to_s+'">'
+					concat '<td class="num"></td>'
+					concat '<td class="name"></td>'
+					concat '<td class="status"></td>'
+					concat '<td/></td>'
+					concat '</tr>'
+				 end
+
+				 %>
+			</tbody>
+		</table>
+	</div>
+<% end %>

@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag 'style.css', :media=> "all" %>	
+<%= periodically_call_remote :url => { :controller => 'logreplies', :action => 'eventlog_process', :id => @id}, :frequency => 3, :success => "hidePopWin(); location.href='/logreplies';" %>
+
+
+<%= image_tag("ajax-loader.gif") %> Loading Please wait
+
+
+
+

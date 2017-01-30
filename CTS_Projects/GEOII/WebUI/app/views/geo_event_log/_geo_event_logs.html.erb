@@ -1,0 +1,5 @@
+  <!-- Display the number of events being fetched -->
+  <%if @command == 10%>
+    <p style="color:#fff">Number of Events : <%= @number_of_events%> </p>
+  <%end%>
+  <div>  <%= image_tag("ajax-loader.gif", :id => "ajax_spinner") %> <br><br><div style="color:#FFFFFF">Loading Please wait....</div></div>

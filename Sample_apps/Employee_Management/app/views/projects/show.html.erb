@@ -1,0 +1,34 @@
+<div style = "position: absolute;top: 25%;left: 25%;">
+  <table >
+    <caption style="background-color:grey; font-weight:bold">
+      About Project:@project.name
+    </caption>
+    <tr>
+      <td><strong>Name:</strong></td>
+      <td><%= @project.name %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Customer:</strong></td>
+      <td><%= @project.customer %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Description:</strong></td>
+      <td><%= @project.description %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Price:</strong></td>
+      <td><%= @project.price %></td>
+    </tr>
+
+    <tr>
+      <td><strong>Manager:</strong></td>
+      <td><%= @project.employee.name %></td>
+    </tr>
+  </table>
+  <br>
+  <%= link_to 'Edit', edit_project_path(@project) %> |
+  <%= link_to 'Back', projects_path %>
+</div>

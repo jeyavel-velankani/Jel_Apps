@@ -1,0 +1,61 @@
+<%= javascript_include_tag  'jquery.form.js' , 'configuration_uploaddownload.js' %>
+<div id="configuration_content" style="overflow-x:hidden;overflow-y:hidden;height:320px;">
+<div class="toolbar_wrapper">
+	<div class="toolbar_button">
+		<select name="configuration_options_select" id="configuration_options_select" class="contentCSPsel_config">
+		    <option value="20" target="10">Configuration Package</option>
+			<option value="11" target="9">CIC.BIN</option>
+			<% if @product_type == true %>
+			<option value="10" target="7">NVCONFIG.SQL3</option>
+			<option value="9" target="11">RC2KEY.BIN</option>
+			<% end %>
+		</select>
+	</div>
+	<div class="toolbar_button unlock_configuration_upload_download" id="unlock_configuration_upload_download">
+		<img src="/images/unlock.png" alt="unlock_configuration_upload_download">
+	</div>
+	<div class="toolbar_button upload_configuration" id="upload_configuration">
+		<img src="/images/update_arte.png" alt="upload_configuration">
+	</div>
+	<div class="toolbar_button download_configuration" id="download_configuration">
+		<img src="/images/Downloadmouseover.png" alt="download_configuration">
+	</div>
+</div>
+<div style="clear:both; padding-top:1px;">&nbsp;</div>
+<div id="resultsft" style="padding-left:10px;"></div>
+<div id="file_ext_check" class="error_message"></div>
+<% if @userpresence_permission.to_s == 'true' %>
+  	<input type="hidden" id="user_presence" value='1'/>
+<% else %>
+  	<input type="hidden" id="user_presence" value='0'/>
+<% end %>
+<div style="clear:both; padding-top:100px;">&nbsp;</div>
+<iframe id="uploader_iframe" name="uploader_iframe" style="display: none;"></iframe>
+<div id="upload_download_content_display" style="height:40px;padding-left:100px;">
+	<div class='serial_outer_upload' id='serial_outer_upload' style="display:none;">
+	    <div class="lbl_text"><span class="uploadfilemessage">Select File :</span>
+             <input type="text" disabled="true" class="contentCSPsel_config" id="fileToUpload_path" name="fileToUpload_path">
+        </div>
+		<form name="software_update_form" action="softwareupdate/configuration_upload" method="post" enctype="multipart/form-data" id="software_update_form">	
+		   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+           <input type="hidden" name="update_type" id="update_type"/>
+		   <input type="hidden" name="target" id="target" />
+		   <div><img src="/images/Browse-mouse-over.png">
+				<a style="color:black;font-weight:bold;" href="javascript: void(0)"></a>
+                <input type="file" name="fileToUpload" id="fileToUpload" style="position:relative;top:-4px;left:-147px;width:145px;opacity: 0; filter:alpha(opacity: 0);cursor:pointer;cursor:hand;height:25px;">
+				</img>
+			</div>
+		</form>
+	</div>
+</div>	
+<div id='download_options_status' class="download_options_status">
+	<div style="clear:both; padding-top:8px;">&nbsp;</div>
+	<div style="padding-top:5px;">
+	 	<span class="display_progressbar_val" id="display_progressbar_val"></span>
+	</div>
+	<div id="display_progressbar" class="display_progressbar"> </div>
+</div>
+<div id="progress_without_percentage" style="display:none;" class="progress_without_percentage" >
+    <span class="update_message_without_percentage" style="color:#F2F2F2;"></span><%= image_tag("progressbar.gif")%>
+</div>
+</div>

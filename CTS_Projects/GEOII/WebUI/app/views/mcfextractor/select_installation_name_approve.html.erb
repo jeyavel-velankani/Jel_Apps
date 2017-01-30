@@ -1,0 +1,18 @@
+<%= javascript_include_tag  'installation_approve_report_rename'%>
+<div class="select_installation_name_content">	
+	<% unless @installation_names.blank? %>
+		<div class='selected_installation_name_approve margin_5'>
+			<span class='loader loader_spin'><%= image_tag("/images/big-spinner.gif") %></span>
+			<div><label>Select Installation : </label></div>
+			<div class="padding_top_1_space">&nbsp;</div>
+			<div><%=select_tag("selected_installation_name_approve", options_for_select(@installation_names.map{|x|[x]}, @installation_names[0]),:class=>"contentCSPselOpen" ,:disabled =>false)%></div>			
+		</div>
+		<div class="padding_top_15_space"></div>
+		<div class="padding_left_10_margin_5">
+		    <button class='select_installation_approve width_80'>Ok</button>
+			<button class='cancel_approve width_80'>Cancel</button>
+		</div>
+	<%else%>
+		<div  align="center" class="no_installation">There is no installation name</div>
+	<% end %>
+</div>

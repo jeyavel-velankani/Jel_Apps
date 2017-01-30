@@ -1,0 +1,30 @@
+<div class="hd_linker_wrapper"> 
+	<input type="hidden" class="hd_get_mcf_type" value="<%=(@gcp_4000_version?'4k':'5k')%>"/>
+	<% if @message == '' %>
+	<%=GenericHelper.toolbar({'hd_update'=>'savemouseover.png','hd_discard'=>'discard_changes.png','hd_create'=>'create.png','hd_view_report'=>'view_report.png','hd_download' => 'Downloadmouseover.png', 'hd_close'=>'back_arte.png'},'')%>
+	<% else %>
+	<%=GenericHelper.toolbar({'hd_close'=>'back_arte.png'},'')%>
+	<% end %>
+	<div class="hd_linker_message_wrapper"><div class="hd_linker_message"><%=@message%></div></div>
+	<div class="hd_linker_section_wrapper">
+		<div class="hd_linker_title">SIN</div>
+		<div class="hd_linker_wrapper">
+			<div class="hd_linker_row"><div class="hd_link_title">GCP:</div><input class="gcp4000_atcs disabled" type="text" value="<%=@atcs_address%>" readonly/></div>
+			<div class="hd_linker_row"><div class="hd_link_title">HD:</div><div class="remote_sin_wrapper"><!-- data is added with JavaScript--></div><div class="remote_sin_error"></div></div>
+		</div>
+	</div>
+	<div class="hd_linker_section_wrapper">
+		<div class="hd_linker_title">Source HD MCF</div>
+		<div class="hd_linker_wrapper">
+			<div class="hd_linker_row"><div class="hd_link_title">Name:</div><input type="text" class="disabled" value="<%=@MCF%>" readonly/></div>
+			<div class="hd_linker_row"><div class="hd_link_title">UCN:</div><input type="text" class="disabled" value="<%=@UCN%>" class="hd_linker_remote_sin" readonly/></div>
+		</div>
+	</div>
+	<div class="hd_linker_section_wrapper_last">
+		<div class="hd_linker_title">New HD MCF</div>
+		<div class="hd_linker_wrapper">
+			<div class="hd_linker_row"><div class="hd_link_title">Name:</div><input type="text" class="hd_mcf_template_name" value="<%=@new_hd_name%>"/></div>
+			<div class="hd_linker_row"><div class="hd_link_title">UCN:</div><input type="text" class="disabled hd_ucn" value="<%=@UCN_hd_new%>" class="hd_linker_remote_sin" readonly/></div>
+		</div>
+	</div>
+</div>

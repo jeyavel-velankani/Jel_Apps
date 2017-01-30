@@ -1,0 +1,50 @@
+<!--*********************************************************************************
+  File name    : _dt_statistics.html.erb
+
+  Description  : This view is used to display the DT Statistics fields(Invalid DT Packets Rx,Valid DT Packets Rx
+  				 and DT Packets Tx).
+  Project Name : iVIU - WebUI Project
+
+  Copyright    : Safetran Systems Corporation, U.S.A. 
+                     Research and Development
+
+  Author       : Cognizant Technology Solutions
+
+*********************************************************************************-->
+<div>
+<table cellspacing="0" cellpadding="0" border="0" class="logtable" width="100%">
+	<thead>
+		<tr>
+			<th class="title" width="400" style="color:#CFD631;font-size:12px;">Console Statistics</th>
+			<th class="title" width="100" style="color:#CFD631;font-size:12px;">Value</th>		
+		</tr>
+	</thead>
+	<tbody>
+	<% records_found = true
+	   unless statistic.invalid_pkts_recvd.blank? && statistic.valid_pkts_recvd.blank? && statistic.pkts_transmitted.blank?%>
+		<tr>
+			<td class="txtleft">Invalid Console Packets Rx</td>
+			<td class="txtleft"><%= statistic.invalid_pkts_recvd %></td>		
+		</tr>
+		<tr>
+			<td class="txtleft">Valid Console Packets Rx</td>
+			<td class="txtleft"><%= statistic.valid_pkts_recvd %></td>		
+		</tr>
+		<tr>
+			<td class="txtleft">Console Packets Tx</td>
+			<td class="txtleft"><%= statistic.pkts_transmitted %></td>		
+		</tr>
+	<% else
+		records_found = false
+	   end %>
+	</tbody>
+</table>
+</div>
+<% if !records_found %>
+	<div class='contentCSPlabel' style="padding:50px; text-align:center;">No device data found.</div>
+<% end %>
+<%= hidden_field_tag 'request_id', request_id %>
+
+<script type="text/javascript">
+  	$('.logtable').flexigrid({height:'auto', striped:false});
+</script>

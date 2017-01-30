@@ -1,0 +1,18 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  geo_is_not_in_session: "Geo is not in session!!"
+  unlock_parameters_failed: "Unable to unlock parameters"
+  successfully_unlocked_parameters: "Successfully unlocked parameters"
+  ucn_instruction_message: "GEO is  not in configured state, please navigate to Connection--> Configure GEO-->SiteConfiguration-->UCN page and enter the UCN value to make GEO fully operational"
+  set_to_default_success: "Set to default process completed successfully"
+  successfully_saved_parameters: "Successfully saved parameters"
+  key_not_pressed_ucn: "Error: Keys not pressed, press push buttons on geo prior to setting UCN"
+  wrong_ucn: "Error: Wrong UCN value entered"
+  changes_saved_successfully: "Changes saved successfully"
+  reboot_request_timeout: "Geo reboot request timeout"
+  geo_rebooted_successfully: "Geo rebooted successfully"
+  key_not_pressed_vital_userio: "Error: Keys not pressed, press push buttons on geo prior to setting Vital User I/O."
+  vital_userio_updated_successfully: "Vital User I/O has been updated successfully."
+  gcp_is_not_in_session: "GCP is not in session!!"

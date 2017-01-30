@@ -1,0 +1,75 @@
+<div class="contentactionbar <%= css_class %>">
+    <div>
+    	<% buttons.each do |button_type| %>
+		    <!-- # TODO: Need to replace if conditions with switch case -->
+    		<% if button_type == "run" %>
+	    	<div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+	            <%= link_to(image_tag("/images/run.png", :alt => "Run Test", :title => "Run Test"), "javascript:void(0);", :class => "run-test", :action_type => "run") %>
+	        </div>
+	        <% end
+			   if button_type == "stop" %>
+			<div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+	            <%= link_to(image_tag("/images/stop-mouse-over.png", :alt => "Stop", :title => "Stop"), "javascript:void(0);", :class => "stop-test disabled_buttons", :action_type => "stop") %>
+			</div>
+			<% end
+			   if button_type == "save" %>
+				<div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+		            <%= link_to(image_tag("/images/savemouseover.png", :alt => "Save", :title => "Save"), "javascript:void(0);", :class => "parameters_save") %>
+				</div>
+			<% end 
+			   if button_type == "discard" %>	
+		        <div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+		            <%= link_to(image_tag("/images/discard  mouse over.png", :alt => "Discard", :title => "Discard"), "javascript:void(0);", :class => "parameters_discard") %>				
+		        </div>
+			<% end 
+			   if button_type == "refresh" %>	
+		        <div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+					<%= link_to(image_tag("/images/refresh_mouse_over.png", :alt => "Refresh", :title => "Refresh"), "javascript:void(0);", :class => "parameters_refresh") %>
+		        </div>
+			<% end 
+			   if button_type == "unlock" %>
+				<div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+		            <%= link_to(image_tag("/images/unlock.png", :alt => "Unlock", :title => "Unlock"), "javascript:void(0);", :class => "parameters_unlock") %>
+		        </div>
+			<% end
+			   if button_type == "default" %>
+				<div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+		            <%= link_to(image_tag("/images/default.png", :alt => "Default", :title => "Default"), "javascript:void(0);", :class => "parameters_default") %>
+		        </div>	
+			<% end 
+			   if button_type == "prev" %>
+				<div style="float:left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI navigation_links" id="prev_button">
+					<%= link_to("<span>#{image_tag('/images/u195_normal.png')}</span> Prev", "javascript:void(0);", :page_href => "/gcp_programming/page_parameters?menu_link=#{prev_link}&page_type=prev", :class => 'navigation') %>
+				</div>
+			<% end 
+			   if button_type == "next" %>
+				<div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI navigation_links" id="next_button">
+					<%= link_to("<span>#{image_tag('/images/u197_normal.png')}</span> Next", "javascript:void(0);", :page_href => "/gcp_programming/page_parameters?menu_link=#{next_link}&page_type=next", :class => 'navigation') %>
+				</div>
+			<% end
+			   if button_type == "reset" %>
+				 <div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+					<%= link_to(image_tag("/images/sear_reset.png", :alt => "Reset", :title => "Reset"), "javascript:void(0);", :class => "parameters_reset_vlp") %>
+		        </div>
+			<% end
+			   if button_type == "clear" %>
+				 <div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+					<%= link_to(image_tag("/images/clear.png", :alt => "Clear", :title => "Clear"), "javascript:void(0);",:class => "parameters_erase") %>
+		        </div>
+		<% 	   end	
+			   if button_type == "Lamps_off" %>
+				 <div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+					<%= link_to(image_tag("/images/lamps_off.png", :alt => "Lamps off", :title => "Lamps_off"), "javascript:void(0);",:class => "parameters_Lamps_off") %>
+		        </div>
+		<% 	   end
+
+				if button_type == "hd_linker" %>
+				 <div style="float: left;" class="contentactionbuttonlabel_new contentactionbuttonlabelI">
+					<%= link_to(image_tag("/images/hd_mcf.png", :alt => "hd linker", :title => "hd_linker"), "javascript:void(0);",:class => "hd_linker") %>
+		        </div>
+		<% 	   end
+			
+		   end %>
+		   <div style="clear:both"></div>
+    </div>
+</div>

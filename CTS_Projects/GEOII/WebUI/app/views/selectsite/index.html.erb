@@ -1,0 +1,6 @@
+<%= javascript_include_tag 'flexdropdown','config_selectsite' %>
+<%= stylesheet_link_tag 'selectsite', 'content', 'flexdropdown' %>
+<div id="divselectcontent">
+	<input type="hidden" name="saveremovesite" id="saveremovesite" value=<%= session[:save]%> />
+	<%= render :partial => "selectcontent" %>
+</div>

@@ -1,0 +1,102 @@
+<%=javascript_include_tag 'gcp_programming.js'%>
+<div id="site_content" style="float: left;height:400px;width:100%;">
+    <div class="contentactionbar content_bar_calib_width">
+        <div>
+            <div style="float: left;" class="contentactionbuttonlabel contentactionbuttonlabelI text_image unlock_icon">
+                <%= link_to("Unlock", "javascript:void(0);", :class => "parameters_unlock") %>
+            </div>
+        </div>
+        <span id="ajax_spinner"><%= image_tag("/images/ajax-loader.gif") %></span>
+    </div>
+    <div id="response_message"></div>
+  <div class='label'>Set Default</div>
+    <div id="basic_site contentdata" class="l_port">
+        <div id='contentdata' class='programming_parameters' style='text-align:center;'>
+            <div id="serial_outer" class="serial_outer">
+              <div id='template_defaults' class="<%= 'disabled' if !(@ui_state && @enable) %>" style="<%= 'display:none' if (!@show) %>">
+                    <span class='label' style='left:-8px;'>Set Template Defaults</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+    	$.post('/gcp_programming/check_user_presence/',{
+			//no params
+		},function(resp){
+			if(resp == "true"){
+				$('.parameters_unlock').addClass("disabled_buttons");
+			}
+		});
+
+		// //first checks if security is enabled then checks to see if the user logged in with the default password
+		// $.post('/access/security_enabled/',{
+			// //no params
+		// },function(sec_resp){
+			// if(sec_resp == "true"){
+				// $.post('/access/check_default_password/',{
+					// // no params
+				// },function(resp){
+					// if(resp == "true"){
+						// $(".parameters_unlock").addClass("disabled_buttons");
+					// }
+				// });
+			// }
+		// })
+
+      $("#template_defaults").click(function(){
+        if(!$(this).hasClass('disabled')){
+          var temp_confirm = confirm("Set Template defaults?")
+          if(temp_confirm){
+            run_set_to_default_pso();
+          }
+        }
+      });
+
+    var new_menu_link = $('li[menulink^="Set to Default"]', window.parent.document);
+    var existing_menu_link = $('li.leftnavtext_D', window.parent.document);
+    if(new_menu_link.length > 0 && new_menu_link.attr("menulink") != existing_menu_link.attr("menulink")){
+      existing_menu_link.removeClass("leftnavtext_D");
+      new_menu_link.addClass("leftnavtext_D");
+      $("#contentareahdr", window.parent.document).html("Set to Default");
+    }
+    });
+</script>
+<style type="text/css">
+  h2
+  {
+    color:white;
+  }
+
+  .disabled{
+    opacity: 0.5;
+    cursor: default !important;
+  }
+
+    #ajax_spinner {
+        left: 650px;
+        position: absolute;
+        top: 0;
+        display: none;
+    }
+
+    .label {
+        color: #F2F2F2;
+        font-family: Arial;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: bold;
+        text-decoration: none;
+    text-align: center;
+    padding: 15px 0;
+    }
+
+  #response_message{
+    padding:10px 5px 0px 5px;
+    font-size:16px;
+    color:green;
+    text-align:center;
+  }
+</style>

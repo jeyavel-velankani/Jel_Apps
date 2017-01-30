@@ -1,0 +1,32 @@
+<%= stylesheet_link_tag 'nv_config.css' %>
+<%= javascript_include_tag 'jquery.form.js' , 'viu_non_vital_config' %>
+<form name="myform1" id="myform1" action="/viunonvital_configuration/update_viunonvitalpage" method="POST" enctype="multipart/form-data">
+	<body onload="timeout()">
+	<div class="toolbar_wrapper">
+		<div class="toolbar_button update_viu_config">
+			<img src="/images/savemouseover.png" alt="Save">
+		</div>
+		<div class="toolbar_button contentactionbuttonlabel contentactionbuttonlabelI  text_image refresh_icon">
+			<a href="javascript: void(0);">refresh</a>
+		</div>
+		<div class="toolbar_button contentactionbuttonlabel contentactionbuttonlabelI  text_image discard_icon">
+			<a href="javascript: void(0);">Discard</a>
+		</div>
+		<div class="toolbar_button contentactionbuttonlabel contentactionbuttonlabelI  text_image default_icon">
+			<a href="javascript: void(0);">Default</a>
+		</div>
+		<input type="hidden" name="tagname" id="tagname" value=<%=@tagname %> > 
+	</div>
+	<div class="clear_padtop_1">&nbsp;</div>
+	<div id="message" class="message paddingleft5 text_font success_message pad_bottom_10" name="message">
+	    <%= flash[:message] %>
+	</div>
+	<div id="errormessage" class="errormessage error_message text_font paddingleft5 pad_bottom_10" name="errormessage">
+	    <%= flash[:errormessage] %>
+	</div>
+	<div>
+		<%= render :partial=>'viunonvitalpageparameters', :locals => { :tag_name => @tagname } %>
+	</div>
+	<p class="formdata"><tt id="results"></tt></p>	
+	</body>  
+</form>

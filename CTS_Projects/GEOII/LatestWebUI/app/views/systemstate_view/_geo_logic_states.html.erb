@@ -1,0 +1,16 @@
+<h3>GEO Logic State View</h3>
+<% form_tag("", :class => "geo_logic_state") do %>
+<table>	
+	<tr>
+		<td><label>First Logic State:</label></td><td><%= text_field "logic_state", "first", :value => 1 %></td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+		<td><label>Last Logic State:</label></td><td><%= text_field "logic_state", "last", :value => 600 %></td>
+	</tr>
+	<tr><td>&nbsp;</td></tr>
+	<tr>
+		<td><%= image_submit_tag("/images/update_arte.png") %></td>
+	</tr>	
+</table>
+<% end %>

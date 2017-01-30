@@ -1,0 +1,14 @@
+.container
+  .row.video-full{ 'data-video-id': @video.id }
+    .col-md-10
+      %h1= @video.name
+      %p.small
+        = link_to 'Back to videos' ,videos_path
+
+        %video#my-video.video-js{:controls => "", "data-setup" => "{}", :height => "264", :preload => "auto", :width => "500"}
+          %source{:src => @video.video_file.url, :type => "video/mp4"}
+      
+    / .col-md-2
+    /   %h1
+    /     %span.likes-count= @video.likes
+    /     %span.glyphicon.glyphicon-heart

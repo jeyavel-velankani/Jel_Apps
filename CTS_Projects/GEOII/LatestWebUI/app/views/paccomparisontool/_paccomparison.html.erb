@@ -1,0 +1,16 @@
+<div><!-- this div is needed because ie9 wont include style tag if it is no here -->
+<% 
+	#parses html and style because you can have a head inside of the body
+	if @displayhtmlcontent && @displayhtmlcontent.index('<style') != nil && @displayhtmlcontent.index('</style') != nil &&  @displayhtmlcontent.index('<body') != nil &&  @displayhtmlcontent.index('< /body') != nil
+	style_start = @displayhtmlcontent.index('<style')
+	style_end = @displayhtmlcontent.index('</style')+7
+
+	html_start = @displayhtmlcontent.index('<body')+6
+	html_end = @displayhtmlcontent.index('</body>')-1
+%>
+	<%= @displayhtmlcontent[style_start..style_end]%>
+	<%= @displayhtmlcontent[html_start..html_end]%>
+<% else %>
+	<%= @displayhtmlcontent%>
+<% end %>
+</div>

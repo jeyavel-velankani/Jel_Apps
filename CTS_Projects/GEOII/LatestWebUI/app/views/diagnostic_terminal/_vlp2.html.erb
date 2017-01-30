@@ -1,0 +1,65 @@
+<div style='width:150px;float:left;'>
+    <div class="status_data" style='width:125px;background-color: gray;'>
+        <div id=<%= card_health !=  "1" &&  card_health !=  nil ? "card_data" : "inactive_card_data" %>>
+            <div class="slot_header" title = "<%= @card_type %>" id="slot_<%= @card_type %>" style='<%= card_health == "1" || card_health == nil  ? "background-color:#9D0F10;" : ""  %>' style="height:25px;">
+                <%= get_slot_name(slot_name) %>
+            </div>
+            <% menus = Menu.find_by_sql "select * from menus where mcfcrc = #{@mcfcrc}" %>
+            <% mcf_params = Parameter.find(:all,
+            :conditions => ["mcfcrc = ? and cardindex = ? and (parameter_type = 3 or parameter_type = 4)", @mcfcrc, @online.card_index],
+            :select => "name, default_value, mcfcrc, parameter_type, parameter_index, cardindex") %>
+            <% battery_mcf_params = mcf_params.select{|card| card.name.match("BatteryVoltage") } %>
+            <% internal_mcf_params = mcf_params.select{|card| card.name.match("InternalVoltage") } %>
+            <% temperature_mcf_params = mcf_params.select{|card| card.name.match("Temperature") } %>
+            <% battery_rt_param = vlp_parameters(battery_mcf_params) %>
+            <% internal_rt_param = vlp_parameters(internal_mcf_params) %>
+            <% temperature_rt_param = vlp_parameters(temperature_mcf_params) %>
+            <div class="outer_box" style='margin: 7px 6px 45px; padding:6px 0 10px 0;'>
+                <div class='vlp_parameters'>
+                    <div id='vlp_captions'>
+                        Battery
+                    </div>
+                    <div class="dtvlp" id="vlp_caption_values">
+                        <%= battery_rt_param.blank? ? "0.00" : sprintf('%.2f', (battery_rt_param/10.0)) %> V 
+                    </div>
+                </div>
+                <div class='vlp_parameters'>
+                    <div id='vlp_captions'>
+                        Internal
+                    </div>
+                    <div class="dtvlp" id="vlp_caption_values">
+                        <%= internal_rt_param.blank? ? "0.00" : sprintf('%.2f', (internal_rt_param/10.0)) %> V
+                    </div>
+                </div>
+                <div class='vlp_parameters'>
+                    <div id='vlp_captions'>
+                        Temperature
+                    </div>
+                    <div class="dtvlp" id="vlp_caption_values">
+                        <%= temperature_rt_param.blank? ? "0.00" : sprintf('%.2f', (temperature_rt_param - 50.0)) %> C
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- background-color of style attribute should change to '#9D0F10' (for cp_slot_inactive) in the given condition  --><!-- cp_slot_inactive should apply to cp slot card 'id' attribute -->
+        <div id="<%= cp_slot_health == '1' || cp_slot_health == nil  ? 'cp_slot_active' : 'cp_slot_active' %>" style='<%= cp_slot_health == "1" || cp_slot_health == nil  ? "background-color:#4CC417" : "background-color:#4CC417"  %>'>
+            <div class="slot_header" id="slot_10">
+                CP
+            </div>
+        </div>
+    </div>
+</div>
+<div style='float:left;padding:5px 0 0 0;'>
+    <%#= get_card_information_links(card_health) %>
+    <span id='io_spinner' style='display:none;'><%= image_tag("/images/wait.gif") %></span>
+    <%= hidden_field "card", "index", :value => @online.card_index %>
+    <%= hidden_field "atcs", "address", :value => atcs_addr %>
+    <%= hidden_field "slot", "atcs_devnumber", :value => @slot_atcs_devnumber %>
+</div>
+<%= stylesheet_link_tag 'jquery.contextMenu' %>
+<%= javascript_include_tag "jquery.contextmenu" %>
+<% if !menus.blank? %>
+<%= javascript_include_tag 'module_config_information_am' %>
+<% else %>
+<%= javascript_include_tag 'module_config_information' %>
+<% end %>

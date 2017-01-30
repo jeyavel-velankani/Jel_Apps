@@ -1,0 +1,39 @@
+/* 
+ * Being used for the following PTC pages.
+ * general, classCD and emp
+ *  
+ */
+
+label, input.error {
+    display: inline;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+label.error {
+    background: url('/images/unchecked.gif') no-repeat;
+    padding-left: 16px;
+    margin-left: .3em;
+    color: #FFFFFF;
+}
+
+label.valid {
+    background: url('/images/checked.gif') no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+.width60imp {
+    width: 60% !important;
+}
+
+.width100imp {
+    width: 100% !important;
+}
+
+#xcontent p {
+    display: none;
+}

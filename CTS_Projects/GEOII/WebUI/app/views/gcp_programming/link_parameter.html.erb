@@ -1,0 +1,63 @@
+<% page_name = (params[:page_name] || params[:menu_link]) %>
+<div id="site_content12" class="site_content12" style="margin-top:15px;float: left;width:100%;">
+	<%= javascript_include_tag 'application.js', 'jquery-ui.min.1.8.23.js' %>
+    <div style="display:none;padding:10px 5px 0px 5px" id="response_message">
+    </div>
+	<p class='ajax_spinner' style="margin-top: 0;"><img src='/images/ajax-loader.gif' /><span style='color:#fff;'></span></p> 
+    <div class="mcfcontent" id="mcfcontent" style='overflow-y:auto; width: 97%'>
+    </div>
+    <input type="hidden" value="<%=@link_name%>" id="hd_link_name" name="hd_link_name">
+    <input type="hidden" value="<%=@sin_value%>" id="hd_sin_value" name="hd_sin_value">    
+</div>
+
+
+<script type='text/javascript'>
+function periodical_call(page_url, response_data){
+	var periodic_update = setInterval(function(){
+		var atcs_addr = $("#hd_sin_value").val();
+	    $.post(page_url, {id: response_data, atcs_addr: atcs_addr}, function(data){
+	        if (data != "0" && data != "1") {                                													
+				$('.mcfcontent').html(data);
+				$('.ajax_spinner span').html('');
+				$('.ajax_spinner').hide();
+	            clearInterval(periodic_update);
+	        }
+	     });
+	}, 3000);
+}
+
+$(document).ready(function(){
+	var link_name = $("#hd_link_name").val();
+	var link_url = "";
+	var atcs_addr = $("#hd_sin_value").val();
+	
+	if (link_name == "sin"){
+		link_url = "/atcs_sin/get_sin";
+	}
+	else if(link_name == "location"){
+		link_url = "/location/get_location";
+	}
+	else if(link_name == "time"){
+		link_url = "/geo_time/get_geo_time";
+	}
+			
+	$('.ajax_spinner').show();
+	$('.ajax_spinner span').html("Loading parameters");
+	$('.mcfcontent').html('');								
+	$.post(link_url, {atcs_addr: atcs_addr}, function(response_data){
+		if (link_url == '/location/get_location')
+			periodical_call('/location/check_state', response_data);
+		else if (link_url == "/atcs_sin/get_sin") 
+			atcs_sin_request('/atcs_sin/check_pending', response_data);
+		else if(link_url == "/object_name/get_object_name")
+			periodical_call('/object_name/check_state', response_data);
+		else if(link_url == "/card_name/get_object_name")
+			periodical_call('/card_name/check_state', response_data);						
+		else if (link_url == "/ucn/index"){
+			$('#mcfcontent').html(response_data);
+  			$('.ajax_spinner').hide();
+		}else if (link_url == "/geo_time/get_geo_time")
+			periodical_call('/geo_time/check_state', response_data);						
+	});	
+});
+</script>

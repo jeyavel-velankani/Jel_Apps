@@ -1,0 +1,32 @@
+<table cellspacing="0" cellpadding="0" border="0" class="statstable" width="100%" class="logtable" style="color:#454545;">
+  <thead>
+    <tr>
+      <th class="title" width="100"> <span style="color:#CFD631;font-size:12px;">Device</span> </th>
+      <th class="title" width="100"> <span style="color:#CFD631;font-size:12px;">Bad CRC's</span> </th>
+      <th class="title" width="100"> <span style="color:#CFD631;font-size:12px;">Lost Sessions</span> </th>
+      <th class="title" width="100"> <span style="color:#CFD631;font-size:12px;">Reboots</span> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%
+    if(@cards)
+      card_num = 1
+      for card in @cards
+      %>
+      <tr>
+        <td class="txtleft"> <span style="color:#fff"><%= card_num %></span> </td>
+        <td class="txtleft"> <span style="color:#fff"><%= card.bad_crcs %></span> </td>
+        <td class="txtleft"> <span style="color:#fff"><%= card.lost_sessions %></span> </td>
+        <td class="txtleft"> <span style="color:#fff"><%= card.reboots %></span> </td>
+      </tr>
+      <%
+      card_num += 1
+      end
+    end
+    %>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $('.statstable').flexigrid({width: "90%", height:'auto',striped:false});
+</script>

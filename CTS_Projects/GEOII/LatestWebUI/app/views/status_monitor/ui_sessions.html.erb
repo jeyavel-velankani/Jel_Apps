@@ -1,0 +1,5 @@
+<div class="width100" id="div-one">
+  <%=render :partial=>"ui_sessions"%>
+</div>
+<%= javascript_include_tag 'log_loader' %>
+<script>setTimeout("reloader('/status_monitor/ui_sessions')", 5000);</script>

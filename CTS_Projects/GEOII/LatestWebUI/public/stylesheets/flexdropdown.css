@@ -1,0 +1,54 @@
+
+.flexdropdownmenu, .flexdropdownmenu ul{ 
+	font: normal 11px Arial;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	list-style-type: none;
+	background: #595651;
+	border: 1px solid black;
+	border-bottom-width: 0;
+	visibility: hidden;
+	display: none;
+	width:100px;
+}
+
+
+.flexdropdownmenu li{
+	position: relative;
+}
+
+.flex_div, .flexdropdownmenu li a{
+	display: block;
+	color: #FFFFFF;
+	background: #595651;
+	border-bottom: 1px solid black;
+	text-decoration: none;
+	padding: 4px 5px;
+	font-weight: bold;
+}
+
+* html .flexdropdownmenu li{ 
+	display: inline-block;
+	width: inherit;
+}
+
+.flex_div:hover, .flexdropdownmenu li a:hover, .flexdropdownmenu li.selected>a{
+	background: #CFD638;
+	color: black;
+}
+
+.rightarrowclass{
+	position: absolute;
+	top: 6px;
+	right: 5px;
+	height:12px;
+}
+
+.flex_submenu{
+	width: 110px !important;
+}
+
+

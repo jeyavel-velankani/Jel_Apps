@@ -1,0 +1,267 @@
+/************ parameters ************/
+.message_container{
+	font-family: Arial;
+    font-size: 12px;
+	padding: 10px;
+	height:25px;
+}
+.v_row{
+	height: 40px;
+	width: 770px;
+}
+.v_title{
+	color: #F2F2F2;
+	float:left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;	
+	height: 20px;
+	width: 220px;
+}
+.v_protected {
+	float:left;
+	width: 20px;
+}
+.v_protected img{
+	border: 0px;
+}
+.v_default_indicator {
+	color: #F2F2F2;
+	float:left;
+	font-size: 13px;
+	width: 15px;
+}
+.dv_input{
+	color: #FFF380;
+	float:left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;	
+	height: 20px;
+	margin: 0px 10px;
+	padding:0px;
+	width: 200px;
+}
+.v_error{
+	color: #FFF380;
+	float:left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;	
+	height: 20px;
+	margin: 0px 10px;
+	padding:0px;
+	width: 250px;
+}
+
+.dv_input input,
+.dv_input select{
+	color: #FFF;
+	background-color: #444;
+	border: 1px solid #888;
+	box-sizing: border-box;
+	height:25px;
+	margin:0px;
+	padding:0px;
+	width: 200px;
+}
+
+
+.v_config_wrapper{
+	width:600px;
+}
+/************ generic view ************/
+.v_config_generic_wrapper{
+	margin:5px 10px;
+}
+/************ channles table ************/
+.v_config_channels_wrapper{
+	min-width: 150px;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+.pagination .current{
+	background: none repeat scroll 0 0 #CFD638;
+	border: 1px solid #CFD638;
+	color: #E4E4E4;
+	font-style: normal;
+	font-weight: bold;
+}
+.pagination a, .pagination span{
+	display: block;
+	float: left;
+	margin-right: 1px;
+	padding: 0.2em 0.5em;
+}
+.pagination a{
+	border: 1px solid #9AAFE5;
+	color: #E4E4E4;
+	text-decoration: none;
+}
+.channels_selection table {
+	font-weight: 700;
+	border-collapse: collapse;
+}
+.channels_selection table td {
+	color: #E4E4E4;
+	font-family: Arial;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	border: 1px solid #787878;
+	height:25px;
+}
+.dark_row{
+	background-color: #424242;
+	color:#fff;
+	height: 25px;
+}
+.light_row{
+	background-color: #515151;
+	color:#fff;
+	height: 25px;
+}
+.selected_row{
+	background-color: #CFD638 !important;
+	color: #000 !important;
+}
+.v_channel{
+	width: 25px;
+}
+.v_name{
+	width: 169px;
+}
+.v_arrow{
+	cursor:pointer;
+	width: 25px;
+}
+
+.v_config_channels_right_wrapper{
+	float: left;
+}
+.v_config_channels_content_wrapper{
+	margin:10px;
+}
+.v_error_message{
+	color: red !important;
+}
+.disabled {
+	cursor: default !important;
+}
+.location_form{
+	padding-left: 15px;
+	padding-top: 15px;
+}
+.width_300{
+	width: 300px;
+}
+
+/************ hd linker ************/
+.hd_linker_section_wrapper{
+	border-bottom: 1px solid #fff;
+}
+.hd_linker_section_wrapper_last,
+.hd_linker_section_wrapper{
+	margin: 10px 20px;
+	padding: 10px;
+}
+.hd_linker_row{
+	height: 40px;
+	width: 870px;
+	clear: both;
+}
+.hd_linker_title{
+	color: #F2F2F2;
+	float: left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	height: 20px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.hd_linker_row .hd_link_title{
+	color: #F2F2F2;
+	float: left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;
+	height: 20px;
+	width: 220px;
+}
+.hd_linker_row input{
+	color: #FFF;
+	background-color: #444;
+	border: 1px solid #888;
+	box-sizing: border-box;
+	height: 25px;
+	margin: 0px;
+	padding: 0px;
+	width: 300px;
+}
+.hd_linker_message_wrapper{
+	margin: 10px 20px 0px 30px;
+}
+.hd_linker_message{
+	color:#fff;
+}
+.hd_linker_wrapper .remote_sin_wrapper{
+	float:left;
+}
+.hd_linker_wrapper .remote_sin_error{
+	float: left;
+	width: 330px;
+	margin-left: 10px;
+}
+.hd_linker_wrapper .hd_view_report img{
+	margin-top: -2px;
+}
+.hd_linker_wrapper .toolbar_wrapper{
+	height: 55px;
+}
+.hd_linker_wrapper .dl_drop_down_wrapper{
+	display:none;
+	margin: 4px 2px 0px 0px;
+}
+.hd_linker_wrapper .dl_drop_down_wrapper .hd_dl_item{
+	cursor: pointer;
+	float: left;
+	font-family: Arial;
+	font-size: 11px;
+	font-weight: bold;
+	width: 100%;
+
+
+	display: block;
+	color: #FFFFFF;
+	background: #595651;
+	border-bottom: 1px solid black;
+	text-decoration: none;
+	padding: 4px 5px;
+	font-weight: bold;
+}
+.hd_linker_wrapper .dl_drop_down_wrapper .hd_dl_item:hover{
+	background: #CFD638;
+	color: black;
+}
+
+.disabled, .locked, .readonly {
+	display: inline-block;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+
+.parameter_menu_link{
+    color: #CFD638 !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+    cursor: pointer;
+	}

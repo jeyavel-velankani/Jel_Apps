@@ -1,0 +1,46 @@
+<div>
+	<div>
+		<h3>
+			Module Information<br /> <%= @card_type %>
+		</h3>
+	</div>
+	<div id='close_content'>
+		<div id="close_content_cross">
+			<%= link_to(image_tag("/images/close.png", :border => 0), "javascript:void(0);", :class => "content_close") %>
+		</div>
+	</div>
+</div>
+<% if @mcf_params.blank? %>
+	<p>Nothing Information found!!</p>
+<% else %>
+<table border=0 style='width:300px;'>
+	<tr>
+		<td style="vertical-align:top;">&nbsp;
+			<table border=0 class='module_info_table'>
+				<tr><th style='float:left;'>Parameter</th></tr>
+			<% @mcf_params.each do |parameter| %>
+				<tr><td><%= parameter.to_s.gsub("_", "").titleize %></td></tr>	
+			<% end %>
+			</table>
+		</td>
+		<td style="vertical-align:top;">
+			&nbsp;
+			<table border=0 class='module_info_table'>
+				<tr><th style='float:left;'>Value</th></tr>
+				<tr><td><%= @io_status_reply.verbosity if @io_status_reply %>&nbsp;</td></tr>
+				<tr><td><%= @io_status_reply.version.to_s.upcase if @io_status_reply %>&nbsp;</td></tr>
+				<tr><td><%= @io_status_reply.number_of_ids if @io_status_reply %>&nbsp;</td></tr>
+			<% flag = @mcf_params.size - 3 %>
+			<% counter = 0 %>
+			<% @io_status_values.each do |parameter| %>
+				<% counter += 2 %>
+				<% if counter <= flag %>
+				<tr><td>&nbsp;<%= parameter.blank? || parameter.sw_id.nil? ? "Unknown" : parameter.sw_id.to_s.upcase  %></td></tr>
+				<tr><td>&nbsp;<%= parameter.blank? || parameter.mef_crc.nil? ? 0 : parameter.mef_crc.to_s.upcase %></td></tr>
+				<% end %>
+			<% end unless @io_status_values.blank? %>
+			</table>
+		</td>
+	</tr>		
+</table>
+<% end %>

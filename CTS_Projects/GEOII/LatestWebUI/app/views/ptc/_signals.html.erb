@@ -1,0 +1,132 @@
+<table cellspacing="1" cellpadding="0" width="800px" border="1" class="mytable" id="mytable_signal" style='float:left;'>
+    <tr>
+        <th class="title" style="width:10%">
+            <strong class="text_white_font_12">Site DeviceID</strong>
+        </th>
+        <th class="title" style="width:10%">
+            <strong class="text_white_font_12">Signal</strong>
+        </th>
+        <% if session[:typeOfSystem] != "VIU" %>
+            <th class="title" style="width:10%">
+                <strong class="text_white_font_12">Geo Subnode</strong>
+            </th>
+        <% end %>
+        <th class="title" style="width:10%">
+            <strong class="text_white_font_12">Track Name</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Direction</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Milepost</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Subdivision Number</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Site Name</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Description</strong>
+        </th>
+        <% if session[:typeOfSystem] != "VIU" %>
+    		<th class="title" style="width:10%">
+                <strong class="text_white_font_12">Include</strong>
+            </th>
+        <% end %>
+        <%if session[:typeOfSystem] == "VIU" && @signal_objects.blank?%>
+        <th class="title" style="width:10%">
+            <strong class="text_white_font_12">
+            	<%= link_to(image_tag('/images/Add-mouse-over.png'), "javascript: void(0)", :id => "add_sig_attributes",:class => "add_sig_attributes" ,:title => "Add Signal") %>
+			</strong>
+        </th>
+        <%end%>
+    </tr>
+    <% @signals.each_with_index do |signal, i| %>
+	<% @includeflag = signal.element_position.to_i > 0 ? true : false %>
+    <tr id='<%= signal.id %>' class='signal_<%= signal.id.to_s %> ptc_wiu signal <%= signal.id.to_s == @current_signal.to_s ? "selected_ptc_element" : "" %>'>
+		<td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left">
+            	<% unless signal.SiteDeviceID.blank? %>
+					<% @sigdeviceid = signal.SiteDeviceID %>
+				<%else%>
+					<% @sigdeviceid = signal.device_name.to_s %>
+                <% end %>
+                <%= text_field_tag "signal_sitedeviceid_#{i}", @sigdeviceid ,:maxlength =>"40" ,:size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Site Device Id", :disabled=>!@includeflag %>
+            </div>
+        </td>
+        <td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left" class="text_font">
+            	<%= text_field_tag "signal_device_name_#{i}", signal.device_name ,:maxlength =>"40" ,:size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Device Name", :disabled=>!@includeflag %>
+            </div>
+        </td>
+        <% if session[:typeOfSystem] != "VIU" %>
+        <td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left" class="text_font">
+                <%= signal.subnode %>
+            </div>
+        </td>
+        <%end%>
+        <td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %> >
+            <div align="left">
+                    <%= text_field_tag "signal_trackname_#{i}", ((signal.track_name.blank?) ?  "Not Set" : signal.track_name), :size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Track Name" , :disabled=>!@includeflag %>
+                    <%= hidden_field_tag "signal_id_#{i}", signal.id   %>
+         	</div>
+        </td>
+		<td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left">
+	    	<%=select_tag("signal_direction_#{i}", options_for_select(["Select"]+@signaldirection,signal.Direction),:class =>"selectbox_ptcdevice" , :disabled=>!@includeflag)%>
+            </div>
+        </td>
+		<td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left">
+            	<% unless signal.Milepost.blank? %>
+					<% @sigmile = signal.Milepost %>
+				<%else%>
+					<% @sigmile = session[:defaultmilepost].to_s %>
+                <% end %>
+				<%= text_field_tag "signal_milepost_#{i}",@sigmile , :size =>"30px",:class=>"inputbox_ptcdevice2"  , :name_text => "Mile Post" , :disabled=>!@includeflag %>
+            </div>
+        </td>
+		<td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left">
+            	<% unless signal.SubdivisionNumber.blank? %>
+					<% @sigsubdivno = signal.SubdivisionNumber %>
+				<%else%>
+					<% @sigsubdivno = session[:defaultdivnumber].to_s %>
+                <% end %>
+                <%= text_field_tag "signal_subdivisionnumber_#{i}", ((@sigsubdivno.blank?) ? "Not Set" : @sigsubdivno) , :size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Sub Division Number" , :disabled=>!@includeflag %>
+            </div>
+        </td>
+		<td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left">
+            	<% unless signal.SiteName.blank? %>
+					<% @sigsitename = signal.SiteName %>
+				<%else%>
+					<% @sigsitename = session[:defaultsitename].to_s %>
+                <% end %>
+                <%= text_field_tag "signal_sitename_#{i}", @sigsitename , :size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Site Name" , :disabled=>!@includeflag %>
+            </div>
+        </td>
+		<td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left">
+            	<%= text_field_tag "signal_description_#{i}", signal.Description , :size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Description" , :disabled=>!@includeflag %>
+            </div>
+        </td>
+        <% if session[:typeOfSystem] != "VIU" %>
+		<td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+            <div align="left">
+            	<%= check_box_tag "sig_include_#{signal.id.to_s}", 'Include', @includeflag ,{:onchange =>"includeorexclude_device(this , 'signal_#{signal.id}')" } %>
+            </div>
+        </td>
+        <% end %>
+        <%if session[:typeOfSystem] == "VIU" && @signal_objects.blank?%>
+	        <td <%= get_ptc_data_style(signal.id.to_s, @current_signal.to_s) %>>
+	            <div align="center">
+	            	<%= link_to(image_tag('/images/add_edit_delete_delete.png'), "javascript: void(0)", :id => "signal_remove_#{signal.id.to_s}" ,:row_id => "signal_#{signal.id}" ,:class => "remove_device_attr" ,:title => "Remove") %>
+	            </div>
+	        </td>
+        <%end%>
+    </tr>
+    <%end %>    
+</table>

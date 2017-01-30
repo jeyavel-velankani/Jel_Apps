@@ -1,0 +1,26 @@
+<table cellspacing="0" cellpadding="0" border="0" class="statstable" width="100%" class="logtable" style="color:#454545;">
+  <thead>
+    <tr>
+      <th class="title" width="170"><span style="color:#CFD631;font-size:12px;">Console Statistics</span></th>
+      <th class="title" width="100"><span style="color:#CFD631;font-size:12px;">Value</span></th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <td class="txtleft"><span style="color:#fff">Invalid Console Packets Rx</span></td>
+        <td class="txtleft"><span style="color:#fff"><%= @currentrequest.invalid_pkts_recvd %></span></td>
+      </tr>
+      <tr>
+        <td class="txtleft"><span style="color:#fff">Valid Console Packets Rx</span></td>
+        <td class="txtleft"><span style="color:#fff"><%= @currentrequest.valid_pkts_recvd %></span></td>
+      </tr>
+      <tr>
+        <td class="txtleft"><span style="color:#fff">Console Packets Tx</span></td>
+        <td class="txtleft"><span style="color:#fff"><%= @currentrequest.pkts_transmitted %></span></td>
+      </tr>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $('.statstable').flexigrid({width: "90%", height:'auto',striped:false});
+</script>

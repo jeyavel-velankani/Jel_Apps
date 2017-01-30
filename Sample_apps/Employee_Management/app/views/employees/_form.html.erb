@@ -1,0 +1,32 @@
+<div style = "position: absolute;top: 25%;left: 25%;">
+<%= form_for(@employee) do |f| %>
+  <% if @employee.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being saved:</h2>
+
+      <ul>
+      <% @employee.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+   <table border = 4>
+    <caption style="background-color:grey; font-weight:bold">
+      Create/Update Employee
+    </caption>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :role_id %></td>
+      <td><%= collection_select(:employee, :role_id, Role.all, :id, :name, {prompt: true}) %></td>
+    </tr>
+   <tr colspan = 2>
+      <td><%= f.submit %></td>
+    </tr>
+  </table>
+<% end %>
+</div>

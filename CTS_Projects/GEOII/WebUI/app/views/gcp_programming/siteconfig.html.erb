@@ -1,0 +1,169 @@
+<body>
+<% form_remote_tag :url => {:controller => 'string_parameters', :action => 'update'}, :update => 'content_header' do %>
+<script type="text/javascript">
+window.onload=function()
+{
+var output=document.getElementById('datefield');
+var mydate=new Date();
+var mon=1+mydate.getMonth();
+var dy=mydate.getDate();
+var yr=1900+mydate.getYear();
+output.value = (mon<10?'0'+mon:mon)+'/'+(dy<10?'0'+dy:dy)+'/'+yr;
+}
+</script>
+<h1>Configure Basic Site Information</h1>
+<div class="content_header">	
+<div class="content_header_icons">
+						<div id="congif_top_icons">
+							<%= image_submit_tag '../images/save_active.gif' %>
+						</div>
+						<div id="congif_top_icons">
+							<%= image_submit_tag '../images/discard_active.gif' %>
+						</div>
+						<div id="congif_top_icons">
+							<%= image_submit_tag '../images/refresh_active.gif' %>
+						</div>
+						<div id="congif_top_icons">
+							<%= image_submit_tag '../images/default_active.gif' %>
+						</div>
+				</div>
+		<div class="cont_header_right"><div class="ar_icons">&nbsp;</div></div>
+</div>
+
+<div style="clear:both"></div>
+
+<div class="floatleft width100">
+	<div class="floatleft width100 padtop_15">
+		<div class="floatleft padright_10">Site Name:<br />
+			<%= text_field("string_parameters", @st_name, :value => session[:sitename]) %>
+		</div>
+		<div class="floatleft padright_25">Mile Post:<br />
+			<%= text_field("milepost", @ml_post, :value => session[:milepost]) %>
+		</div>
+		<div class="floatleft">DOT Number:<br />
+			<%= text_field("dotnumber", @dt_num, :value => session[:dotnumber]) %>
+		</div>
+	</div>
+	<div class="floatleft width100 padtop_15">
+		<div class="floatleft padright_10">Time Zone:<br />
+			<%= text_field("timezone", @tme_zone, :value => session[:timezone]) %>
+		</div>
+		<div class="floatleft padright_10">Date:<br />
+			<input type="text" name="datefield" id="datefield" class="displayinline"/>
+		</div>
+		<div class="floatleft">Time:<br />
+			<select name="start_time">
+				<option value="00:00:00">00:00:00</option>
+				<option value="00:15:00">00:15:00</option>
+				<option value="00:30:00">00:30:00</option>
+				<option value="00:45:00">00:45:00</option>
+				<option value="01:00:00">01:00:00</option>
+				<option value="01:15:00">01:15:00</option>
+				<option value="01:30:00">01:30:00</option>
+				<option value="01:45:00">01:45:00</option>
+				<option value="02:00:00">02:00:00</option>
+				<option value="02:15:00">02:15:00</option>
+				<option value="02:30:00">02:30:00</option>
+				<option value="02:45:00">02:45:00</option>
+				<option value="03:00:00">03:00:00</option>
+				<option value="03:15:00">03:15:00</option>
+				<option value="03:30:00">03:30:00</option>
+				<option value="03:45:00">03:45:00</option>
+				<option value="04:00:00">04:00:00</option>
+				<option value="04:15:00">04:15:00</option>
+				<option value="04:30:00">04:30:00</option>
+				<option value="04:45:00">04:45:00</option>
+				<option value="05:00:00">05:00:00</option>
+				<option value="05:15:00">05:15:00</option>
+				<option value="05:30:00">05:30:00</option>
+				<option value="05:45:00">05:45:00</option>
+				<option value="06:00:00">06:00:00</option>
+				<option value="06:15:00">06:15:00</option>
+				<option value="06:30:00">06:30:00</option>
+				<option value="06:45:00">06:45:00</option>
+				<option value="07:00:00">07:00:00</option>
+				<option value="07:15:00">07:15:00</option>
+				<option value="07:30:00">07:30:00</option>
+				<option value="07:45:00">07:45:00</option>
+				<option value="08:00:00">08:00:00</option>
+				<option value="08:15:00">08:15:00</option>
+				<option value="08:30:00">08:30:00</option>
+				<option value="08:45:00">08:45:00</option>
+				<option value="09:00:00">09:00:00</option>
+				<option value="09:15:00">09:15:00</option>
+				<option value="09:30:00">09:30:00</option>
+				<option value="09:45:00">09:45:00</option>
+				<option value="10:00:00">10:00:00</option>
+				<option value="10:15:00">10:15:00</option>
+				<option value="10:30:00">10:30:00</option>
+				<option value="10:45:00">10:45:00</option>
+				<option value="11:00:00">11:00:00</option>
+				<option value="11:15:00">11:15:00</option>
+				<option value="11:30:00">11:30:00</option>
+				<option value="11:45:00">11:45:00</option>
+				<option value="12:00:00">12:00:00</option>
+				<option value="12:15:00">12:15:00</option>
+				<option value="12:30:00">12:30:00</option>
+				<option value="12:45:00">12:45:00</option>
+				<option value="13:00:00">13:00:00</option>
+				<option value="13:15:00">13:15:00</option>
+				<option value="13:30:00">13:30:00</option>
+				<option value="13:45:00">13:45:00</option>
+				<option value="14:00:00">14:00:00</option>
+				<option value="14:15:00">14:15:00</option>
+				<option value="14:30:00">14:30:00</option>
+				<option value="14:45:00">14:45:00</option>
+				<option value="15:00:00">15:00:00</option>
+				<option value="15:15:00">15:15:00</option>
+				<option value="15:30:00">15:30:00</option>
+				<option value="15:45:00">15:45:00</option>
+				<option value="16:00:00">16:00:00</option>
+				<option value="16:15:00">16:15:00</option>
+				<option value="16:30:00">16:30:00</option>
+				<option value="16:45:00">16:45:00</option>
+				<option value="17:00:00">17:00:00</option>
+				<option value="17:15:00">17:15:00</option>
+				<option value="17:30:00">17:30:00</option>
+				<option value="17:45:00">17:45:00</option>
+				<option value="18:00:00">18:00:00</option>
+				<option value="18:15:00">18:15:00</option>
+				<option value="18:30:00">18:30:00</option>
+				<option value="18:45:00">18:45:00</option>
+				<option value="19:00:00">19:00:00</option>
+				<option value="19:15:00">19:15:00</option>
+				<option value="19:30:00">19:30:00</option>
+				<option value="19:45:00">19:45:00</option>
+				<option value="20:00:00">20:00:00</option>
+				<option value="20:15:00">20:15:00</option>
+				<option value="20:30:00">20:30:00</option>
+				<option value="20:45:00">20:45:00</option>
+				<option value="21:00:00">21:00:00</option>
+				<option value="21:15:00">21:15:00</option>
+				<option value="21:30:00">21:30:00</option>
+				<option value="21:45:00">21:45:00</option>
+				<option value="22:00:00">22:00:00</option>
+				<option value="22:15:00">22:15:00</option>
+				<option value="22:30:00">22:30:00</option>
+				<option value="22:45:00">22:45:00</option>
+				<option value="23:00:00">23:00:00</option>
+				<option value="23:15:00">23:15:00</option>
+				<option value="23:30:00">23:30:00</option>
+				<option value="23:45:00">23:45:00</option>
+				
+			</select>
+		</div>
+	</div>
+	<div class="floatleft width100 padtop_15">
+		<div class="floatleft padright_10">Site ATCS Address:<br />
+			<%= text_field("atcs_address", @atcs_addr, :value => session[:ATCSaddress]) %>
+		</div>
+		<div class="floatleft">ACSES ATCS Address:<br />
+			<%= text_field("acses_atcs_address", @acses_atcs_addr, :value => session[:ACSES_ATCSaddress]) %>
+		</div>
+	</div>
+	<%= hidden_field_tag :type, params[:string_parameters] %>	
+</div>
+<%end%> 
+</body>
+
+

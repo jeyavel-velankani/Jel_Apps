@@ -1,0 +1,6 @@
+<script type="text/javascript">
+	var content_tabs = window.parent.document.getElementById('contenttabs')
+	var menus = "<%= escape_javascript(render('layouts/essr_radio_settings_menus')) %>"
+	jQuery(content_tabs).html(menus).css('height', '29px');
+</script>
+<div id='contentdata'></div>

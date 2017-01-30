@@ -1,0 +1,21 @@
+<%= stylesheet_link_tag 'setup_wizard.css'%>
+<%=javascript_include_tag 'gcp_progamming_setup_wizard.js'%>
+<div style="border-bottom:1px solid #787878" id="setup_wizard_page">
+	<div class="setup_wizard_menu">
+		<%= render "setup_wizard_menu"%>
+	</div>
+	<div style="float:left;" id="setup_wizard_right_content">
+		<div class="programming_parameters_template" style="width:650px;height:610px">
+			<div id="site_content" style="width:650px;height:610px">&nbsp;</div>
+		</div>
+		<div style="clear:both"></div>
+		<%if @gcp_4000_version == false%>
+		<div class="navigation_buttons">
+			<div id="button_panel" style="padding:15px 0 0 10px;">
+				<%= render :partial => "/layouts/partials/prev_next_buttons" %>
+			</div>
+		</div>
+		<%end%>
+	</div>
+	<div style="clear:both"></div>
+</div>

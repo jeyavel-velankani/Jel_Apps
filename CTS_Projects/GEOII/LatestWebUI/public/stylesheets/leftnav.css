@@ -1,0 +1,58 @@
+.leftnav
+	{
+	vertical-align		: top;
+	background-color	: transparent;
+	}
+
+.leftnavtitle
+	{
+	font-family			: Arial;
+	font-size			: 13px;
+	font-weight			: bold;
+	color				: #CFD638;
+	text-shadow			: 0px -1px 0 #333333;
+	position			: relative;
+	left				: 10px;
+	top					: 6px;
+	vertical-align		: center;
+	}
+
+.leftnavbkgd
+	{
+	background			: url( images/leftnav/SubNavBKND.png );	/* TODO ignored, whether background or background-image; may need "../" because relative to css folder */
+	background-repeat	: no-repeat;
+	}
+
+.leftnavtree
+	{
+	font-family			: Arial;
+	font-size			: 12px;
+	text-indent			: 10px;
+	color				: #FFFFFF;
+	max-width			: 240px;
+	background-color	: transparent;
+	line-height			: 185%;
+	}
+
+.leftnavtext_U
+	{
+	color				: #FFFFFF;
+	}
+
+.leftnavtext_H
+	{
+	color				: #C3CF21;
+	cursor				: pointer;
+	}
+
+.leftnavtext_D
+	{
+	color				: #C3CF21;
+	cursor				: pointer;
+	}
+
+	
+.disable_logs{
+	color: #A1A1A1;
+	cursor: default;
+}

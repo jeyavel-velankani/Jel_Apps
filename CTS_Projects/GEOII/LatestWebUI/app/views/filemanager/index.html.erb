@@ -1,0 +1,145 @@
+<%= javascript_include_tag 'jquery.form', 'filemanager', 'flexdropdown' %>
+<%= stylesheet_link_tag 'filemanager', 'flexdropdown' %>
+<div id="divfilemanagercontent"  class="padding_left_10 text_font">
+	<form name="frmfilemanager" id="frmfilemanager" action="/filemanager/import_files" class='frmfilemanager' method="POST" enctype="multipart/form-data">
+	   <div class="toolbar_wrapper"> 
+	   		<div style="float:left;display: block; width: 94px; height: 25px; overflow: hidden;padding-left:5px ; padding-top:5px;">
+				<%= link_to(image_tag('/images/export-files.png'),"javascript: void(0)", :id => "export_files",:title => "Export Files"  )%>
+			</div>		
+			<div id ="btselectzipfile" style="display: block;float:left ;width: 94px; height:20px; overflow: hidden;padding-left:5px ; padding-top:5px;">
+				   <img src="/images/import-files.png"><a href="javascript: void(0)"  style="color:black;cursor:pointer; font-weight:bold;"></a></img>
+				   <input type="file" id="upload_zip_input" name="upload_zip_input" onchange="upload_zip();" style="font-size: 50px;cursor: pointer;  width: 91px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -20px;left: -0px" />			   
+			</div>
+			<div id ="btremove_template" style="display: block;float:left ;width: 130px; height:20px; overflow: hidden;padding-left:5px ; padding-top:5px;">
+				   <img src="/images/remove_template.png" data-flexmenu="templatemenu" style="cursor: pointer;" id="remove_template"></img>				   			   
+			</div>
+	   </div>
+	   
+	<div>
+		<ul id="templatemenu" class="flexdropdownmenu">			
+			<li>
+				<%if @get_template_list.include?("iviu ptc geo")%>
+					<a href="javascript: void(0);"  id = 'template_iviuptc' class="template_remove">iVIU PTC GEO</a>
+				<%else%>
+					<a href="javascript: void(0);"  id = 'template_iviuptc' style="color:gray" >iVIU PTC GEO</a>
+				<%end%>
+			</li>
+			<li>
+				<%if @get_template_list.include?("iviu")%>
+					<a href="javascript: void(0);" id = 'template_iviu' class="template_remove">iVIU</a>
+				<%else%>
+					<a href="javascript: void(0);" id = 'template_iviu' style="color:gray">iVIU</a>
+				<%end%>	
+			</li>
+			<li>
+				<%if @get_template_list.include?("viu")%>
+					<a href="javascript: void(0);" id = 'template_viu' class="template_remove">VIU</a>
+				<%else%>
+					<a href="javascript: void(0);" id = 'template_viu' style="color:gray">VIU</a>
+				<%end%>
+			</li>
+			<li>
+				<%if @get_template_list.include?("gcp")%>
+					<a href="javascript: void(0);" id = 'template_gcp' class="template_remove">GCP</a>
+				<%else%>
+					<a href="javascript: void(0);" id = 'template_gcp' style="color:gray">GCP</a>
+				<%end%>
+			</li>
+			<li>
+				<%if @get_template_list.include?("cpu-iii")%>
+					<a href="javascript: void(0);" id = 'template_cpu3' class="template_remove">CPU-III</a>
+				<%else%>
+					<a href="javascript: void(0);" id = 'template_cpu3' style="color:gray">CPU-III</a>
+				<%end%>
+			</li>
+		</ul>
+	</div>
+	<div class="padding_left100_green"><%= @successmsg.to_s %></div>
+	<div id="template_mess" name="template_mess" class="success_message padding_left_160 text_font">
+		<%= @remove_msg_template unless @remove_msg_template.blank? %>
+	</div>
+	<div class="padding_left_10">
+		<%if (!@not_import_files.blank? || !@imported_files.blank? || !@hash_dup_fileslist.blank?)%>		
+			<table width="90%" align="center" cellspacing="2" cellpadding="5" border="1" id="mytable">
+				<tr>
+					<th class="title" style="width:250px;">File</th>
+					<th class="title" style="width:250px;">Status</th>
+					<th class="title"style="width:150px;text-align: left;" >
+						<% unless @hash_dup_fileslist.blank? %>
+						<%= check_box_tag 'overridecancel', 'overridecancel', true %>Check All
+						<%end%>
+					</th>						
+				</tr>
+				<% unless @not_import_files.blank? %>
+					<%for ind in 0...(@not_import_files.length)%>
+						<%if(@not_import_files[ind].length > 0)%>
+							<tr>
+								<td style="color:yellow"><%=@not_import_files[ind]%></td>
+								<td style="color:yellow">Failed: Invalid file</td>
+								<td style="color:yellow"></td>
+							</tr>
+						<%end%>
+					<%end%>
+				<% end%>
+				
+				<% unless @imported_files.blank?%>
+					<%for ind in 0...(@imported_files.length)%>
+						<%@flg = false%>
+						<%if(@imported_files[ind].length > 0)
+							fl_name = @imported_files[ind].split("*")
+						    unless @hash_dup_fileslist.blank? %>
+						  		<%@hash_dup_fileslist.each_pair{|rec|	
+									if (rec[1][:file_path].downcase == fl_name[1].downcase)
+										@flg = true
+										break
+									end
+								}%>
+						  <%end%>
+						  <% if @flg == false%>
+							<tr>
+								<td style="color:white"><%=fl_name[0]%></td>
+								<td style="color:white">Imported</td>
+								<td style="color:white"><input type = "hidden" name ="hd_imp_filename" id = "hd_imp_filename" value="<%=fl_name[1]%>"></td>
+							</tr>
+						 <%end%>
+						<%end%>
+					<%end%>
+				<% end%>
+				<%id = 0%>
+				<% unless @hash_dup_fileslist.blank?%>
+					<%@hash_dup_fileslist.each_pair{|rec|
+						id = id + 1					
+						rdbutid= "chk_" + id.to_s
+						%>
+					<tr>
+						<td style="color:white"><%=rec[1][:new_name].to_s%></td>
+						<td style="color:white">File already exists</td>
+						<td style="color:white"><input id="<%=rdbutid%>" type="checkbox" value="<%=rec[1][:file_path].to_s%>" checked name = "<%=rdbutid%>" onclick = "validate_check_all();"/>Override? <input type = "hidden" name ="hd_imp_filename" id = "hd_imp_filename" value="<%=rec[1][:file_path].to_s%>"></td>
+					</tr>
+					<%}%>
+				<% end%>
+				<div>
+					<input type = "hidden" name ="rec_count" id = "rec_count" value="<%=id%>">
+				</div>
+			</table>
+		<%end %>
+		<%unless @hash_dup_fileslist.blank?%>			
+			<div style="float:right;display: block; width:200px; height: 25px; padding-left:5px;padding-top:15px";>
+   				<%= link_to(image_tag('/images/Override-selected-files.png'),"javascript: void(0)", :id => "save_file",:title => "Override selected files", :onclick=>"save_selected_file();") %>   				
+			</div>
+			<div style="float:right;display: block; width:105px; height: 25px; padding-left:5px;padding-top:15px";>
+		<% else%>
+			<div style="float:right;display: block; width:145px; height: 25px; padding-left:5px;padding-top:15px";>
+		<%end%>
+		<% if @import_flag == true %>							
+				<%= link_to(image_tag('/images/cancel-import.png'),"javascript: void(0)", :id => "cancel_import",:title => "Cancel imported files", :onclick=>"cancel_imported_file();") %>				
+			</div>			
+			<% if @hash_dup_fileslist.blank?%>
+				<div style="float:right;display: block; width:75px; height: 25px; padding-left:5px;padding-top:15px";>				
+					<%= link_to(image_tag('/images/finish-mouse-over.png'),"javascript: void(0)", :id => "ok_import",:title => "Finish import files", :onclick=>"ok_imported_files();") %>				
+				</div>
+			<% end%>
+		<% end%>   		
+	</div>
+	</form>
+</div>

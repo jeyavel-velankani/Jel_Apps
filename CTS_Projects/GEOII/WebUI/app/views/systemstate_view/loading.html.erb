@@ -1,0 +1,7 @@
+<form id="loading" name="loading">
+	<%= periodically_call_remote :url => { :controller=>'systemstate_view', :action => 'systemstate_process', :id => session[:event_id], :with=>"'event_id='+$('event_id').value" }, :frequency => 1 ,:loading=>"document.getElementById('signal').value=2", :interactive=>"showPopWin2('../loading', 200, 70, null);",:success =>"window.parent.hidePopWin2(false);", :complete=>"window.parent.hidePopWin2(false);",   :condition=>"check_req()" %>
+	<div id="flag_div"><%= image_tag("ajax-loader.gif") %> Loading Please wait</div>  
+	<input type="hidden" id="event_id" name="event_id" value=<%= session[:event_id] %> />          
+	<input type="hidden" id="signal" name="signal" value=<%= session[:signal] %> />
+</form>
+

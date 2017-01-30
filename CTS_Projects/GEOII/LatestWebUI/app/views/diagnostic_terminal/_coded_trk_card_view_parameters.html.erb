@@ -1,0 +1,163 @@
+<% @channel_titles.each do |channel| %>
+	<% channel_title = channel.channel_title.split('.')[1] %>
+	<% mcf_params = Parameter.find(:all,
+	:conditions => ["mcfcrc = ? and cardindex = ? and (parameter_type = 3 or parameter_type = 4)", channel.mcfcrc, @online.card_index],
+	:select => "name, default_value, mcfcrc, parameter_type, parameter_index, cardindex") %>
+	<% vco_mcf_params = mcf_params.select{|card| card.name.match("VCO") } %>
+	<% vco_param_names = vco_mcf_params.collect {|param| param.name.split('.').last } %>
+	<% vti_mcf_params = mcf_params.select{|card| card.name.match("VTI") } %>
+	<% vti_param_names = vti_mcf_params.collect {|param| param.name.split('.').last } %>
+	<% if channel_title.eql? "Code" %>
+	<div class="outer_box" style='margin:0;border-bottom: 1px solid #000;'>
+	    <div id="titles" style='text-align:center;margin-top:5px;'>
+	        <%= channel_title %>
+	    </div>
+	    <div id="titles" style='padding-left:7px;'>
+	        Tx
+	    </div>
+	    <table cellspacing=0 cellpadding=0 id="coded_track_vars">
+	        <tr>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                &nbsp;<% if vco_param_names.include? "C1" %>
+	                <% parameters = vco_mcf_params.select{|param| param.name.split('.').last == "C1" } %>
+	                <% rt_param = get_real_parameter(parameters) %>
+	                <%= rt_param unless rt_param.blank? %>
+	                <% end %>
+	            </td>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                &nbsp;<% if vco_param_names.include? "C2" || "C3" || "C4" || "C7" || "C8" || "C9" %>
+	                <% parameters = vco_mcf_params.select{|param| param_name = param.name.split('.').last; param_name == "C2" || param_name == "C3" || param_name == "C4" || param_name == "C7" || param_name == "C8" || param_name == "C9" } %>
+	                <% rt_parameter = get_real_parameter(parameters) %>
+	                <%= rt_parameter if !rt_parameter.blank? %>
+	                <% end %>
+	            </td>
+	        </tr>
+	        <tr>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                <% track_tx = "" %>
+	                &nbsp;<% if vco_param_names.include? "C5" || "C6" || "CM" %>
+	                <% track_tx = get_coded_line_track_tx(vco_mcf_params, ["C5", "C6", "CM"]) %>
+	                <%= track_tx %>
+	                <% end %>
+	            </td>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                &nbsp;<% if vco_param_names.include? "C5" || "C6" || "CM" %>
+	                <% elements = ["C5", "C6", "CM"] %>
+	                <% elements.delete(track_tx) %>
+	                <%= get_coded_line_track_tx(vco_mcf_params, elements) %>
+	                <% end %>
+	            </td>
+	        </tr>
+	        <tr>
+	            <td colspan=2 id="coded_track_table_data" class='nobackground_table'>
+	                <% if vco_param_names.include? "VCOCurrent" %>
+	                <% parameter = vco_mcf_params.select{|param| param.name.split('.').last == "VCOCurrent" } %>
+	                <% rt_parameter = get_rt_parameter(parameter.first) %>
+	                <%= rt_parameter.blank? ? "0.00 A" : "#{rt_parameter.first.current_value.to_f * 0.05} A" %>
+	                <% end %>
+	            </td>
+	        </tr>
+	        <tr>
+	            <td colspan=2 id="coded_track_table_data" class='nobackground_table'>
+	                <% if vco_param_names.include? "VCOVoltage" %>
+	                <% parameter = vco_mcf_params.select{|param| param.name.split('.').last == "VCOVoltage" } %>
+	                <% rt_parameter = get_rt_parameter(parameter.first) %>
+	                <%= rt_parameter.blank? ? "0.00 V" : "#{rt_parameter.first.current_value.to_f * 0.02} V" %>
+	                <% end %>
+	            </td>
+	        </tr>
+	    </table>
+	    <% cp_param = vti_mcf_params.select{|param| param.name.split('.').last == "CodePresent"} %>
+	    <% vc_param = vti_mcf_params.select{|param| param.name.split('.').last == "VitalCodePresent"} %>
+	    <% cp_parameter = get_real_parameter(cp_param) %>
+	    <% vcp_parameter = get_real_parameter(vc_param) %>
+	    <div>
+	        <span id="titles" style='padding-left:8px;'>Rx</span>
+	        <span id="titles" style='float:right;padding-right:13px;'><%= get_nc_param(cp_parameter, vcp_parameter) %></span>
+	    </div>
+	    <table cellspacing=0 cellpadding=0 border=1 id="coded_track_vars">
+	        <tr>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                &nbsp;<% if vti_param_names.include? "C1" %>
+	                <% parameters = vti_mcf_params.select{|param| param.name.split('.').last == "C1" } %>
+	                <% rt_parameter = get_real_parameter(parameters) %>
+	                <%= rt_parameter if !rt_parameter.blank? %>
+	                <% end %>
+	            </td>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                &nbsp;<% if vti_param_names.include? "C2" || "C3" || "C4" || "C7" || "C8" || "C9" %>
+	                <% parameters = vti_mcf_params.select{|param| param_name = param.name.split('.').last; param_name == "C2" || param_name == "C3" || param_name == "C4" || param_name == "C7" || param_name == "C8" || param_name == "C9" } %>
+	                <% rt_parameter = get_real_parameter(parameters) %>
+	                <%= rt_parameter if !rt_parameter.blank? %>
+	                <% end %>
+	            </td>
+	        </tr>
+	        <tr>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                <% vti_track_tx = "" %>
+	                &nbsp;<% if vti_param_names.include? "C5" || "C6" || "CM" %>
+	                <% vti_track_tx = get_coded_line_track_tx(vti_mcf_params, ["C5", "C6", "CM"]) %>
+	                <%= vti_track_tx %>
+	                <% end %>
+	            </td>
+	            <td id="coded_track_table_data" class='nobackground_table'>
+	                &nbsp;<% if vti_param_names.include? "C5" || "C6" || "CM" %>
+	                <% elements = ["C5", "C6", "CM"] %>
+	                <% elements.delete(vti_track_tx) %>
+	                <%= get_coded_line_track_tx(vti_mcf_params, elements) %>
+	                <% end %>
+	            </td>
+	        </tr>
+	        <tr>
+	            <td id="coded_track_table_data" colspan=2 class='nobackground_table'>
+	                &nbsp;<% if vti_param_names.include? "VTICurrent" %>
+	                <% parameter = vti_mcf_params.select{|param| param.name.split('.').last == "VTICurrent" } %>
+	                <% rt_parameter = get_rt_parameter(parameter.first) %>
+	                <%= rt_parameter.blank? ? "0.00 A" : "#{rt_parameter.first.current_value.to_f * 0.01} A" %>
+	                <% end %>
+	            </td>
+	        </tr>
+	    </table>
+	</div>
+	<% elsif channel_title.eql? "LED" %>
+	<div class="outer_box" style="margin:0;border-bottom:1px solid #000;">
+	    <% led_parameters = mcf_params.select{|param| param.name.split('.').first.match("LED") } %>
+	    <table cellspacing=0 cellpadding=0 style="margin-bottom:2px; text-align: center;width: 85px;">
+	        <tr>
+	            <td class='no_border_led' id="channel_title" style='height:0px;'>
+	                <%= channel_title %>
+	            </td>
+	        </tr>
+	        <tr>
+	            <% led_codes = get_coded_track_led(led_parameters) %>
+	            <td class='no_border_led' style='height:0px;font-size:12px;'>
+	                <%= led_codes["led_image"] %>
+	            </td>
+	            <td class='no_border_led' style='height:0px;font-size:12px;'>
+	                <%= led_codes["led_status"] %>
+	            </td>
+	        </tr>
+	    </table>
+	</div>
+	<% elsif channel_title.eql? "VRO" %>
+	<div class="outer_box" style="border-bottom:1px solid #000;margin:0;">
+	    <% vro_parameters = mcf_params.select{|param| param.name.split('.').first.match("VRO") } %>
+	    <table cellspacing=0 cellpadding=0 style="margin-bottom:3px; text-align: center;width: 85px;">
+	        <tr>
+	            <td class='no_border_led' id="channel_title" style='height:0px;'>
+	                <%= channel_title %>
+	            </td>
+	        </tr>
+	        <tr>
+	            <% vro_codes = get_vro_output_mnemonic(vro_parameters) %>
+	            <td class='no_border_led' style='height:0px;font-size:12px;'>
+	                <%= image_tag("dt/box.png", :size=> "11x11") %><span style='padding-left:3px;'><%= vro_codes["lamp_image"] %></span>
+	            </td>
+	            <td class='no_border_led' style='height:0px;font-size:12px;'>
+	                <%= vro_codes["status"] %>
+	            </td>
+	        </tr>
+	    </table>
+	</div>
+	<% end %>
+<% end %>

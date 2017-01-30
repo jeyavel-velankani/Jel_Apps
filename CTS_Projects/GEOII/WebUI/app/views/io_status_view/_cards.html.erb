@@ -1,0 +1,41 @@
+<%card_health_status = (card_health.to_s == '0' ? 'active' : 'inactive')%>
+<% if card_name.blank? && (card.card_type == 9 || card.card_type == 7) %>
+	<% card_caption = card.card_type == 7 ? "VLP" : "VLP2" %>
+<% else %>
+	<% card_caption = card_name %>
+<% end %>
+<div card_caption = "<%=  card_caption %>" class="status_data <%= card_health_status %> io_card_<%= card.card_index if card %>" name="<%= card.card_index if card %>" atcs_addr = "<%= atcs_address %>" card_type="<%= card.card_type if card %>" mcfcrc = " <%= mcfcrc %>" slot_number = "<%= card.slot_no if card %>">
+	<div class="slot_header" id = "slot_<%= card.card_type if card %>" card_status = "<%=card_health_status%>" card_index = "<%= card.card_index if card %>" style='<%= card_health.to_s == "0" ? "" : ( card_name == "< Empty >" ? "background-color:#E6E6FA;color:#000;" : "background-color:#B7280A;color:#FFF;" )%>'>
+		<%= card_caption %>
+    </div>
+    <% if card %>
+	    <% channel_parameters = fetch_channel_parameters(atcs_address, mcfcrc, card.card_index, card.card_type, view_type) %>		
+		<div id="main_card">
+		    <div id="card_column">
+		    	<% if card.card_type == 9 || card.card_type == 7 %>
+					<%= render :partial => "/io_status_view/channels/vlp_channel",
+							:locals => {:mcfcrc => mcfcrc, :card_type => card.card_type, :card_index => card.card_index, :atcs_address => atcs_address, 
+							:channel_parameters => channel_parameters, :card_name => card_name}		 %>
+				<% else %>
+					<% channels.each do |channel| %>
+						<% begin %>
+						    <% channel_name = get_channel_name_rtviewchannels(channel.channel_name) %>
+							<%= render(:partial => "#{draw_channel(channel.channel_tile)}", 
+								:locals => {:channel_index => channel.channel_index, :mcfcrc => mcfcrc, :card_type => card.card_type, 
+								:card_index => card.card_index, :atcs_address => atcs_address, :channel_parameters => channel_parameters, 
+								:card_number => card_number, :card_name => card_name, :channel_type => channel.channel_tile, 
+								:channel_name => channel_name}) %>
+								
+						<% rescue Exception => e %>
+							<div class="outer_box">
+								<%= channel.channel_tile %><br />
+								<%= e.message %>
+							</div>
+						<% end %>
+					<% end %>
+				<% end %>	
+			</div>
+			<div style="clear:both;"></div>
+		</div>
+    <% end %>
+</div>

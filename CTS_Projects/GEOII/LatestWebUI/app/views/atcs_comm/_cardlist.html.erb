@@ -1,0 +1,14 @@
+<%= "<p style='color:#FFF;'>No Cards Available!!</p>" if @card_information.blank? %>
+
+<% @card_information.each do |node| %>
+	<% crd_nam = Card.find(:all, :select=>'DISTINCT crd_name, card_index, crd_type, parameter_type', :conditions => ["mcfcrc = ? and crd_type = ? AND card_index = ?", @gwe.mcfcrc, node.card_type, node.card_index]) %>
+	<% crd_nam.uniq.each do |crdname| %>
+		<li style="list-style:none;" class="atcs_comm_links">
+			<%= link_to "#{crdname.crd_name}", 'javascript:void(0);', :class => "contenttabon", :id=> crdname.card_index, :style => "padding-right:1px;"  %>					
+		</li>	
+	<% end %>
+<% end unless @card_information.blank? %>
+
+
+<input type="hidden" id="atcs_addr" value=<%= @sin %> />
+<input type="hidden" id="mcfcrc" value=<%= @gwe.mcfcrc if @gwe %> />

@@ -1,0 +1,2 @@
+module BasicsiteconfigurationHelper
+end

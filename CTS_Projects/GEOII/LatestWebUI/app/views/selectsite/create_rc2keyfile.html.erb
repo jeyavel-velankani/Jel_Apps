@@ -1,0 +1,31 @@
+<%= javascript_include_tag 'config_generate_rc2key' %>
+<div class="create_rc2key_content_area">
+	<div class="create_rc2key_header text_font">Create RC2Key File</div>
+	<span class='rc2key_loader saveas_open_loader'><%= image_tag("/images/ajax-loader_white.gif") %></span>
+	<div class="clear"></div>
+	<div class="padding_left_25 text_font"><label>Enter RC2Key Value: </label></div>		
+	<div class="padding_left_25"><%= password_field_tag "txtrc2key_value", @rc2keyvalue, :maxlength => 20, :size => 40, :class =>"contentCSPsel_rc2key",:onblur=>"valudate_rc2keyvalue(this,'');", :disabled => false, :html=>{:style => "text-transform:capitalize"}%></div>
+	<div class="clear"></div>
+	<div class="padding_left_25 text_font"><label>Confirm RC2Key Value: </label></div>
+	<div class="padding_left_25"><%= password_field_tag "txtconfirmrc2key_value", @rc2keyvalue, :maxlength => 20, :size => 40, :class =>"contentCSPsel_rc2key",:onblur=>"valudate_rc2keyvalue(this,'confirm ');", :disabled => false, :html=>{:style => "text-transform:capitalize"}%></div>
+	<div class="clear"></div>
+	<div id="append_content" class="append_content"></div>
+	<div class="clear"></div>
+	<div class="padding_left_25 width_300_height_30 text_font">
+		<span id="rc2key_error" class="error_message"></span>
+		<span id="rc2key_success" class="success_message"></span>
+	</div>
+	<div class="padding_left_25 width_320 text_font">
+		Note:<br>To load RC2key onto the iVIU, put the RC2key.bin file into the following folder: \safetran\iviu\configuration
+	</div>
+	<div class="clear"></div>
+	<div class="clear"></div>
+	<input type="hidden" name="txtrc2key_file_name" id="txtrc2key_file_name" />
+	<div class="padding_left_55 mcf_file_margin_5">
+	    <button id="btnok_createrc2key" class='btnok_createrc2key button_width_150 text_font'>Create RC2Key File</button>
+		<div id="download_and_recreate_content"  style="display:none">
+			<button id="btndownloadrc2key" class='btndownloadrc2key button_width_90 text_font'>Download</button>
+			<button id="btnrecreaterc2key" class='btnok_createrc2key button_width_150  text_font'>Update</button>
+		</div>
+	</div>
+</div>

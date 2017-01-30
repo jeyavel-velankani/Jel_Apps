@@ -1,0 +1,38 @@
+
+<table border=1>
+    <caption style="background-color:grey; font-weight:bold">
+      Listing Projects
+    </caption>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Customer</th>
+        <th>Description</th>
+        <th>Manager</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @projects.each do |project| %>
+        <tr>
+         <% if can? :read, project %>
+          <td><%= project.name %></td>
+          <td><%= project.customer %></td>
+          <td><%= project.description %></td>
+          <td><%= link_to 'Show', project %></td>
+          <% end %>
+          <% if can? :update, project %>
+            <td><%= link_to 'Edit', edit_project_path(project) %></td>
+          <% end %>
+          <% if can? :destroy, project %>
+            <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+
+  <%= link_to 'New Project', new_project_path %>
+

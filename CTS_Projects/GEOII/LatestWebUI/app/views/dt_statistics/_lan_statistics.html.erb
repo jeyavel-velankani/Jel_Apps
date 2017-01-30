@@ -1,0 +1,52 @@
+<!--*********************************************************************************
+  File name    : _lan_statistics.html.erb
+
+  Description  : This view is used to display the LAN Statistics fields(Invalid LAN Packets,Valid LAN Packets Rx
+  				 and Valid LAN Packets Tx). 
+
+  Project Name : iVIU - WebUI Project
+
+  Copyright    : Safetran Systems Corporation, U.S.A. 
+                     Research and Development
+
+  Author       : Cognizant Technology Solutions
+
+*********************************************************************************-->
+<div>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" class="logtable">
+	<thead>
+	<tr>
+		<th class="title" width="400" style="color:#CFD631;font-size:12px;">LAN Statistics</th>
+		<th class="title" width="150" style="color:#CFD631;font-size:12px;">Value</th>		
+	</tr>
+	</thead>
+	<tbody>
+	<%  records_found = true
+		unless statistic.invalid_lan_pkts.blank? && statistic.valid_lan_rx_pkts.blank? && statistic.valid_lan_tx_pkts.blank?%>	
+		<tr>
+			<td class="txtleft">Invalid LAN Packets</td>
+			<td class="txtleft"><%= statistic.invalid_lan_pkts %></td>		
+		</tr>
+		<tr>
+			<td class="txtleft">Valid LAN Packets Rx</td>
+			<td class="txtleft" style="text-align:left;color:#606060"><%= statistic.valid_lan_rx_pkts %></td>		
+		</tr>
+		<tr>
+			<td class="txtleft">Valid LAN Packets Tx</td>
+			<td class="txtleft"><%= statistic.valid_lan_tx_pkts %></td>		
+		</tr>
+	<% else
+		records_found = false
+	   end %>
+	</tbody>
+</table>
+</div>
+<% if !records_found %>
+	<div class='contentCSPlabel' style="padding:50px; text-align:center;">No device data found.</div>
+<% end %>
+<%= hidden_field_tag 'request_id', request_id %>
+
+
+<script type="text/javascript">
+  	$('.logtable').flexigrid({height:'auto', striped:false});
+</script>

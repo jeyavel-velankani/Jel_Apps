@@ -1,0 +1,48 @@
+<div class="contentactionbar content_bar_calib_width">
+    <div>
+    	<% unless @gcp_4000_version %>        
+			<div style="float: left;" class="contentactionbuttonlabel text_image save_icon contentactionbuttonlabelI">
+	            <%= link_to("Save", "javascript:void(0);", :class => "parameters_save") %>
+	        </div>
+	        <div style="float: left;" class="contentactionbuttonlabel contentactionbuttonlabelI text_image discard_icon">
+	            <%= link_to("Discard", "javascript:void(0);", :class => "parameters_discard") %>
+	        </div>
+	        <div style="float: left;" class="contentactionbuttonlabel contentactionbuttonlabelI  text_image refresh_icon">
+	            <%= link_to("Refresh", "javascript:void(0);", :class => "parameters_refresh") %>
+	        </div>
+		<% end %>
+		<div style="float: left;" class="contentactionbuttonlabel contentactionbuttonlabelI text_image unlock_icon">
+            <%= link_to("Unlock", "javascript:void(0);", :class => "parameters_unlock") %>
+        </div>
+		<% if params[:track_setup].blank? %>
+			<% if @gcp_4000_version %>
+			<!--
+			Commented out as per UI Observation - 245
+			   <div style="float: left;padding-left: 10px;padding-top: 2px;" class="contentactionbuttonlabel contentactionbuttonlabelI text_image default_icon">
+		            <%#= link_to("Default", "javascript:void(0);", :class => "parameters_default") %>
+		        </div>
+			-->
+				<% if @page && !@page.prev.blank? %>
+					<div style="float:left;" class="contentactionbuttonlabel contentactionbuttonlabelI navigation_links">
+						<%= link_to("<span>#{image_tag('/images/u195_normal.png')}</span> Prev", "/gcp_programming/page_parameters?menu_link=#{@page.prev}&page_type=prev", :class => 'navigation') %>
+					</div>
+				<% end %>
+				<% if @page && !@page.next.blank? %>
+					<div style="float: left;" class="contentactionbuttonlabel contentactionbuttonlabelI navigation_links">
+						
+						<%= link_to("<span>#{image_tag('/images/u197_normal.png')}</span> Next", "/gcp_programming/page_parameters?menu_link=#{@page.next}&page_type=next", :class => 'navigation') %>
+					</div>
+				<% end %>
+			<% end %>
+		<% end %>
+    </div>
+    <span id="ajax_spinner"><%= image_tag("/images/ajax-loader.gif") %></span>
+</div>
+<style type="text/css">
+    #ajax_spinner {
+        left: 650px;
+        position: absolute;
+        top: 0;
+		display:none;
+    }
+</style>

@@ -1,0 +1,132 @@
+<table cellspacing="1" cellpadding="0" width="800px" border="1" class="mytable" id="mytable_hazarddetector" style='float:left;'>
+	<tr>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Site DeviceID</strong>
+        </th>
+        <th class="title" style="width:10%">
+            <strong class="text_white_font_12">Hazard Detector</strong>
+        </th>
+        <% if session[:typeOfSystem] != "VIU" %>
+	        <th class="title" style="width:10%">
+	            <strong class="text_white_font_12">Geo Subnode</strong>
+	        </th>
+	    <% end %>
+        <th class="title" style="width:10%">
+            <strong class="text_white_font_12">Track Name</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Direction</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Milepost</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Subdivision Number</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Site Name</strong>
+        </th>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Description</strong>
+        </th>
+        <%if session[:typeOfSystem] != "VIU"%>
+		<th class="title" style="width:10%">
+            <strong class="text_white_font_12">Include</strong>
+        </th>
+        <% end %>
+        <%if session[:typeOfSystem] == "VIU" && @hazard_objects.blank?%>
+        <th class="title" style="width:10%">
+            <strong class="text_white_font_12">
+            	<%= link_to(image_tag('/images/Add-mouse-over.png'), "javascript: void(0)", :id => "add_hazarddetector_attributes",:class => "add_hazarddetector_attributes" ,:title => "Add Hazard detector") %>
+			</strong>
+        </th>
+        <%end%>
+	</tr>
+	<% @hazarddetectors.each_with_index do |hazarddetector, i| %>
+	   <% @hdincludeflag = hazarddetector.element_position.to_i > 0 ? true : false %>
+	   <tr id='<%= hazarddetector.id %>' class='hd_<%= hazarddetector.id.to_s %> hazarddetector_ptc hd'>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+				<div align="left">
+					<% unless hazarddetector.SiteDeviceID.blank? %>
+						<% @hddeviceid = hazarddetector.SiteDeviceID %>
+					<%else%>
+						<% @hddeviceid = hazarddetector.device_name.to_s %>
+	                <% end %>
+			    	<%= text_field_tag "hazarddetector_sitedeviceid_#{i}", @hddeviceid , :maxlength =>"40" , :size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Site Device Id" , :disabled=>!@hdincludeflag %>
+			    </div>
+			</td>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+				<div align="left" class="text_font">
+					    <%= text_field_tag "hazarddetector_device_name_#{i}", hazarddetector.device_name ,:maxlength =>"40" ,:size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Device Name", :disabled=>!@hdincludeflag %>
+			    </div>
+			</td>
+			<% if session[:typeOfSystem] != "VIU" %>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+				<div align="left" class="text_font">
+			    	<%= hazarddetector.subnode %>
+			    </div>
+			</td>
+			<% end %>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%> >
+				<div align="left">
+						<%= text_field_tag "hdtrkname#{i}", ((hazarddetector.track_name.blank?) ?  "Not Set" : hazarddetector.track_name), :size =>"30px" ,:class=>"inputbox_ptcdevice2" , :name_text => "Track Name" , :disabled=>!@hdincludeflag  %>
+						<%= hidden_field_tag "hazarddetector_id_#{i}", hazarddetector.id %>
+			    </div>
+			</td>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+	            <div align="left">
+	            	<%=select_tag("hazarddetector_direction_#{i}", options_for_select(["Select"]+@signaldirection,hazarddetector.Direction),:class =>"selectbox_ptcdevice"  , :disabled=>!@hdincludeflag)%>
+	            </div>
+	        </td>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+	            <div align="left">
+	            	<% unless hazarddetector.Milepost.blank? %>
+						<% @hdmile = hazarddetector.Milepost %>
+					<%else%>
+						<% @hdmile = session[:defaultmilepost].to_s %>
+	                <% end %>
+	                <%= text_field_tag "hazarddetector_milepost_#{i}", @hdmile, :size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Mile Post" , :disabled=>!@hdincludeflag %>
+	            </div>
+	        </td>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+	            <div align="left">
+	            	<% unless hazarddetector.SubdivisionNumber.blank? %>
+						<% @hdsubdivno = hazarddetector.SubdivisionNumber %>
+					<%else%>
+						<% @hdsubdivno = session[:defaultdivnumber].to_s %>
+	                <% end %>
+	                <%= text_field_tag "hazarddetector_subdivisionnumber_#{i}", ((@hdsubdivno.blank?) ? "Not Set" : @hdsubdivno), :size =>"30px",:class=>"inputbox_ptcdevice2" , :name_text => "Sub Division Number" , :disabled=>!@hdincludeflag %>
+	            </div>
+	        </td>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+	            <div align="left">
+	            	<% unless hazarddetector.SiteName.blank? %>
+						<% @hdsitename = hazarddetector.SiteName %>
+					<%else%>
+						<% @hdsitename = session[:defaultsitename].to_s %>
+	                <% end %>
+	                <%= text_field_tag "hazarddetector_sitename_#{i}", @hdsitename, :size =>"30px",:class=>"inputbox_ptcdevice2"  , :name_text => "Site Name" , :disabled=>!@hdincludeflag %>
+	            </div>
+	        </td>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+	            <div align="left">
+	            	<%= text_field_tag "hazarddetector_description_#{i}", hazarddetector.Description, :size =>"30px",:class=>"inputbox_ptcdevice2"  , :name_text => "Description" , :disabled=>!@hdincludeflag %>
+	            </div>
+	        </td>
+	        <%if session[:typeOfSystem] != "VIU"%>
+			<td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s)%>>
+	            <div align="left">
+	            	<%= check_box_tag "hd_include_#{hazarddetector.id.to_s}", 'Include', @hdincludeflag  ,{:onchange =>"includeorexclude_device(this , 'hd_#{hazarddetector.id}')" } %>
+	            </div>
+	        </td>
+	       	<%end%>
+	        <%if session[:typeOfSystem] == "VIU" && @hazard_objects.blank?%>
+		        <td <%= get_ptc_data_style(hazarddetector.id.to_s, @current_hazarddetector.to_s) %>>
+		            <div align="center">
+		            	<%= link_to(image_tag('/images/add_edit_delete_delete.png'), "javascript: void(0)", :id => "hazarddetector_remove_#{hazarddetector.id.to_s}" , :row_id => "hd_#{hazarddetector.id}"  ,:class => "remove_device_attr" ,:title => "Remove") %>
+		            </div>
+		        </td>
+        	<%end%>
+		</tr>
+	<%end %>
+</table>

@@ -1,0 +1,192 @@
+<StatisticDefinitions>
+
+	<TypeDef name="DTStatistics1">
+		<Fields>
+			<Field>
+				<Name>InvalidDTPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>ValidDTPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DTPacketsTx</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>		
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VLPStatistics1">
+		<Fields>
+			<Field>
+				<Name>VLPReboots</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SIOStatistics1">
+		<Fields>
+			<Field>
+				<Name>BadSIOPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SIOTxPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SIORxPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SPITxQFullCount</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SPIRxQFullCount</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardStatistics1">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="CardStatisticsData" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+	<TypeDef name="CardStatisticsData">
+		<Fields>
+			<Field>
+				<Name>BadCRCs</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>LostSessions</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Reboots</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LANStatistics1">
+		<Fields>
+			<Field>
+				<Name>InvalidPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>ValidTxPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>ValidRxPackets</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NonVitalATCSStatistics1">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="NonVitalaATCSStatisticsData" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+	<TypeDef name="NonVitalaATCSStatisticsData">
+		<Fields>
+			<Field>
+				<Name>OutOfOrder</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>LostSessions</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NVATCSMessagesTx</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>RecallMsgsRx</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>ControlMsgsRx</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>		
+		</Fields>	
+	</TypeDef>
+
+	<TypeDef name="VitalATCSStatistics1">
+		<Fields>
+			<Field>
+				<Name>BadCRCs</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="VitalATCSStatisticsData" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+	<TypeDef name="VitalATCSStatisticsData"> 
+		<Fields>
+			<Field>
+				<Name>OutOfOrder</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Stale</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>LostSessions</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>VitalMessagesTx</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>VitalMessagesRx</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TimeStatistics1">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="TimeStatisticsData" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TimeStatisticsData">
+		<Fields>
+			<Field>
+				<Name>Min</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Max</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Mean</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+</StatisticDefinitions>

@@ -1,0 +1,49 @@
+<table class="text_font">
+    <tr style="height:30px;">
+        <th style="width:200px;" class="th_status">
+            <div style="text-align: left;padding-left:15px;">
+                Link
+            </div>
+        </th>
+        <th style="width:200px;" class="th_status">
+            <div style="text-align: left;padding-left:15px;">
+                Status
+            </div>
+        </th>
+    </tr>
+</table>
+<hr style="color:#CFD638"/>
+<table>
+	<% @connections.each do |connection| %>
+	<% ha_status = get_ha_state(connection) %>
+	    <tr>
+	        <td style="width:200px;" class="td_status text_font">
+	            <div style="text-align: left;padding-left:20px;">
+	                <span><%= connection.link_number %></span>
+	            </div>
+	        </td>
+	        <td style="width:200px;" class="td_status text_font">
+	            <div style="text-align: left;padding-left:15px;">                            
+					<%= ha_status[:state] %>
+	            </div>
+	        </td>
+			<td style="width:100px;" class="td_status text_font">
+				<div style="text-align: left;">
+					<span class='status_image'><%= ha_status[:image] %></span>
+				</div>
+			</td>
+	    </tr>
+	<% end %>
+</table>       
+<style type="text/css">
+	.th_status {
+	 color:#CFD638;
+	 width:100px;
+	}
+	
+	.td_status {
+	 color:#F2F2F2;
+	 width:100px;
+	 height:25px;
+	}
+</style>

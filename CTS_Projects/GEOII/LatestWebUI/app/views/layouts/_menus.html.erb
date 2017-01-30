@@ -1,0 +1,63 @@
+<table class='track_menus' cellspacing='0' border='0'>
+    <tbody>
+        <tr>
+        	<% 
+			   @track_cards_count = RtCard.fetch_count_of_track_cards
+			   card_number = init_card_type = pso_number = sscc_number = 0
+			   show_pso_tab = true
+			   show_pso_tab = Parameter.oos_applicable?(Gwe.mcfcrc) if(action_name == "out_of_service")	
+			%>
+			
+        	<% @cards.each_with_index do |card, index| %>
+			<%  show_tab = true
+			%>
+			<%  if(card.card_type == TRACK_CARD)
+				  	show_tab = (card.card_used == 0)
+					card_number += 1
+				elsif(card.card_type == PSO_CARD)
+					pso_number += 1
+				  	show_tab = (card.card_used == 0 && show_pso_tab)
+			%>
+			<%	elsif(card.card_type == MAIN_SSCC_CARD)
+					sscc_number += 1
+					show_tab = (card.card_used == 0)? true:false
+			    end
+			%>
+			<%  if(show_tab)
+					menu =  menu_tab(card, controller_name) %>
+			    <td id='slot_<%= card.card_index %>' cardnumber='<%= (card.card_type == PSO_CARD)? pso_number: ((card.card_type == MAIN_SSCC_CARD)? sscc_number:card_number) %>' page_type='<%= @page_type %>' card_index='<%= card.card_index %>' card_type='<%= card.card_type %>' class='leftnav contenttab contenttabU track_menu_link <%= menu[:klass] %>' height="35" width="95" style='background-image: <%= menu[:image] %>;'>
+	                <span style='color: <%= menu[:color] %>'><%= card_name(card, pso_number, sscc_number) %>/SL <%= card.slot_atcs_devnumber %></span>
+	            </td>           
+			<%  end
+			   end %>
+			<td class='spinner'><%= image_tag("/images/large-loading.gif", :border => '0') %></td>
+		</tr>
+    </tbody>
+</table>
+
+<style type="text/css">
+	.spinner {
+	    padding-left: 10px;
+	    display: none;
+	}
+</style>
+<%# if controller_name == 'calibration' %>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var track_menu = '<%= params[:system_view] %>';
+			if(track_menu != null && track_menu != undefined && track_menu != ""){
+				var card_index = '<%= params[:card_index] %>';
+				var first_tab = jQuery("#slot_"+card_index, window.parent.document);
+				jQuery("#contentareahdr", window.parent.document).html('<%= params[:page_heading] %>');
+			}else{
+				var content_tabs = jQuery(".track_menu_link", window.parent.document)
+				var first_tab = content_tabs[0];
+				<% if params[:page_heading] %>
+					jQuery("#contentareahdr", window.parent.document).html('<%= params[:page_heading] %>');
+				<% end %>
+			}	
+			if(!$(first_tab).hasClass('calibration_disable'))
+				$(first_tab).trigger('click');	
+		});	
+	</script>
+<%# end %>

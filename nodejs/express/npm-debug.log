@@ -1,0 +1,107 @@
+0 info it worked if it ends with ok
+1 warn npm npm does not support Node.js v0.10.32
+2 warn npm You should probably upgrade to a newer version of node as we
+3 warn npm can't make any promises that npm will work with this version.
+4 warn npm You can find the latest version at https://nodejs.org/
+5 verbose cli [ 'node', '/usr/local/bin/npm', 'publish' ]
+6 info using npm@4.0.5
+7 info using node@v0.10.32
+8 verbose publish [ '.' ]
+9 silly cache add args [ '.', null ]
+10 verbose cache add spec .
+11 silly cache add parsed spec { raw: '.',
+11 silly cache add   scope: null,
+11 silly cache add   escapedName: null,
+11 silly cache add   name: null,
+11 silly cache add   rawSpec: '.',
+11 silly cache add   spec: '/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/nodejs',
+11 silly cache add   type: 'directory' }
+12 verbose addLocalDirectory /home/local/BLR/jeyavel.natesan/.npm/main/1.0.0/package.tgz not in flight; packing
+13 verbose correctMkdir /home/local/BLR/jeyavel.natesan/.npm correctMkdir not in flight; initializing
+14 info lifecycle main@1.0.0~prepublish: main@1.0.0
+15 silly lifecycle main@1.0.0~prepublish: no script for prepublish, continuing
+16 info lifecycle main@1.0.0~prepare: main@1.0.0
+17 silly lifecycle main@1.0.0~prepare: no script for prepare, continuing
+18 verbose tar pack [ '/home/local/BLR/jeyavel.natesan/.npm/main/1.0.0/package.tgz',
+18 verbose tar pack   '/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/nodejs' ]
+19 verbose tarball /home/local/BLR/jeyavel.natesan/.npm/main/1.0.0/package.tgz
+20 verbose folder /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/nodejs
+21 verbose addLocalTarball adding from inside cache /home/local/BLR/jeyavel.natesan/.npm/main/1.0.0/package.tgz
+22 verbose correctMkdir /home/local/BLR/jeyavel.natesan/.npm correctMkdir not in flight; initializing
+23 silly cache afterAdd main@1.0.0
+24 verbose afterAdd /home/local/BLR/jeyavel.natesan/.npm/main/1.0.0/package/package.json not in flight; writing
+25 verbose correctMkdir /home/local/BLR/jeyavel.natesan/.npm correctMkdir not in flight; initializing
+26 verbose afterAdd /home/local/BLR/jeyavel.natesan/.npm/main/1.0.0/package/package.json written
+27 silly publish { name: 'main',
+27 silly publish   version: '1.0.0',
+27 silly publish   description: 'Hello world',
+27 silly publish   main: 'main.js',
+27 silly publish   dependencies: { express: '^4.14.0' },
+27 silly publish   devDependencies: {},
+27 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+27 silly publish   author: '',
+27 silly publish   license: 'ISC',
+27 silly publish   readme: 'ERROR: No README data found!',
+27 silly publish   _id: 'main@1.0.0',
+27 silly publish   _shasum: '6634dabb83dbaac04bdbf848caf3062392483218',
+27 silly publish   _from: '.' }
+28 info lifecycle main@1.0.0~prepublishOnly: main@1.0.0
+29 silly lifecycle main@1.0.0~prepublishOnly: no script for prepublishOnly, continuing
+30 verbose getPublishConfig undefined
+31 silly mapToRegistry name main
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry data { raw: 'main',
+34 silly mapToRegistry   scope: null,
+34 silly mapToRegistry   escapedName: 'main',
+34 silly mapToRegistry   name: 'main',
+34 silly mapToRegistry   rawSpec: '',
+34 silly mapToRegistry   spec: 'latest',
+34 silly mapToRegistry   type: 'tag' }
+35 silly mapToRegistry uri https://registry.npmjs.org/main
+36 verbose publish registryBase https://registry.npmjs.org/
+37 silly publish uploading /home/local/BLR/jeyavel.natesan/.npm/main/1.0.0/package.tgz
+38 verbose request uri https://registry.npmjs.org/main
+39 verbose request sending authorization for write operation
+40 info attempt registry request try #1 at 14:08:16
+41 verbose request using bearer token for auth
+42 verbose request id 367aee09ea824f47
+43 http request PUT https://registry.npmjs.org/main
+44 http 403 https://registry.npmjs.org/main
+45 verbose headers { 'content-type': 'application/json',
+45 verbose headers   'cache-control': 'max-age=300',
+45 verbose headers   'content-length': '98',
+45 verbose headers   'accept-ranges': 'bytes',
+45 verbose headers   date: 'Wed, 11 Jan 2017 08:38:18 GMT',
+45 verbose headers   via: '1.1 varnish',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'x-served-by': 'cache-sin6921-SIN',
+45 verbose headers   'x-cache': 'MISS',
+45 verbose headers   'x-cache-hits': '0',
+45 verbose headers   'x-timer': 'S1484123897.910473,VS0,VE842',
+45 verbose headers   vary: 'Accept-Encoding' }
+46 verbose request invalidating /home/local/BLR/jeyavel.natesan/.npm/registry.npmjs.org/main on PUT
+47 error publish Failed PUT 403
+48 verbose stack Error: you do not have permission to publish "main". Are you logged in as the correct user? : main
+48 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:302:12)
+48 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:290:14)
+48 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:210:14)
+48 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:186:22)
+48 verbose stack     at Request.emit (events.js:98:17)
+48 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1081:10)
+48 verbose stack     at Request.emit (events.js:95:17)
+48 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1001:12)
+48 verbose stack     at IncomingMessage.g (events.js:180:16)
+48 verbose stack     at IncomingMessage.emit (events.js:117:20)
+49 verbose statusCode 403
+50 verbose pkgid main
+51 verbose cwd /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/nodejs
+52 error Linux 4.2.0-27-generic
+53 error argv "node" "/usr/local/bin/npm" "publish"
+54 error node v0.10.32
+55 error npm  v4.0.5
+56 error code E403
+57 error you do not have permission to publish "main". Are you logged in as the correct user? : main
+58 error If you need help, you may report this error at:
+58 error     <https://github.com/npm/npm/issues>
+59 verbose exit [ 1, true ]

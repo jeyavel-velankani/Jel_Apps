@@ -1,0 +1,36 @@
+<% form_tag("", :id => "essr_radio_settings_form") do %>
+	<div id="essr_radio_settings_parameters">
+        <% @group_parameters.each do |group_parameter| %>
+		<% elid = nil%>
+        <div id="module_update" style="padding-left:10px;">
+            <div id="serial_outer" class="serial_outer">
+                <div class="serialleft contentCSPlabel text_type">
+                    <%= get_label(group_parameter[:title]) %>
+                </div>
+                <div class="serialright text_type">
+                    <%= get_field(group_parameter[:type], group_parameter[:title].first, @selected_type) %>
+                </div>
+				<% elid = get_field_id(group_parameter[:type], group_parameter[:title].first, @selected_type) %>
+				<% unless elid.blank? %>
+					<div width='200px' class='div_essr_integer_only' id = "prog_warning_msg_<%= elid %>"></div>
+				<%end%>
+            </div>
+        </div>
+        <% end %>
+	</div>
+<% end %>
+<!--<script type="text/javascript">
+    //Applying stepper to integer fields
+    $(".integer_only").each(function(index){
+        var min = $(this).attr('min');
+        var max = $(this).attr('max');
+        var step = $(this).attr('step');
+        
+        /*$(this).spinner({
+            decimals: 0,
+            min: min,
+            max: max,
+            stepping: step
+        });*/
+    });
+</script>-->

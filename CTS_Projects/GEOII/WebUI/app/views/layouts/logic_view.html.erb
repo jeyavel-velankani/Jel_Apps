@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>WebUI: Logic View</title>
+        <%= stylesheet_link_tag 'content', 'logic_view' %>
+		<script>		  	
+			var lamps_on = null;
+			function clear_auto_refresh(){
+				if(lamps_on != null){
+					set_test_lamp("0");
+				}
+			}
+		</script>
+        <%= javascript_include_tag 'jquery.js', 'logic_view',, :cache => "cached/logic_view_js"%>
+    </head>
+	
+    <body>
+        <%= yield %>
+    </body>
+</html>

@@ -1,0 +1,12 @@
+.container
+  .row
+    - @videos.each do |video|
+      .col-md-3.thumb.video-thumb{ 'data-video-id': video.id }
+        = link_to video.name , "/videos/#{video.id}"
+        %video{:height => "200", :preload => "auto", :width => "200"}
+          %source{:src => video.video_file.url, :type => "video/mp4"}
+          
+  .row
+    .col-md-12
+      .pull-right
+        = link_to 'Upload new video', new_video_url, class: 'btn btn-primary'

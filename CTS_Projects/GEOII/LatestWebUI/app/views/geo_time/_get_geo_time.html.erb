@@ -1,0 +1,16 @@
+<%= javascript_include_tag 'geo_time'%>
+<%= stylesheet_link_tag 'v_config.css'%>
+
+<% if(params[:get_time] == 'true') %>
+	<%= render :partial => "time_settings" %>
+<% else %>
+	<%= GenericHelper.toolbar({ 'get_time' => 'refresh_mouse_over.png',  'v_save' => 'savemouseover.png',  'pc_time' => 'text=>PC Time' })%>
+	<div class="v_config_wrapper">
+		<div class="message_container">&nbsp;<span class="message"></span></div>
+		<div id="geo_time">
+			<%= render :partial => "time_settings" %>
+		</div>
+	</div>
+<% end %>
+
+	

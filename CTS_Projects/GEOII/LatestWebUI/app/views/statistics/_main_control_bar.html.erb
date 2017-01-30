@@ -1,0 +1,40 @@
+<div class="toolbar_wrapper">
+
+	<div class='toolbar_button'>
+		Type:
+	 </div>	
+	<div class="toolbar_button">
+		<div title="Stats Type" >
+			<select id="stats_type" class="smalldropdownlist_format">
+			  <option value= <%= CARD_STATS_ID%> >Vital I/O Module</option>
+			  <option value= <%= VITAL_STATS_ID%> >Vital ATCS</option>
+			  <option value= <%= NONVITAL_STATS_ID%> >CTC</option>
+			  <option value= <%= TIME_STATS_ID%> >VLP Cycle Time</option>
+			  <option value= <%= SIO_STATS_ID%> >Backplane</option>
+			  <option value= <%= LAN_STATS_ID%> >Echelon</option>
+			  <%if (@cpu_type.to_s == 'true')%>
+			  	<option value= <%= PTC_STATS_ID%> >PTC</option>
+			  <% end %>
+			</select>
+			&nbsp;
+		</div>
+	</div>
+	
+	<!-- R E F R E S H   B U T T O N -->
+	<div title="Refresh Current Statistics" class="toolbar_button" >
+	  <a onclick="create_request()">
+	    <img src="/images/../images/refreshmouseover.png">
+	  </a>
+	</div>
+	
+	<!-- C L E A R   B U T T O N -->
+	<div title="Clear Current Statistics" class="toolbar_button" >
+	  <a onclick="create_request(1)">
+	    <img src="/images/../images/clearmouseover.png">
+	  </a>
+  </div>
+  <div title="Clear Current Echelon Statistics" class="toolbar_button stat_ech_clear" style="display:none;">
+	    <img src="/images/../images/clearmouseover.png">
+  </div>
+</div>
+

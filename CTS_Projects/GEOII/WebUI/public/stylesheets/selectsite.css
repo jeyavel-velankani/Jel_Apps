@@ -1,0 +1,247 @@
+.config_panel_left_st {
+	width		: 120px;
+	color 		: #FFFFFF;
+	height		: 25px;
+	padding-left: 10px;
+	float 		: left;
+	font-size	: 12px;
+}
+
+.comboBoxselectsite {
+	width		: auto;
+	height		: 20px;
+}
+
+#navigation li:hover {
+	color		: red;
+}
+
+.folder_tree #navigation li {
+	color		: #000;
+}
+
+.file_tree #navigation li {
+	color 		: #000;
+}
+
+.contentCSPsel_saveas_sitename {
+	color 		: #000000;
+	width		: 150px;
+	height		: 20px;
+	border 		: 1px solid #888;
+	font-size	: 12px
+}
+
+.contentCSPsel_template_name {
+	color 		: #000000;
+	width		: 185px;
+	height		: 20px;
+	border 		: 1px solid #888;
+	font-size	: 12px
+}
+
+.contentCSPsel_rc2key {
+	color 		: #000000;
+	width		: 200px;
+	height		: 20px;
+	border 		: 1px solid #888;
+	font-size	: 12px
+}
+
+.selimport:hover {
+	background-color: #CFD638;
+}
+
+.remove:hover {
+	color 		: #000000;
+}
+
+.export:hover {
+	color 		: #000000;
+}
+
+.saveas_open_loader{
+	position:absolute;
+	display:none;
+	z-index:10001;
+	right:50%;
+	top:35%;
+}
+
+.contentCSPsel_mcfcrcvalue{
+	color				: #000000;
+    width				: 180px; 
+	height		    	: 20px; 
+	border			    : 1px solid #888; 
+	font-size			: 12px
+}
+
+.padding_select_mcf_content{
+	padding  : 10px; 
+	color    : #000; 
+	height   : 150px;
+	width    : 375px;
+}
+
+.padding_select_pac_compare{
+	padding  : 10px; 
+	color    : #000; 
+	height   : 200px;
+	width    : 320px;
+}
+
+.padding_select_import_content{
+	padding  : 10px; 
+	color    : #000; 
+	height   : 190px;
+	width    : 290px;
+}
+
+.padding_select_mcf_content_cpu3{
+	padding : 10px; 
+	color   : #000; 
+	height  : 260px;
+	width   : 375px;
+}
+
+.loader{
+	position: absolute;
+	display: none;
+	z-index: 10001;
+	right: 50%;
+	top: 55%;
+}
+
+.button_width_90{
+	width: 90px !important;
+}
+
+.button_width_75{
+	width: 75px !important;
+}
+
+.select_mcf_combo{
+	float: left;
+	width: auto;
+	padding-right: 3px;
+}
+
+.saveas_content_area{
+	padding: 10px;
+	color: #000; 
+	width: 220px;
+}
+
+.create_rc2key_content_area{
+	padding: 0px; 
+	color: #000; 
+	width: 350px; 
+	height: 300px;
+}
+
+.padding_left_25{
+	padding-left: 25px !important;
+}
+
+.width_320{
+	width: 320px !important;
+}
+
+.width_300_height_30{
+	width: 320px !important;
+	height: 30px;
+}
+
+.create_rc2key_header{
+	padding-left: 110px; 
+	background-color: blue; 
+	color: white; 
+	font-weight: bold; 
+	font-size: 11px; 
+	height: 18px;
+}
+
+.padding_left_55{
+	padding-left: 55px !important;
+}
+
+.button_width_150{
+	width: 150px !important;
+}
+
+.padding_left_160{
+	padding-left: 160px !important;
+}
+
+.padleft_25_bottom_10{
+	padding-left: 25px !important;
+	padding-bottom: 10px !important;
+}
+
+.selimport{
+	display: block;
+	width: 100px; 
+	height: 21px; 
+	overflow: hidden;
+}
+
+.sitename_spin{
+	display: none;
+	left: 355px;
+	position: absolute;
+	top: 110px;
+}
+
+.masterdb_spin{
+	display: none;
+	left: 355px;
+	position: absolute;
+	top: 145px;
+}
+
+.installation_spin{
+	display: none;
+	left: 355px;
+	position: absolute;
+	top: 182px;
+}
+
+.float_left_pad3{
+	float: left;
+	padding-right: 3px; 
+}
+
+.btselectmcffile{
+	display: block;
+	width: 92px; 
+	height: 21px; 
+	overflow: hidden;
+}
+
+.gcp_create_template_content_area{
+	padding: 10px;
+	color: #000; 
+	width: 250px;
+}
+
+.gcp_set_template_content_area{
+	padding: 10px;
+	color: #000; 
+	width: 300px;
+}
+
+.template_loader{
+	position:absolute;
+	display:none;
+	z-index:10001;
+	right:50%;
+	top:35%;
+}
+
+.contentCSPsel_sitename{
+	color				: #000000;
+    width				: 200px; 
+	height		    	: 15px; 
+	border			    : 1px solid #888; 
+	font-size			: 12px
+}

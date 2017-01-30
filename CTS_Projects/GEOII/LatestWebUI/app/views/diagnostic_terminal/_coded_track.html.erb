@@ -1,0 +1,25 @@
+<% card_health = get_card_health( @online.card_index, atcs_addr, @mcfcrc) %>
+<div id=<%= card_health !=  "1" &&  card_health !=  nil ? "card_data" : "inactive_card_data" %> style='width:110px;float:left;'>
+    <div class="status_data" style='height:289px;border:2px solid #000;width: 103px;float:left; background-color: #DDDDDD;'>
+        <div class="slot_header" title = "<%= @card_type %>" id="slot_<%= @card_type %>" style='font-weight:bold; <%= card_health == "1" || card_health == nil  ? "background-color:#9D0F10;" : ""  %>'>
+			<%= get_slot_name(slot_name) %>
+        </div>
+        <% if !@channel_titles.blank? && @channel_titles.first.class.name.eql?("RtChannelName") %>
+			<%= render :partial => "coded_trk_channel_title_parameters", :locals => {:mcfcrc => mcfcrc} %>
+		<% else %>
+			<%= render :partial => "coded_trk_card_view_parameters", :locals => {:mcfcrc => mcfcrc} %>
+		<% end %>
+    </div>
+</div>
+<div style='float:left;padding:5px 0 0 0;'>
+    <%#= get_card_information_links(card_health) %>
+    <span id='io_spinner' style='display:none;'><%= image_tag("/images/wait.gif") %></span>
+    <%= hidden_field "card", "index", :value => @online.card_index %>
+    <%= hidden_field "slot", "atcs_devnumber", :value => @slot_atcs_devnumber %>
+    <%= hidden_field "atcs", "address", :value => atcs_addr %>
+    <%= hidden_field "card", "type", :value => 'CodedTrack' %>
+    <%= hidden_field "card", "mcfcrc", :value => mcfcrc %>
+</div>
+
+<%= stylesheet_link_tag 'jquery.contextMenu' %>
+<%= include_config_javascript(@mcfcrc) %>

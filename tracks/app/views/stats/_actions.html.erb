@@ -1,0 +1,17 @@
+<%= render :partial => 'time_to_complete', :locals => {:ttc => actions.ttc} -%>
+
+<p><%= t('stats.actions_actions_avg_created_30days', :count => (actions.created_last30days*10.0/30.0).round/10.0 )%>
+<%= t('stats.actions_avg_completed_30days', :count => (actions.done_last30days*10.0/30.0).round/10.0 )%>
+<%= t('stats.actions_avg_created', :count => (actions.created_last12months*10.0/12.0).round/10.0 )%>
+<%= t('stats.actions_avg_completed', :count => (actions.done_last12months*10.0/12.0).round/10.0 )%></p>
+
+<% actions.completion_charts.each do |chart| %><%=
+    render :partial => 'chart', :locals => {:chart => chart}
+-%><% end %>
+
+<br style="clear:both">
+
+<% actions.timing_charts.each do |chart| %><%=
+    render :partial => 'chart', :locals => {:chart => chart}
+-%><% end %>
+

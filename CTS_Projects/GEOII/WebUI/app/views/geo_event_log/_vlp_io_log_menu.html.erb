@@ -1,0 +1,9 @@
+<% if !@cards.blank? %>
+	<% @cards.each_with_index do |card, index| %>
+	   <% enable_disable_flag = ((index == 0 || (card["comm_status"].to_i & (0x02)) == 0))? "" : "disable" %> 
+	    <% page_href= "/geo_event_log/index?card_type= #{card["type"]}&slot=#{card["slot"]}&card_index=#{card["index"]}&page_title=#{card["name"]}" %>
+		<li class="leftnavtext_U <%= enable_disable_flag %>" page_href= '<%= page_href %>'  >
+			<span cardtype='<%= card["type"] %>' slot= '<%=card["slot"]%>' value='<%=card["index"]%>' class='vlp_io_log_menu_item <%= enable_disable_flag %>'><%=card["name"]%></span>
+		</li>
+	<% end %>
+<% end %>

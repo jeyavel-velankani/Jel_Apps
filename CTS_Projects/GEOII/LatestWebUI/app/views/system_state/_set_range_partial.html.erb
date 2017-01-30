@@ -1,0 +1,25 @@
+<% if @is_non_am %>
+<div class="mcfcontent_data" style='overflow-y:auto;padding: 20px 10px 10px;'>
+<% else %>
+<div style="padding: 20px 10px 10px;" >
+<% end %>
+		<div id="range_error_message" style="padding-bottom:10px;" class="error_message">
+			&nbsp;
+		</div>
+		<% form_tag("#", :id => "set_range_form") do %>
+		<table>
+			<tr>
+				<td><label style="color:#FFF;">First Logic State</label></td><td><%= text_field("first", "value", :value => 1, :class => "sys_state_input") %></td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td><label style="color:#FFF;">Last Logic State</label></td><td><%= text_field("last", "value", :value => 600, :class => "sys_state_input") %></td>
+			</tr>
+			<tr><td><%= hidden_field("atcs", "address", :value => @atcs_addr) %>
+				<%= hidden_field("non", "am", :value => (@is_non_am rescue "")) %>&nbsp;</td></tr>
+			<tr>
+				<td><%= image_submit_tag("/images/update_arte.png", :class => "range_submit", :id => "range_submit") %></td>
+			</tr>
+		</table>
+		<% end %>
+</div>

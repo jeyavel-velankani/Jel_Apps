@@ -1,0 +1,40 @@
+<div class='stats_bad_crc'>
+	<span class='stats_bad_crc_label'>Number of Bad CRC's:</span>
+	<span><%= @cards[0].bad_crcs if @cards.length > 0 %></span>
+</div>
+<table cellspacing="0" cellpadding="0" border="0" class="statstable" width="100%" class="logtable" style="color:#454545;">
+  <thead>
+    <tr>
+      <th class="title" width="100"> <span>Device</span> </th>
+      <th class="title" width="100"> <span>Out Of Order</span> </th>
+      <th class="title" width="100"> <span>Stale</span> </th>
+      <th class="title" width="100"> <span>Lost Sessions</span> </th>
+      <th class="title" width="100"> <span>Vital Msgs Tx</span> </th>
+      <th class="title" width="100"> <span>Vital Msgs Rx</span> </th>
+    </tr>
+  </thead>
+  <tbody>
+    <%
+    if(@cards)
+      card_num = 1
+      for card in @cards
+      %>
+      <tr>
+        <td class="txtleft"> <span><%= card_num %></span> </td>
+        <td class="txtleft"> <span><%= card.out_of_order %></span> </td>
+        <td class="txtleft"> <span><%= card.stale %></span> </td>
+        <td class="txtleft"> <span><%= card.lost_sessions %></span> </td>
+        <td class="txtleft"> <span><%= card.vital_msgs_tx %></span> </td>
+        <td class="txtleft"> <span><%= card.vital_msgs_rx %></span> </td>
+      </tr>
+      <%
+      card_num += 1
+      end
+    end
+    %>
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $('.statstable').flexigrid({width: "90%", height:'auto',striped:false});
+</script>

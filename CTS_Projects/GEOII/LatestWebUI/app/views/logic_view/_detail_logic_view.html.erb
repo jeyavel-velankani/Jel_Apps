@@ -1,0 +1,230 @@
+
+<div id='status'>
+	<%if !@equations.blank?%>
+	<%= draw_logic_view %>
+	<%if (@logic_params.blank? || (@logic_params.length == 0))%>
+		<div><span style="color: red; font-weight: bold; padding: 10px; position: relative; top: 10px;">No records found!</span></div>
+	<%end%>
+	<div id='logic_table' class='ladder_logic'>
+		<table id='ladder_table' border='0px' cellspacing='0'>
+			<%for i in 0..(@max_row+3) %>
+				<tr id = "tr_<%=i%>">
+				<%for j in 0..(@max_col+3) %>
+					<td id = "td_<%=i%>-<%=j%>" term_name = "" card_index = "" ele_type = ""></td>
+				<%end%>
+				</tr>
+			<%end%>
+		</table>
+	</div>
+	<input type="hidden" name = 'hd_logic_params' id = 'hd_logic_params' value = "<%=@logic_params%>"/>
+	<input type="hidden" name = 'hd_max_row' id = 'hd_max_row' value = "<%=@max_row%>"/>
+	<input type="hidden" name = 'hd_max_col' id = 'hd_max_col' value = "<%=@max_col%>"/>
+	<input type="hidden" name = 'hd_logic_type' id = 'hd_logic_type' value = "<%=@display_logic_type%>"/>
+	<input type="hidden" name = 'hd_param_name' id = 'hd_param_name' value = "<%=@parent_name%>"/>
+	<input type="hidden" name = 'hd_card_index' id = 'hd_card_index' value = "<%=params[:card_index].to_s%>"/>
+	<input type="hidden" name = 'hd_req_id' id = 'hd_req_id' value = "<%=@ls_req_id%>"/>
+	<input type="hidden" name = 'hd_out_put' id = 'hd_out_put' value = ""/>
+	<%else%>
+		<div><span style="color: red; font-weight: bold; padding: 10px; position: relative; top: 10px;">No records found!</span></div>
+	<%end%>
+</div>
+
+<script type="text/javascript">
+$(document).ready(function(){
+var key = "";
+	var term_name = "";
+	var td_style = "";
+	var td_type = "";
+	var sub_equ = "";
+	var sub_ele;
+	var col_num = 0;
+	var row_num = 0;
+	var title = "";
+	var state_val = "";
+	var max_row = parseInt($("#hd_max_row").val());
+	var max_col = parseInt($("#hd_max_col").val());
+	var row_value = $("#hd_logic_params").val().split('^^');
+	$("#status").width((max_col+5) * 60);
+	if (row_value.length > 0){
+		for (i = 0; i < row_value.length; i++){
+			col_value = row_value[i].split('|');
+			if(col_value[0].length > 0){
+				key = "td_" + col_value[0];
+				arr_cell = col_value[0].split('-')
+				row_num = parseInt(arr_cell[0],10);
+				col_num = parseInt(arr_cell[1],10);
+				term_name = col_value[1];
+				td_style = col_value[2];
+				td_type = col_value[3];
+				sub_equ = col_value[4];
+				title = col_value[5];
+				state_val = col_value[6];
+				if (state_val.length > 0){
+					if (((state_val == "timer") || (state_val.indexOf("timer") >= 0)) && (term_name != "")){
+						$("#" + key).html("<div>" + term_name + "</div><div><img src='/images/ladder_logic/hourglass.png'></div>");	
+					}
+					else
+					{
+						$("#" + key).text(term_name);
+					}
+				}
+				$("#" + key).attr('term_name', term_name);
+				$("#" + key).css("background-image",td_style);
+				$("#" + key).attr('ele_type', td_type);
+				$("#" + key).attr("title",title);
+				row_col = col_value[0].split("-");
+				if (td_style.length == 0){
+					if(parseInt(row_col[0]) == 0){
+						if((td_type == "left_or") || (td_type == "right_or") || ((td_type == "or") && (term_name.length == 0))){
+							$("#" + key).css("background-image","url(/images/ladder_logic/or_connector.png)");
+						}
+						else{
+							$("#" + key).css("background-image","url(/images/ladder_logic/bar.png)");
+						}
+					}
+					else if(parseInt(row_col[0]) == max_row){
+						if(td_type == "left_or"){
+							$("#" + key).css("background-image","url(/images/ladder_logic/reverse_lbar.png)");
+						}
+						else if(td_type == "right_or"){
+							$("#" + key).css("background-image","url(/images/ladder_logic/lbar.png)");
+						}
+					}
+					else{
+						if(td_type == "left_or"){
+							$("#" + key).css("background-image","url(/images/ladder_logic/reverse_tbar.png)");
+						}
+						else if(td_type == "right_or"){
+							$("#" + key).css("background-image","url(/images/ladder_logic/tbar.png)");
+						}
+						else if(td_type == "vbar"){							
+							if ($("#td_" + row_num + "-" + (col_num -1)).attr('term_name') == "") 
+							{
+								$("#" + key).css("background-image","url(/images/ladder_logic/vbar.png)");
+							}
+							else{
+								$("#" + key).css("background-image","url(/images/ladder_logic/tbar.png)");
+							}
+						}
+					}
+				}
+				
+				if(sub_equ.length > 0){
+					$("#" + key).addClass("link_sub_equation");
+					sub_ele = sub_equ.split(',');
+					$("#" + key).attr('term_name', sub_ele[0]);
+					$("#" + key).attr('card_index', sub_ele[1]);
+				}
+				
+				if (i == row_value.length-1){
+					$("#hd_out_put").val(term_name);
+				}
+			}
+		}
+	}
+	// ////////////////// Remove unwanted cells between images ////////////////////////
+	var col_count = 0;
+	var delete_col = false;
+	var remove_flag = false;
+	var td_id = "";
+	var or_id = "";
+	var or_flag = false;
+	var del_col = "";
+	for (col_count = 2; col_count <= max_col; col_count++){
+		delete_col = false;
+		td_id = "td_" + "0-" + col_count.toString();
+		or_id = td_id;
+		del_col = td_id;
+		if((($("#" + td_id).attr('ele_type') == "open_brc") || ($("#" + td_id).attr('ele_type') == "close_brc")) && ($("#" + td_id).attr('term_name') == "") ){
+			delete_col = true;
+			//$("#" + td_id).css("background-image","url(/images/ladder_logic/bar.png)");
+		}
+		else
+		{
+			delete_col = false;
+		}
+		
+		if (delete_col){
+			for (row_count = 0; row_count <= max_row; row_count++){
+				td_id = "td_" + row_count.toString() + "-" + col_count.toString();
+				$("#" + td_id).remove();
+			}
+		}
+		
+		if($("#" + or_id).attr('ele_type') == "or"){
+			or_flag = true;
+			for (row_count = 1; row_count <= max_row-1; row_count++){
+				or_id = "td_" + row_count.toString() + "-" + col_count.toString();
+				if($("#" + or_id).attr('ele_type') == "right_or"){
+					or_flag = false;
+				}
+				if (or_flag && ($("#" + or_id).attr('ele_type') == "")){
+					$("#" + or_id).css("background-image","url(/images/ladder_logic/vbar.png)");
+				}
+			}
+		}
+		
+		if((($("#" + del_col).attr('ele_type') == "") || ($("#" + del_col).attr('ele_type') == "close_brc")) && ($("#" + del_col).attr('term_name') == "") ){			
+			delete_col = true;
+			for (row_count = 1; row_count <= max_row; row_count++){
+				del_id = "td_" + row_count.toString() + "-" + col_count.toString();
+				if(!(($("#" + del_id).attr('ele_type') == "") || ($("#" + del_id).attr('ele_type') == "close_brc")) && ($("#" + del_id).attr('term_name') == "")){					
+					delete_col = false;
+				}
+			}
+			if (delete_col){
+				for (row_count = 0; row_count <= max_row; row_count++){
+					td_id = "td_" + row_count.toString() + "-" + col_count.toString();
+					$("#" + td_id).remove();
+				}
+			}
+		}
+		
+	}
+	
+	////////////////// Formate the cells ///////////////////////////////////////////
+	td_id = "";
+	var or_flag = false;
+	var below_td_id = "";
+	var prev_td_id = "";
+	if (max_row > 0){
+		for (i = 0; i <= max_row; i++){
+			for(j = 1; j<= max_col; j++){
+				td_id = "td_" + i.toString() + "-" + j.toString();
+				below_td_id = "td_" + (i+1).toString() + "-" + j.toString();
+				prev_td_id = "td_" + i.toString() + "-" + (j-1).toString();
+				if (i==0){
+					if(($("#" + td_id).attr('ele_type') == "") && ($("#" + td_id).attr('term_name') == "") ){
+						$("#" + td_id).css("background-image","url(/images/ladder_logic/bar.png)");
+					}
+				}else{					
+					if($("#" + td_id).attr('ele_type') == "left_or"){
+						or_flag = true;
+						if($("#" + below_td_id).attr('ele_type') == ""){
+							$("#" + td_id).css("background-image","url(/images/ladder_logic/reverse_lbar.png)");
+						}
+					}
+					else if($("#" + td_id).attr('ele_type') == "right_or"){
+						or_flag = false;						
+						if($("#" + below_td_id).attr('ele_type') == ""){
+							$("#" + td_id).css("background-image","url(/images/ladder_logic/lbar.png)");
+						}
+					}
+					else if($("#" + td_id).attr('ele_type') == "vbar"){
+						or_flag = false;						
+						if($("#" + prev_td_id).attr('ele_type') == "bar"){
+							$("#" + td_id).css("background-image","url(/images/ladder_logic/tbar.png)");
+						}
+					}
+					else{
+						if ((or_flag) && ($("#" + td_id).text().length == 0) ){
+							$("#" + td_id).attr('ele_type','bar');
+							$("#" + td_id).css("background-image","url(/images/ladder_logic/bar.png)");
+						}
+					}
+				}
+			}
+		}
+	}
+});
+</script>

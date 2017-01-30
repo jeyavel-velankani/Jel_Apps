@@ -1,0 +1,50 @@
+<div>
+	<% if cards.blank? %>
+	  <div style="padding-top:25px;width:250px">
+	  	<h5 style='color:#CFD638;'>No communication cards used.</h5>
+	  </div>	
+		
+	<% end %>
+	<% cards.each do |card| %>
+		<% if card
+				card_name = get_atcs_card_name(card)
+				card_health = (card.card_status & (0X02))				
+			else
+				card_name = "< Empty >"
+			end 
+	    %>
+		<div id="module_cards_layout" class="card_layout">
+			<%= render :partial => "atcs_card", :locals => {:card_name => card_name, :card => card, :mcfcrc => @gwe.mcfcrc, 
+						:atcs_address => atcs_address, :view_type => view_type,  
+						:card_health => card_health} %>	
+		</div>
+	<% end %>
+</div>
+
+<style type="text/css">
+	
+	.outer_box{
+		width: 100% !important;
+	}
+	
+	#atcs_com_buttons td img{
+		padding: 2px;
+	}
+	
+	#atcs_com_buttons td span#first{
+		float: left;
+	}
+	
+	#atcs_com_buttons td span#last{
+		float: right;
+	}
+	
+	#atcs_com_buttons td{
+		position: relative;
+		width: 100px;
+	}
+	
+	#module_cards_layout{
+		height: 500px !important;
+	}
+</style>

@@ -1,0 +1,8 @@
+<%= stylesheet_link_tag 'geo_event_log'%>
+<%= javascript_include_tag "geo_event_log" %>
+<% unless @geoatcs_add.blank? %>
+  <%= hidden_field_tag 'geo_event_atcs', @geoatcs_add %>
+  <%= hidden_field_tag 'card_details',@page_title,:card_type=> params[:card_type] ,:slot=>params[:slot] , :card_index=>params[:card_index] %>
+<%end%>
+<div class="geo_event_log text_font text_white" id="geo_event_log"></div>
+<div class="clear"></div>

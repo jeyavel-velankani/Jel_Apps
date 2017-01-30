@@ -1,0 +1,37 @@
+
+<table cellspacing="0" cellpadding="0" border="0" class="statstable" width="100%" class="logtable" style="color:#454545;">
+  <thead>
+    <tr>
+      <th class="title" width="170"> <span style="color:#CFD631;font-size:12px;">PTC Statistics</span> </th>
+      <th class="title" width="100"> <span style="color:#CFD631;font-size:12px;">Value</span> </th>
+    </tr>
+  </thead>
+  <tbody>
+  	<% if (@ptc_stats != nil) %>
+      <tr>
+        <td class="txtleft"> <span style="color:#fff">Get Status msgs Rx</span> </td>
+        <td class="txtleft"> <span style="color:#fff"><%= @ptc_stats.status_msg_rcvd %></span> </td>
+      </tr>
+      <tr>
+        <td class="txtleft"> <span style="color:#fff">WIU Beacon msgs Rx</span> </td>
+        <td class="txtleft"> <span style="color:#fff"><%= @ptc_stats.wiu_beacons_msg_rcvd %></span> </td>
+      </tr>
+      <tr>
+        <td class="txtleft"><span style="color:#fff">Bad timestamp msgs Rx</span></td>
+        <td class="txtleft"><span style="color:#fff"><%= @ptc_stats.bad_ts_msg_rcvd %></span></td>
+      </tr>
+      <tr>
+        <td class="txtleft"><span style="color:#fff">Bad HMAC msgs Rx</span></td>
+        <td class="txtleft"><span style="color:#fff"><%= @ptc_stats.bad_hmac_msg_rcvd %></span></td>
+      </tr>	  
+      <tr>
+        <td class="txtleft"><span style="color:#fff">WSMs Tx</span></td>
+        <td class="txtleft"><span style="color:#fff"><%= @ptc_stats.wsms_tx %></span></td>
+      </tr>		
+	  <% end %>  
+  </tbody>
+</table>
+
+<script type="text/javascript">
+  $('.statstable').flexigrid({width: "90%", height:'auto',striped:false});
+</script>

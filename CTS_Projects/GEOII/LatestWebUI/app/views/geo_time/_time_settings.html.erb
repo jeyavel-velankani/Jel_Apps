@@ -1,0 +1,30 @@
+<%= javascript_include_tag 'datevalidation' %>
+
+<form action='/geo_time/geo_time_update/' class='geo_time_update' name="time_settings_form">
+    <%	tz_param = EnumParameter.find(:first, :conditions=>['ID = ? AND DisplayOrder!= ?', 1, -1], :order => 'DisplayOrder') %>
+    <div id="time_zone_container" class="geo_time_class">
+        <div class="lbl_text" style="width: 220px;">Time Zone </div>
+		<div> <%= select("enum", "#{tz_param.ID}", options_for_select(( ( EnumParameter.enum_dropdownbox_values(tz_param.ID) ).map{|u| [u.Name,u.ID]} ), tz_param.Selected_Value_ID ), {}, :class => "contentCSPsel" ) %> </div>
+    </div>
+    <div  class="geo_time_class">
+        <div  class="lbl_text" style="width: 220px;">
+            Date(mm/dd/yyyy)
+        </div>
+        <div class="text_field">
+            <%= text_field_tag "site_date", @site_time.strftime("%m/%d/%Y"), :id => "calendar", :class=>"input_style datevalidate", :style => "width: 187px;" %>
+        </div>
+    </div>
+    <div  class="geo_time_class">
+        <div class="lbl_text " style="width: 220px;">
+            Time(hh:mm:ss)
+        </div>
+        <div style="float: left;">
+			<%= select_time(@site_time , {:default => @site_time, :include_seconds => true, :prefix => "date"}, :class => "input_style", :style => "width: 50px;" ) %>
+        </div>
+    </div>
+    <%= hidden_field_tag 'hd_time_zone' %>
+	<%= hidden_field_tag 'sitedate'%>
+	<%= hidden_field_tag 'datetime_hour' %>
+	<%= hidden_field_tag 'datetime_minute' %>
+	<%= hidden_field_tag 'datetime_second' %>
+</form>

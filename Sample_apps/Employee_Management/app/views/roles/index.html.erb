@@ -1,0 +1,27 @@
+<div style = "position: absolute;top: 25%;left: 25%;">
+  <table border=1>
+    <caption style="background-color:grey; font-weight:bold">
+      Listing Roles
+    </caption>
+
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @roles.each do |role| %>
+        <tr>
+          <td><%= role.name %></td>
+          <td><%= role.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
+
+
+

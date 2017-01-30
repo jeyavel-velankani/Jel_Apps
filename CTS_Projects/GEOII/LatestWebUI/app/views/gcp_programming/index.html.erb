@@ -1,0 +1,53 @@
+<script type="text/javascript">
+	var name = '<%= params[:page_name]%>';
+	var menu_link = '<%= params[:menu_link]%>';
+	var left_menu = $("#leftnavtree", window.parent.document)
+	var menus = "<%= @gcp_4000_version ? escape_javascript(render('menus')) : escape_javascript(render('latest_mcf_menus')) %>"
+	jQuery(left_menu).html(menus);
+
+
+	if(name.length != 0){
+		$("#loading", window.parent.document).show();
+		var iframe = $('#iframe', window.parent.document);
+		iframe.attr('src', '/gcp_programming/page_parameters?page_name='+name+'&menu_link='+menu_link);
+
+		var programm_tree_int = setInterval(function(){
+
+			if(name.length != 0){
+
+				if($('#programming_menu',window.parent.document).length != 0){
+					//searchs for the selected element by using the menu_link link
+					var selected_obj = '';
+
+
+					$('#programming_menu',window.parent.document).find('li').each(function(){
+						// remove html number for space and replaces it with a space and removes whitespace before and after the words
+						if($(this).attr('menulink')==menu_link.replace(/^\s+|\s+$/g, '').replace(/%20/g,' ')){
+							selected_obj = $(this);
+						}
+					});
+
+					if(selected_obj.length != 0){
+
+						clearInterval(programm_tree_int);
+						//makes menu selected 
+						selected_obj.addClass('leftnavtext_D');
+
+						//makes menue and visible and changes the arrows
+						while(selected_obj.length != 0){
+							selected_obj = selected_obj.parent().closest('ul');
+							selected_obj.css({'display':'block'})
+
+							//makes sure there is more above it so it does not change the arrows on the wrong links
+							if(selected_obj.parent().closest('ul').length != 0){
+								selected_obj.closest('li').children().first().removeClass('expandable-hitarea').addClass('collapsable-hitarea');
+							}
+						}
+					}
+				}
+			}
+		},500);
+
+	}
+</script>
+<div id='contentdata'></div>

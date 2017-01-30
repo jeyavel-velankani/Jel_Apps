@@ -1,0 +1,50 @@
+<div class="outer_box" id="track_detail_box">
+	<table cellspacing=0 cellpadding=0 class="channel_table">
+        <tr>
+            <td class='no_border_led' id="channel_title" colspan=2>
+                I/O Status		
+            </td>
+        </tr>
+        <tr>
+            <td class='no_border_led' id="channel_status_image">
+            	<!-- <div id="trk_io_status_img">
+            		<%= render :partial => "/io_status_view/channels/trk_io_status", :locals => {:param_value => channel_parameters["3.VRO1.GPO_ON"], :param_name => "OUT #{card_number}.1"} %>
+            		<%= render :partial => "/io_status_view/channels/trk_io_status", :locals => {:param_value => channel_parameters["3.VRO2.GPO_ON"], :param_name => "OUT #{card_number}.2"} %>
+            	</div>
+				<div id="trk_io_status_img">
+            		<%= render :partial => "/io_status_view/channels/trk_io_status", :locals => {:param_value => channel_parameters["3.VPI1.ON"], :param_name => "IN #{card_number}.1"} %>
+            		<%= render :partial => "/io_status_view/channels/trk_io_status", :locals => {:param_value => channel_parameters["3.VPI2.ON"], :param_name => "IN #{card_number}.2"} %>
+            	</div>	 -->	
+            	<div id="trk_io_status_img">
+            		<%  get_IO_Status(card_number)
+            			in_count = 0
+            			out_count = 0
+            			@io_param_values.each do |io_stat|
+					    str_param = ""
+					    if (io_stat[:param_long_name].downcase.start_with?("out"))
+					    	str_param = "VRO" + (out_count + 1).to_s + ".GPO_ON"
+					    	out_count = out_count + 1
+					    else
+					      	str_param = "VPI" + (in_count + 1).to_s + ".ON"
+					      	in_count = in_count + 1
+					    end
+            		
+			    		#if (io_stat[:current_value] == 0) 
+			    		#	io_status = "whitecircle_blank_border"
+			    		#else
+			    			io_status = (channel_parameters["#{Status}.#{str_param}"] == 1)? "plaingreencircle" : "plaingreycircle"			    			
+			    		#end 
+					%>   
+						<div>
+					  		<img src="/images/dt/<%= io_status %>.png" />
+							<span><%=io_stat[:param_long_name]%></span>
+						</div>
+					<%      
+					    end  		#End for @io_param_values.each do |io_stat|
+					%>				
+            	</div>
+            			
+            </td>
+        </tr>
+    </table>
+</div>	

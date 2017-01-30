@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  name: MyString
+  description: MyString
+  value: 1
+  default_id: 1
+  IsLocked: false
+  TypeId: 1
+  GroupId: 1
+
+two:
+  id: 1
+  name: MyString
+  description: MyString
+  value: 1
+  default_id: 1
+  IsLocked: false
+  TypeId: 1
+  GroupId: 1

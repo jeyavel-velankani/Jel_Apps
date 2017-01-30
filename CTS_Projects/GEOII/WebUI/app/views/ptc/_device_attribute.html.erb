@@ -1,0 +1,154 @@
+<%= javascript_include_tag 'device_attributes' %>
+<%= stylesheet_link_tag 'device_attributes'%>
+<form action="/ptc/update_device_attributes" id="device_attr_form" class="device_attr_form">
+	<div id="ptc_device_attr_content" class='ptc_device_attr_content'>
+		<div class="toolbar_wrapper">
+	         <div class="contentactionbuttonlabel contentactionbuttonlabelI" style="float: left;padding-left:5px;">
+				<%= link_to(image_tag('/images/savemouseover.png'), "javascript: void(0)", :id => "save_device_attr", :class => "save_device_attr", :title => "Save") %>
+	        </div>
+			<div class="contentactionbuttonlabel contentactionbuttonlabelI" style="float: left;padding-left:5px;">
+				<%= link_to(image_tag('/images/refresh_mouse_over.png'), "javascript: void(0)", :id => "refresh",:class => "device_attr_refresh" ,:title => "Refresh") %>
+	        </div>
+		</div>
+		<div  class="blank_space">&nbsp;</div>
+		<div id="ptc_gen" class="errormesg" style="color:green; padding-left:5px" name="ptc_gen">
+		    <%= params[:message] %> <%= flash[:deviceattr] %>
+		</div>
+		<% if !(@mcf_installations.blank?) && session[:typeOfSystem] != "VIU" %>
+			<div><span class='text_white text_font_18'>Installation Name:</span><span class='inv_yellow'><%= @installation_name %></span> </div>			
+		<%end%>
+		<% unless session[:typeOfSystem].blank? && session[:typeOfSystem] != "VIU" %>
+			<%= hidden_field_tag "typeOfSyetem" , session[:typeOfSystem] %>
+		<%else%>
+			<%= hidden_field_tag "typeOfSyetem" , "" %>
+		<%end%>
+		<%if (!@signals.blank? && @signals.length >= 1) || (!@switches.blank? && @switches.length >= 1) || (!@hazarddetectors.blank? && @hazarddetectors.length >= 1)%>
+		   <%= hidden_field_tag "devicecount" , true %>
+		<%else%>
+		   <%= hidden_field_tag "devicecount" , false %>
+		<%end%>
+		<%= hidden_field_tag "installation_name" , @installation_name%>		
+		<%= hidden_field_tag "hd_newsignal_count" , 0%>
+		<%= hidden_field_tag "hd_newswitch_count" , 0%>
+		<%= hidden_field_tag "hd_newhzdetector_count" , 0%>
+		<%= hidden_field_tag "remove_devices_list" , ""%>
+		<%= hidden_field_tag "default_milepost" , session[:defaultmilepost] %>
+		<%= hidden_field_tag "default_subdivision_no" , session[:defaultdivnumber] %>
+		<%= hidden_field_tag "default_sitename" , session[:defaultsitename] %>
+		<%= hidden_field_tag "device_last_id_val" , @device_last_id_val%>
+		<% unless @elementorder.blank? %>
+			<% if (@elementorder.length !=3) %>
+				<div class='text_white text_font'>PTC device order is inconsistent and needs reordering, reorder now..
+	  			    <%= link_to image_tag('/images/accept.png',  :border => 0), "javascript: void(0)",:id =>"rearrange_device_order" %>
+				</div>
+			<%end%>
+		<%end%>
+		<div  class="blank_space">&nbsp;</div>
+		<div class="elements_content" id="elements_content">
+			<ul id="error_container" class="pad_5_list_style"></ul>
+			<% @i=0 %>
+			<% @elementorder.each do |elementOrder| %>
+				<% case @elementorder[@i.to_i][0].to_s  
+				   	when "Signal" %>
+						    <% if (!@signals.blank?) || session[:typeOfSystem] == "VIU" %>
+							    <h2 class='text_white text_font_18'>Signal</h2>
+							    <div id="signal_div" class="floatleft width100">
+							        <div class="floatleft width100 padtop_5">
+							            <div class='signals_table'>
+							                <%= render :partial => "signals" %>
+							            </div>
+							        </div>
+							    </div>
+						    <% end %>
+			    			<div  class="blank_space">&nbsp;</div>
+				<% 	when "Switch" %>
+					    <% if (!@switches.blank?) || session[:typeOfSystem] == "VIU" %>
+						    <h2 class='text_white text_font_18'>Switch</h2>
+						    <div id="switch_div" class="floatleft width100">
+						        <div class="floatleft width100 padtop_5">
+						            <div class='switches_table'>
+						                <%= render :partial => "switches" %>
+						            </div>
+						        </div>
+						    </div>
+					    <% end %>
+			    		<div  class="blank_space">&nbsp;</div>
+				<% 	when "Hazard Detector" %>
+					    <% if (!@hazarddetectors.blank?) || session[:typeOfSystem] == "VIU" %>
+						    <h2 class='text_white text_font_18'>Hazard Detector</h2>
+						    <div id="hd_div" class="floatleft width100">
+						        <div class="floatleft width100 padtop_5">
+						            <div class='hazarddetector_table'>
+						                 <%= render :partial => "hazarddetector" %>
+						            </div>
+						        </div>
+						    </div>
+					    <%end %>
+				 		<div  class="blank_space">&nbsp;</div>
+				<% end %>
+				<% @i= @i+1 %>
+			<%end %>
+			<div  class="blank_space">&nbsp;</div>
+			<% unless @aspects.blank? %>
+			<h2 class='text_white text_font_18'>Aspects</h2>
+			<div class="aspectcontent" id="aspectcontent">
+				<div class="floatleft width100 padtop_5">
+					<div>
+						<table  cellspacing="0" cellpadding="1" width="700px" border="0" id="aspecttable" style='float:left;'>
+							<tr>
+								<th class="title text_white text_font" style="width:15%"><strong>Aspect ID</strong></th>
+								<th class="title text_white text_font" style="width:30%;"><strong>GEO Aspect</strong></th>
+								<th class="title text_white text_font" style="width:30%"><strong>PTC Aspect Name</strong></th>
+								<th class="title text_white text_font" style="width:25%"><strong>PTC Aspect Code</strong></th>
+						    </tr>
+							<%@aspects.each_with_index do |aspectss , i | %>
+								<tr id='<%= aspectss.Index.to_s %>'>
+									<td ><div align="center" class="aspects_height_23 text_font"><%= aspectss.Index.to_s %></div></td>
+									<td ><div align="center" class="aspects_height_23 text_font"><%= aspectss.AspectName%></div></td>
+									<% 	returnvalue = nil
+					                       begin
+					                          file = File.new(session[:aspectfilepath], "r")
+					                            while (line = file.gets)
+					                                result=[]
+					                                data = "#{line}"
+					                                result = data.split(", \"")
+													if (result.length == 1)
+									 					result = data.split(",\"")
+									 				end
+					                                restrim = []
+					                                restrim1 = result[0].split("\"")
+					                                restrim = result[1].split("\"")
+					                                restrimf= restrim[0].split(", \"")
+					                                if(restrim1[0].rstrip.upcase == aspectss.AspectName.upcase)
+					                                   returnvalue = restrimf[0].rstrip
+					                                   break
+					                                end
+					                            end
+					                          file.close
+					                       end  
+					                       unless returnvalue.blank?
+					                           ptcaspects = Ptcaspect.all(:conditions => {:InstallationName => @installation_name },:order => "AspectName asc")
+					                           for i in 0...(ptcaspects.length)
+					                             if (ptcaspects[i].AspectName.upcase == returnvalue.upcase)
+											         @AspectName = ptcaspects[i].AspectName
+													 @PTCCode	 = ptcaspects[i].PTCCode
+													break
+					                             end
+					                           end
+					                       else
+					                        @AspectName = '--'
+											@PTCCode	= '--'
+					                       end %>
+										<td ><div align="center" class="aspects_height_23 text_font"><%= @AspectName.to_s %></div></td>
+										<td ><div align="center" class="aspects_height_23 text_font"><%= @PTCCode.to_s %></div></td>
+								 </tr> 
+							 <%end%>
+							</table>
+						 </div>
+				 </div>
+			</div>
+			<div  class="blank_space">&nbsp;</div>	
+			<% end %>
+		</div>
+	</div>
+</form>

@@ -1,0 +1,49 @@
+<div id="site_content" class="site_content" style="margin-top:15px;float: left;width:100%;">
+    <div id="basic_site contentdata" class="l_port">
+        <% form_tag("/gcp_programming/check_supervisor_session", :method => 'POST') do %>
+	        <div id='contentdata'>
+	            <div style="padding:20px 0;">
+	                Please enter supervisor password 
+	            </div>
+	            <div id="serial_outer" class="serial_outer">
+	                <%= hidden_field_tag("menu_link", params[:menu_link]) %>
+	                <%= hidden_field_tag("page_name", params[:page_name]) %>
+	                <%= hidden_field_tag("page_type", params[:page_type]) %>
+	                <div class="serialleft contentCSPlabel text_type">
+	                    Password:
+	                </div>
+	                <div class='serialright text_type'>
+	                    <%= password_field("user", "password", :class => "contentCSPsel", :value => '') %>
+	                </div>
+	            </div>
+	            <div id='submit_tag'>
+	                <%= image_submit_tag("/images/Confirm.png") %>
+	            </div>
+	        </div>
+        <% end %>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#user_password").val('').focus();
+    });
+</script>
+<style type="text/css">
+    #contentdata {
+        background-color: #3E3E3E;
+        border-radius: 4px;
+        box-shadow: 0 0 1px 1px #3E3E3E;
+        color: #FFFFFF;
+        float: left;
+        left: 30px;
+        padding: 5px;
+        position: relative;
+        top: 15px;
+        width: 420px;
+    }
+    
+    #submit_tag {
+        float: right;
+        padding-right: 10px;
+    }
+</style>

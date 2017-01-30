@@ -1,0 +1,62 @@
+<div style="width:160px;float:left;padding:6px;font-size:12px;font-family:Arial;">
+            <div style="width:75px;float:left;border:1px solid #000;">
+                <% @channel_titles.each_with_index do |channel, i| %>
+                	<% channel_title = channel.channel_title.split('.')[1] %>
+	                <% if channel_title == "Colorlight" %>
+		                <% vlo_mcf_params = get_color_mcf_parameters(channel.mcfcrc, @online.card_index, "VLO#{i+1}") %>
+		                <% rt_param_hash = get_colour_code_rt_param(vlo_mcf_params, channel.channel_index) %>
+		                <div style="padding:0 5px;float:left;border-bottom: 1px solid; width:65px; <%= rt_param_hash['foreign_energy'].blank? ? "" : 'background-color:yellow;' %>">
+		                    <div style='padding-bottom:5px;' id="channel_title">
+		                        VLO
+		                    </div>
+		                    <div style='float:left;'>
+		                        <div style='float:left;width:20px;'>
+		                            <%= rt_param_hash['lamp_image'] %>
+		                        </div>
+		                        <div style='float:right;width:30px;position:relative;top:-3px;text-align:right;'>
+		                            <%= rt_param_hash['lamp_status'] %>
+		                        </div>
+		                    </div>
+		                </div>
+	                <% end %>
+                <% end %>
+            </div>
+            <div style='width:75px;float:right;border:1px solid #000;'>
+                <% vpi_index = 1 %>
+                <% @channel_titles.each do |channel| %>
+	                <% channel_title = channel.channel_title.split('.')[1] %>
+	                <% if channel_title == "VRO" %>
+		                <% vro_mcf_params = get_color_mcf_parameters(channel.mcfcrc, @online.card_index, 'VRO') if channel_title == "VRO" %>
+		                <% rt_param_vro = get_vro_output_mnemonic(vro_mcf_params) if channel_title == "VRO" %>
+		                <div style='float:left;padding:0 5px; border-bottom: 1px solid #000000;'>
+		                    <div style='padding-bottom:5px;'>
+		                        VRO
+		                    </div>
+		                    <div style='width:30px;float:left;padding-left:5px;'>
+		                        <%= image_tag "dt/box.png", :size=> "11x11" %><span style='padding-left:3px;'><%= rt_param_vro['lamp_image'] %></span>
+		                    </div>
+		                    <div style='width:30px;float:right;'>
+		                        <%= rt_param_vro['status'] %>
+		                    </div>
+		                </div>
+	                <% end %>
+	                <% if channel_title == "VPI" %>
+		                <% vpi_mcf_params = get_color_mcf_parameters(channel.mcfcrc, @online.card_index, "VPI#{vpi_index}") if channel_title == "VPI" %>
+		                <% rt_param_vpi = get_vro_output_mnemonic(vpi_mcf_params) if channel_title == "VPI" %>
+		                <div style='float:left;padding:5px; border-bottom: 1px solid #000000;'>
+		                    <div style='padding-bottom:5px;' id="channel_title">
+		                        VPI
+		                    </div>
+		                    <div style='width:30px;float:left;padding-left:5px;'>
+		                        <span style='padding-right:3px;'><%= rt_param_vpi['lamp_image'] %></span>
+		                        <%= image_tag "dt/box.png", :size=> "11x11" %>
+		                    </div>
+		                    <div style='width:30px;float:right;'>
+		                        <%= rt_param_vpi['status'] %>
+		                    </div>
+		                </div>
+		                <% vpi_index += 1 %>
+	                <% end %>
+                <% end %>
+            </div>
+        </div>

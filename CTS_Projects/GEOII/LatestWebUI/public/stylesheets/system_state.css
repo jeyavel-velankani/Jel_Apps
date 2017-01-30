@@ -1,0 +1,17 @@
+.getbutton_padding{
+  padding-left: 10px;
+}
+
+.sys_state_input{
+	background-color: #444444;
+    border: 1px solid #888888;
+    color: #FFFFFF;
+    height: 25px;
+    margin: 0;
+    padding: 0;
+    width: 40px;
+}
+
+.downloadbutton_padding{
+  padding-left: 15px;
+}

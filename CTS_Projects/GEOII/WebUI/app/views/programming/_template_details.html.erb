@@ -1,0 +1,24 @@
+<div id="serial_outer" class="serial_outer" style="height: 180px !important">
+    <div class="serialleft contentCSPlabel text_type">
+    </div>
+    <span class='ucn_protected'>&nbsp;</span>
+    <div class='serialright text_type template_picture'>
+        <div id='template_picture'>
+            <%template.picture = template.picture.gsub(/\n/,"<br/>")%>
+            <%= simple_format(template.picture.gsub(/\s/, "&nbsp;"), :class => 'mtf_index_picture') %>
+        </div>
+    </div>
+</div>
+<div id="serial_outer" class="serial_outer">
+    <div class="serialleft contentCSPlabel text_type">
+        Description
+    </div>
+    <span class='ucn_protected'>&nbsp;</span>
+    <div class='serialright text_type'>
+        <div id='template_description'>
+            <p>
+                <%= template.description %>
+            </p>
+        </div>
+    </div>
+</div>

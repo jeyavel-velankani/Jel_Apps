@@ -1,0 +1,51 @@
+<div class="mcftree" id="mcftree">
+    <ul id="navigation">
+        <%= display_systemstatetree1(@satname, @gwe.mcfcrc) %>
+    </ul>
+</div>
+<div class="mcfcontent" id="mcfcontent" style='overflow-y:auto;'>
+	<div>
+		<div id="bredcrumb" style="float:left"></div>
+		<div style="clear:both">&nbsp;</div>
+	</div> 
+	<div class='mcfcontent_data' style="padding-top:10px;"></div>    
+</div>
+<%= javascript_include_tag "jquery.treeview_site"%>
+<%= stylesheet_link_tag "jquery.treeview_site"%>
+<script type="text/javascript">
+    $(document).ready(function(){
+		$("#navigation1").treeview1({
+			persist: "location",
+			collapsed: true,
+			unique: true
+		});
+		
+		$('.system_state_view').w_click(function(event){
+			if(!$(this).hasClass('disabled')){
+				stop_system_state_replies();
+				req_aborted = true;
+				
+	            $("#system_state_req_id").val("");
+	            $('.ajax-loader').hide();
+				$("#bredcrumb").html($(this).attr('rel'));
+				var atcs_addr = $('#atcs_addr').val();
+				var sat_index = $(this).attr('id');
+				var parent_name = $(this).attr('title');
+				var name = $(this).text();
+				var request_type = $(this).attr('name');
+				$(".mcfcontent_data").html("");
+				if(request_type == "get"){
+					$(".get_properties").removeAttr("disabled").removeClass("disabled_buttons");
+					$(".set_properties").removeAttr("disabled").removeClass("disabled_buttons");
+					$("#system_state_name").val(name);
+					$("#system_state_parent_name").val(parent_name);
+					$("#system_state_sat_index").val(sat_index);				
+				}else if(request_type == "set"){
+					//$(".get_properties").hide();				
+					$(".get_properties").attr("disabled", "disabled").addClass("disabled_buttons");
+					$(".set_properties").removeAttr("disabled").removeClass("disabled_buttons");
+				}	
+			}		
+        });
+    });
+</script>

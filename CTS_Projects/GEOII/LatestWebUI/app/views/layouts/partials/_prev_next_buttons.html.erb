@@ -1,0 +1,29 @@
+<div class="button_container <%= "disable" if !params[:setup_wizard].nil? %>" data-label="Previous">
+	<div>
+		<div id = "left_arrow" ></div>
+		<div class="label_cover">
+			<div class="previous_label_style">Previous</div>
+		</div>
+	</div>
+</div>
+<div style="float:left">&nbsp;</div>
+<div class="button_container" data-label="Next" id="next_button_container">
+	<div>
+		<div id = "right_arrow"></div>
+		<div class="label_cover">
+			<span class="next_label_style" >Next</span>
+		</div>
+	</div>
+</div>
+<% if params[:setup_wizard].nil? %>
+<div style="float:left">&nbsp;</div>
+<div class="button_container" data-label="Cancel">
+	<div>
+		<div id = "cancel_button"></div>
+		<div class="label_cover">
+			<span class="cancel_label_style" >Cancel</span>
+		</div>
+	</div>
+</div>
+<% end %>
+<div style="clear:both"></div>

@@ -1,0 +1,19 @@
+<script type="text/javascript">
+	var nv_group_id  = <%=(@group_id == 'array' ? '"'+@group_id+'"' : @group_id)%>;
+	var nv_group_channel  = <%=@group_ch%>;
+	var atcs_sin_only = <%= (params[:atcs_address_only].blank?)? false:true %>
+	//set_content_deminsions(800,400)
+</script>
+<%=javascript_include_tag 'toolbar.js',"nv_config.js","sin.js"%>
+<%= stylesheet_link_tag 'nv_config.css'%>
+<% if params[:atcs_address_only].blank? %>
+	<%= GenericHelper.toolbar({ 'unlock' => 'unlock.png', 'nv_save' => 'savemouseover.png', 'nv_refresh' => 'refresh_mouse_over.png', 'nv_default' => 'default.png'},'unlock')%>
+<% else %>
+	<%= GenericHelper.toolbar({ 'unlock' => 'unlock.png', 'atcs_only_save' => 'savemouseover.png', 'nv_refresh' => 'refresh_mouse_over.png'},'unlock')%>
+<% end %>
+<div class="nv_config_message_wrapper"><div class="nv_config_message"></div></div>
+<div class="nv_config_wrapper">
+	<div class="nv_config_generic_wrapper">
+		<%=render :partial=> "parameters"%>
+	</div>
+</div>

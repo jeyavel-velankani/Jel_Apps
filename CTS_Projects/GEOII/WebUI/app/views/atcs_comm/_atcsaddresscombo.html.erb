@@ -1,0 +1,18 @@
+ <div id="atcscombobox">
+ <span id="contenttabs" class="contenttabs"></span>
+ <% if OCE_MODE ==0 %>
+	 		<% @atcs_addresses = RtSession.find_atcs_addrs %>
+			 <div id="select_dt_atcs1" style="display:none;margin-bottom:5px !important;">
+			     <span class="white_header">ATCS Address</span>
+			     <%= select("atcs[addr]","", options_for_select(@atcs_addresses), {:prompt => "Select"}, :id => "card_combo", :class => "contentCSPsel height20", :style => "width:180px !important;") %>
+			     <!--<span class="ajax_spinner"><%= image_tag('ajax-loader.gif') %></span>
+-->
+			 </div>
+		        <div id="select_dt_atcs" style="display:none;margin-bottom:5px !important;">
+		           <span class="white_header">ATCS Address</span>
+		            <%= select("atcs[addr]","", options_for_select(@atcs_addresses), {:prompt => "Select"}, :id => "nav_tab", :class => "contentCSPsel height20", :style => "width:180px !important;") %>
+		         <!--  <span class="ajax_spinner"><%= image_tag('ajax-loader.gif') %></span>
+-->
+		       </div>	
+<% end %>
+</div>

@@ -1,0 +1,55 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require jquery-ui/autocomplete
+ *= require jquery-ui/datepicker
+ *= require jquery-ui/dialog
+ *= require jquery-ui/sortable
+ *= require_self
+ */
+
+@import "icons";
+
+.legacy-ui {
+  @import "../../../vendor/assets/stylesheets/superfish-navbar";
+  @import "../../../vendor/assets/stylesheets/superfish-vertical";
+  @import "../../../vendor/assets/stylesheets/superfish";
+  @import "legacy";
+}
+
+.bootstrap {
+  @import "bootstrap-sprockets";
+  @import "bootstrap";
+  @import "tracks-logo";
+  @import "login";
+
+  // resets normally applied to body
+  // TODO: remove when dropping the .bootstrap namespace
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+
+  @import "tracks";
+}
+
+// Hybrid Bootstrap/legacy styles applied to body
+// See bootstrap/_normalize and bootstrap/_scaffolding
+// TODO: clean these up after the migration to Bootstrap is complete
+body {
+  @import "bootstrap/_variables";
+  $font-family-base: "Lucida Grande", Verdana, Geneva, Arial, sans-serif;
+  $body-bg: #eee;
+
+  margin: 0;
+  font-family: $font-family-base;
+  color: $text-color;
+  background-color: $body-bg;
+}

@@ -1,0 +1,73 @@
+<%= javascript_include_tag 'ptc_msg_layout' %>
+<div class='ptcwiu_message' id="ptcwiu_message">
+<form action="/ptc/update_message_layout" id="msg_layout_form" class="msg_layout_form">
+  <% if session[:value] == 1 %>
+	<div class="toolbar_wrapper">
+         <div class="contentactionbuttonlabel contentactionbuttonlabelI" style="float: left;padding-left:5px;">
+			<%= link_to(image_tag('/images/savemouseover.png'), "javascript: void(0)", :id => "save_message_layout", :class => "save_message_layout", :title => "Save") %>
+        </div>
+		<div class="contentactionbuttonlabel contentactionbuttonlabelI" style="float: left;padding-left:5px;">
+			<%= link_to(image_tag('/images/refresh_mouse_over.png'), "javascript: void(0)", :id => "refresh",:class => "ptc_wiu_refresh" ,:title => "Refresh") %>
+        </div>
+	</div>
+  <%end%>
+  <div style="clear:both; padding-top:1px;">&nbsp;</div>
+  <div id="ptc_gen" class="errormesg success_message paddingleft5" name="ptc_gen">
+  	<%= params[:msg_status].to_s%>
+  </div>
+  <% if !(@mcf_installations.blank?) && session[:typeOfSystem] != "VIU" %>
+	<div class="paddingleft5">
+		<div><span class='text_white text_font_18'>Installation Name:</span><span class='inv_yellow'><%= @installation_name %></span> </div>
+	</div>
+  <%end%>
+ <%if @signals.length >= 1 || @switches.length >= 1 || @hazarddetectors.length >= 1%>
+     <%= hidden_field_tag "ptcdevicecount" , true %>
+ <%else%>
+     <%= hidden_field_tag "ptcdevicecount" , false %>
+ <%end%>
+  <%= hidden_field_tag "installation_name" , @installation_name%>
+  <div style="clear:both; padding-top:1px;">&nbsp;</div>
+  <div class='ptc_wiu_msg_content text_font'>
+    <% unless @elementorder.blank? %>
+		<% if (@elementorder.length == 3) %>
+			<%= render :partial=>'elementorder' %>
+		<%else%>
+			<div class='text_white text_font'>PTC device order is inconsistent and needs reordering, reorder now..
+				<%= link_to image_tag('/images/accept.png',  :border => 0), "javascript: void(0)",:id =>"reordernow" %>
+			</div>
+		<%end%>
+	<%end%>
+  </div>
+</form>
+</div>
+<script type='text/javascript'>
+	$(document).ready(function(){
+		$("#element_arrow").w_click(function(){
+			var link_title = $(this).attr('title');
+	        var alternate_element = alternate_element_id = null;
+	        var selected_element = $('.selected_element_ptc_element');
+	        var next_element = $('.selected_element_ptc_element').next();
+	        var prev_element = $('.selected_element_ptc_element').prev();
+	
+	        if (link_title == 'Device type down') {
+	            alternate_element = next_element;
+	            alternate_element_id = next_element.attr('id');
+	        }else if (link_title == 'Device type up') {
+	            alternate_element = prev_element;
+	            alternate_element_id = prev_element.attr('id');
+	    	}
+	        if (selected_element != null && alternate_element_id != null && alternate_element_id != "") {
+	            var selected_content = selected_element.clone();
+	            var cloned_content = alternate_element.clone();
+	            alternate_element.replaceWith(selected_content);
+	            selected_element.replaceWith(cloned_content);
+				
+	            selected_element = $('.selected_element_ptc_element');
+	            var next_switch_id = $('.selected_element_ptc_element').next().attr('id');
+	            var prev_switch_id = $('.selected_element_ptc_element').prev().attr('id');
+	            format_ptc_element_style(prev_switch_id, next_switch_id);
+	            add_nv_preload_page();
+	        }
+	    });
+	});
+</script>

@@ -1,0 +1,97 @@
+<%=javascript_include_tag 'toolbar.js',"setup.js"%>
+<%= stylesheet_link_tag 'setup.css'%>
+<input type="hidden" class="setup_type" value="<%=@method_name%>"/>
+<div class="lamp_container_wrapper">
+	<input type="hidden" class="atcs_address" value="<%=@atcs_address%>"/>
+	<input type="hidden" class="mcfcrc" value="<%=@gwe.mcfcrc%>"/>
+<%
+	if @msg == nil || @msg == ''
+		@tracks.each do |track| 
+
+			if track
+				track_name = track['name']
+				lamp_index = 1
+				health = (track['health'] == 'active' ? 'green' : 'red')
+				slot_no = track['slot_no']
+				card_index = track['card_index'] 
+				card_type = track['card_type'] 
+
+		%>
+
+				<div class="card_warpper <%=(lamp_index % 2 == 0 ? 'card_new_row' : '')%>" slot_no="<%=slot_no.to_s%>" card_type="<%=card_type.to_s%>">
+					<input type="hidden" id="card_index" value="<%=card_index%>"/>
+					<div class="card_title"><%=track_name%></div>
+					<div class="card_status"><img src="images/led/<%=health%>.png"></div>
+					<div class="card_feedback_wrapper"><div class="card_feedback"></div></div>
+		<%
+
+				row_index = 0; 
+				@parameter_names[card_type.to_i].each do |parameter_name|
+
+					if parameter_name
+
+						param_info = Parameter.find(:first,:conditions => ['cardindex = ? and parameter_type = ? and name = ?',card_index,2,parameter_name])
+                        if !param_info.blank?
+							if param_info[:param_typedef] && param_info[:param_typedef] == 'INTEGER' && param_info[:int_type_name]
+								param_type ="int"
+								integertypes_info  = Integertype.find(:first, :conditions => ['int_type_name = ?',param_info[:int_type_name]])
+	
+								param_data = RtParameter.find(:first, :conditions=>["mcfcrc = ? and card_index = ?  and parameter_type = ? and parameter_name = ? ",Gwe.mcfcrc, card_index, 2, parameter_name])
+	
+	
+								if integertypes_info
+									if integertypes_info[:signed_number] != nil
+										if integertypes_info[:signed_number] == "Yes"
+											sign_number = 'true'
+										else
+											sign_number = 'false'
+										end
+									else
+										sign_number = 'false'
+									end
+	
+									show_param = true
+									scalse_factor = integertypes_info[:scale_factor]
+									lower = integertypes_info[:lower_bound].to_s
+									upper = integertypes_info[:upper_bound].to_s
+									step = integertypes_info[:step].to_s
+	
+									#concat debug param_data[:current_value]
+	
+									if param_data && param_data[:current_value]
+										value = param_data[:current_value]
+									else
+										value = 0
+									end
+									concat '<div class="card_input_row">'
+										concat'<div class="card_input_title">'+param_info[:param_long_name]+(integertypes_info != nil && integertypes_info.metric_unit  != nil && integertypes_info.metric_unit.strip != '' ? '('+integertypes_info.metric_unit+')' : '')+'</div>'
+	
+											concat '<div class="card_input"><input type="text" id="'+parameter_name+'" scale="'+scalse_factor.to_s+'" min="'+lower+'" max="'+upper+'" value="'+(value*scalse_factor/1000).to_s+'" sign_number="'+sign_number+'" step="'+step+'" param_type="'+param_type+'"/></div>'
+	
+										concat '<div class="card_error"></div>'
+							
+										if row_index == 0
+											concat '<div class="card_save_button"><img src="images/savemouseover.png"/></div>'
+										end
+										
+									concat '</div>'
+						
+									row_index += 1
+								end
+							end
+                        end
+					end
+				end
+				partial = @setup_type[card_type.to_i]
+				if partial != 'error'
+					concat render :partial => 'setup/'+partial, :locals => { :track => track, :card_index => card_index}
+				end
+				lamp_index += 1
+				concat '</div>'
+			end
+		end 
+	else
+		concat debug @tracks
+	end
+%>
+</div>

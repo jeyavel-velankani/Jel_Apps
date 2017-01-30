@@ -1,0 +1,47 @@
+
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table border = 4>
+    <caption style="background-color:grey; font-weight:bold">
+      Create/Update Project
+    </caption>
+    <tr>
+      <td><%= f.label :name %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :customer %></td>
+      <td><%= f.text_field :customer %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :description %></td>
+      <td><%= f.text_area :description %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :price %></td>
+      <td><%= f.text_field :price %></td>
+    </tr>
+
+    <tr>
+      <td><%= f.label :employee_id %></td>
+      <td><%= collection_select(:employee, :manager_id, Employee.all, :id, :name, {:prompt => true}) %>
+    </tr>
+
+    <tr colspan = 2>
+      <td><%= f.submit %></td>
+    </tr>
+  </table>
+<% end %>

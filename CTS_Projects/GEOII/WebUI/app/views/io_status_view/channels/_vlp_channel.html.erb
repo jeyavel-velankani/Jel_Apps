@@ -1,0 +1,36 @@
+<div class="status_data">
+    <div class="outer_box">
+        <div class='vlp_parameters'>
+            <div id='vlp_captions'>
+                Battery
+            </div>
+            <div class="dtvlp" id="vlp_caption_values">
+                <%  if(@scaled_parameters["#{card_index}.3.VLPProc.BatteryVoltage"].blank?) %>
+				      <%= channel_parameters["3.VLPProc.BatteryVoltage"].blank? ? "0" : ( '%g' % sprintf('%.4f', (channel_parameters["3.VLPProc.BatteryVoltage"]/10.0))) %> V
+				<%  else %>
+				      <%= channel_parameters["3.VLPProc.BatteryVoltage"].blank? ? "0" : ( '%g' % sprintf('%.4f', ((channel_parameters["3.VLPProc.BatteryVoltage"].to_f * @scaled_parameters["#{card_index}.3.VLPProc.BatteryVoltage"].to_f/1000)/1000))) %> V 
+				<%  end %>
+				
+				
+            </div>
+        </div>
+        <div class='vlp_parameters'>
+            <div id='vlp_captions'>
+                Internal
+            </div>
+            <div class="dtvlp" id="vlp_caption_values">
+            	<%  if(@scaled_parameters["#{card_index}.3.VLPProc.InternalVoltage"].blank?) %>
+				      <%= channel_parameters["3.VLPProc.InternalVoltage"].blank? ? "0" : ( '%g' % sprintf('%.4f', (channel_parameters["3.VLPProc.InternalVoltage"]/10.0))) %> V
+				<%  else %>
+				      <%= channel_parameters["3.VLPProc.InternalVoltage"].blank? ? "0" : ( '%g' % sprintf('%.4f', ((channel_parameters["3.VLPProc.InternalVoltage"].to_f * @scaled_parameters["#{card_index}.3.VLPProc.InternalVoltage"].to_f/1000)/1000))) %> V
+				<%  end %>
+            </div>
+        </div>
+    </div>
+</div>
+<% if card_type != 7 %>
+	<% cp_card_info = get_cp_card_info(mcfcrc, atcs_address) %>
+	<div class="cp_slot slot_header" id="<%= cp_card_info.card_index if cp_card_info %>">
+	    CP
+	</div>
+<% end %>

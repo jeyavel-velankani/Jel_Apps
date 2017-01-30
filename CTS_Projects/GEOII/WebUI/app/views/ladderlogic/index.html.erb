@@ -1,0 +1,60 @@
+<%= stylesheet_link_tag 'ladderlogic' %>
+<%= javascript_include_tag "jquery.form.js","ladderlogic" %>
+<div class="content_wrapper_ladder" id="ladder_logic_content">
+	<div class="nvladderlogic_checkbox">
+		<%= check_box_tag 'nvladderlogic', 'Non-vital ladderlogic controller', @enabled ,{:onchange =>"change(this.checked)" } %> Non-Vital Ladder Logic Controller
+		<%= hidden_field_tag 'ladderlogic', @enabled %>
+	</div>
+	<div class="ll_message_container">&nbsp;<span class="ll_success_message"></span></div>
+	<div class="content_wrapper_ladder"></div>
+	<div id="ladder_logic_controls">
+	    <form name="ladderlogic_update_form" action="ladderlogic/ll_upload" method="post" enctype="multipart/form-data" id="ladderlogic_update_form">
+			<div class="serialleft contentCSPconfiglabel" ><label id="label1" >LLW File:</label></div>
+			<div class="padding_right_3">
+				<input type="text" class="contentCSPsel fileupload_width" name="llw_file_upload_path" id="llw_file_upload_path" disabled="true" >
+			</div>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+	        <div style="display: block;">
+				<img src="/images/Browse-mouse-over.png"></img>
+				<input type="file" id="llw_file_upload" name="llw_file_upload" onchange="llw_file_upload_path.value =llw_file_upload.value; llwfilecheck();" style="cursor:pointer;cursor:hand;position:relative;top:-2px;left:-150px;width:145px;opacity: 0; filter:alpha(opacity: 0);" />
+			</div>
+			<div class="content_wrapper_ladder"></div>
+			<div class="serialleft contentCSPconfiglabel" ><label id="label1" >LLB File:</label></div>
+			<div class="padding_right_3">
+				<input type="text" class="contentCSPsel fileupload_width" name="llb_file_upload_path" id="llb_file_upload_path" disabled="true" >
+			</div>
+		    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+			<div style="display: block;">
+				<img src="/images/Browse-mouse-over.png"></img>
+				<input type="file" id="llb_file_upload" name="llb_file_upload" onchange="llb_file_upload_path.value =llb_file_upload.value; llbfilecheck();" style="cursor:pointer;cursor:hand;position:relative;top:-2px;left:-150px;width:145px;opacity: 0; filter:alpha(opacity: 0);" />
+			</div>
+			<div class="content_wrapper_ladder"></div>
+	        <div class="serialleft contentCSPconfiglabel" ></div>
+			<div class="toolbar_button btnfileupload">
+				<%= image_submit_tag('/images/File_upload_form_button.png',:id =>"btnfileupload") %>
+			</div>
+	    </form>
+	</div>
+</div>
+
+<div id="upload_progress" style="display:none">
+	<div>
+		Overall Percentage for LLW: <span id="llw_percentage">0</span>
+	</div>
+	<div>
+		Uploading LLW file <span id="llw_upload_filename"></span> to <span id="llw_upload_filepath"></span>
+	</div>
+	<br />
+	<div>
+		Overall Percentage for LLB: <span id="llb_percentage">0</span>
+	</div>
+	<div>
+		Uploading LLW file <span id="llb_upload_filename"></span> to <span id="llb_upload_filepath"></span>
+	</div>
+	<br />
+	<div>
+		<%= link_to(image_tag('/images/cancelmouseover.png', :border => 0), "javascript: void(0)", :class => "cancel_upload aspect", :id => "cancel_upload", :title => 'Cancel Upload Process') %>
+    </div>
+	<%= hidden_field_tag "llw_request_id", "" %>
+	<%= hidden_field_tag "llb_request_id", "" %>
+</div>

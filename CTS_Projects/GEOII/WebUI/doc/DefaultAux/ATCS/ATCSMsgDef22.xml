@@ -1,0 +1,409 @@
+<ATCSMessages>
+
+<ATCSMessage Label = "50987" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>ExEzLimitsMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50802" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>AuxiliaryFileCRCRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50872" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>AuxiliaryFileCRCReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50871" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>RebootMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50775" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CPUVersionRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50775" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>CPUVersionRequest2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50775" Version = "3" Subversion = "1" Priority = "4">
+	<TypeDef>CPUVersionRequest3</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50775" Version = "5" Subversion = "1" Priority = "4">
+        <TypeDef>CPUVersionRequest5</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50847" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CPUVersionReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50847" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>CPUVersionReply2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50847" Version = "3" Subversion = "1" Priority = "4">
+	<TypeDef>CPUVersionReply3</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50847" Version = "5" Subversion = "1" Priority = "4">
+        <TypeDef>CPUVersionReply5</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50901" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>ResetCommStatistics</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50776" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>CommStatusRequest2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50848" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>CommStatusReply2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50777" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>GEOMCFRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50849" Version = "1" Subversion = "1" Priority = "7">
+	<TypeDef>GEOMCFReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50778" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>EventHistoryRequest1</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50778" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>EventHistoryRequest2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50778" Version = "3" Subversion = "1" Priority = "4">
+	<TypeDef>EventHistoryRequest3</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50778" Version = "4" Subversion = "1" Priority = "4">
+	<TypeDef>EventHistoryRequest4</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50842" Version = "1" Subversion = "1" Priority = "7">
+	<TypeDef>EventHistoryReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50842" Version = "3" Subversion = "1" Priority = "7">
+	<TypeDef>EventHistoryReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50842" Version = "4" Subversion = "1" Priority = "7">
+	<TypeDef>EventHistoryReply4</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50873" Version = "4" Subversion = "1" Priority = "7">
+	<TypeDef>EventHistoryBinaryReply4</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50900" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>ClearEventHistory1</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50900" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>ClearEventHistory2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50900" Version = "3" Subversion = "1" Priority = "4">
+	<TypeDef>ClearEventHistory3</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50779" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>ReconfigureRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50783" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CardStatusRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50852" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CardStatusReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50785" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>LogicStatesRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50854" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>LogicStatesReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50781" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>DiagnosticDataRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50844" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>DiagnosticDataReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50791" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CPUStatusRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50846" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CPUStatusReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50787" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>ConfigurationRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50850" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>ConfigurationReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50784" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>IOCardStatusRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50853" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>IOCardStatusReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50790" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>IOStatusRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50851" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>IOStatusReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50971" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SetWatchedStates</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50786" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>WatchedStatesRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50855" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>WatchedStatesReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50902" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>ResetWatchedLogicStates</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50861" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>PCICommandMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50862" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>PCIStatusMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50970" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SetPCIConfigData</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50972" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SetSerialEventUpdate</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50795" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>NVConfigLogicStatesRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50964" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>SetVerbosityLevel</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50968" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>LogExternalData1</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50969" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>LogExternalData2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50800" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>AuxiliaryFileRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50869" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>AuxiliaryFileReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50798" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SystemConsistRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50798" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>SystemConsistRequest2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50867" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SystemConsistReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50867" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>SystemConsistReply2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50797" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CardInformationRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50866" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CardInformationReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50797" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>CardInformationRequest2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50866" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>CardInformationReply2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50801" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>NewUCNRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50870" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>UCNConfiguration</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50870" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>UCNConfiguration2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50966" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SetNewUCN</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50966" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>SetNewUCN2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50974" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>VitalCFGMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50973" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>NVitalCFGMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "54850" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>TimeRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "55042" Version = "1" Subversion = "1" Priority = "1">
+	<TypeDef>SetTime</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "1224" Version = "1" Subversion = "1" Priority = "2">
+	<TypeDef>SafetranReset</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50799" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>VIODataRequest</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50868" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>VIODataReply</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50799" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>VIODataRequest2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50868" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>VIODataReply2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "36101" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CMSVitalSessionEmulationDataUpdate</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50975" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>PasswordMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50976" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>RouteDefinitionMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50977" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>DTSession</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50978" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SendUnsolicitedEvents</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50979" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SEARSession</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50980" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>TrackMonitorMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50981" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SetCfgPropertyMessage</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50982" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CPUTestMode</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50983" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>TestSynchCommand</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50984" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>VerifyCfgPropertyScreen</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50985" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>TrainMoveHistory</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50986" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>SetDefaultMsg</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50988" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>GEOPCIChangeMsg</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50988" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>GEOPCIChangeMsg2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50990" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CfgSettingsMsg</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50990" Version = "2" Subversion = "1" Priority = "4">
+	<TypeDef>CfgSettingsMsg2</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50991" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>LocationSettings</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50992" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>HWConfiguration</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50994" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>GCPStatisticsMsg</TypeDef>
+</ATCSMessage>
+<ATCSMessage Label = "51010" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>GEOSafeModeMsg</TypeDef>
+</ATCSMessage>
+
+<ATCSMessage Label = "50989" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>IntegerLogicStatesMsg</TypeDef>
+</ATCSMessage>
+<ATCSMessage Label = "51002" Version = "1" Subversion = "1" Priority = "4">
+	<TypeDef>CPUCCNMessage</TypeDef>
+</ATCSMessage>
+
+</ATCSMessages>

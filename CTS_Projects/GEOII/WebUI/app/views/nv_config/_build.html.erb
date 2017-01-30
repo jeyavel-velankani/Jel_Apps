@@ -1,0 +1,157 @@
+<input type="hidden" class="user_presence" value="<%=@user_presence%>"/>
+<input type="hidden" id="default_flag" value="<%=@default%>"/>
+<%
+
+if @user_presence != nil && !@user_presence 
+	readonly = true;
+else
+	readonly = false
+end
+
+elements = ''
+if @group_parameters != nil
+	 @group_parameters.each do |t| 
+	 	ucn_protected = t[:input][0][:isUCNProtected]
+
+	 	if ucn_protected != 0
+	 		if readonly
+	 			parameter_locked = true
+	 		else
+	 			parameter_locked = false
+	 		end
+	 	else
+	 		parameter_locked = false
+	 	end
+
+		case t[:type]
+	        when "int"
+	        	id = t[:input][0][:ID]
+	        	title = t[:input][0][:Name]
+	        	locked = t[:input][0][:isLocked]
+	        	value = t[:input][0][:Value]
+	        	min = t[:input][0][:Min_Value]
+	        	max = t[:input][0][:Max_Value]
+	        	units = t[:input][0][:Units]
+	        	inc = t[:input][0][:Increments]
+	        	mask = t[:input][0][:Format_Mask]
+	        	default_value = t[:input][0][:Default_Value]
+	        	group_ID = t[:group_ID].to_s
+
+	        	#if default is set
+	        	if @default 
+	        		value = default_value
+	        	end
+
+	        	if mask.split(':') != nil &&  mask.split(':')[0] == 'H'
+	        		if title == 'Starting Comm ID'
+		        		value = Float(Array(value).pack('N').unpack('I')[0]).to_i.to_s(16)
+		        	else
+	        			value = Float(Array(value).pack('V').unpack('I')[0]).to_i.to_s(16)
+					end		        		
+	        		numeric_only = ''
+	        	else
+	        		numeric_only = 'numeric_only'
+	        	end
+
+	        	hide_row = false
+
+	        	if title == 'Echelon Gateway Node'
+	        		if !Generalststistics.isUSB?
+	        			hide_row = true
+	        		end
+	        	end
+
+	        	if !hide_row
+
+	        		elements += '<div class="nv_row"><div class="nv_title">'+title+(units.length > 0 ? ' ('+units+')': '')+'</div>'+build_utc_icon(ucn_protected)+'<div class="dv_input"><input id="int_'+id.to_s+'" value="'+value.to_s+'" class="'+(locked == 1 ? 'locked' : '')+(parameter_locked ? ' readonly': '')+' '+numeric_only+'" '+(locked == 1 || parameter_locked ? 'disabled' : '')+' min = "'+min.to_s+'" max = "'+max.to_s+'" inc="'+inc.to_s+'"  mask="'+mask+'" default_value="'+default_value.to_s+'" ucn_protected="'+ucn_protected.to_s+'" group_ID="'+group_ID+'"/></div>'+(locked == 1 ? '<div class="locked_icon"></div>' : '')+'<div class="is_default" '+(value == default_value ? '' : 'style="display:none;"')+'>*</div><div class="nv_error"></div></div>'
+	        	end
+
+	        when "string"
+				id = t[:input][0][:ID]
+	        	title = t[:input][0][:Name]
+	        	locked = t[:input][0][:isLocked]
+	        	value = t[:input][0][:String]
+	        	min = t[:input][0][:Min_Length]
+	        	max = t[:input][0][:Max_Length]
+	        	mask = t[:input][0][:Format_Mask]
+	        	default_value = t[:input][0][:Default_String]
+	        	group_ID = t[:group_ID].to_s
+	        	
+	        	if ((id == 181 || id == 35) && (title.downcase == "subdivision number"))
+	        		value = (value.blank?) ? "Not Set" : value
+	        	end
+	        	#if default is set
+	        	if @default 
+	        		value = default_value
+	        	end
+
+	        	elements += '<div class="nv_row"><div class="nv_title">'+title+'</div>'+build_utc_icon(ucn_protected)+'<div class="dv_input"><input type="'+(title =~ /password/i ? 'password' : 'text')+'" id="string_'+id.to_s+'" value="'+value+'" class="'+(locked == 1 ? 'locked' : '')+(parameter_locked ? ' readonly': '')+'"'+(locked == 1 || parameter_locked ? 'disabled' : '')+' min = "'+min.to_s+'" max = "'+max.to_s+'" mask="'+mask+'" default_value="'+default_value.to_s+'" ucn_protected="'+ucn_protected.to_s+'" group_ID="'+group_ID+'"/></div>'+(locked == 1 ? '<div class="locked_icon"></div>' : '')+'<div  class="is_default" '+(value == default_value ? '' : 'style="display:none;"')+'>*</div><div class="nv_error"></div></div>'
+			when "enum"
+				id = t[:input][0][:ID]
+				title = t[:input][0][:Name]
+	        	locked = t[:input][0][:isLocked]
+	        	value = t[:input][0][:Selected_Value_ID]
+	        	default_value = t[:input][0][:Default_Value_ID]
+	        	group_ID = t[:group_ID].to_s
+	        	
+	        	#if default is set
+	        	if @default 
+	        		value = default_value
+	        	end
+
+	        	hide_row = false
+
+	        	if title == 'Vital Message Routing'
+	        		if !Menu.cpu_3_menu_system
+	        			hide_row = true
+	        		end
+	        	end
+
+	        	if !hide_row
+		        	select_tag = '<select id = "enum_'+id.to_s+'" class="'+(@subgroup_parameters_id[id] != nil ? 'subgroup_anchor' : '')+(locked == 1 ? 'locked' : '')+(parameter_locked ? ' readonly': '')+'" '+(locked == 1 || parameter_locked ? 'disabled' : '')+' default_value="'+default_value.to_s+'" ucn_protected="'+ucn_protected.to_s+'" group_ID="'+group_ID+'">'
+		        	t[:selection].each do |sel|
+		        		name = sel[:Name]
+		        		option_id = sel[:ID]
+		        		option_value = sel[:Value]
+		        		select_tag += '<option value="'+option_id.to_s+'" '+(option_id == value ? 'selected' : '')+'>'+name +'</option>'
+		        	end
+		        	select_tag += '</select>'
+		        	elements += '<div class="nv_row"><div class="nv_title">'+title+'</div>'+build_utc_icon(ucn_protected)+'<div class="dv_input">'+select_tag+'</div>'+(locked == 1 ? '<div class="locked_icon"></div>' : '')+'<div  class="is_default" '+(value == default_value ? '' : 'style="display:none;"')+'>*</div><div class="nv_error"></div></div>'
+	    		end
+	        when "byte"
+				id = t[:input][0][:ID]
+				title = t[:input][0][:Name]
+	        	locked = t[:input][0][:isLocked]
+	        	value = t[:input][0][:Array_Value]
+	        	default_value = t[:input][0][:Default_Value]
+	        	size = t[:input][0][:Size].to_i * 2
+	        	group_ID = t[:group_ID].to_s
+
+	        	#if default is set
+	        	if @default 
+	        		value = default_value
+	        	end
+
+	        	elements += '<div class="nv_row"><div class="nv_title">'+title+'</div>'+build_utc_icon(ucn_protected)+'<div class="dv_input"><input id="byte_'+id.to_s+'" value="'+value.to_s+'" class="byte_parameter '+(locked == 1 ? 'locked' : '')+(parameter_locked ? ' readonly': '')+'" '+(locked == 1 || parameter_locked ? 'disabled' : '')+' size = "'+size.to_s+'" default_value="'+default_value.to_s+'" ucn_protected="'+ucn_protected.to_s+'" group_ID="'+group_ID+'"/></div>'+(locked == 1 ? '<div class="locked_icon"></div>' : '')+'<div  class="is_default" '+(value == default_value ? '' : 'style="display:none;"')+'>*</div><div class="nv_error"></div></div>'
+	    end
+	end
+end
+if @site_time != nil
+		elements += '<div class="nv_date_row"><div class="nv_title">Date</div><div class="ptc_icon"></div><div class="dv_date_input"><input id="date" value="'+(get_date_type == 'mm-dd-yyyy' ? @site_time.strftime("%m-%d-%Y") : @site_time.strftime("%d-%m-%Y"))+'" class="site_info_date"/></div><div class="nv_error"></div></div>'
+		elements += '<div class="nv_row"><div class="nv_title">Time</div><div class="ptc_icon"></div><div class="dv_input">'+select_time(@site_time , {:default => @site_time, :time_separator => ':', :include_seconds => true, :prefix => "start_time[begin]"}, :class => "site_info_time site_time ")+'</div><div class="nv_error"></div></div>'
+
+		if @time_source
+			elements += '<input class="time_source" type="hidden" value="'+@time_source[0][:item]+'"/>'
+		end
+
+end
+if @emp != nil
+	if @emp == 'file not found'
+		@emp = '';
+	end 
+	def_val = ByteArrayParameter.Bytearray_defaultvalue_query(2)
+	elements += '<div class="nv_row"><div class="nv_title">RC2 Key</div><div class="ptc_icon"></div><div class="dv_input"><input type="password" value="'+ (@default ? def_val : "********************") +'" class="rc2_key"/></div><div class="nv_multi_line"><div class="nv_rc2keycrc">'+session[:rc2keycrc]+'</div><div class="nv_error"></div></div></div>'
+
+	elements += '<div class="nv_row"><div class="nv_title">RC2 Key Confirmation </div><div class="ptc_icon"></div><div class="dv_input"><input type="password" value="'+ (@default ? def_val : "********************") +'" class="rc2_key"/></div><div class="nv_error"></div></div>'
+end
+%><%=elements%>

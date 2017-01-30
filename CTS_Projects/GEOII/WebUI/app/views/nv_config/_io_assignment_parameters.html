@@ -1,0 +1,15 @@
+ <% if @io_template_options && @io_template_options != "error" %>
+	<div class="nv_row">
+		<div class="nv_title">Template</div>
+		<div class="ptc_icon"></div>
+		<div class="dv_input">
+			<select class="template_select">
+				<option>Please Select a Template</option>
+				<%=@io_template_options%>
+			</select>
+		</div>
+		<div class="is_default"></div>
+		<div class="nv_error"></div>
+	</div>
+<% end %>
+<%=render :partial=> "parameters"%>

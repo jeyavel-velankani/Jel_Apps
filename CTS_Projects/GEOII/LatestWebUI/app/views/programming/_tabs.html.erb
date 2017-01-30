@@ -1,0 +1,21 @@
+<table class='programming_tabs' cellspacing='0' border='0'>
+    <tbody>
+        <tr>
+        	<% @page.tabs.each_with_index do |tab, index| %>	
+				<% if eval_expression(tab.show) && tab.mcfcrc == Gwe.mcfcrc %>           
+				    <td cardnumber='<%= index + 1 %>' page_type='programming' page_name='<%= tab.link %>' class='leftnav contenttab track_menu_link contenttabU <%= eval_expression(tab.enable) ? "enable" : "disable programming_disable" %>' width="95" style='background-image: url(images/Tab.png); height: 32px;'>
+		                <span><%= tab.name %></span>
+		            </td>            
+				<% end %>
+			<% end %>
+			<td class='spinner'><%= image_tag("/images/large-loading.gif", :border => '0') %></td>
+		</tr>
+    </tbody>
+</table>
+
+<style type="text/css">
+	.spinner {
+	    padding-left: 10px;
+	    display: none;
+	}
+</style>

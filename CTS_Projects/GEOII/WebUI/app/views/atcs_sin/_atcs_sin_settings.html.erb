@@ -1,0 +1,75 @@
+<!-- ####################################################################
+# Company: Siemens 
+# Author: Vijay Anand G
+# File: _atcs_sin_settings.html.erb
+# Description: This view is used to display the sin setting fields(SIN, Pending).
+#################################################################### -->
+<%= "<div style='padding:5px'>#{@err_msg}</div>" if @err_msg %>
+<% if @geo_non_am.blank? && !@geo_non_am %>
+<div class='contentactionbar contentsmallbarwidth'>
+    <div style='contentbarwidth'>
+        <div class='contentactionbuttonlabel contentactionbuttonlabelI' style='float: left;'>
+            <% if !session[:cur_geo_atcs_addr].blank? %>
+     	       <%= link_to(image_tag("/images/unlock.png", :id => "geo_unlock_parameters_button_atcs_sin"), "javascript:void(0);", 
+					:title => "Unlock Parameters - Edit mode", :class => "geo_unlock_parameters_atcs_sin") %>
+            <% else %>
+        	    <%= image_submit_tag '/images/unlock.png',:title => "Unlock Parameters - Edit mode", :name => "submit", :value => "unlock", :ui_command=> "1" ,:style=>"padding-left:18px;",:onclick => "start_set_edit_mode_request()", :before => "setConfirmUnload(false);",:disabled => disable_parameter_update() %>
+            <% end %>
+        </div>        
+    </div>
+</div>
+<% end %>
+<div>&nbsp;</div>
+<div>
+	<% if params[:unlock_parameters_clicked]%>
+		<% if @editmode%>
+			<div id="userpresence_mesg" class="mcf_successmesg"><%= I18n.t("successfully_unlocked_parameters")%></div>
+		<% else %>
+			<div id="userpresence_mesg" class="mcf_errormesg"><%= I18n.t("unlock_parameters_failed")%></div>
+		<% end %>
+	<% end %>
+    <% form_tag("/atcs_sin/sin_update", :class => "sin_update", :id => "sin_id") do %>
+    <%= hidden_field_tag 'request_id', @set_atcs_sin_rq.request_id %>
+    <%= hidden_field_tag 'savedcontent' %>
+    <div class="message" id="status_message"></div>
+    <div class="text_fields">
+        <div class="label_text_field_sin contentCSPlabel">
+           <%if PRODUCT_TYPE == PRODUCT_TYPE_GCP_WEBUI %>
+           		SIN
+           <%else%>
+           		<% if @geo_non_am %>
+			     SIN
+	           <% else %>
+			     <%= image_tag('ProtectedMethods.gif') %>SIN
+			   <% end %>
+           <%end%>
+            	
+		</div>
+        <div>
+           <% if @geo_non_am %>
+		   		<%= text_field_tag 'sin', sin, :class => "text_sin required sin linkcontent_text", :onKeyUp => "sin_validation($(this).val())" %>
+		   <% elsif @editmode%>	
+		   		<%= text_field_tag 'sin', sin, :class => "text_sin required sin linkcontent_text", :onKeyUp => "sin_validation($(this).val())" %>
+		   <% else %>
+           		<%= text_field_tag 'sin', sin, :class => "text_sin required sin linkcontent_text", :onKeyUp => "sin_validation($(this).val())", :disabled => false %>
+		   <% end %>
+		   		<span id="sin_erro_msg" style="padding-left:0px" class="error_message"></span>
+        </div>
+    </div>
+		<% unless @get_pending_value.nil? %>
+	    <div class="text_fields">
+	        <div class="label_text_field_sin">
+	            <%= image_tag('ProtectedMethods.gif') %> Pending 
+	        </div>
+	        <div class="linkcontent_right">
+	            <%#= text_field_tag 'pending', pending, :class => "text_sin", :disabled => @editmode == 1 ? false : true %>
+				<%= text_field_tag 'pending', pending, :class => "linkcontentlabel text_sin linkcontent_text", :disabled => 'disabled' %>
+	        </div>
+	    </div>
+	    <% end %>
+	    <div id = "submit_button" class="text_fields">
+	        <div class="label_text_field_loc linkcontentlabel">&nbsp;</div>
+	        <div class="text_field"><%= image_submit_tag "/images/accept.png" %></div>
+	    </div>
+    <% end %>
+</div>

@@ -1,0 +1,18 @@
+<% isi_codes = pso_island_control(channel_parameters, channel_index, 3, card_index, mcfcrc, atcs_address) %>
+<div class="outer_box" style="background-color: <%= isi_codes['health'] %>">
+	<table cellspacing=0 cellpadding=0 class="channel_table">
+        <tr>
+            <td class="pso_island_status" id="island">
+            	ISL
+            </td>
+            <td class='no_border_led'>
+            	<%= isi_codes["modulation_code"] %>
+            </td>
+        </tr>
+		<% if isi_codes["cal_required"] %>
+			<tr>
+				<td><%= isi_codes["cal_required"] %></td>
+			</tr>
+		<% end %>
+    </table>
+</div>	

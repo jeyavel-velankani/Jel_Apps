@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag "softwareupdate.css" %>
+<%= javascript_include_tag 'toolbar', 'jquery.form.js','maintenance' %>
+<div id="software_update_content">
+	<%= GenericHelper.toolbar({'unlock_required' => 'unlock.png','update_ecd_cic' => 'clear.png'},'unlock_required')%>
+	<div id='status_message' class="padding_top_2 status_message"></div>
+	<% if @userpresence_permission.to_s == 'true' %>
+	  	<input type="hidden" id="user_presence" value='1'/>
+	<% else %>
+	  	<input type="hidden" id="user_presence" value='0'/>
+	<% end %>
+	<input type="hidden" id="clear_type" value="<%=@type%>"/>
+
+	<div class="space"></div>
+
+	<div id="progressbar"></div>
+	<div id='display_process_status'>
+		<div class="space"></div>
+		<div class="display_progressbar_val_wrapper">
+		 	<span class="display_progressbar_val text_font text_white" id="display_progressbar_val"></span>
+		</div>
+		<div id="display_progressbar_image"><%= image_tag("progressbar.gif")%></div>
+		<div id="display_progressbar" class="display_progressbar"> </div>
+	</div>
+	<div id="progress_without_percentage" class="progress_without_percentage" >
+	    <span class="message_without_percentage text_font text_white" ></span><%= image_tag("progressbar.gif")%>
+	</div>
+</div>

@@ -1,0 +1,29 @@
+<!-- ####################################################################
+# Company: Siemens 
+# Author: Vijay Anand G
+# File: _set_UCN.html.erb
+# Description: This view is used to display the UCN field. 
+#################################################################### -->
+<form action='/ucn/set_ucn/' class='set_ucn' id="ucn" >
+	<input type='hidden' value="<%= GenericHelper.check_user_presence%>" class='user_presence'>
+	<div class="v_row">
+		<div class="v_title">UCN</div>
+		<div class="dv_input">
+			<%= text_field "ucn", 'ucn', :maxlength => 8, :value => @ucn %>
+		</div>
+		<div class="v_error"></div>
+	</div>
+	<%
+	 if Generalststistics.isPTC?
+	 	concat '<div class="v_row">'
+		 	concat '<div class="v_title">PTC UCN</div>'
+		 	concat '<div class="dv_input">'
+		 		concat text_field "ptc_ucn", 'ptc_ucn', :maxlength => 8, :value => @ptcucn
+		 	concat '</div>'
+		 	concat '<div class="v_error"></div>'
+	 	concat '</div>'
+	 end
+	%>
+</form>
+
+

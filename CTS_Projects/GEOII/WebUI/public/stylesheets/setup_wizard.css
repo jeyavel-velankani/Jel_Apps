@@ -1,0 +1,48 @@
+.leftnavtree {
+		font-size: 12px !important;
+	}
+			
+	.page_content{
+		color:#fff;
+		float:right;
+		border-left:1px solid #f2f2f2;
+		height:500px;
+		width:69%;		
+	}	
+	.navigation_buttons{
+ 		color:#fff;
+		border:1px solid #787878;
+		border-left:none;
+		border-bottom:none;
+		height:55px;width:104%;
+		border-right:0px;		
+	}
+	.setup_wizard_menu{
+		color:#f2f2f2;
+		float:left;
+		height:656px;
+		width:250px;
+		padding-bottom:10px;
+		background-color:#363636 !important;
+		border-right:1px solid #787878;	
+	}
+	.setup_wizard_overview {
+		color:#f2f2f2;
+		font-size:13px;
+		font-weight:bold;
+		text-align:center;
+		padding:10px 0;
+	}
+	.template_lable {
+		font-family: Arial; font-size: 12px; 
+		font-style: normal; 
+		text-decoration: none; color: #C3CF21;
+		padding:2px 10px;
+		cursor:pointer;
+	}
+	.disable {
+		-moz-opacity: 0.4;
+		opacity:0.4;
+		filter: alpha(opacity=40);
+	    cursor: default !important;
+	}

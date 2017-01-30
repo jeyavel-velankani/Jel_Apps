@@ -1,0 +1,34 @@
+<div id="loading_ccn_occn" style="display:none" class="loading_ccn_occn" >
+    <%= image_tag("ajax-loader.gif")%>
+</div>
+<div id="display_ccn_occn_values" style="color:#F2F2F2;font-weight:bold"></div>
+<script type="text/javascript">
+jQuery(document).ready(function() {
+	document.getElementById('loading_ccn_occn').style.display = 'block';
+	$('#display_ccn_occn_values').html("<div style='font:'Arial';font-size:14px;'>Generating OCCN and CCN Please Wait...")
+	$.post("/gcp_programming/calculate_ccn_and_occn", {
+		 // no params
+		 }, function(response){
+			var request_id_val = response.request_id;
+		 	var get_ccn_and_occn_request_status_timer = setInterval(function(){
+		 		$.post("/gcp_programming/ccn_and_occn_request_status", {
+					request_id :request_id_val
+				 }, function(response_ccn_and_occn_request){
+					 	if(response_ccn_and_occn_request.request_state == '2'){
+						 	$.post("/gcp_programming/read_ccn_and_occn", {
+							//no params
+							}, function(response_read_ccn_occn){
+								clearInterval(get_ccn_and_occn_request_status_timer);
+								document.getElementById('loading_ccn_occn').style.display = 'none';
+							 	$('#display_ccn_occn_values').html('');
+								var display_text = "<div style='padding-left:15px;'><BR>&nbsp;&nbsp;<div>OCCN = "+response_read_ccn_occn.occn+"</div><BR><div>CCN = "+response_read_ccn_occn.ccn+"</div></div>"
+								$('#display_ccn_occn_values').html(display_text);
+								// Clean up request
+								$.post("/gcp_programming/cleanup_simplerequest", {request_id: request_id_val}, function(response){});
+							});
+					 	}
+			 	});
+		 	},3000);
+	});
+});
+</script>

@@ -1,0 +1,14 @@
+<div class="outer_box" style="padding-top:3px; padding-bottom:3px;">
+	<% hpo_codes = get_hpo_parameters(channel_parameters, channel_index, "HPO", 3) %>
+	
+	<table cellspacing=0 cellpadding=0 class="channel_table">
+        <tr>
+            <td class='no_border_led' id="channel_status_image">
+            	<span style='padding-right:3px;'><%= hpo_codes['image'] %></span>
+            </td>
+            <td class='no_border_led'>
+                <%= hpo_codes["status"] %>
+            </td>
+        </tr>
+    </table>
+</div>	

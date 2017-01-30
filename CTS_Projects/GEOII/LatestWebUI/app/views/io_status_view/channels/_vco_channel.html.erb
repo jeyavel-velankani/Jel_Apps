@@ -1,0 +1,42 @@
+<div class="status_data">
+    <div class="outer_box" style='margin:0;border-bottom: none;'>
+        <% track_parameters = get_track_parameters(channel_parameters, "4.VCO", channel_index) %>
+        <% parameters = get_track_current_and_voltage(card_type, channel_parameters, card_index) %>
+        <div id="titles" class="title">
+            <span><%= channel_name.blank? ? (card_type && card_type == 1 ? "VCO" : "VTI") : channel_name %></span>
+        </div>
+        <div>
+            <span id="titles" style='padding-left:8px;'>Tx</span>
+            <span id="titles" class="sub_title"><%= get_tx_track_fail_parameter(channel_parameters, "3.VTI", channel_index) %>
+            </span>
+        </div>
+        <table cellspacing=0 cellpadding=0 id="coded_track_vars">
+            <tr>
+                <td id="coded_track_table_data" class='nobackground_table'>
+                    <%= track_parameters[:track1] %>
+                </td>
+                <td id="coded_track_table_data" class='nobackground_table'>
+                    <%= track_parameters[:track2] %>
+                </td>
+            </tr>
+            <tr>
+                <td id="coded_track_table_data" class='nobackground_table'>
+                    <%= track_parameters[:track3] %>
+                </td>
+                <td id="coded_track_table_data" class='nobackground_table'>
+                    <%= track_parameters[:track4] %>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2 id="coded_track_table_data" class='nobackground_table'>
+                    <%= parameters["current"] %>
+                </td>
+            </tr>
+            <tr>
+                <td colspan=2 id="coded_track_table_data" class='nobackground_table'>
+                    <%= parameters["voltage"] %>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

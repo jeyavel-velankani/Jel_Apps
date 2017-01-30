@@ -1,0 +1,28 @@
+<%= javascript_include_tag 'configuration_editor_popup' %>
+<div class="saveas_content_area">	
+	<% unless @root_entries.blank? %>
+		<div class='selected_folder mcf_file_margin_5'>
+			<span class='loader saveas_open_loader'><%= image_tag("/images/ajax-loader_white.gif") %></span>
+			<div class="padding_left_10 text_font"><label>Select Product : </label></div>
+			<div class="clear"></div>
+			<div class="padding_left_10"><%=select_tag("selected_product","<option selected=\"selected\">Select</option><option>IVIU PTC GEO</option><option>IVIU</option><option>VIU</option><option>GEO</option><option>GCP</option><option>GEO CPU3</option>",:onchange => "change_product_type();",:class=>"contentCSPselOpen" ,:disabled =>false)%></div>
+			<div class="padding_left_10 text_font"><label>Select Site : </label></div>
+			<div class="clear"></div>
+			<div class="padding_left_10"><%=select_tag("selected_folder", "<option  selected=\"selected\">Select</option>",:class=>"contentCSPselOpen" ,:disabled =>false)%></div>
+		</div>		
+		<div style="clear:both; padding-top:20px;"></div>
+		<div class="padding_left_10 mcf_file_margin_5">
+		    <button class='open_configuration button_width_90 text_font'>Ok</button>
+			<button class='cancel_button button_width_90 text_font'>Cancel</button>
+		</div>
+	<%else%>
+		<div class="error_message">There is no site configuration available, Please configure new site</div>
+	<% end %>
+	<input type="hidden" id="hd_root_directory" value="<%= @root_directory%>" />
+	<input type="hidden" id="hd_iviu_ptc_geo" value="<%= @iviu_ptc_geo%>" />
+	<input type="hidden" id="hd_iviu" value="<%= @iviu%>" />
+	<input type="hidden" id="hd_viu" value="<%= @viu%>" />
+	<input type="hidden" id="hd_geo" value="<%= @geo%>" />
+	<input type="hidden" id="hd_gcp" value="<%= @gcp%>" />
+	<input type="hidden" id="hd_geo_cpu3" value="<%= @geo_cpu3%>" />
+</div>

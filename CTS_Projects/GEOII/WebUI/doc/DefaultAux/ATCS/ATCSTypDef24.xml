@@ -1,0 +1,4041 @@
+<TypeDefinitions>
+
+	<TypeDef name="Date">
+		<Fields>
+			<Field>
+				<Name>Year</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Month</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Day</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="Time">
+		<Fields>
+			<Field>
+				<Name>Hours</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Minutes</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Seconds</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Hundredths</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="DateTime">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="Date"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="Time"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SlotCardStatus">
+		<Fields>
+			<Field>
+				<Name>Status</Name>
+				<Type name="INTEGER">
+					<BitFields>
+						<BitField>
+							<Name>SlotStatus</Name>
+							<Mask>1</Mask>
+						</BitField>
+						<BitField>
+							<Name>CardStatus</Name>
+							<Mask>2</Mask>
+						</BitField>
+					</BitFields>
+				</Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SlotConfiguration">
+		<Fields>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="SlotCardStatus"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="IOCardStatus">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="SlotCardStatus"></Type>
+			</Field>
+			<Field>
+				<Name>LastPCIStatusBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+			<Field>
+				<Name>LastPCICommandBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="WatchedLogicState">
+		<Fields>
+			<Field>
+				<Name>LogicStateNumber</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>WatchType</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NVConfigLogicState">
+		<Fields>
+			<Field>
+				<Name>LogicStateNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Value</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Description</Name>
+				<Type name="STRING"><Size>3</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+
+	<TypeDef name="CPUVersionRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUVersionRequest2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUVersionRequest3">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+        <TypeDef name="CPUVersionRequest5">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUVersionReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>ModuleType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFVersion</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFMCFCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFHWCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>InOutServiceCheckNumber</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFName</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFLocation</Name>
+				<Type name="STRING"><Size>32</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUVersionReply2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>ModuleType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFVersion</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFMCFCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFHWCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>InOutServiceCheckNumber</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFName</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFLocation</Name>
+				<Type name="STRING"><Size>32</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFCRC</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFRevision</Name>
+				<Type name="STRING"><Size>3</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUVersionReply3">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>ModuleType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFVersion</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFMCFCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFHWCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>InOutServiceCheckNumber</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFName</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFLocation</Name>
+				<Type name="STRING"><Size>32</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFCRC</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFRevision</Name>
+				<Type name="STRING"><Size>3</Size></Type>
+			</Field>
+			<Field>
+				<Name>ConfigurationCheckWord</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+        <TypeDef name="CPUVersionReply5">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>ModuleType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFVersion</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFMCFCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MEFHWCI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>InOutServiceCheckNumber</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFName</Name>
+				<Type name="STRING"><Size>30</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFLocation</Name>
+				<Type name="STRING"><Size>32</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFCRC</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFRevision</Name>
+				<Type name="STRING"><Size>3</Size></Type>
+			</Field>
+			<Field>
+				<Name>ConfigurationCheckWord</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+	<TypeDef name="ResetCommStatistics">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Type</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CommStatusRequest2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Type</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CommStatusReply2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Type</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="DateTime"></Type>
+			</Field>
+			<Field>
+				<Name>StatisticVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfWords</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Statistics</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="GEOMCFRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFSectionType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="GEOMCFReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>MCFSectionType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFSection</Name>
+				<Type name="BINARYDYNAMIC"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="EventHistoryRequest1">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Type</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfEvents</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="EventHistoryRequest2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Type</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfEvents</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EventLog</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Format</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Position</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Slot</Name>
+				<Type name="INTEGER"></Type>
+			</Field>		</Fields>
+	</TypeDef>
+
+	<TypeDef name="EventHistoryRequest3">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Type</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfEvents</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EventLog</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Format</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Position</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Slot</Name>
+				<Type name="INTEGER"></Type>
+			</Field>		</Fields>
+	</TypeDef>
+
+	<TypeDef name="EventHistoryRequest4">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Type</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfEvents</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EventLog</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Format</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Position</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Slot</Name>
+				<Type name="INTEGER"></Type>
+			</Field>		</Fields>
+	</TypeDef>
+
+	<TypeDef name="EventHistoryReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EventText</Name>
+				<Type name="STRING"><Size>80</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="EventHistoryReply4">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SequenceNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EventText</Name>
+				<Type name="STRING"><Size>80</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="EventHistoryBinaryReply4">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfEvents</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Status</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EventData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ClearEventHistory1">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ClearEventHistory2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EventLog</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ClearEventHistory3">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EventLog</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ReconfigureRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardStatusRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardStatusReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlotCardStatus</Name>
+				<Type name="INTEGER"></Type>
+				<BitFields>
+					<BitField>
+						<Name>SlotStatus</Name>
+						<Mask>1</Mask>
+					</BitField>
+					<BitField>
+						<Name>CardStatus</Name>
+						<Mask>2</Mask>
+					</BitField>
+				</BitFields>
+			</Field>
+			<Field>
+				<Name>LastCardError</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardSWVersion</Name>
+				<Type name="STRING"><Size>9</Size></Type>
+			</Field>
+			<Field>
+				<Name>PCIConfigBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+			<Field>
+				<Name>LastPCIStatusBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+			<Field>
+				<Name>LastPCICommandBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LogicStatesRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>StartLogicState</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EndLogicState</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LogicStatesReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>StartLogicState</Name>
+				<Type name = "INTEGER"><Size>2</Size></Type>
+			</Field>			
+			<Field>
+				<Name>EndLogicState</Name>
+				<Type name = "INTEGER"><Size>2</Size></Type>	
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="LogicStates" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LogicStates">
+		<Fields>
+			<Field>
+				<Name>LS</Name>
+				<Type name = "BIT"></Type>
+			</Field>
+		</Fields>	
+	</TypeDef>
+
+	<TypeDef name="CPUStatusRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUStatusReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SystemState</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>VerbosityLevel</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SIN</Name>
+				<Type name="BINARYSTATIC"><Size>6</Size></Type>
+			</Field>
+			<Field>
+				<Name>BatteryVoltage12V</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>BatteryVoltage5V</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SerialUpdateStatus</Name>
+				<Type name="INTEGER"></Type>
+				<BitFields>
+					<BitField>
+						<Name>PCI</Name>
+						<Mask>1</Mask>
+					</BitField>
+					<BitField>
+						<Name>EventLog</Name>
+						<Mask>2</Mask>
+					</BitField>
+				</BitFields>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ConfigurationRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ConfigurationReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>ModuleType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SIN</Name>
+				<Type name="BINARYSTATIC"><Size>6</Size></Type>
+			</Field>
+			<Field>
+				<Name>SystemState</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfSlots</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="SlotConfiguration" array="9"></Type>
+			</Field>
+			<Field>
+				<Name>MCFLocation</Name>
+				<Type name="STRING"><Size>32</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="IOCardStatusRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="IOCardStatusReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="IOCardStatus" array="1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="IOStatusRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="IOStatusReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="IOCardStatus" array="8"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetWatchedStates">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="WatchedLogicState" array="10"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="WatchedStatesRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="WatchedStatesReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="DateTime"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="WatchedLogicStateStatus" array="10"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ResetWatchedLogicStates">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="PCICommandMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>PCICommandBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="PCIStatusMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>PCIStatusBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetPCIConfigData">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SlotNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>PCIConfigBytes</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetSerialEventUpdate">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Update</Name>
+				<Type name="INTEGER">
+					<BitFields>
+						<BitField>
+							<Name>IOStatus</Name>
+							<Mask>1</Mask>
+						</BitField>
+						<BitField>
+							<Name>EventLog</Name>
+							<Mask>2</Mask>
+						</BitField>
+					</BitFields>
+				</Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NVConfigLogicStatesRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NVConfigLogicStatesReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfUsedNVConfigLogicStates</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="NVConfigLogicState" array="8"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetNVConfigLogicStates">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfUsedNVConfigLogicStates</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="NVConfigLogicState" array="8"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetVerbosityLevel">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>VerbosityLevel</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Slot</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LogExternalData1">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Text</Name>
+				<Type name="STRING"><Size>56</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LogExternalData2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Text</Name>
+				<Type name="STRING"><Size>56</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="AuxiliaryFileRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FileSource</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FillerByte</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Key</Name>
+				<Type name="STRING"><Size>16</Size></Type>
+			</Field>
+			<Field>
+				<Name>FileCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="AuxiliaryFileReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FileSource</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FileStatus</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Key</Name>
+				<Type name="STRING"><Size>16</Size></Type>
+			</Field>
+			<Field>
+				<Name>FileCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>FileData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+	<TypeDef name="AuxiliaryFileCRCRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FileSource</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+	<TypeDef name="AuxiliaryFileCRCReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FileSource</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfCRC</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FillerByte</Name>
+				<Type name="INTEGER"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>FileCRCs</Name>
+				<Type name="FileCRCArray" array="-1"></Type>
+
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+	<TypeDef name="FileCRCArray">
+		<Fields>
+			<Field>
+				<Name>FileCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="RebootMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+
+		</Fields>
+	</TypeDef>
+
+
+	<TypeDef name="SystemConsistRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SystemConsistRequest2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="MCFCardInformation">
+		<Fields>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="MCFCardInformation2">
+		<Fields>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardUsed</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SystemConsistReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EquipmentType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfSlots</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfCardsInMCF</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CPUCardID</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="MCFCardInformation" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SystemConsistReply2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EquipmentType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfSlots</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfCardsInMCF</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CPUCardID</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="MCFCardInformation2" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardInformationRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardInformationRequest2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIOCardInformation">
+		<Fields>
+			<Field>
+				<Name>Card</Name>
+				<Type name="CardInformation"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIOCardInformation2">
+		<Fields>
+			<Field>
+				<Name>Card</Name>
+				<Type name="VIOCardInformationEx"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardInformation">
+		<Fields>
+			<Field>
+				<Name>CommunicationStatus</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndexVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardData</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIOCardInformationEx">
+		<Fields>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CommunicationStatus</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndexVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardData</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardInformation2">
+		<Fields>
+			<Field>
+				<Name>CommunicationStatus</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndexVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfBytes</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>CardData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardSettings">
+		<Fields>
+			<Field>
+				<Name>SWVersion</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>SWIdNumber</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Verbosity</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Unused</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardSettings2">
+		<Fields>
+			<Field>
+				<Name>Verbosity</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SWVersion</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfIDs</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>IDRecords</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="IDRecords">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="IDRecord" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="IDRecord">
+		<Fields>
+			<Field>
+				<Name>SWIdNumber</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+			<Field>
+				<Name>MEFCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardInformationReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="CardInformation" array="1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CardInformationReply2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="CardInformation2"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="GEOPCIChangeMsg">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardData</Name>
+				<Type name="BINARYDYNAMIC"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="GEOPCIChangeMsg2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardData</Name>
+				<Type name="BINARYDYNAMIC"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NewUCNRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="UCNConfiguration">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UCNData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="UCNConfiguration2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UCNData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetNewUCN1">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>UCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetNewUCN2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>FillerByte</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Subcommand</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>DataKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>VitalData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGRequest">
+		<Fields>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CompatibilityIndexVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGData">
+		<Fields>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+			<Field>
+				<Name>Key</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGUpdate">
+		<Fields>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGChanges">
+		<Fields>
+			<Field>
+				<Name>Chars</Name>
+				<Type name="BINARYDYNAMIC"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGConfirm">
+		<Fields>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGConfirmResponse">
+		<Fields>
+			<Field>
+				<Name>Confirmed</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGChecksum">
+		<Fields>
+			<Field>
+				<Name>Checksum</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VitalCFGChecksumResponse">
+		<Fields>
+			<Field>
+				<Name>ChecksumCorrect</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NVitalCFGMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Subcommand</Name>
+				<Type name="INTEGER"></Type>
+			</Field>			<Field>
+				<Name>DataKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>VitalData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NVitalCFGData">
+		<Fields>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="NVitalCFGUpdate">
+		<Fields>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TimeRequest">
+		<Fields>
+			<Field>
+				<Name>Destination</Name>
+				<Type name="BINARYSTATIC"><Size>8</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetTime">
+		<Fields>
+			<Field>
+				<Name>Seconds</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Minutes</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Hours</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Day</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Month</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Year</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SafetranReset">
+		<Fields>
+			<Field>
+				<Name>Slot</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIODataRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIODataReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="VIOCardInformation" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIODataRequest2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIODataReply2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>InformationType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="VIOCardInformation2" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIOData">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="VIOCardData" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VIOCardData">
+		<Fields>
+			<Field>
+				<Name>Card</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+	<TypeDef name="DiagnosticDataRequest">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="DiagnosticDataReply">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DiagnosticData</Name>
+				<Type name="BINARYSTATIC"><Size>48</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CMSVitalSessionEmulationDataUpdate">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NGWEAddress</Name>
+				<Type name="BINARYSTATIC"><Size>7</Size></Type>
+			</Field>
+			<Field>
+				<Name>Filler</Name>
+				<Type name="INTEGER"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>SessionStatus</Name>
+				<Type name="INTEGER"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfChannels</Name>
+				<Type name="INTEGER"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>MessageBits</Name>
+				<Type name="GeoMsg"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="GeoMsg">
+		<Fields>
+			<Field>
+				<Name>LR</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>LG</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>PR</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>PG</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>FR</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>FG</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>AT</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>RT</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>ST</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T1W</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T2W</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T1</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T2</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T1A</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T2A</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T1D</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T2D</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_AT</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_RT</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_ST</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T1W</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T2W</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T1</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T2</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T1A</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T2A</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T1D</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T2D</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>AE</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>RE</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>SE</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T1E</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>T2E</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_AE</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_RE</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_SE</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T1E</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_T2E</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>AR</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>AG</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>SR</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>LK</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>DS</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>DST</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_DS</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>_DST</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>XR</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>XG</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>XL</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>RC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>BO</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>lrcls</Name>
+				<Type name="BIT"><Size>6</Size></Type>
+			</Field>
+			<Field>
+				<Name>lgcls</Name>
+				<Type name="BIT"><Size>6</Size></Type>
+			</Field>
+			<Field>
+				<Name>aspect</Name>
+				<Type name="BIT"><Size>16</Size></Type>
+			</Field>
+			<Field>
+				<Name>SA</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>rsig</Name>
+				<Type name="BIT"><Size>16</Size></Type>
+			</Field>
+			<Field>
+				<Name>FM</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>TK</Name>
+				<Type name="BIT"><Size>8</Size></Type>
+			</Field>
+			<Field>
+				<Name>CTK</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>STK</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>DTK</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>HEC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>BAC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>code</Name>
+				<Type name="BIT"><Size>10</Size></Type>
+			</Field>
+			<Field>
+				<Name>HR</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>RP</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>NRP</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>CB</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>CBOS</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>cab</Name>
+				<Type name="BIT"><Size>5</Size></Type>
+			</Field>
+			<Field>
+				<Name>prcls</Name>
+				<Type name="BIT"><Size>5</Size></Type>
+			</Field>
+			<Field>
+				<Name>XC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>NXC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>LO</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>ALM</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>ALC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>DAM</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>DAC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>DIV</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>C5OPT</Name>
+				<Type name="BIT"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NOC</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>ALF</Name>
+				<Type name="BIT"/>
+			</Field>
+			<Field>
+				<Name>ALO</Name>
+				<Type name="BIT"/>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="PasswordMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Password</Name>
+				<Type name="STRING"><Size>16</Size></Type>
+			</Field>
+
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="RouteDefinitionMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Filler</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfEntries</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Type2Address</Name>
+				<Type name="RouteDefinition"></Type>
+			</Field>
+			<Field>
+				<Name>DifferentLine</Name>
+				<Type name="RouteDefinition"></Type>
+			</Field>
+			<Field>
+				<Name>SameLine</Name>
+				<Type name="RouteDefinition"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="UsedGroupRouteDefinition"><Size>15</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="RouteDefinition">
+		<Fields>
+			<Field>
+				<Name>Route</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>LANSubnode</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="UsedGroupRouteDefinition">
+		<Fields>
+			<Field>
+				<Name>GGG</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SS</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Filler</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>RouteDefinition</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="DTSession">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SendUnsolicitedEvents">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>IOChanges</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Events</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>EventFormat</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SEARSession">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetCfgPropertyMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Subcommand</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>DataKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardNumber</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>PropertyIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CfgPropertyData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ViewPropertyRequest">
+		<Fields>
+			<Field>
+				<Name>CardType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlotDDIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>SlaveKind</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>PCI_CI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="UpdatePropertyRequest">
+		<Fields>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ViewPropertyReply">
+		<Fields>
+			<Field>
+				<Name>Key</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="UpdatePropertyReply">
+		<Fields>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="PropertyVerificationRequest">
+		<Fields>
+			<Field>
+				<Name>Data</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="PropertyVerificationReply">
+		<Fields>
+			<Field>
+				<Name>Confirmed</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>PropertyValue</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="UpdateUserIOReply">
+		<Fields>
+			<Field>
+				<Name>UpdateReceipt</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="VerifyCfgPropertyScreen">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>ScreenIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>VerifyCfgScreenData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="PropertyScreenVerifyData">
+		<Fields>
+			<Field>
+				<Name>ScreenCRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>HiddenParamsCount</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="HiddenParams" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="HiddenParam">
+		<Fields>
+			<Field>
+				<Name>ItemIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>	
+	</TypeDef>
+
+	<TypeDef name="PropertyScreenDataConfirmed">
+		<Fields>
+			<Field>
+				<Name>Confirmed</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TrainMoveHistory">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="TrainMoveHistoryEvent" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TrainMoveHistoryEvent">
+		<Fields>
+
+			<Field>
+				<Name>Event</Name>
+				<Type name="TrainMoveHistoryData"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TrainMoveHistoryData">
+		<Fields>
+			<Field>
+				<Name>PositionIndicator</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Hours</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Minutes</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Seconds</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Year</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Month</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Day</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>IslandID</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>XRID</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>DetectedSpeed</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>IslandSpeed</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>AverageSpeed</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>WarningTime</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Route</Name>
+				<Type name="BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TrainHistoryListItem">
+		<Fields>
+			<Field>
+				<Name></Name>
+				<Type name="TrainHistoryListItemData" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="TrainHistoryListItemData">
+		<Fields>
+			<Field>
+				<Name>TrackID</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Activation</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="SetDefaultMsg">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MCFType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>ScreenCount</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="ScreenIndices" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ScreenIndices">
+		<Fields>
+			<Field>
+				<Name>ScreenIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ExEzLimitsMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="ExEzLimitsMessageData"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ExEzLimitsMessageData">
+		<Fields>
+			<Field>
+				<Name>HighEzTime</Name>
+				<Type name="Time"></Type>
+			</Field>
+			<Field>
+				<Name>HighEzDate</Name>
+				<Type name="Date"></Type>
+			</Field>
+			<Field>
+				<Name>HighEzEz</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>HighEzEx</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>LowExTime</Name>
+				<Type name="Time"></Type>
+			</Field>
+			<Field>
+				<Name>LowExDate</Name>
+				<Type name="Date"></Type>
+			</Field>
+			<Field>
+				<Name>LowExEz</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>LowExEx</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+
+			<Field>
+				<Name>HighChkEzTime</Name>
+				<Type name="Time"></Type>
+			</Field>
+			<Field>
+				<Name>HighChkEzDate</Name>
+				<Type name="Date"></Type>
+			</Field>
+			<Field>
+				<Name>HighChkEzEz</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>HighChkEzEx</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+
+			<Field>
+				<Name>HighChkEzDeltaTime</Name>
+				<Type name="Time"></Type>
+			</Field>
+			<Field>
+				<Name>HighChkEzDeltaDate</Name>
+				<Type name="Date"></Type>
+			</Field>
+			<Field>
+				<Name>HighChkEzDeltaEz</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>HighChkEzDeltaEx</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="GCPStatisticsMsg">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CardIndex</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ExEzLimitsMessageTrackStatistics">
+		<Fields>
+			<Field>
+				<Name>CI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CIVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>LowEZ</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>FalsePredictions</Name>
+				<Type name="FalsePredictionsType"></Type>
+			</Field>
+			<Field>
+				<Name>PredictionCounts</Name>
+				<Type name="PredictionCountsType"></Type>
+			</Field>
+			<Field>
+				<Name>MinuteOfEzExLevel</Name>
+				<Type name="MinuteOfEzExLevelType"></Type>
+			</Field>
+			<Field>
+				<Name>ThrusUps</Name>
+				<Type name="ThrusType"></Type>
+			</Field>
+			<Field>
+				<Name>ThrusDowns</Name>
+				<Type name="ThrusType"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="FalsePredictionsType">
+		<Fields>
+			<Field>
+				<Name>PrimePrediction</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>PreemptPrediction</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>PrimeUAX</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>PreemptUAX</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>GCPError</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>IslError</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>OutOfSession</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>IslOccupancy</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>And1Enable</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>AdvPreemptIP</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="PredictionCountsType">
+		<Fields>
+			<Field>
+				<Name>Prime</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DaxA</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DaxB</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DaxC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DaxD</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DaxE</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DaxF</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>DaxG</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Preempt</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="MinuteOfEzExLevelType">
+		<Fields>
+			<Field>
+				<Name>EZ115</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EZ110</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EZ80</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EZ39</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EZ44</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ThrusType">
+		<Fields>
+			<Field>
+				<Name>from0to10</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from10to20</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from20to30</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from30to40</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from40to50</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from50to60</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from60to70</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from70to80</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from80to90</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>from90to100</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ExEzLimitsMessageSysStatistics">
+		<Fields>
+			<Field>
+				<Name>CI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CIVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CPReboots</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>VLP2Reboots</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsMsg">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>DataType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsMsg2">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>DataType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsReply">
+		<Fields>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfBytes</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfCards</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>ConfigData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsSINReply">
+		<Fields>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfBytes</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SIN</Name>
+				<Type name="BINARYSTATIC"><Size>6</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsVerifyCRC">
+		<Fields>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsCRCVerification">
+		<Fields>
+			<Field>
+				<Name>CRCValid</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsError">
+		<Fields>
+			<Field>
+				<Name>Status</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsInProgress">
+		<Fields>
+			<Field>
+				<Name>Progress</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsDownloadSIN">
+		<Fields>
+			<Field>
+				<Name>CRCText</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfBytes</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>SIN</Name>
+				<Type name="BINARYSTATIC"><Size>6</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CfgSettingsDownload">
+		<Fields>
+			<Field>
+				<Name>CRCText</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>CRC</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfBytes</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfCards</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>ConfigData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LocationSettings">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CIVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>DOTNumber</Name>
+				<Type name="STRING"><Size>7</Size></Type>
+			</Field>
+			<Field>
+				<Name>MilepostNumber</Name>
+				<Type name="STRING"><Size>11</Size></Type>
+			</Field>
+			<Field>
+				<Name>SiteName</Name>
+				<Type name="STRING"><Size>25</Size></Type>
+			</Field>
+			<Field>
+				<Name>Filler1</Name>
+				<Type name="STRING"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>GCPLatitude</Name>
+				<Type name="LatLongType"></Type>
+			</Field>
+			<Field>
+				<Name>GCPLongitude</Name>
+				<Type name="LatLongType"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LatLongType">
+		<Fields>
+			<Field>
+				<Name>Degrees</Name>
+				<Type name="STRING"><Size>3</Size></Type>
+			</Field>
+			<Field>
+				<Name>Minutes</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Seconds</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Tenths</Name>
+				<Type name="STRING"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>Direction</Name>
+				<Type name="STRING"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>Filler1</Name>
+				<Type name="STRING"><Size>1</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="HWConfiguration">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="HWConfigurationReply"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="HWConfigurationReply">
+		<Fields>
+			<Field>
+				<Name>CI</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CIVersion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Filler1</Name>
+				<Type name="STRING"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="HWCfgData"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="HWCfgData">
+		<Fields>
+			<Field>
+				<Name>NumberOfCustomers</Name>
+				<Type name="INTEGER"><Size>1</Size></Type>
+			</Field>
+			<Field>
+				<Name>NumberOfRepairs</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>LatestRepair</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Manufacturing</Name>
+				<Type name="ManufacturingInfo"></Type>
+			</Field>
+			<Field>
+				<Name>LatestHWRevision</Name>
+				<Type name="STRING"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>Customer1</Name>
+				<Type name="CustomerInfo"></Type>
+			</Field>
+			<Field>
+				<Name>Customer2</Name>
+				<Type name="CustomerInfo"></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="FRRInfo" array="4"></Type>
+			</Field>
+			<Field>
+				<Name>Comments</Name>
+				<Type name="STRING"><Size>40</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="ManufacturingInfo">
+		<Fields>
+			<Field>
+				<Name>PartNumber</Name>
+				<Type name="STRING"><Size>16</Size></Type>
+			</Field>
+			<Field>
+				<Name>HWRevShipped</Name>
+				<Type name="STRING"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>SerialNumber</Name>
+				<Type name="STRING"><Size>6</Size></Type>
+			</Field>
+			<Field>
+				<Name>BuildDate</Name>
+				<Type name="STRING"><Size>10</Size></Type>
+			</Field>
+			<Field>
+				<Name>SWIDShipped</Name>
+				<Type name="STRING"><Size>12</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CustomerInfo">
+		<Fields>
+			<Field>
+				<Name>SalesOrderNumber</Name>
+				<Type name="STRING"><Size>8</Size></Type>
+			</Field>
+			<Field>
+				<Name>Customer</Name>
+				<Type name="STRING"><Size>6</Size></Type>
+			</Field>
+			<Field>
+				<Name>SafetyLevel</Name>
+				<Type name="STRING"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>WarrantyDate</Name>
+				<Type name="STRING"><Size>8</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="FRRInfo">
+		<Fields>
+			<Field>
+				<Name>FRRNumber</Name>
+				<Type name="STRING"><Size>8</Size></Type>
+			</Field>
+			<Field>
+				<Name>Date</Name>
+				<Type name="STRING"><Size>8</Size></Type>
+			</Field>
+			<Field>
+				<Name>Comment</Name>
+				<Type name="STRING"><Size>16</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+	<TypeDef name="GEOSafeModeMsg">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgType</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgData</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+
+	<TypeDef name="IntegerLogicStatesMsg">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Command</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>StartLSNo</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>EndLSNo</Name>
+				<Type name="INTEGER"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name></Name>
+				<Type name="LogicStatesData" array="-1"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="LogicStatesData">
+		<Fields>
+			<Field>
+				<Name>LS</Name>
+				<Type name = "BINARYDYNAMIC"></Type>
+			</Field>
+		</Fields>	
+	</TypeDef>
+	<TypeDef name="CPUCCNMessage">
+		<Fields>
+			<Field>
+				<Name>Manufacturer</Name>
+				<Type name="STRING"><Size>2</Size></Type>
+			</Field>
+			<Field>
+				<Name>Subversion</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>Cmd</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>MsgData</Name>
+				<Type name="BINARYVARIABLE"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+	
+	<TypeDef name="CPUCCNMessageReply">
+		<Fields>
+			<Field>
+				<Name>CurrentCCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>OCCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>CCNforOCCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>DateSetOCCN</Name>
+				<Type name="Date"></Type>
+			</Field>
+			<Field>
+				<Name>TimeSetOCCN</Name>
+				<Type name="Time"></Type>
+			</Field>
+			<Field>
+				<Name>UploadDataExists</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>UploadCCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>UploadOCCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>UploadDate</Name>
+				<Type name="Date"></Type>
+			</Field>
+			<Field>
+				<Name>UploadTime</Name>
+				<Type name="Time"></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUCCNMessageUpdateRequest">
+		<Fields>
+			<Field>
+				<Name>OCCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+			<Field>
+				<Name>CCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+	<TypeDef name="CPUCCNMessageUpdateReply">
+		<Fields>
+			<Field>
+				<Name>Confirm</Name>
+				<Type name="INTEGER"></Type>
+			</Field>
+			<Field>
+				<Name>CCN</Name>
+				<Type name="INTEGER"><Size>4</Size></Type>
+			</Field>
+		</Fields>
+	</TypeDef>
+
+</TypeDefinitions>

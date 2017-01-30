@@ -1,0 +1,29 @@
+<script type="text/javascript">
+	var nv_group_id  = <%=@group_id%>;
+	var nv_group_channel  = <%=@group_ch%>;
+	var atcs_sin_only = <%= (params[:atcs_address_only].blank?)? false:true %>
+	var OCE_MODE = <%=OCE_MODE%>;
+	var nv_page_type = 'generic';
+
+	set_content_deminsions(800,400)
+	
+	tabs = {}
+	<% if @tabs != nil %>
+		<% @tabs.each do |tab|%>
+			tabs[get_current_url().split('?')[0]+'?channel=<%=tab[:Group_Channel]%>'] = '<%=tab[:Group_Name]%>';
+		<% end %>
+	<% end %>
+	
+	//tabs = {'Test NV Config' : '/nv_config/','test 2' : '/test2/'};
+
+</script>
+<%=javascript_include_tag 'toolbar.js',"nv_config.js"%>
+<%= stylesheet_link_tag 'nv_config.css'%>
+
+<%= GenericHelper.toolbar({ 'unlock' => 'unlock.png', 'nv_save' => 'savemouseover.png', 'nv_refresh' => 'refresh_mouse_over.png', 'nv_default' => 'default.png'})%>
+<div class="nv_config_message_wrapper"><div class="nv_config_message"></div></div>
+<div class="nv_config_wrapper">
+	<div class="nv_config_generic_wrapper">
+		<%=render :partial=> "parameters"%>
+	</div>
+</div>

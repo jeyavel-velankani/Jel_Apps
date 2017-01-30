@@ -1,0 +1,64 @@
+<!--*********************************************************************************
+  File name    : _nonvital_atcs_statistics.html.erb
+
+  Description  : This view is used to display the Nonvital ATCS statistics fields(Card Id, Out Of Orde, Lost Sessions
+                 Indication Msgs Transmitted, Recall Msgs received and Control Msgs received). 
+
+  Project Name : iVIU - WebUI Project
+
+  Copyright    : Safetran Systems Corporation, U.S.A. 
+                     Research and Development
+
+  Author       : Cognizant Technology Solutions
+
+*********************************************************************************-->
+<div>
+<table cellspacing="0" cellpadding="0" width="100%" border="0" class="logtable" style="color:#454545">
+	<thead>                                       
+		<tr>
+			<th class="title" width="100" style="color:#CFD631;font-size:12px;">Card</font></th>
+		    <th class="title" width="100" style="color:#CFD631;font-size:12px;">Out Of Order</font></th>                                
+		    <th class="title" width="100" style="color:#CFD631;font-size:12px;">Lost Sessions</font></th>
+		    <th class="title" width="180" style="color:#CFD631;font-size:12px;">Indication Msgs Transmitted</font></th>
+			<th class="title" width="180" style="color:#CFD631;font-size:12px;">Recall Msgs received</font></th>
+		    <th class="title" width="180" style="color:#CFD631;font-size:12px;">Control Msgs received</font></th>                      
+		</tr>
+	</thead>
+	<tbody>
+	<%  records_found = true
+		unless @card_infos.blank?%>
+		<tr>
+			<td class="txtleft">&nbsp;</td>                                                                        
+			<td class="txtleft">&nbsp;</td>                                                                                     
+			<td class="txtleft">&nbsp;</td>                                                  
+			<td class="txtleft">&nbsp;</td>
+			<td class="txtleft">&nbsp;</td>                                                  
+			<td class="txtleft">&nbsp;</td>               
+		</tr>
+		<% counter = 1 %>
+		<% for cardinfo in @card_infos %>
+			<tr>
+			    <td class="txtleft"><%= counter %></td>
+			    <td class="txtleft"><%= cardinfo.out_of_order %></td>
+			    <td class="txtleft"><%= cardinfo.lost_sessions %></td>
+			    <td class="txtleft"><%= cardinfo.indication_msgs_transmitted %></td>
+				<td class="txtleft"><%= cardinfo.recall_msgs_recvd %></td>
+				<td class="txtleft"><%= cardinfo.control_msgs_recvd %></td>
+			</tr>
+			<% counter += 1 %>
+		<%end%>
+	<% else
+		records_found = false
+	   end %>
+	</tbody>
+</table>
+</div>
+<% if !records_found %>
+	<div class='contentCSPlabel' style="padding:50px; text-align:center;">No device data found.</div>
+<% end %>
+
+<%= hidden_field_tag 'request_id', request_id %>
+
+<script type="text/javascript">
+  	$('.logtable').flexigrid({height:'auto', striped:false});
+</script>

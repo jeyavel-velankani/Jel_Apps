@@ -1,0 +1,6 @@
+<div id="dialog" title="Cause/Remedy">
+  <div class="diag_content">
+    <%= @cause_remedy.cause_remedy.gsub(/\n/, "<br/>") %>
+  </div>
+</div>
+<script>$( "#dialog" ).dialog({position:[350,100]} );</script>

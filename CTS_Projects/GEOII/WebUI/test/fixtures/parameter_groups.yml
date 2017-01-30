@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  Id: 1
+  GroupName: MyString
+  GroupChannel: MyString
+  GroupSubChannel: MyString
+  GroupId: MyString
+
+two:
+  Id: 1
+  GroupName: MyString
+  GroupChannel: MyString
+  GroupSubChannel: MyString
+  GroupId: MyString

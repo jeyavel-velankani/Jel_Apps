@@ -1,0 +1,48 @@
+<% if @first_field && @first_field.isLocked  != nil
+    readonly_flag = @first_field.isLocked == 1 ? true : false
+
+    if readonly_flag
+      readonly_class = 'class="disabled_buttons" disabled locked="true"'
+      lock_img = image_tag("/images/green-lock.png", :alt => "locked", :style => "position: relative;top: 5px;left: 5px;")
+    else
+    	readonly_class = ""
+   		lock_img = ''
+    end
+else
+	readonly_class = ""
+    lock_img = ''
+end %>
+<div id = "div_right_panel" style="padding-left:10px; width: 100%">
+	<%= render 'recorder_action_panel'%> 
+	<div id="message_container">
+		<div id="error_explanation"></div>&nbsp;
+	</div>
+	
+	<div id="module_update" style="padding-left:10px; width: 100%">
+		<div class="input_channnel_<%=@channel_id%>"></div>
+		<%if @first_field%>	
+			<div class="serial_outer_io" id= 'algorithm_opt'>
+				<div class="serialleft_io contentCSPlabel text_type">
+					<%= label_tag @first_field.Name, nil, :id => 'first_field_id', :name => @first_field.ID%>
+				</div>
+				<div class="serialright_io text_type">
+					<select id="algorithm_option" name="algorithm[option]" style="width:190px;height:28px;" <%=readonly_class%>>
+						<%(@first_field_options).each do |option|%>
+						<%if @first_field.Selected_Value_ID.to_i == option.ID%> <option value='<%= option.ID%>' selected="selected"><%= option.Name%></option>
+						<%else%> <option value='<%= option.ID%>'><%= option.Name%></option>
+						<%end%>
+						<%end%>
+					</select><%=lock_img%>
+				</div>
+			</div>
+		<%end%>
+	</div>
+	
+	<input type="hidden" value="<%= @page_type%>" id="selected_page_type"/>
+	<%= render '/layouts/partials/form' %>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+	init_template(<%=@channel_id%>);
+});
+</script>

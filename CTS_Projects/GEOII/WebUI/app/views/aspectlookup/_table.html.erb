@@ -1,0 +1,85 @@
+<table cellspacing="0" cellpadding="0" width="500px" class="aspect_table_border" id="mytable">
+	<tr>
+		<th class="title width_220_title"><strong>GEO Aspect Name</strong></th>
+		<th class="title width_220_title"><strong>PTC Aspect Name</strong></th>
+		<th class="title empty_coloumn_width_30">&nbsp;</th>
+		<th class="title empty_coloumn_width_30">&nbsp;</th>
+	</tr>
+	<%counter = 1
+	  @txtfilepath = session[:aspectfilepath]
+	  begin
+		  file = File.new(@txtfilepath, "r")
+	      while (line = file.gets)
+	  			 result=[]
+		         @data = "#{line}"
+				 @count = "#{counter}"
+				 result = @data.split(", \"")
+                 if (result.length == 1)
+				 	result = @data.split(",\"")
+				 end
+				 restrim = []
+				 restrim = result[1].split("\"")
+	%>
+	<tr id='<%= @count%>' class='aspect_table_view <%= @count.to_s == @current_aspect.to_s ? "selected_aspect_element" : "" %>'>						
+	 	 <td <%= aspect_data_style(@count.to_s, @current_aspect.to_s) %>>
+	 	 	<%= text_field_tag "aspectvalGEO#{counter}", "#{result[0].strip}",:class=>"contentCSPsel",:readonly=>true %>
+		 </td>
+	     <td <%= aspect_data_style(@count.to_s, @current_aspect.to_s) %>>
+	     	<%= text_field_tag "aspectvalPTC#{counter}", "#{restrim[0].strip}",:class=>"contentCSPsel",:readonly=>true %>
+		 </td>
+ 	     <td <%= aspect_data_style(@count.to_s, @current_aspect.to_s) %>>
+	 		<%= link_to(image_tag('/images/add_edit_delete_edit.png'),"javascript: void(0);",:id=>"edit#{counter}", :onclick =>"editfield('#{counter}');", :border => 0 , :title => "Edit") %>
+		 </td>
+	     <td <%= aspect_data_style(@count.to_s, @current_aspect.to_s) %>>
+			<%= link_to(image_tag('/images/add_edit_delete_delete.png'),"javascript: void(0);",:id=>"delete#{counter}", :onclick =>"deletefield('#{counter}');", :border => 0, :title => "Delete")%>
+		 </td>									
+	</tr>
+	<%counter = counter + 1
+  	  end
+	  file.close
+	  rescue => err
+	     puts "Exception: #{err}"
+	     err
+	  end
+	%>					
+</table>
+<script type="text/javascript">
+$(document).ready(function(){
+	$('.aspect_table_view').mousedown(function(){
+		var next_element = prev_element = current_element = null;
+		var prevSelected = $('.selected_aspect_element').attr('id');
+	    $('.aspect_table_view').removeClass('selected_aspect_element');
+	    $(this).addClass('selected_aspect_element');			
+	    next_element = $(this).next().attr('id');
+	    prev_element = $(this).prev().attr('id');
+	    selected_element = $(this).attr('id');	
+		if ((prevSelected != null) && (prevSelected != "") && (prevSelected != undefined) && (prevSelected != selected_element)) {
+			var delfld = "delete" + prevSelected;
+			document.getElementById("aspectvalGEO" + prevSelected).style.background = "#444";
+			document.getElementById("aspectvalGEO" + prevSelected).style.color = "#fff";
+			document.getElementById("aspectvalPTC" + prevSelected).style.background = "#444";
+			document.getElementById("aspectvalPTC" + prevSelected).style.color = "#fff";
+			if ((document.getElementById(delfld).title == 'Cancel') || (document.getElementById(delfld).title == 'Remove')) {
+				deletefield(prevSelected);
+			}				
+		}
+	    $('.uparrow').css({
+	        "opacity": "1",
+	        "cursor": "pointer"
+	    });
+	    $('.downarrow').css({
+	        "opacity": "1",
+	        "cursor": "pointer"
+	    });
+	    $('.aspect_table_view td').css({
+	        "background-color": "#949494",
+	        "color": "#fff"
+	    });
+	    $(this).children().css({
+	        "background-color": "#CFD638",
+	        "color": "#000"
+	    });
+		format_ptc_data_style(prev_element, selected_element, next_element, prevSelected);
+	});
+});
+</script>

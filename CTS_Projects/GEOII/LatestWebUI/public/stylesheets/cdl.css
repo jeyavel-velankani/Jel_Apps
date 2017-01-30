@@ -1,0 +1,187 @@
+body{
+	background-color: #282828;
+}
+.cdl_wrapper{
+	width:935px;
+}
+/****************************** Download ******************************/
+.sizenw {
+	width:20px;
+	height:20px;
+}
+.sizetop {
+	width:25px;
+	height:25px;
+}
+#download_button{
+	cursor:pointer;
+	float:left;
+	position: relative;
+}
+.unordered_cdl_list{
+	display:none;
+	z-index: 1;
+}
+.unordered_cdl_list ul{
+	position: absolute;
+	border: 1px 1px 0px 1px solid black;
+	list-style-type: none; 
+	margin: 0px 3px;
+	padding: 0px;	
+}
+.unordered_cdl_list a
+{
+
+	background-color: #474747;
+	border-bottom: 1px solid black;
+	color: white;
+	display: block;
+	font-size: 14px
+	font-weight: bold;
+	padding: 0.2em 0.8em;
+	text-decoration: none;
+	text-indent: 5px;
+	width: 64px;
+}
+.unordered_cdl_list ul li a:hover
+{
+	background-color: #CFD638;
+	color: black;
+}
+
+/****************************** Content ******************************/
+.space{
+	clear:both; 
+	padding-top:5px;
+}
+#cdlfilename{
+	clear:both;
+	color:#FFFFFF;
+	font-family:Arial;
+	font-size:small;	
+	padding-left:10px;
+}
+.cdl_spinner{
+	display:none;
+	left:250px;
+	position: absolute;
+	top:50px;
+}
+#cdl_flash{
+	padding-left:2px
+}
+/****************************** Basic ******************************/
+.clear{
+	clear:both;
+}
+img{
+	border:0px;
+}
+.cdl_site_setup{
+	color:#fff;
+	margin: 0px 10px;
+	padding: 0px;
+	font-size: 12px;
+}
+.log_wrapper{
+	width: 870px;
+}
+/****************************** start partial ******************************/
+.ans_err_str{
+	color:#FFFFFF;
+	font-family:Arial;
+	font-size:small;
+	padding-left:10px
+}
+.sizenw {
+	width:20px;
+	height:20px;
+}
+.sizetop {
+	width:25px;
+	height:25px;
+}
+.config_panel_right{
+	width: 440px;
+}
+div.config_panel_right select{
+	width:auto;
+}
+#cdlanserr{
+	color:#FFFFFF;
+	font-family:Arial;
+	font-size:small;
+	padding-left:10px
+}
+#cdl_message table{
+	color:#FFFFFF;
+}
+#congif_top_icons{
+	float:left;
+	width:4%;
+}
+.config_panel_left{
+	padding-top:3px 7px 0px 0px;
+	width:auto;
+}
+.errormesg{
+	color: #C3CF21;	
+	font-family: Verdana,helvetica,arial,sans-serif;
+	font-size: 10px;
+	list-style: square outside none;
+	padding-top:5px 0px 0px 250px;
+}
+/****************************** upload partial ******************************/
+.cdl_file_label{
+	float: left;
+	margin: 2px 5px;
+	padding: 0px;
+	color: #fff;
+}
+.sizenw {
+    width: 25px;
+    height: 25px;
+}
+
+.button {
+    background-image: url(../images/update.gif);
+    width: 58px;
+    height: 23px;
+}
+
+div.fileinputs {
+    position: relative;
+}
+#fileToUpload{
+	/*display:none;*/
+	cursor: pointer;
+	top:-2px;
+	left:-150px;
+	opacity: 0;
+	position: relative;
+	filter:alpha(opacity:0);
+	width:150px;
+}
+.submit_button{
+	background: url('/images/update_arte.png') no-repeat 0 0 ;
+	border:0;
+	cursor: pointer;
+	display:block;
+	height:19px;
+	margin:0;
+	padding:0;
+	position:relative;
+	text-indent: -9999px;
+	top:10px;
+	width:76px;
+	left: 130px;
+}
+
+.operation_input{
+	float:left;
+}
+.error_message{
+	float: left;
+	width: 175px;
+	height: 25px;
+}

@@ -1,0 +1,42 @@
+.copyright_wrapper{
+    margin-top: 40px;
+    width: 100%;
+}
+.copyrighttxt {
+    font-family: Arial;
+    font-size: 11px;
+    color: #CCCCCC;
+    width:100%;
+    padding:10px 0px 15px 10px;
+    border-top: 3px solid #809818;
+}
+
+.copyrighttxt #version_text_right{
+    float:right;
+    margin-top: 20px;
+    text-align:right;
+}
+
+.copyrighttxt #version_text_left{
+    float:left;
+    margin-top: 20px;
+    text-align:left;
+}
+
+.versiontxt {
+    font-family: Arial;
+    font-size: 11px;
+    color: #CCCCCC;
+    position: absolute;
+    left: 850px;
+}
+
+.footerbkgd {
+    background-repeat: no-repeat;
+    vertical-align: top;
+}
+
+.footerimg {
+    position: absolute;
+    left: 15px;
+}

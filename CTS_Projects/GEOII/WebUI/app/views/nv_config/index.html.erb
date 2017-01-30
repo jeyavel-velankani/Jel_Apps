@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	var nv_group_id  = <%=@group_id%>;
+	var nv_group_channel  = <%=@group_ch%>;
+</script>
+<%=javascript_include_tag "nv_config.js"%>
+<%= stylesheet_link_tag 'nv_config.css'%>
+
+<div class="nv_config_channels_wrapper">
+	<%=render :partial=> "build_channels_table"%>
+</div>
+<div class="nv_config_channels_right_wrapper">
+	<%= GenericHelper.toolbar({ 'unlock' => 'unlock.png', 'nv_save' => 'savemouseover.png', 'nv_table_refresh' => 'refresh_mouse_over.png', 'nv_table_default' => 'default.png'})%>
+	<div class="nv_config_channels_content_wrapper">
+		<%=render :partial=> "parameters"%>
+	</div>
+</div>

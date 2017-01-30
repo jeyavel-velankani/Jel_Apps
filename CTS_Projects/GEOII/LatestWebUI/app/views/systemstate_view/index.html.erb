@@ -1,0 +1,15 @@
+<h1>System State View</h1>
+<div class="mcf" id="mcf">	
+<div class="mcftree" id="mcftree">	
+    <input type="hidden" name="heading" id="heading" value=<%=@heading %> />
+	<input type="hidden" name="act" id="act" value=<%=@act %> />
+	     <ul id="navigation">
+	     	<%= display_systemstatetree(@satname) %>
+	    </ul>
+</div>
+<div class="systemstateviewparams" id="systemstateviewparams">
+
+		<%= render :partials=>'systemstateview' %>   
+
+</div>
+</div> 

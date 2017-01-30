@@ -1,0 +1,12 @@
+<div class='connection_information'>
+    <div id="module_update" style="padding-left:10px;">
+        <div id="serial_outer" class="serial_outer">
+            <div class="serialleft contentCSPlabel text_type">
+                <%= get_label([@enabled_parameter]) %>
+            </div>
+            <div class="serialright text_type">
+                <%= get_field(Enum_Type, @enabled_parameter, @selected_type) %>
+            </div>
+        </div>
+    </div>
+</div>

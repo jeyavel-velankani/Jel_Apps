@@ -1,0 +1,29 @@
+
+<script>
+  function prevfNextcreateLinks(e,url){
+      var img_load = "<img src='/images/ajax-loader.gif' alt='loading...' />";
+    	$("#jqueryLink").click(function(){
+		$("#contentcontents")
+			.html(img_load)
+			.load(url, null, function(responseText){
+			});
+	});
+  }
+
+</script>
+<div class='right_content1' id="dycontent">
+<div>
+  <h3 class='sub_header1'>
+
+            <%=@title%></h3>
+
+<% @tracks.each do |v| %>
+  
+	<p class='treeview' id="jqueryLink">
+          <a href = "<%= "../basic_track1/#{v[:page_name].gsub(' ','_')}/?page=#{v[:menu_name]}" || '#' %>" id = "<%= v[:menu_name] %>" style="text-decoration: none;" class='menu_link_item'><font color="#23CCAA"><%= v[:menu_name] %></font></a>
+	</p>
+        
+<% end %>
+
+</div>
+</div>

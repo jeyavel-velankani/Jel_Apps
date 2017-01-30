@@ -1,0 +1,50 @@
+.headerbkgd
+	{
+	 background-repeat	: no-repeat;
+	}
+
+.toplogo
+	{
+	    position		: absolute;
+	}
+
+.toplogo img{
+    position: absolute;
+	top: -30px;
+}
+
+.welcometxt
+	{
+	 float				: right;
+	 font-family		: Arial;
+	 font-size			: 14px;
+	 color				: #CCCCCC;
+	 vertical-align		: middle;
+	 width				: 826px;
+	 text-align			: right;
+	}
+
+.logoutbtn
+	{
+    background-repeat	: no-repeat;
+    color 				: #FFFFFF;
+    font-family			: Arial;
+    font-size			: 14px;
+    font-weight			: bold;
+    width				: 71px;
+	}
+.logoutbtn a
+	{
+    color 				: #FFFFFF;
+    text-align			: center;
+    text-decoration		: none;
+	}	
+
+.site
+	{
+	 font-family		: Arial !important;
+	 font-size			: 10px !important;
+	 color				: #C3Cf21 !important;
+	 float				: right !important;
+	 text-align			: right !important;
+	}

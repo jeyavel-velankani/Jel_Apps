@@ -1,0 +1,102 @@
+<%= javascript_include_tag 'jquery' %>
+<%= stylesheet_link_tag 'logic_view'%>
+<div style="width:100%;" align="center">
+  <div id="logic_table" style="width:100%;">
+	<table class='font-bold'>
+		<thead>
+			<tr>
+				<th class = "table_header" height="25px">Name</th>
+				<th class = "table_header" height="25px">Value</th>
+			</tr>
+		</thead>
+		<tbody>
+	    	<tr class="even">
+				<td height="25px">Module Name</td>
+				<td  height="25px"><%= @module_name %></td>
+			</tr>
+			<tr class="odd">
+				<td  width="50%" height="25px">Module Slot</td>
+				<td class="module_slot" width="50%" height="25px"><%= @slot %></td>
+			</tr>
+			<tr class="even" height="25px;">
+				<td  width="50%" height="25px">Time Stamp</td>
+				<td  width="50%" height="25px"><%= @module_time if !@module_time.blank? %></td>
+			</tr>
+			<tr class="odd">
+				<td  width="50%" height="25px">Communication Status</td>
+				<td  width="50%" height="25px"><%= @status %></td>
+			</tr>
+	    	<tr class="even">
+				<td  width="50%" height="25px">Sensor A Type</td>
+				<td  class="lamp_a_current_type" width="50%" height="25px"></td>
+			</tr>
+			<tr class="odd">
+				<td  width="50%" height="25px">Sensor A Current</td>
+				<td class="lamp_a_current" width="50%" height="25px"></td>
+			</tr>
+			<tr class="even">
+				<td width="50%" height="25px">Sensor B Type</td>
+				<td class="lamp_b_current_type" width="50%" height="25px"></td>
+			</tr>
+			<tr class="odd">
+				<td width="50%" height="25px">Sensor B Current</td>
+				<td class="lamp_b_current" width="50%" height="25px"></td>
+			</tr>
+		<% 10.times do |i| %>
+			<tr class="<%= (i%2 == 0)? 'even' : 'odd' %>">
+				<td  height="25px">&nbsp;</td>
+				<td  height="25px">&nbsp;</td>
+			</tr>
+		<% end %>
+	</tbody>
+	</table>
+  </div>
+</div>
+<style type="text/css">
+body{
+	margin: 0;
+}
+#logic_table table tr{
+	height: 25px;
+	padding: 0px;
+	margin: 0px;
+}
+</style>
+
+<script type="text/javascript">
+	var update_ilod_interval;
+
+	$(document).ready(function(){
+		get_ilod_current();
+		setInterval(function(){
+			get_ilod_current();
+		},60000);
+	});
+
+	function get_ilod_current(){
+		$.post('/status_monitor/request_lamp_current',{
+			slot : $('.module_slot').html()
+		},function(resp_id){
+			var lamp_current_status_interval = setInterval(function(){
+				$.post('/status_monitor/lamp_current_status',{
+					request_id: resp_id
+				},function(resp_status){
+					if(parseInt(resp_status) == 2){
+						clearInterval(lamp_current_status_interval);
+						clearInterval(update_ilod_interval);
+						update_ilod_interval = setInterval(function(){
+							$.post('/status_monitor/get_lamp_current',{
+								slot : $('.module_slot').html()
+							},function(lamp_current){
+								$('.lamp_a_current').html(parseInt(lamp_current.a_value)/10);
+								$('.lamp_a_current_type').html((lamp_current.a_type == '??' ? 'None': lamp_current.a_type));
+								$('.lamp_b_current').html(parseInt(lamp_current.b_value)/10);
+								$('.lamp_b_current_type').html((lamp_current.b_type == '??' ? 'None': lamp_current.b_type));
+							},'json');
+						},1000);
+					}
+				})
+			},1000);
+		});
+	}
+</script>

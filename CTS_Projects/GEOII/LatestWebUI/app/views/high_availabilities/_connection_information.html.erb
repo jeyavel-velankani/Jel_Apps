@@ -1,0 +1,43 @@
+<div>
+	<% form_tag("", :class => 'availability_form') do %>
+		  <div id="module_update" style="padding-left:10px;">
+			     <div id="serial_outer" class="serial_outer">
+		            <div class="serialleft contentCSPlabel text_type">
+		                IP Range
+		            </div>
+		            <div class="serialright text_type">
+		                <%= text_field "high_availability", "ip_range", :class => "contentCSPsel", :value => ip_range %>
+		            </div>
+		        </div>
+				
+				<div id="serial_outer" class="serial_outer">
+		            <div class="serialleft contentCSPlabel text_type">
+		                Port Number
+		            </div>
+		            <div class="serialright text_type">
+		                <%= text_field "high_availability", "port_number", :class => "contentCSPsel", :value => port_number %>
+		            </div>
+		        </div>
+				
+				<div id="serial_outer" class="serial_outer">
+		            <div class="serialleft contentCSPlabel text_type">
+		                Idle Timeout Enabled
+		            </div>
+		            <div class="serialright text_type">
+		                <%= select "high_availability", "timeout_enabled", options_for_select(['Yes', 'No']), {}, :class => "contentCSPsel" %>
+		            </div>
+		        </div>
+				
+				<div id="serial_outer" class="serial_outer">
+		            <div class="serialleft contentCSPlabel text_type">
+		                Idle Timeout Sec
+		            </div>
+		            <div class="serialright text_type">
+		                <%= text_field "high_availability", "timeout_sec", :class => "contentCSPsel", :value => timeout_sec %>
+		            </div>
+		        </div>
+				
+		  </div>
+        <div id="module_sub_update"></div>
+	<% end %>
+</div>

@@ -1,0 +1,189 @@
+<div id="site_content" class="site_content" style="float: left;width:100%;">
+	<% 	action_buttons = ["save", "discard", "refresh", "default"] %>
+	<%= render :partial => "layouts/partials/action_buttons", :locals => { :buttons => action_buttons, :css_class => "content_bar_calib_width"} %>
+	<div id="message_container">
+		<div id="message"></div>&nbsp;
+	</div>	
+	<div id="essr_radio_settings">
+		<%= render :partial => "essr_parameters" %>
+	</div>
+</div>
+
+<style type="text/css">
+	
+	#confirm_box{
+		display: none;
+	}
+	
+    #ajax_spinner {
+        display: none;
+	    left: 730px;
+	    position: absolute;
+	    top: -2px;
+    }
+	
+	.serialright{
+		float: left;
+    	width: 200px !important;
+	}
+    
+    .programming_action_buttons {
+        float: left;
+        width: 150px;
+    }
+    .page_header {
+        color: #FFF;
+        color: 14px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 14px;
+        padding: 10px 0 0 0;
+    }
+    
+    .ui-spinner-up, .ui-spinner-down {
+        border-radius: 0 !important;
+        width: 9% !important;
+    }
+    
+    .ui-spinner {
+        width: 186px !important;
+        box-shadow: none !important;
+    }
+	#message_container {
+        color: greenYellow;
+        padding: 10px 0px 10px 9px;
+    }
+</style>
+<script>
+  $(document).ready(function(){  
+  
+  	var iframe = $('#iframe', window.parent.document)
+	var content_contents = $("#contentcontents", window.parent.document)
+	$(iframe).css({'height': '600px', 'min-height':'355px', 'width': '736px', 'min-width':'633px'});
+	$(content_contents).css({'height': '600px', 'min-height':'355px', 'width': '736px', 'min-width':'633px'});
+
+    $.fn.validate_form = function(){
+        var error_messages = new Array();
+        
+        $(".ip_required").each(function(index){
+            var ip_string = $(this)
+            if (ip_string.val() != "" && !ip4_checker(ip_string.val())) {
+                var label = ip_string.parent().siblings().text()
+                error_messages.push($.trim(label))
+            }
+        });
+        if (error_messages.length == 0) {
+            return true;
+        }
+        else {
+            message_format = '<div id="error_explanation">';
+            li_format = "";
+            param = error_messages.length == 1 ? ' parameter' : ' parameters'
+            message_format += "<h3>" + error_messages.length + param + " failed to save:</h3>"
+            $.each(error_messages, function(index, message){
+                li_format += "<li>Invalid " + message + "</li>"
+            });
+            message_format += "<ul>" + li_format + "</ul></div>"
+            $("#message").html(message_format).show();
+        }
+    }
+	
+	// Integer parameters need to validate and display error message(Removed the stepper)
+	$(".integer_only").live('keyup', function(event){
+		var mcf_4000_version = $(".mcf_version").html();
+		if (mcf_4000_version != '' && mcf_4000_version != undefined) {
+			$(".contentCSPsel").attr('disabled', 'disabled');
+			$(".integer_only").attr('disabled', 'disabled');
+			$('button').attr('disabled', 'disabled')
+			$(this).removeAttr('disabled');		
+		}
+		var element_id = $(this).attr('id');
+		var intRegex = /^[0-9]+$/;
+		var min = $(this).attr('min');
+		var max = $(this).attr('max');
+		var val = $(this).attr('value');
+		var param_id = $(this).attr('id');
+		var current_val = $(this).attr('current_value');
+		var msg = "#prog_warning_msg_"+element_id
+		if (intRegex.test(val)) {
+			if ((parseInt(val,10) < parseInt(min,10)) || (parseInt(val,10) > parseInt(max,10))) {
+				$(msg).show();
+				$(msg).html("<span style='color:red;'>Value must be with in the range of " + min + " and " + max + "</span>");
+			}else{
+				$(msg).html("");
+				$(msg).hide();
+			}
+		}
+		else {
+			$(msg).show();
+			$(msg).html("<span style='color:red;'>Invalid format!! number only allowed</span>");
+		}
+	});
+
+	$("input, select").change(function(){
+		window.parent.myValue = true;
+	});
+    
+    $(".parameters_save").click(function(event){
+		var param_validation = false;
+		$(".div_essr_integer_only").each(function(index, ele){
+			if ($(ele).html().length > 0){				
+				param_validation = true;
+			}
+		});
+		if (param_validation) {
+			alert("Please clear the Data Entry Errors and try again!");
+			return false;
+		}else {
+			if ($(".ip_required").validate_form()) {
+				var p_values = $("#essr_radio_settings_form").serialize();
+				$("#site_content").mask("Saving parameters, please wait...");
+
+				window.parent.myValue = false;
+
+				$.post("/gcp_programming/update_essr_parameters", p_values, function(response){
+					$("#site_content").unmask("Saving parameters, please wait...");
+					$("#message").html(response).fadeIn('fast').fadeOut(6000);
+				});
+			}
+		}
+    });
+    
+	$(".parameters_discard").click(function(){
+        $("#message").html("");
+        if (confirm("Confirm discard changes?")) {
+            $("#site_content").mask("Loading parameters, please wait...");
+            $.get("essr_parameters", function(response){
+                $("#site_content").unmask("Loading parameters, please wait...");
+                $("#essr_radio_settings").html(response)
+            })
+        }
+    });
+    
+    $(".parameters_refresh").click(function(){
+        $("#site_content").mask("Loading parameters, please wait...");
+        $("#message").html("");
+        $.get("essr_parameters", function(response){
+            $("#site_content").unmask("Loading parameters, please wait...");
+            $("#essr_radio_settings").html(response)
+        })
+    });
+    
+    $(".parameters_default").click(function(){
+        $("#site_content").mask("Loading parameters, please wait...");
+        $("#message").html("");
+        $.get("essr_parameters?selected_value=default", function(response){
+            $("#site_content").unmask("Loading parameters, please wait...");
+            $("#essr_radio_settings").html(response)
+        })
+    });
+  });
+  function ip4_checker(value){
+	    // RegExp to validate the ip address
+	    var ip = /^(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])(\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])){3}$/;
+	    var ip_range = /^((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])(\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])){3})-((25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])(\.(25[0-5]|2[0-4][0-9]|[0-1][0-9]{2}|[0-9]{2}|[0-9])){3})$/
+		var domain = /^[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
+		
+	    return (ip.test(value) || ip_range.test(value) || domain.test(value));
+	}	
+</script>

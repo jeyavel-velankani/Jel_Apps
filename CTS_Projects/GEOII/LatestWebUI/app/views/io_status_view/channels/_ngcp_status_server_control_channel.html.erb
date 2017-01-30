@@ -1,0 +1,53 @@
+<% used_parameters = gcp_and_ipi_used?(card_index, params[:atcs_address]) %>
+<div class='outer_box <%= "ngcp_track_#{card_number} ngcp_track" if channel_parameters["4.GCPAppTrk#{card_number}.GCPInService"] == 1  %>' id="track_detail_box" style="background-color:<%= get_track_bg_color(channel_parameters, card_index, card_number, used_parameters['GCPUsed']) %>">
+	<table cellspacing=0 cellpadding=0 class="channel_table" height="130px" width="150px" id="ngcp_table">
+        <% if used_parameters["GCPUsed"] %>
+			<tr>
+	            <td id="island" colspan=2 style="<%= island_status(channel_parameters, used_parameters['IPIUsed'],card_index) %>">
+	                Isl
+	            </td>
+	        </tr>		
+			<tr><td>&nbsp;</td></tr>
+			<tr>
+				<td>
+					<div class="track_details_gcp">
+						
+						<label>EZ:</label>
+						<span>
+							<%= (!channel_parameters['3.GCPStatus.EZValue'].blank? && channel_parameters['3.GCPStatus.EZValue'] != 0)? channel_parameters['3.GCPStatus.EZValue'] : 0 %>
+						</span><br />
+						<label>EX:</label>
+						<span>
+							<%= (!channel_parameters['3.GCPStatus.EXValue'].blank? && channel_parameters['3.GCPStatus.EXValue'] != 0)? channel_parameters['3.GCPStatus.EXValue'] : 0 %>
+						</span><br />
+						<label>Speed:</label>
+						<% train_speed = channel_parameters['3.GCPStatus.TrainSpeed'] || 0 %>
+						<span>
+							<%= (channel_parameters['3.GCPStatus.TrainDirection'] == 0 ? '+' : '-') if train_speed != 0 %> <%= train_speed %> MPH
+						 </span>
+					</div>
+				</td>
+			</tr>
+			<tr><td>&nbsp;</td></tr>
+			<tr><td id='calibration_required'><%= get_calibration_message(channel_parameters, 3, card_number) %></td></tr>
+		<% else %>
+			<tr><td style='height:18px;float:left;'>&nbsp;</td></tr>
+			<tr><td style='height:18px;float:left;'>GCP Not Used</td></tr>	
+		<% end %>
+    </table>
+	<div style='padding-top:3px;'>
+		<%= get_track_status_params(channel_parameters, card_number, mcfcrc, atcs_address, card_index) %>
+	</div>	
+</div>
+
+<% if channel_parameters["4.GCPAppTrk#{card_number}.GCPInService"] == 1 %>
+	<script type='text/javascript'>
+		$(document).ready(function(){
+			var card_number = "<%= card_number %>";
+			
+			color_status = setInterval(function(){
+				$(".ngcp_track_"+card_number).toggleClass('ngcp_track_oos')
+			}, 1000)
+		});
+	</script>	
+<% end %>

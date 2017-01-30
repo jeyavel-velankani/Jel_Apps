@@ -1,0 +1,24 @@
+<%= javascript_include_tag 'jquery.form' ,'filemanager.js' %>
+<div class="gcp_remove_template_content_area">	
+	<div class='selected_folder mcf_file_margin_5'>
+		<span class='loader saveas_open_loader'><%= image_tag("/images/ajax-loader_white.gif") %></span>
+		<div class="padding_left_10 text_font"><label>Select Template : </label></div>
+		<div class="clear"></div>
+		<form name="template_file_remove" action="/filemanager/remove_gcptemplate_files" id ="form_template_file_remove" class='upload_template_file' method="POST" enctype="multipart/form-data" >
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+				<div class="padding_left_10 select_mcf_combo">
+					<%=select_tag("selected_template", options_for_select(@templates.map{|x|[File.basename(x),x]},@templates[0]),:class=>"contentCSPselOpen" ,:disabled =>false)%>
+					<input type="hidden" name="uploaded_template_path" id="uploaded_template_path" />
+				</div>
+		</form>
+	</div>
+	<div class="clear"></div>
+	<div>
+		<span id="error_message" class="error_message"></span>
+	</div>
+	<div style="clear:both; padding-top:20px;"></div>
+	<div class="padding_left_10 mcf_file_margin_5">
+	    <button class='remove_gcp_template button_width_120 text_font'>Remove Template</button>
+		<button class='cancel_template_button button_width_90 text_font'>Cancel</button>
+	</div>
+</div>

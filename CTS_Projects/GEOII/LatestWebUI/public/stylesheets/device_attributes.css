@@ -1,0 +1,145 @@
+#elements_content{
+    margin: 0px 10px;
+	width: 935px !important;
+}
+label, input.error {
+    display: inline;
+}
+
+input.error {
+    border: 1px solid red;
+}
+
+label.error {
+    background: url('http://dev.jquery.com/view/trunk/plugins/validate/demo/images/unchecked.gif') no-repeat;
+    padding-left: 16px;
+    margin-left: .3em;
+}
+
+.mytooltip {
+    cursor: pointer;
+    color: green;
+    border-bottom: 1px dotted green
+}
+
+label.valid {
+    background: url('http://dev.jquery.com/view/trunk/plugins/validate/demo/images/checked.gif') no-repeat;
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+#xcontent p {
+    display: none;
+}
+
+.element_order, .myselect {
+    width: 125px;
+    height: 55px
+}
+
+.signals_table, .switches_table, .hazarddetector_table{
+	float:left;
+}
+.position_images {
+    float: left;
+    height: 40px;
+    padding-top: 15px;
+    width: 30px;
+}
+
+.total_mcf_installations {
+    padding-left: 10px;
+}
+
+.total_mcf_installations select {
+    background-color: #FFFFFF;
+    border: 1px solid #020202;
+    height: 22px;
+    width: 140px;
+}
+
+.inputbox_ptcdevice1 {
+    color: #FFF;
+    background-color: #444; /* transparent */
+    width: 90px;
+    height: 24px;
+    border: 1px solid #888;
+    font-size: 12px
+}
+.inputbox_ptcdevice2 {
+    color: #FFF;
+    background-color: #444; /* transparent */
+    width: 95px;
+    height: 24px;
+    border: 1px solid #888;
+    font-size: 12px
+}
+
+.selectbox_ptcdevice {
+    color: #FFF;
+    background-color: #444; /* transparent */
+    width: 100px;
+    height: 24px;
+    border: 1px solid #888;
+    font-size: 12px
+}
+.installation_name {
+    color: #CBD23A;
+    font-size: 13px;
+}
+.padtop_5{
+	padding-top:5px;
+}
+
+#aspecttable {
+    border-bottom: 1px solid #5E5E5E;
+    border-left: 1px solid #5E5E5E;
+    border-right: 1px solid #5E5E5E;
+    text-align: center;
+}
+#aspecttable tr.even td {
+    background-color: #F2F2F2;
+}
+#aspecttable tr td a {
+    color: #000000;
+}
+#aspecttable tr td {
+    background-color: #949494;
+    border-bottom: 1px solid #000000;
+    text-align: left;
+}
+#aspecttable tr td a:hover {
+    color: #CFD638;
+}
+#aspecttable tr.odd td {
+    background-color: #EEEEEE;
+}
+#aspecttable th.title {
+    background-color: #5E5E5E;
+    border: 1px solid #5E5E5E;
+    color: #F2F2F2;
+    font-size: 11px;
+    font-weight: bold;
+    height: 27px;
+    text-align: center;
+}
+#aspecttable tr.alt td {
+    background: none repeat scroll 0 0 #EEEEEE;
+    height: 27px;
+    text-align: center;
+}
+#aspecttable tr td {
+    background-color: #444444;
+    border-bottom: 1px solid #000000;
+	color: #F2F2F2;
+}
+
+.blank_space{
+	clear:both; 
+	padding-top:1px;
+}
+
+.aspects_height_23{
+	height:23px;
+}

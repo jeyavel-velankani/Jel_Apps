@@ -1,0 +1,42 @@
+<!--
+1. Iterate through number of slots
+2. select rt_card_information that matches the iterated slot number
+3. Get the card name based on the card_index mapping
+4. Naming of the slot is applied conditionally.
+-->
+<%= javascript_include_tag 'system_view' %>
+
+<div>
+	<%  card_number = 0
+		init_card_type = 0
+	%>
+    <% 1.upto(number_of_slots) do |slot_number| %>			
+		    <% card = cards.find{|card| card.slot_no == slot_number} %>
+			<% if card
+					if init_card_type == card.card_type
+						card_number += 1
+					else
+						init_card_type = card.card_type
+						card_number = 1
+					end
+					card_name = card.slot_name
+					channels = channel_set["#{card.card_index}"]
+					card_health = (card.card_status & (0X02))
+				else
+					card_name = "< Empty >"
+					channels = []
+				end 
+			%>
+			<div id="module_cards_layout" class="card_layout">
+		    	<%= render :partial => "cards", :locals => {:card_name => card_name, :card => card, :mcfcrc => @gwe.mcfcrc, 
+								:atcs_address => atcs_address, :view_type => view_type, :channels => channels, 
+								:card_health => card_health, :card_number => card_number} %>
+			</div>								
+    <% end %>
+</div>
+
+<% if @geo_type.eql?("AM") %>
+	<%= javascript_include_tag("io_status_context_menu_am") %>
+<% else %>
+	<%= javascript_include_tag("io_status_context_menu_non_am") %>
+<% end %>

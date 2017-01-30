@@ -1,0 +1,38 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+    	$('#digiclock').jdigiclock();
+
+      	// setInterval(function() {
+       //    	$('#digiclock1').load('/welcome/give_time');
+      	// }, 1000);
+         
+    });
+</script>
+
+<h1>Hello, Rails!</h1>
+Date:<%= @date%> <span id="digiclock1"><%= render :partial=>"my_time" %></span>
+<div id="digiclock"></div>
+
+
+
+<%= form_for @name, url: { action: "name_save" } do |f| %>
+  First name: <%= f.text_field :name %><br />
+  <%= f.submit %>
+<% end %>
+
+<%= link_to 'My Blog', controller: 'articles' %>
+<%= semantic_form_for @job do |f| %>
+	<%= f.inputs :name => "Basic" do %>
+	  <%= f.input :name %>
+	  <%= f.input :age %>
+	  <%= f.input :status %>
+	  <%= f.input :photo_file_size %>
+	  <%= f.input :photo_file_name %>
+	  <%= f.input :created_at %>
+	  <%= f.input :photo, required: false, hint: image_tag(@job.photo.url(:thumb)) %>
+	<% end %>
+	<%= f.actions do %>
+	  <%= f.action :submit, :as => :button %>
+	  <%= f.action :cancel, :as => :link %>
+	<% end %>
+<% end %>

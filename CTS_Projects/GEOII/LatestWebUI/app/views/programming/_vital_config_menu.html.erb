@@ -1,0 +1,36 @@
+<% @expression_structure = {} %>
+<% if (!session[:typeOfSystem].blank? && (session[:typeOfSystem].to_s == "GCP") && (PRODUCT_TYPE == PRODUCT_TYPE_GEO_OCE)) %>
+	<li class="leftnavtext_U" page_href = "/programming/setup_wizard"><span>Setup Wizard</span></li>
+	<li class="leftnavtext_U" page_href='/nv_config/site_configuration' breadcrumb='Site Configuration'><span>Site Configuration</span></li>
+<% end %>
+<% @main_menu['ROOT'].each_with_index do |menu, index| %>
+<%	enable_param = eval_expression(menu.enable) %>
+<% 	if enable_param
+		disable_menu_item = ""
+	else
+		disable_menu_item = "disable"
+	end 
+%>
+	<% if(menu.menu_name.downcase == 'unique check number (ucn)') %>
+	    <li class="leftnavtext_U <%=disable_menu_item%>" page_href="/ucn/index">
+			<span page_name='<%= menu.menu_name %>' menu_link='<%= menu.link %>' class='v_config_menu_item'><%= menu.menu_name.strip %></span>
+		</li>
+	<% elsif menu.menu_name != '[Line]' %>
+	    <%if menu.menu_name == "Set Default"%>
+		    <% page_href = url_for(:controller => "programming", :action => "set_to_default") %>
+		<%else%>
+		    <% page_href = url_for(:controller => "programming", :action => "page_parameters", :page_name => menu.menu_name, :menu_link => menu.link) %>
+		<%end%>
+		<li class="leftnavtext_U <%=disable_menu_item%>" page_href = "<%=page_href%>">
+			<span page_name='<%= menu.menu_name %>' menu_link='<%= menu.link %>' class='v_config_menu_item'><%= menu.menu_name.strip %></span>
+			<%if(menu.menu_name.downcase != "unique check number (ucn)")%>
+				<ul>
+					<%= build_ancestry(menu, index,'') %>
+				</ul>
+			<%end%>		
+		</li>
+	<% end %>
+<% end unless @main_menu.blank? %>
+<% if PRODUCT_TYPE == PRODUCT_TYPE_GEO_WEBUI%>
+	<li class="leftnavtext_U" page_href = "/programming/reset_vlp"><span>Reset VLP</span></li>
+<% end %>

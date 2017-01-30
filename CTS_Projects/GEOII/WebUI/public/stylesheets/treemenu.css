@@ -1,0 +1,106 @@
+/* #339900*/
+		/* A few IE bug fixes */
+		* { margin: 0; padding: 0; }
+		* html ul ul li a { height: 100%; }
+		* html ul li a { height: 100%; border-bottom: 1px solid #000000; padding: 3px 3px 3px 3px;}
+		* html ul ul li { margin-bottom: -1px;  }
+		#theMenu a{text-decoration: none;}
+		body { font-family: Arial, Helvetica, sans-serif; }
+		#theMenu { width: 200px; height: auto; margin: 30px 8px; padding:4px 4px 4px 4px;  }
+		
+		/* Some list and link styling */
+		#theMenu ul li { width: 200px; font-size: 13px; border-bottom: 1px solid #eee; padding-left: 2px; padding-bottom: 2px; padding-top: 2px; }
+		#theMenu ul li a { padding: 2px 2px 0px 20px; }
+		#theMenu ul ul li { border-left: 15px solid #eee; padding: 0; width: 183px; margin-bottom: 0; }
+		#theMenu ul ul li a { display:block; color: #000; padding: 3px 6px; font-size: small; }
+		#theMenu ul ul li a:hover { display:block; color: #369; background-color: #eee; padding: 3px 8px; font-size: 13px; }
+		/* For the xtra menu */
+		#theMenu ul ul ul li { border-left: none; border-bottom: 1px solid #eee; padding: 0; width: 185px; margin-bottom: 0; }
+		#theMenu ul ul ul li a { display:block; color: #000; padding: 3px 6px; font-size: 13px; }
+		#theMenu ul ul ul li a:hover { display:block; color: #369; background-color: #eee; padding: 3px 8px; font-size: 13px; }
+		
+		
+		#theMenu li { list-style-type: none; }
+		#theMenu h2 { margin-top: 2.5em; }
+		
+		/* Header links styling */
+		#theMenu h3.head a { 
+		color: #FFF;
+		display:block; 
+		border-top: 0px solid #36a;
+		border-right: 0px solid #36a;
+		/* background: #008000 url(down.gif) no-repeat; */
+	    background: #008000; 
+		background-position: 98% 50%;
+		padding: 3px 6px;
+        font-size: 14px;
+			
+		}
+		#theMenu h3.head a:hover { 
+		color: #CCC;
+		/* background: #008000 url(down.gif) no-repeat; */
+			 background: #008000;
+		background-position: 98% 50%;
+		font-size: 14px;
+
+		}
+		#theMenu h3.selected a { 
+		/* background:  #008000 url(up.gif) no-repeat; */
+        background: #008000; 
+		background-position:98% 50%;
+		color: #fff;
+		padding: 3px 6px;
+		font-size: 14px;
+
+		}
+		#theMenu h3.selected a:hover { 
+		/* background:  #008000 url(up.gif) no-repeat; */ 
+		 background: #008000;
+		background-position:98% 50%;
+		color: #ccc;
+		font-size: 14px;
+
+		}
+		
+		/* Xtra Header links styling */
+		#theMenu h4.head a { 
+		color: #FFF;
+		display:block; 
+		border-top: 1px solid #008000;
+		border-right: 0px solid #008000;
+		/*background: #008000 url(down.gif) no-repeat; */
+		 background: #008000;
+		background-position: 98% 50%;
+		padding: 3px 6px;
+		font-size: 13px;
+
+		}
+		#theMenu h4.head a:hover { 
+		color: #000;
+		/*background: #ddd url(images/down.gif) no-repeat;*/
+		 background: #ddd;
+		background-position: 98% 50%;
+		font-size: 13px;
+
+		}
+		#theMenu h4.selected a { 
+		/*background: #008000 url(up.gif) no-repeat;*/
+		background: #008000; 
+		background-position:98% 50%;
+		color: #FFF;
+		padding: 3px 6px;
+		font-size: 13px;
+		border-top: 1px solid #CCCCCC;
+		border-right: 1px solid #CCCCCC;
+
+		}
+		#theMenu h4.selected a:hover { 
+		/* background:  #eee url(up.gif) no-repeat; */
+		background: #eee; 
+		background-position:98% 50%;
+		color: #000;
+		font-size: 13px;
+		border-top: 1px solid #CCCCCC;
+		border-right: 1px solid #CCCCCC;
+
+		}

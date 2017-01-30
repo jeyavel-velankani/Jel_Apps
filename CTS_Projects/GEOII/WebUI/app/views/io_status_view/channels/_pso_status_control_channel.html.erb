@@ -1,0 +1,18 @@
+<% pso_codes = psorx_status_modulation_code(channel_parameters, channel_index, 3, card_index, mcfcrc, atcs_address) %>
+<div class="outer_box" style="background-color: <%= pso_codes['health'] %>">
+	<table cellspacing=0 cellpadding=0 class="channel_table">
+        <tr>
+            <td class="pso_island_status" id="island" style="width:30px">
+            	RX <%= channel_index %>
+            </td>
+            <td class='no_border_led'>
+            	<%= pso_codes["modulation_code"] %>
+            </td>
+        </tr>
+		<% if pso_codes["cal_required"] %>
+			<tr>
+				<td><%= pso_codes["cal_required"] %></td>
+			</tr>
+		<% end %>
+    </table>
+</div>	

@@ -1,0 +1,16 @@
+<div class="lamp_table">
+	<table class="vlo_table">
+	<%
+
+		(0..5).each do |i|
+			channel_name = track['data'][i]['Colorlight']['name']
+			channel_status = (track['data'][i]['Colorlight']['code']['lamp_status'] != nil ? track['data'][i]['Colorlight']['code']['lamp_status']: track['data'][i]['Colorlight']['params']['status'])
+			channel_led = track['data'][i]['Colorlight']['code']['lamp_image']
+            fe = track['data'][i]['Colorlight']['code']['foreign_energy'] == true ? "style='background-color:yellow;'" :""
+            text_color = (fe=="")?"style='color:#FFFFFF'" : "style='color:#000000'"
+			concat '<tr><td>'+channel_name+'</td><td class="vlo1_value"'+fe+'><img class="lamp_led" src="'+channel_led+'"/><span '+text_color+'>'+channel_status+'</span></td></tr>'
+
+		end
+	%>
+	</table>
+</div>

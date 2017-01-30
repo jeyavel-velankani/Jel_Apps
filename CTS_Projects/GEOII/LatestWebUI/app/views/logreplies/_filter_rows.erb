@@ -1,0 +1,17 @@
+<tr id="<%= filter ? (filter.filter_id.to_s + '_row') : '1_row' %>" class='<%= filter ? filter.filter_id : 1 %>'>
+	<td>
+		<%= f.select(:filter_field, options_for_select(@filter.filters, filter.try(:filter_field)), {:prompt => "Select"}, {:class => "filter_combo contentCSPsel", :name => ((filter.filter_id.to_s + "_log_filter[filter_field]") if filter),:message => "Field"}) %>
+	</td>
+	<td>
+		<%= f.select(:filter_operation, options_for_select(@filter.operations, filter.try(:filter_operation)), {:prompt => "Select"}, {:class => "filter_combo contentCSPsel", :name => ((filter.filter_id.to_s + "_log_filter[filter_operation]") if filter), :message => "Operation"}) %>
+	</td>
+	<td>
+		<%= f.text_field(:filter_text, :value => filter.try(:filter_text), :message => "Text", :id => "filter_text_field", :class => "filter_combo contentCSPsel", :name => (filter.filter_id.to_s + "_log_filter[filter_text]" if filter)) %>
+	</td>
+	<td>
+		<%= f.select(:filter_logic, options_for_select(@filter.logics, filter.try(:filter_logic)), {:prompt => "Select"}, {:class => "filter_combo contentCSPsel", :name => ((filter.filter_id.to_s + "_log_filter[filter_logic]") if filter), :message => "Logic"}) %>								
+	</td>
+	<td>
+		<%= link_to(image_tag("/images/add_edit_delete_delete.PNG", :border => '0', :alt => "Delete"), "javascript:void(0);", :class => "row_delete", :id => (filter ? filter.filter_id.to_s + "_" : ""), :name => ('old' if filter)) %>
+	</td>
+</tr>

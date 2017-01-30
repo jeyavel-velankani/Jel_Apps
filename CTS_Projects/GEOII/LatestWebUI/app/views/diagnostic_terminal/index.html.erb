@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag "content" %>
+<%= javascript_include_tag 'jquery' %>
+<div style="clear:both"></div>
+
+<div id="slot_content">
+    <%= "<p>No GEO Configured!!</p>" if @atcs_addresses.blank? %>
+</div>
+<div style="display:none;" id="callback_content">
+</div>

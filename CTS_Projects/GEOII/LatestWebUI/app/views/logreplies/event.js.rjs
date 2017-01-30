@@ -1,0 +1,2 @@
+page.replace_html ('mytable', :partial=>"replies_data")
+page.alert("triggered")

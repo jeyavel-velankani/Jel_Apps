@@ -1,0 +1,70 @@
+#software_update_content{
+	overflow-x:hidden;
+	overflow-y:hidden;
+	height:320px;
+}
+#status_message{
+	clear:both;
+	padding-left:10px;
+}
+.space{
+	clear:both; 
+	padding-top:1px;
+	height:21px;
+}
+#select_box{
+	padding-top:50px;
+}
+
+#fileToUpload{
+	position:relative;
+	top:-4px;
+	left:-150px;
+	height:25px;
+	width:145px;
+	opacity: 0; 
+	filter:alpha(opacity: 0);
+	cursor:pointer;
+	cursor:hand;
+}
+.lbl_text_wrapper{
+	padding-left:20px;
+}
+.lbl_text{
+	width: 131px;
+}
+.contentCSPsel_config_wrapper{
+	padding-left:20px;
+	float:left;
+}
+.button_wrapper{
+	padding-left:5px;
+	float:left;
+}
+.button_wrapper a{
+	color:black;
+	font-weight:bold;
+}
+#display_process_status{
+	padding-top:50px0;
+	display:none;
+	padding-left:50px;
+}
+.display_progressbar_val_wrapper{
+	padding-top:5px;
+}
+#progress_without_percentage{
+	display:none;
+	padding-left:50px;
+}
+.mcfcrc_form{
+	clear:both;
+}
+.mnfc_crc_wrapper{
+	clear:both;
+}
+#progressbar{
+	width: 500px;
+	height: 30px;
+	margin: 10px;
+}

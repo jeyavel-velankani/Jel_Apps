@@ -1,0 +1,52 @@
+<h1>Editing logreply</h1>
+
+<% form_for(@logreply) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :request_id %><br />
+    <%= f.text_field :request_id %>
+  </p>
+  <p>
+    <%= f.label :time_stamp %><br />
+    <%= f.datetime_select :time_stamp %>
+  </p>
+  <p>
+    <%= f.label :hundreths %><br />
+    <%= f.text_field :hundreths %>
+  </p>
+  <p>
+    <%= f.label :equipment %><br />
+    <%= f.text_field :equipment %>
+  </p>
+  <p>
+    <%= f.label :sitename %><br />
+    <%= f.text_field :sitename %>
+  </p>
+  <p>
+    <%= f.label :cardandslot %><br />
+    <%= f.text_field :cardandslot %>
+  </p>
+  <p>
+    <%= f.label :verbositylevel %><br />
+    <%= f.text_field :verbositylevel %>
+  </p>
+  <p>
+    <%= f.label :entry_type %><br />
+    <%= f.text_field :entry_type %>
+  </p>
+  <p>
+    <%= f.label :entry_text %><br />
+    <%= f.text_field :entry_text %>
+  </p>
+  <p>
+    <%= f.label :validation_crc %><br />
+    <%= f.text_field :validation_crc %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @logreply %> |
+<%= link_to 'Back', logreplies_path %>

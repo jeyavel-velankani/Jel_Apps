@@ -1,0 +1,19 @@
+<%= javascript_include_tag  'installation_approve_report_rename'%>
+<div class="rename_installation_name_content" >	
+	<div class='selected_installation_name margin_5'>
+		<span class='loader loader_spin'><%= image_tag("/images/big-spinner.gif") %></span>
+		<div>
+			<label>Current Installation Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label>New installation Name</label>
+		</div>
+		<div class="padding_top_1_space">&nbsp;</div>
+		<div>
+			<%= text_field_tag "txtexisting_installation_name", session[:selectedinstallationname], :class =>"contentCSPsel_ins_approve",:disabled => true, :html=>{:style => "text-transform:capitalize"}%>
+			<%= text_field_tag "txtrename_installation_name", session[:selectedinstallationname], :class =>"contentCSPsel_ins_approve",:maxlength => 25, :size => 25,:title => "Enter Installation Name" ,:disabled => false, :html=>{:style => "text-transform:capitalize"}%>
+		</div>
+	</div>
+	<div class="padding_top_15_space"></div>
+	<div class="padding_left_25_margin_5">
+	    <button id="rename_installation" class='rename_installation width_100'>Rename</button>
+		<button id="rename_cancel" class='rename_cancel width_100'>Cancel</button>
+	</div>
+</div>

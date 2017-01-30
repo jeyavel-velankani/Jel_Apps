@@ -1,0 +1,634 @@
+<?xml version="1.0"?>
+<root name="VSLIC" sysid="1" version="1.0.17" xmlns="http://safetran.com/nvcoregen">
+
+    <!-- Basic site information -->
+    <record tag="1" name="SITE_INFO" title="Site Information">
+        /* ###### Generic configurable site information. ################### */
+        <item name="SITE_NAME" title="Site Name" description="Name of the site installation" min="1" max="20" default="Siemens" datatype="string" validate="^[0-9A-Za-z _]+$"/>
+        <item name="DOT_NUM" title="DOT Number" description="DOT Number of the installation" min="1" max="7" default="000000A" datatype="string" validate="^[0-9A-Za-z]+$"/>
+        <item name="MILEPOST" title="Milepost" description="Milepost of the installation" min="0" max="20" type="string" default="000.0" datatype="string" validate="^[0-9A-Za-z.]+$" display_order="1"/>
+        <item name="TIME_ZONE" title="Time Zone" description="Unit's time zone" min="0" max="13" default="1" datatype="enum_time_zone" validate="^[0-9]+$"/>
+        <item name="SITE_ATCS_ADDR" title="Site ATCS Address" description="${title}" min="0" max="16" default="7.620.100.100.03" editmode="true" datatype="sin" validate="^7\\.(\\d{3})\\.(\\d{3})\\.(\\d{3})\\.(\\d{2})$"/>
+        <item name="MCF_CRC" title="MCF CRC" description="${title}" min="0" max="0xFFFFFFFF" default="0" editmode="true" datatype="hex" validate="^[0-9A-Fa-f]+$"/>
+    </record>
+
+    <!-- The configuration information for the eventog process -->
+    <record tag="2" name="EVTLOG_CFG" title="Event Log Configuration">
+        /* ###### Event Log configuration information. ##################### */
+        <item name="EVENTLOG_SERVER_IP" title="Server IP" description="${title}" min="7" max="16" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+    </record>
+
+    <!-- The configuration information for the diaglog process -->
+    <record tag="3" name="DLOG_CFG" title="Diagnostic Log Configuration">
+        /* ###### Diagnostic Log configuration information. ################ */
+        <item name="DLOG_SERVER_IP" title="Server IP" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="DLOG_VERBOSITY" title="Verbosity" description="${title}" min="1" max="4" default="3" datatype="enum_verbosity" validate="^[0-9]+$"/>
+    </record>
+
+    <!-- The configuration information for the empcomm process -->
+    <record tag="4" name="EMP_WIU_CFG" title="EMP / WIU Configuration">
+        /* ###### EMP protocol configuration information. ########################## */
+        <!-- These are array sizes, not actual configurable fields. -->
+        <const name="WIU_CHAN_SRC_STR_LEN" value="63" />
+        <const name="WIU_CHAN_DST_STR_LEN" value="63" />
+        <const name="WIU_CHAN_MCAST_IP_LEN" value="15" />
+
+        <!-- These are the actual configurable fields. -->
+        <item name="EMP_HMAC_KEY" title="Encrypted HMAC Key" description="${title}" min="1" max="24" default="00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00" datatype="bytearray" validate="^[0-9A-Fa-f]+$"/>
+        <item name="EMP_RC2_KEY" title="RC2 Key" description="${title}" min="0" max="20" default="" datatype="string" validate=""/>
+        <item name="EMP_MSG_VER" title="EMP Message Version" description="${title}" min="0" max="255" default="0" datatype="integer" validate="^[0-9]+$"/>
+        <item name="EMP_MSG_FLAGS" title="Message Flags" description="${title}" min="0" max="255" default="0x09" datatype="hex" validate="^[0-9A-Fa-f]+$" show="false" />
+
+        <item name="WIU_ITC_SERVER_IP" title="AG IP Address (Class D Remote Address)" description="${title}" min="7" max="64" default="10.255.255.210" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" display_order="13"/>
+        <item name="WIU_ITC_SERVER_PORT" title="AG Port (Class D Remote Port)" description="${title}" min="0" max="65535" default="3001" datatype="integer" validate="^[0-9]+$" display_order="14"/>
+        <item name="WIU_EMP_HDR_SRC_ADR" title="EMP Header Source Address" description="${title}" min="0" max="63" default="" datatype="string" validate="" display_order="5"/>
+        <item name="WIU_EMP_HDR_DST_ADR" title="EMP Header Destination Address" description="${title}" min="0" max="63" default="XX.L.X.000000:tmc" datatype="string" validate="" display_order="6"/>
+        <item name="WIU_MCAST_IP" title="Class C Multicast Address" description="${title}" min="7" max="15" default="239.255.0.5" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" display_order="11"/>
+        <item name="WIU_MCAST_UDP" title="Class C Multicast Port" description="${title}" min="0" max="65535" default="32768" datatype="integer" validate="^[0-9]+$" display_order="12"/>
+        <item name="WIU_NOACK_TIME" title="Data ACK Timeout (msec)" description="${title}" min="2" max="60000" default="15000" datatype="integer" validate="^[0-9]+$"/>
+        <item name="WIU_NOACK_COUNT" title="Data NAK Retry Limit" description="${title}" min="0" max="10" default="3" datatype="integer" validate="^[0-9]+$"/>
+        <item name="WIU_ALIVE" title="Keep Alive Interval (msec)" description="${title}" min="0" max="60000" default="30000" datatype="integer" validate="^[0-9]+$" display_order="16"/>
+        
+        <item name="WIU_NTTL" title="EMP Timed Beacon TTL" description="${title}" min="0" max="65535" default="12" datatype="integer" validate="^[0-9]+$" display_order="7"/>
+        <item name="WIU_ATTL" title="EMP WIU Status Response TTL" description="${title}" min="0" max="65535" default="12" datatype="integer" validate="^[0-9]+$" display_order="8"/>
+        <item name="WIU_NQOS" title="EMP Timed Beacon QOS" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" display_order="9"/>
+        <item name="WIU_AQOS" title="EMP WIU Status Response QOS" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" display_order="10"/>
+        <item name="WIU_CLASS_D_ACK_ENABLED" title="Class D Data ACK Enabled" description="${title}" min="0" max="1" default="1" datatype="boolean" validate="^[0-1]+$" display_order="18">/** Yes=1 or No=0*/</item>
+
+        <item name="WIU_ALIVE_ACK_TIME" title="Keep Alive ACK Timeout (msec)" description="${title}" min="0" max="60000" default="15000" datatype="integer" validate="^[0-9]+$" display_order="17"/>
+        <item name="WIU_RETRANSMIT_DELAY" title="Retransmit Delay (msec)" description="${title}" min="0" max="10000" default="0" datatype="integer" validate="^[0-9]+$"/>
+        <item name="WIU_CONN_ATTEMPT_TIMEOUT" title="Connection Attempt Timeout (msec)" description="${title}" min="1" max="60000" default="30000" datatype="integer" validate="^[0-9]+$"/>
+        <item name="WIU_CONN_ATTEMPT_DELAY" title="Connection Delay (msec)" description="${title}" min="1" max="60000" default="60000" datatype="integer" validate="^[0-9]+$"/>
+        <item name="WIU_CONN_ATTEMPT_RETRY_COUNT" title="Connection Retry Limit" description="${title}" min="-1" max="10000" default="-1" datatype="integer" validate="^[-+]?[0-9]+$"/>
+        <item name="WIU_RECONN_ATTEMPT_RETRY_COUNT" title="Reconnection Limit" description="${title}" min="-1" max="10000" default="-1" datatype="integer" validate="^[-+]?[0-9]+$"/>
+        <item name="WIU_LOG_TRAFFIC_ENABLED" title="Log Traffic" description="${title}" min="0" max="1" default="0" datatype="integer" validate="^[0-1]+$" display_order="15"/>
+        <item name="WIU_CHANNEL_ADDR" title="WIU Address" description="${title}" min="0" max="16" default="7.620.100.100.03" datatype="sin" validate="^7\\.(\\d{3})\\.(\\d{3})\\.(\\d{3})\\.(\\d{2})$" display_order="0"/>
+    </record>
+
+    <!-- This is the WIU information that is provided to the non-vital core by
+         the vital CPU.  Is is not editable by the user but the Web UI will
+         need to display it.  This data comes from the vital MCF. -->
+    <record tag="5" name="EMP_WIU_INFO" title="EMP / WIU Information">
+        /* ###### EMP WIU information. ##################################### */
+        <item name="WIU_SUPPORTED" title="WIU Supported" description="${title}" min="0" max="1" default="1" datatype="integer" validate="^[0-1]+$"/>
+        <item name="WIU_ACTIVE" title="Channel One Active" description="${title}" min="0" max="1" default="1" datatype="integer" validate="^[0-1]+$"/>
+    </record>
+
+    <!-- This is the serial ports interface information. See the _SERIAL_PROTO_CONST for the
+         meaning of the min/max/default settings.  They are values that are indexes to get the
+         real values the C code needs. -->
+    <record tag="6" name="SER_PORT_1_CFG" title="Serial Port 1 Configuration">
+        /* ###### Serial port 1 configurable information. ################## */
+        <item name="SER_PORT_1_BAUD_RATE" title="Baud Rate" description="${title}" min="0" max="8" default="3" datatype="enum_ser_baudrate" validate="^[0-8]+$"/>
+        <item name="SER_PORT_1_DATABITS" title="Data Bits" description="${title}" min="0" max="1" default="0" datatype="enum_ser_databit" validate="^[0-1]+$"/>
+        <item name="SER_PORT_1_PARITY" title="Parity" description="${title}" min="0" max="2" default="0" datatype="enum_ser_parity" validate="^[0-2]+$" display_order="2"/>
+        <item name="SER_PORT_1_STOPBITS" title="Stop Bits" description="${title}" min="0" max="1" default="0" datatype="enum_ser_stopbit" validate="^[0-1]+$"/>
+        <item name="SER_PORT_1_FLOW" title="Flow Control" description="${title}" min="0" max="1" default="0" datatype="enum_ser_flowcontrol" validate="^[0-1]+$" display_order="1"/>
+        <item name="SER_PORT_1_PROTO" title="Protocol" description="${title}" min="0" max="4" default="0" datatype="enum_ser_protocol_port1" validate="^[0-4]+$"/>
+
+        <!-- The NMEA protocol specific options -->
+        <item name="PROTO_PORT_1_NMEA_RECV_TIMEOUT" title="Receive Timeout" description="${title}" min="0" max="86400" default="5" datatype="integer" validate="^[0-9]+$"/>
+        <item name="PROTO_PORT_1_NMEA_TIME_DIFF" title="RTC Time Difference" description="${title}" min="1" max="86400" default="1" datatype="integer" validate="^[0-9]+$"/>
+
+        <!-- The ACSES protocol specific options -->
+        <item name="PROTO_PORT_1_BCP_NUMBER" title="BCP Number" description="${title}" min="0" max="999" default="0" datatype="integer" validate="^[0-9]+$"/>
+    </record>
+
+    <record tag="7" name="SER_PORT_LAP_CFG" title="Laptop Serial Port Configuration">
+        /* ###### Laptop port configurable information. #################### */
+        <item name="SER_PORT_LAP_BAUD_RATE" title="Baud Rate" description="${title}" min="0" max="8" default="4" datatype="enum_ser_baudrate" validate="^[0-8]+$"/>
+        <item name="SER_PORT_LAP_DATABITS" title="Data Bits" description="${title}" min="0" max="1" default="0" datatype="enum_ser_databit" validate="^[0-1]+$"/>
+        <item name="SER_PORT_LAP_PARITY" title="Parity" description="${title}" min="0" max="2" default="0" datatype="enum_ser_parity" validate="^[0-2]+$" display_order="2"/>
+        <item name="SER_PORT_LAP_STOPBITS" title="Stop Bits" description="${title}" min="0" max="1" default="0" datatype="enum_ser_stopbit" validate="^[0-1]+$"/>
+        <item name="SER_PORT_LAP_FLOW" title="Flow Control" description="${title}" min="0" max="1" default="0" datatype="enum_ser_flowcontrol" validate="^[0-1]+$" display_order="1"/>
+        <item name="SER_PORT_LAP_PROTO" title="Protocol" description="${title}" min="0" max="4" default="4" datatype="enum_ser_protocol" validate="^[0-4]+$"/>
+
+        <!-- The NMEA protocol specific options -->
+        <item name="PROTO_PORT_LAP_NMEA_RECV_TIMEOUT" title="Receive Timeout" description="${title}" min="0" max="86400" default="5" datatype="integer" validate="^[0-9]+$"/>
+        <item name="PROTO_PORT_LAP_NMEA_TIME_DIFF" title="RTC Time Difference" description="${title}" min="1" max="86400" default="1" datatype="integer" validate="^[0-9]+$"/>
+
+        <!-- The ACSES protocol specific options -->
+        <item name="PROTO_PORT_LAP_BCP_NUMBER" title="BCP Number" description="${title}" min="0" max="999" default="0" datatype="integer" validate="^[0-9]+$"/>
+    </record>
+
+    <record tag="8" name="ETH_LAPTOP_CFG" title="Laptop Ethernet Port Configuration">
+        /* ###### Laptop Ethernet Port Configuration ####################### */
+        <item name="ETH_LAPTOP_IP" title="Laptop IP" description="${title}" min="7" max="15" default="192.168.1.100" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_LAPTOP_MASK" title="Laptop Network Mask" description="${title}" min="7" max="15" default="255.255.255.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_LAPTOP_GATEWAY" title="Laptop Gateway" description="${title}" min="7" max="15" default="192.168.1.1" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_LAPTOP_DHCP_CNT_ENABLED" title="DHCP Client Enabled" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" display_order="0">/** Yes=1 or No=0*/</item>
+        <item name="ETH_LAPTOP_DHCP_SVR_ENABLED" title="DHCP Server Enabled" description="${title}" min="0" max="1" default="1" datatype="boolean" validate="^[0-1]+$" display_order="1">/** Yes=1 or No=0*/</item>
+        <item name="ETH_LAPTOP_PRI_DNS" title="Primary DNS" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" show="false" />
+        <item name="ETH_LAPTOP_SEC_DNS" title="Secondary DNS" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"  show="false" />
+    </record>
+
+    <record tag="9" name="ETH_PORT_1_CFG" title="Ethernet Port 1 Configuration">
+        /* ###### Ethernet Port 1 Configuration ############################ */
+        <!-- These are array sizes, not actual configurable fields. -->
+        <const name="ETH_PORT_IP_MAX" value="15" ></const>
+
+        <!-- These are the configurable fields. -->
+        <item name="ETH_PORT_1_IP" title="IP" description="${title}" min="7" max="15" default="192.168.2.100" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_PORT_1_MASK" title="Network Mask" description="${title}" min="7" max="15" default="255.255.255.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_PORT_1_GATEWAY" title="Gateway" description="${title}" min="7" max="15" default="192.168.2.1" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_PORT_1_DHCP_CNT_ENABLED" title="DHCP Client Enabled" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" display_order="0">/** Yes=1 or No=0*/</item>
+        <item name="ETH_PORT_1_PRI_DNS" title="Primary DNS" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" show="false" />
+        <item name="ETH_PORT_1_SEC_DNS" title="Secondary DNS" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" show="false" />
+    </record>
+
+    <record tag="10" name="ETH_PORT_2_CFG" title="Ethernet Port 2 Configuration">
+        /* ###### Ethernet Port 2 Configuration ############################ */
+        <item name="ETH_PORT_2_IP" title="IP" description="${title}" min="7" max="15" default="192.168.3.100" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_PORT_2_MASK" title="Network Mask" description="${title}" min="7" max="15" default="255.255.255.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_PORT_2_GATEWAY" title="Gateway" description="${title}" min="7" max="15" default="192.168.3.1" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ETH_PORT_2_DHCP_CNT_ENABLED" title="DHCP Client Enabled" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" display_order="0">/** Yes=1 or No=0*/</item>
+        <item name="ETH_PORT_2_PRI_DNS" title="Primary DNS" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" show="false" />
+        <item name="ETH_PORT_2_SEC_DNS" title="Secondary DNS" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" show="false" />
+    </record>
+
+    <!-- TCP Port number settings for external programs like the DT and VTP. -->
+    <record tag="11" name="TCP_PORT_CFG" title="TCP Port configuration">
+        /* ###### TCP Ports for External Programs ########################## */
+        <item name="TCP_PORT_DT" title="DT TCP Port" description="${title}" min="0" max="65535" default="10075" datatype="integer" validate="^[0-9]+$"/>
+        <item name="TCP_PORT_VTP" title="VTP TCP Port" description="${title}" min="0" max="65535" default="10076" datatype="integer" validate="^[0-9]+$"/>
+        <item name="L2_UDP_PORT" title="AServer UDP Port" description="${title}" min="1" max="65535" default="5361" datatype="integer" validate="^[0-9]+$"/>
+        <item name="ROUTE_REGION_IP_ONE" title="Route Region One IP" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ROUTE_REGION_IP_TWO" title="Route Region Two IP" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="ROUTE_MAINTAIN_TIMER" title="Route Maintain Timer" description="${title}" min="10" max="65535" default="900" datatype="integer" validate="^[0-9]+$"/>
+        <item name="ROUTE_ESTABLISH_TIMER" title="Route Establish Timer" description="${title}" min="10" max="65535" default="20" datatype="integer" validate="^[0-9]+$"/>
+        <item name="ROUTE_CIRCUIT_ID" title="Circuit ID" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$"/>
+        <item name="OFFICE_PATH_BYTE" title="Office Path Byte" description="${title}" min="0" max="0xFF" default="46" datatype="hex" validate="^[0-9A-Fa-f]+$"/>       
+    </record>
+
+    <record tag="12" name="ROUTER_CFG" title="ATCS Router Configuration">
+        /* ###### Configurables for the ATCS message router ################ */
+        <item name="ROUTER_UDP_PORT" title="Remote VIU port" description="${title}" min="0" max="65535" default="7000" datatype="integer" validate="^[0-9]+$"/>
+        <item name="ROUTER_TIMEOUT" title="Route Timeout" description="${title}" min="0" max="65535" default="7500" datatype="integer" validate="^[0-9]+$" display_order="0"/>
+    </record>
+
+    <!-- The following are the configuration settings for the internal GPS port -->
+    <record tag="13" name="GPS_PORT_CFG" title="GPS Port Configuration">
+        /* ###### Configurable parameters for the internal GPS receiver #### */
+        <item name="GPS_PORT_ENABLED" title="GPS Time Source" description="${title}" min="0" max="4" default="1" datatype="enum_gps_time_src" validate="^[0-3]+$"/>
+        <item name="GPS_PORT_RECV_TIMEOUT" title="Receive Timeout (secs)" description="${title}" min="0" max="86400" default="5" datatype="integer" validate="^[0-9]+$"/>
+        <item name="GPS_PORT_TIME_DIFF" title="Time Message Deviation (secs)" description="${title}" min="0" max="3" default="1" datatype="integer" validate="^[0-3]+$"/>
+        <item name="GPS_PORT_CONSOLIDATED_TIME_SERVER" title="Consolidated Time Server" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$"/>
+		<!--  VIU CAT Changes April 3 2011 -->
+        <item name="GPS_MAX_TIME_CHANGE_WITHIN_MINUTES" title="Max. Time Change Within Minutes (min)" description="${title}" min="1" max="120" default="60" datatype="integer" validate="^[0-9]+$"/>
+        <item name="GPS_MAX_SECS_TIME_CHANGE" title="Max. Secs Time Change (sec)" description="${title}" min="1" max="10" default="3" datatype="integer" validate="^[0-9]+$"/>
+        <item name="GPS_IGNORED_TIME_DIFFERENCE" title="Ignored Time Difference (sec)" description="${title}" min="1" max="10" default="3" datatype="integer" validate="^[0-9]+$"/>
+        <item name="GPS_TIME_MSGS_BEFORE_SENDING_WSM" title="Time msgs Before Sending WSM (sec)" description="${title}" min="1" max="10" default="5" datatype="integer" validate="^[0-9]+$"/>
+        <item name="GPS_NO_TIME_SYNC_MSG" title="No Time Sync Msg (min)" description="${title}" min="1" max="6" default="6" datatype="integer" validate="^[0-9]+$"/>
+        <item name="GPS_LRM_MAX_SEC_TIME_DIFF" title="LRM Maximum Seconds Time Difference (sec)" description="${title}" min="0" max="20" default="3" datatype="integer" validate="^[0-9]+$" display_order="8"/>
+    </record>
+    
+    <!-- The following are the configuration for specific product details -->
+    <record tag="14" name="PRODUCT_CONFIG" title="Product Configuration">
+        <item name="PRODUCT_NAME" title="Product Name" description="${title}" min="0" max="20" default="VIU" datatype="string" validate=""/>
+        <item name="PRODUCT_TYPE" title="Product Type" description="${title}" min="0" max="20" default="" datatype="string" validate=""/>
+        <item name="PRODUCT_SHOW_SLAVE_STATUS" title="Show Slave Status" description="${title}" min="0" max="1" default="1" datatype="integer" validate="^[0-1]+$">/**0 to hide slave status, 1 to show it.*/</item>
+    </record> 
+     
+    <!-- The following are the configuration for PTC Tests -->
+    <record tag="15" name="PTC_TESTS_CONFIG" title="PTC Test Configuration">
+        <item name="TEST_SERVER_IP" title="Test Server IP Address" description="${title}" min="7" max="64" default="192.168.1.110" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+        <item name="TEST_SERVER_PORT" title="Test Server Port Number" description="${title}" min="1024" max="65535" default="12100" datatype="integer" validate="^[0-9]+$"/>
+        <item name="TEST_FRAME_COUNT" title="Test Frame Count" description="${title}" min="1" max="65535" default="10" datatype="integer" validate="^[0-9]+$"/>
+        <item name="TEST_FRAMES_DELAY" title="Delay Between Test Frames (msec)" description="${title}" min="100" max="65535" default="1000" datatype="integer" validate="^[0-9]+$"/>
+        <item name="TEST_MESSAGES_ENABLED" title="Test Message Enabled" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$">/** Yes=1 or No=0*/</item>
+        <item name="TEST_LOG_TEST_RESULTS" title="Log Test Results" description="${title}" min="0" max="1" default="1" datatype="boolean" validate="^[0-1]+$">/** Yes=1 or No=0*/</item>
+		<!--  VIU CAT Changes April 3 2011 -->
+        <item name="TEST_ITC_CLASS_D_STARTING_COMM_ID" title="ITC Class D Starting Comm ID" description="${title}" min="0" max="4294967295" default="1" datatype="integer" validate="^[0-9]+$"/>
+    </record>
+
+    <!-- The following are the configuration for ACSES II Network -->
+    <record tag="16" name="ACSESII_NET_CONFIG" title="ACSES II Network Configuration">
+        <item name="ACSESII_UDP_ENABLED" title="ACSES-II UDP Enabled" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$">/** Yes=1 or No=0*/</item>
+        <item name="ACSESII_UDP_PORT" title="UDP Port" description="${title}" min="1024" max="65535" default="10100" datatype="integer" validate="^[0-9]+$"/>
+        <item name="ACSESII_MCAST_IP" title="RRP Multicast Group" description="${title}" min="7" max="15" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"/>
+    </record>
+
+    <!-- SNTP -->
+    <record tag="17" name="SNTP_Information" title="SNTP Information">
+        <item name="SNTP_MODE" title="NTP Mode" description="${title}" min="0" max="1" default="0" datatype="enum_snmp" validate="^[0-1]+$"></item>
+        <item name="SNTP_PRIMARY" title="Primary NTP Time Source" description="${title}" min="0" max="64" default="pool.ntp.org" datatype="string" validate="" enable="[SNTP_MODE]!=Broadcast" />
+        <item name="SNTP_BACKUP" title="Backup NTP Time Source" description="${title}" min="0" max="64" default="" datatype="string" validate=""/>
+        <item name="SNTP_MCAST" title="NTP Multicast address" description="${title}" min="0" max="64" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$" enable="[SNTP_MODE]!=Unicast" />
+        <item name="SNTP_PORT" title="NTP UDP Port" description="${title}" min="0" max="65535" default="123" datatype="integer" validate="^[0-9]+$"/>
+        <item name="SNTP_POLL" title="NTP Polling Rate" description="${title}" min="0" max="65535" default="60" datatype="integer" validate="^[0-9]+$"  enable="[SNTP_MODE]!=Broadcast" />
+        <item name="SNTP_WAIT" title="NTP Wait Time" description="${title}" min="0" max="65535" default="120" datatype="integer" validate="^[0-9]+$"  enable="[SNTP_MODE]!=Unicast" />
+    </record>
+
+
+    <!-- HA -->
+    <record tag="18" name="HA_Information" title="High Availability Information">        
+        <item name="HA_ADDRESS_1" title="IP Name/IP Range 1" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_1" title="TCP Port Number 1" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_1" title="Idle Timeout Enabled 1" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_1" title="Idle Timeout Seconds 1" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_2" title="IP Name/IP Range 2" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_2" title="TCP Port Number 2" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_2" title="Idle Timeout Enabled 2" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_2" title="Idle Timeout Seconds 2" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_3" title="IP Name/IP Range 3" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_3" title="TCP Port Number 3" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_3" title="Idle Timeout Enabled 3" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_3" title="Idle Timeout Seconds 3" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_4" title="IP Name/IP Range 4" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_4" title="TCP Port Number 4" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_4" title="Idle Timeout Enabled 4" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_4" title="Idle Timeout Seconds 4" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_5" title="IP Name/IP Range 5" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_5" title="TCP Port Number 5" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_5" title="Idle Timeout Enabled 5" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_5" title="Idle Timeout Seconds 5" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_6" title="IP Name/IP Range 6" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_6" title="TCP Port Number 6" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_6" title="Idle Timeout Enabled 6" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_6" title="Idle Timeout Seconds 6" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_7" title="IP Name/IP Range 7" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_7" title="TCP Port Number 7" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_7" title="Idle Timeout Enabled 7" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_7" title="Idle Timeout Seconds 7" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_8" title="IP Name/IP Range 8" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_8" title="TCP Port Number 8" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_8" title="Idle Timeout Enabled 8" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_8" title="Idle Timeout Seconds 8" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_9" title="IP Name/IP Range 9" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_9" title="TCP Port Number 9" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_9" title="Idle Timeout Enabled 9" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_9" title="Idle Timeout Seconds 9" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_10" title="IP Name/IP Range 10" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_10" title="TCP Port Number 10" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_10" title="Idle Timeout Enabled 10" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_10" title="Idle Timeout Seconds 10" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_11" title="IP Name/IP Range 11" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_11" title="TCP Port Number 11" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_11" title="Idle Timeout Enabled 11" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_11" title="Idle Timeout Seconds 11" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+
+        <item name="HA_ADDRESS_12" title="IP Name/IP Range 12" description="${title}" min="0" max="70" default="" datatype="string" validate="" show="[HA_ENABLE]!=No"></item>
+        <item name="HA_PORT_12" title="TCP Port Number 12" description="${title}" min="1024" max="65535" default="12000" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_IDLE_12" title="Idle Timeout Enabled 12" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[HA_ENABLE]!=No"/>
+        <item name="HA_TIME_12" title="Idle Timeout Seconds 12" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$" show="[HA_ENABLE]!=No"/>
+        
+        <item name="HA_ENABLE" title="Enable/Disable HA" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" display_order="0"/>
+    </record>
+
+
+    <!-- Time Source Information -->
+    <record tag="19" name="TS_Information" title="Time Source Information">
+        <item name="TS_ENABLED" title="Preferred Time Source Enable" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$"></item>
+        <item name="TS_SYNC" title="Sync Timeout Value" description="${title}" min="0" max="65535" default="0" datatype="integer" validate="^[0-9]+$"/>
+        <item name="TS_ENTRY_1" title="Publisher Enable/Disable 1" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ADDRESS_1" title="Publisher EMP Address 1" description="${title}" min="0" max="63" default="" datatype="string" validate="" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ENTRY_2" title="Publisher Enable/Disable 2" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ADDRESS_2" title="Publisher EMP Address 2" description="${title}" min="0" max="63" default="" datatype="string" validate="" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ENTRY_3" title="Publisher Enable/Disable 3" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ADDRESS_3" title="Publisher EMP Address 3" description="${title}" min="0" max="63" default="" datatype="string" validate="" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ENTRY_4" title="Publisher Enable/Disable 4" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ADDRESS_4" title="Publisher EMP Address 4" description="${title}" min="0" max="63" default="" datatype="string" validate="" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ENTRY_5" title="Publisher Enable/Disable 5" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ADDRESS_5" title="Publisher EMP Address 5" description="${title}" min="0" max="63" default="" datatype="string" validate="" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ENTRY_6" title="Publisher Enable/Disable 6" description="${title}" min="0" max="1" default="0" datatype="boolean" validate="^[0-1]+$" show="[TS_ENABLED]!=No"/>
+        <item name="TS_ADDRESS_6" title="Publisher EMP Address 6" description="${title}" min="0" max="63" default="" datatype="string" validate="" show="[TS_ENABLED]!=No"/>
+    </record>
+
+    <!-- SNMP -->
+    <record tag="20" name="SNMP_Information" title="SNMP">
+        <item name="SNMP_IP_ADDRESS_1" title="Destination 1 IP" description="${title}" min="0" max="64" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"></item>
+        <item name="SNMP_IP_PORT_1" title="Destination 1 Port" description="${title}" min="0" max="65535" default="162" datatype="integer" validate="^[0-9]+$"/>
+        <item name="SNMP_IP_ADDRESS_2" title="Destination 2 IP" description="${title}" min="0" max="64" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"></item>
+        <item name="SNMP_IP_PORT_2" title="Destination 2 Port" description="${title}" min="0" max="65535" default="162" datatype="integer" validate="^[0-9]+$"/>
+        <item name="SNMP_IP_ADDRESS_3" title="Destination 3 IP" description="${title}" min="0" max="64" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"></item>
+        <item name="SNMP_IP_PORT_3" title="Destination 3 Port" description="${title}" min="0" max="65535" default="162" datatype="integer" validate="^[0-9]+$"/>
+        <item name="SNMP_IP_ADDRESS_4" title="Destination 4 IP" description="${title}" min="0" max="64" default="0.0.0.0" datatype="ip" validate="^(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})\\.(\\d{1,3})$"></item>
+        <item name="SNMP_IP_PORT_4" title="Destination 4 Port" description="${title}" min="0" max="65535" default="162" datatype="integer" validate="^[0-9]+$"/>
+        <item name="SNMP_COMMUNITY" title="Community" description="${title}" min="0" max="31" default="Siemens" datatype="string" validate=""/>
+        <item name="SNMP_CONTACT_INFO" title="Contact Info" description="${title}" min="0" max="64" default="" datatype="string" validate=""/>
+    </record>
+    
+    <record tag="21" name="CDL_LOGLEVEL" title="CDL Loglevel">
+        <item name="CDL_COMPILER_LOGLEVEL" title="CDL Log Level" description="${title}" min="0" max="4" default="0" reqt="" subreqt="" datatype="enum_verbosity" validate="^[0-9]+$"/>
+    </record>
+
+    <!-- The following are common constants that are needed across all serial
+         port configurations.  This is NOT a record that is retreived from or
+         sent to the config manager! -->
+    <record tag="0xFFFF" name="_GLOBAL_CONSTS_" title="Global Constants">
+        /* ###### Common Constants Needed to Configure Serial Ports ########## */
+
+        <!-- Protocol Constants -->
+        <const name="SER_PROTO_NONE" value="0">/* Serial Protocol Selection Values */</const>
+        <const name="SER_PROTO_NMEA" value="1" />
+        <const name="SER_PROTO_GEN_ATCS_FIELD" value="2" />
+        <const name="SER_PROTO_ACSES" value="3" />
+        <const name="SER_PROTO_USER" value="4" />
+        <!-- Serial Protocol Constants -->
+		<Enumeration name="enum_ser_protocol">
+	        <Enumerator>
+		      	<LongName>User</LongName> 
+		      	<Value>4</Value> 
+            </Enumerator>
+	        <Enumerator show="[SER_PORT_1_PROTO]==ACSES">
+	          	<LongName>NMEA</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+	        <Enumerator show="[SER_PORT_1_PROTO]!=None">
+	          	<LongName>ACSES</LongName> 
+	          	<Value>3</Value> 
+	        </Enumerator>
+        </Enumeration>
+
+        <Enumeration name="enum_ser_protocol_port1">
+            <Enumerator show="[SER_PORT_LAP_PROTO]==User">
+                <LongName>None</LongName> 
+                <Value>0</Value> 
+            </Enumerator>
+            <Enumerator show="[SER_PORT_LAP_PROTO]!=NMEA">
+                <LongName>NMEA</LongName> 
+                <Value>1</Value> 
+            </Enumerator>
+            <Enumerator>
+                <LongName>ACSES</LongName> 
+                <Value>3</Value> 
+            </Enumerator>
+        </Enumeration>
+
+        <!-- Baud Rate Constants -->
+        <const name="SER_BAUD_300" value="0">/* Baud Rate constants for lookup table */</const>
+        <const name="SER_BAUD_1200" value="1" />
+        <const name="SER_BAUD_2400" value="2" />
+        <const name="SER_BAUD_4800" value="3" />
+        <const name="SER_BAUD_9600" value="4" />
+        <const name="SER_BAUD_19200" value="5" />
+        <const name="SER_BAUD_38400" value="6" />
+        <const name="SER_BAUD_57600" value="7" />
+        <const name="SER_BAUD_115200" value="8" />
+		<!-- Baud Rate Constants -->
+        <Enumeration name="enum_ser_baudrate">
+	        <Enumerator>
+		      	<LongName>300</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>1200</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+			<Enumerator>
+		      	<LongName>2400</LongName> 
+		      	<Value>2</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>4800</LongName> 
+	          	<Value>3</Value> 
+	        </Enumerator>
+			<Enumerator>
+		      	<LongName>9600</LongName> 
+		      	<Value>4</Value> 
+            </Enumerator>
+			<Enumerator>
+		      	<LongName>19200</LongName> 
+		      	<Value>5</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>38400</LongName> 
+	          	<Value>6</Value> 
+	        </Enumerator>
+			<Enumerator>
+		      	<LongName>57600</LongName> 
+		      	<Value>7</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>115200</LongName> 
+	          	<Value>8</Value> 
+	        </Enumerator>
+        </Enumeration>
+        
+        <!-- Parity Constants -->
+        <const name="SER_PARITY_NONE" value="0">/* Parity constants for lookup table*/</const>
+        <const name="SER_PARITY_ODD" value="1" />
+        <const name="SER_PARITY_EVEN" value="2" />
+		<!-- Parity Constants -->
+		<Enumeration name="enum_ser_parity">
+	        <Enumerator>
+		      	<LongName>None</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>Odd</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+			<Enumerator>
+		      	<LongName>Even</LongName> 
+		      	<Value>2</Value> 
+            </Enumerator>
+        </Enumeration>
+
+        <!-- Data Bits Constants -->
+        <const name="SER_DATABITS_8" value="0">/* Databits Constants for lookup table */</const>
+        <const name="SER_DATABITS_7" value="1" />
+		<!-- Data Bits Constants -->
+		<Enumeration name="enum_ser_databit">
+	        <Enumerator>
+		      	<LongName>8</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>7</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+        </Enumeration>
+        
+        <!-- Stop Bits Constants -->
+        <const name="SER_STOPBITS_1" value="0">/* Stopbits constants for lookup table */</const>
+        <const name="SER_STOPBITS_2" value="1" />
+		<!-- Stop Bits Constants -->      
+		<Enumeration name="enum_ser_stopbit">
+	        <Enumerator>
+		      	<LongName>1</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>2</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+        </Enumeration>
+        
+        <!-- Flow Control Constants -->
+        <const name="SER_FLOW_NONE" value="0">/* Flow control constants for lookup table */</const>
+		<!-- Flow Control Constants -->
+		<Enumeration name="enum_ser_flowcontrol">
+	        <Enumerator>
+		      	<LongName>None</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>Hw</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+        </Enumeration>
+        
+        <!-- Timezone constants -->
+        <const name="TZ_GMT" value="0">/* Time zone constants for timezone selection */</const>
+        <const name="TZ_EASTERN" value="1" />
+        <const name="TZ_CENTRAL" value="2" />
+        <const name="TZ_MOUNTAIN" value="3" />
+        <const name="TZ_PACIFIC" value="4" />
+        <const name="TZ_ALASKA" value="5" />
+        <const name="TZ_ATLANTIC" value="6" />
+        <const name="TZ_ARIZONA" value="7" />
+        <const name="TZ_NEWFOUNDLAND" value="8" />
+        <const name="TZ_AUS_WESTERN" value="9" />
+        <const name="TZ_AUS_CENTRAL" value="10" />
+        <const name="TZ_AUS_CENTRAL_NO_DST" value="11" />
+        <const name="TZ_AUS_EASTERN" value="12" />
+        <const name="TZ_AUS_EASTERN_NO_DST" value="13" />
+        <const name="TZ_NUM_ZONES" value="14" />
+		<!-- Timezone constants -->
+		<Enumeration name="enum_time_zone">
+	        <Enumerator>
+		      	<LongName>Gmt</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>Eastern</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+			<Enumerator>
+		      	<LongName>Central</LongName> 
+		      	<Value>2</Value> 
+            </Enumerator>
+			<Enumerator>
+		      	<LongName>Mountain</LongName> 
+		      	<Value>3</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>Pacific</LongName> 
+	          	<Value>4</Value> 
+	        </Enumerator>
+			<Enumerator>
+		      	<LongName>Alaska</LongName> 
+		      	<Value>5</Value> 
+            </Enumerator>
+	        <Enumerator>
+		      	<LongName>Atlantic</LongName> 
+		      	<Value>6</Value> 
+            </Enumerator>
+			<Enumerator>
+		      	<LongName>Arizona</LongName> 
+		      	<Value>7</Value> 
+            </Enumerator>
+			<Enumerator>
+		      	<LongName>Newfoundland</LongName> 
+		      	<Value>8</Value> 
+            </Enumerator>
+	        <Enumerator>
+		      	<LongName>Aus Western</LongName> 
+		      	<Value>9</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>Aus Central</LongName> 
+	          	<Value>10</Value> 
+	        </Enumerator>
+			<Enumerator>
+		      	<LongName>Aus Central No DST</LongName> 
+		      	<Value>11</Value> 
+            </Enumerator>
+			<Enumerator>
+		      	<LongName>Aus Eastern</LongName> 
+		      	<Value>12</Value> 
+            </Enumerator>
+			<Enumerator>
+		      	<LongName>Aus Eastern No DST</LongName> 
+		      	<Value>13</Value> 
+            </Enumerator>
+			<Enumerator>
+		      	<LongName>Num Zones</LongName> 
+		      	<Value>14</Value> 
+            </Enumerator>
+        </Enumeration>
+
+        <!-- Flow Control Constants -->
+        <const name="GPS_DISABLED" value="0">/* Flow control constants for lookup table */</const>
+        <const name="GPS_INTERNAL_RECEIVER" value="1" />
+        <const name="GPS_EXTERNAL_SERIAL_PORT_1" value="2" />
+        <const name="GPS_VIA_CLASS_CD_MESSAGES" value="3" />
+        <const name="GPS_VIA_SNTP" value="4" />
+		<!-- GPS Flow Control Constants -->
+		<Enumeration name="enum_gps_time_src">
+	        <Enumerator>
+		      	<LongName>Disabled</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>Internal GPS Receiver</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+			<Enumerator>
+	          	<LongName>External Serial Port 1</LongName> 
+	          	<Value>2</Value> 
+	        </Enumerator>
+			<Enumerator>
+	          	<LongName>External via Class C/D Messages</LongName> 
+	          	<Value>3</Value> 
+	        </Enumerator>
+            <Enumerator>
+                <LongName>SNTP Client</LongName> 
+                <Value>4</Value> 
+            </Enumerator>
+        </Enumeration>
+
+    	<!-- SNTP -->
+        <const name="SNTP_UNICAST" value="0" />
+        <const name="SNTP_BROADCAST" value="1" />
+		<Enumeration name="enum_snmp">
+	        <Enumerator>
+		      	<LongName>Unicast</LongName> 
+		      	<Value>0</Value> 
+            </Enumerator>
+	        <Enumerator>
+	          	<LongName>Broadcast</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+        </Enumeration>
+
+        <!-- CDL Compiler Log Constants -->
+        <const name="CDL_BASIC" value="0">/* cdl compiler log constants*/</const>
+        <const name="CDL_ERROR" value="1" />
+        <const name="CDL_WARN" value="2" />
+		<const name="CDL_INFO" value="3" />
+        <const name="CDL_DEBUG" value="4" />
+		<!-- Verbosity Control Constants, Removed 'BASIC' from List for OCE -->
+		<Enumeration name="enum_verbosity">
+	        <Enumerator>
+	          	<LongName>Error</LongName> 
+	          	<Value>1</Value> 
+	        </Enumerator>
+			<Enumerator>
+	          	<LongName>Warning</LongName> 
+	          	<Value>2</Value> 
+	        </Enumerator>
+			<Enumerator>
+	          	<LongName>Info</LongName> 
+	          	<Value>3</Value> 
+	        </Enumerator>
+			<Enumerator>
+	          	<LongName>Debug</LongName> 
+	          	<Value>4</Value> 
+	        </Enumerator>
+        </Enumeration>
+    </record>
+    
+</root>
+

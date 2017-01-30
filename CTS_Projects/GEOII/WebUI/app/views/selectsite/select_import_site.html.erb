@@ -1,0 +1,36 @@
+<%= javascript_include_tag  'jquery.form' , 'config_import_site' %>
+<div class="padding_select_import_content">	
+	<form name="site_config_import_form"  id ="site_config_import_form" class='site_config_import_form' method="POST" enctype="multipart/form-data" >
+		<div class="clear"></div>
+		<div class="clear"></div>
+		<div class="clear"></div>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+		<span class='loader'><%= image_tag("/images/ajax-loader_white.gif") %></span>
+		<div class="padding_left_10 text_font"><label>Import file : </label></div>
+		<div class="clear"></div>
+		<div class="padding_left_10">
+			<input type="text" id="selected_imported_file" disabled="true" style="width:200px;">
+			<div class="browse_button_area">
+				<img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a></img>
+				<input type="file" id="upload_siteconfig_zip" name="upload_siteconfig_zip" style="font-size: 50px;cursor: hand;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px" />
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="div_gcp_site_name" style="display:none;">
+			<div class="clear"></div>
+			<div class="padding_left_10 text_font"><label>Site Name : </label></div>
+			<div class="clear"></div>
+			<div class="padding_left_10">
+				<%= text_field_tag "gcp_site_name",@sitename,:class =>"contentCSPsel_sitename", :html=>{:style => "text-transform:capitalize"}  %>
+			</div> 
+		</div>		
+	</form>
+	<div class="clear"></div>
+	<div id="error_message" class="error_message" style="display:block;"></div>
+	<input type="hidden" id="hd_gcp_site_name" value="" />
+	<div class="padtop_15 clear"></div>
+	<div class="padding_left_10">
+	    <button id='import_selected_site_config' class='import_selected_site_config button_width_90'>Ok</button>
+		<button id='cancel_import_selected_site_config' class='cancel_import_selected_site_config button_width_90'>Cancel</button>
+	</div>
+</div>

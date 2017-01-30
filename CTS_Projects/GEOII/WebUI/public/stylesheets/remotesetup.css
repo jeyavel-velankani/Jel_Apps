@@ -1,0 +1,36 @@
+html{
+	overflow: hidden;
+}
+.remote_setup{
+	margin-bottom:5px;
+}
+#remote_setup_info_table{
+	margin-left: 30%;
+	padding: 7px 0px 10px 0px;
+}
+
+.remotesetup_button{
+	float: left;
+	margin: 4px 0px 4px 10px;
+}
+.remotesetup_button img{
+	height:19px;
+}
+.remote-setup-tabular-info-structure{
+	color:#fff;
+}
+.remote-setup-tabular-info-structure input[type=text]{
+	background-color: #424242;
+	border: 1px solid #808080;
+	color: #fff;
+}
+.message_wrapper{
+	height: 15px;
+	margin: 8px;
+	padding: 0px;
+	position: relative;
+	width: 100%;
+}
+#msg{
+	position: absolute;
+}

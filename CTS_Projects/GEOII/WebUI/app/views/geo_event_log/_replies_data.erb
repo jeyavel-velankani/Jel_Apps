@@ -1,0 +1,60 @@
+<div id='log_updater'></div>
+<p class="errormesg">
+    <%if @failure%>
+        <%=@failure%>
+    <%end%>
+</p>
+<%= hidden_field_tag 'command', @command %>
+<div style="padding-left:1px;">
+    <% if @failure
+    else %>
+        <table cellspacing="0" cellpadding="0" width="90%" height='100%' border="0"  class="logtable" style="color:#454545;">
+            <thead>
+                <tr>
+                    <th class="sorted title text_font" align="center" abbr="timestamp" axis="col0" width="180">Time Stamp
+                        <a href='javascript: void(0);' id="timestamp_img" class="imager" ><img src="/images/order_blank.png"/></a>
+                    </th>
+                    <th id='entry_text' class="txtleft title sorted text_font" width="450">Event Text
+                        <a href='javascript: void(0);' id="events_img" class="imager" ><img src="/images/order_blank.png"/></a>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @logreplies.each do |logreply| %>
+                    <tr class="<%= cycle('even','odd')%> ">
+                        <%  events = date_time = "" %>
+                        <% logreply.text_event.split(" ").each_with_index do |reply, index| %>
+                          <% if index == 1
+                                      date_time = reply[0,2]+'-'+reply[2,3].capitalize+'-'+reply[5,2]
+                          elsif index == 2
+                            date_time = date_time +" #{reply}"
+                          end %>
+                          <% if index > 2
+                            events += "#{reply} "
+                          end %>
+                        <% end %>
+                        <td class="trnwclass text_font text_white"><%= date_time %></td>
+                        <td class="trnwclass text_font text_white"><%= events %></td>
+                        <td></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    <% end%>
+</div>
+
+<script type="text/javascript">
+  $('.logtable').flexigrid({width: "90%", height:'auto',striped:false, sortname: "timestamp",sortorder: "asc",})
+  checkforclearedcmd();
+
+  function checkforclearedcmd(){
+    var command = $('#command').val();
+    // Check if Clearbutton was pressed
+    DebugMsg("checkforclearedcmd, cmd = " + command);
+    if(command == 100){
+	  $('#ajax_spinner').show();
+      DebugMsg("checkforclearedcmd, cmd = 100, Calling geo_event_make_request");
+      geo_event_make_request(4);
+    }
+  }
+</script>

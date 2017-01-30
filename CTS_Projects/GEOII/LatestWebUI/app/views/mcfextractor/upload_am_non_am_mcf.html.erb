@@ -1,0 +1,90 @@
+<%= javascript_include_tag  'jquery.form.js' , 'upload_am_non_am_mcf'%>
+<div class="upload_am_non_am_content">
+<div class="nonappliance_model_mcfenable">
+	<%= check_box_tag 'appliancemodelmcf', 'Appliance Model MCF', true ,{:onchange =>"change(this.checked)" } %> Appliance Model MCF
+</div>
+<form name="mcf_fileuploads" action="/mcfextractor/checknonappliancemodelupload" class='mcf_extractor' id='mcf_extractor' method="POST" enctype="multipart/form-data" >	
+	<div class='select_nonappliance_model_mcf mcf_file_margin_5'>
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+		<span class='loader loader_spin'><%= image_tag("/images/big-spinner.gif") %></span>
+		<div class="padding_top_1_space">&nbsp;</div>
+		<div id="appliancemodelcontent"  class="appliancemodelcontent" style="display:none;height:auto;">
+			<table class="width_370">
+				<tr>
+					<td class="width_110">
+						<label>GEO Database: </label>
+					</td>
+					<td class="width_180">
+						<input type="text" class="width_180" name="fileToUpload_path" id="fileToUpload_path"  disabled="true" value = "<%= @mdbfile %>" >
+					</td>
+					<td class="width_80">
+						<%if @mdbfile %>
+							<div class="browse_button">
+								<input type="hidden" id="mdb_file_name" value="<%= @mdbfile %>" />
+								<img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a></img>
+								<input type="file" id="fileToUpload" name="fileToUpload" disabled=false style="font-size: 50px;cursor: pointer;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px" />
+							</div>	
+						<%else%>
+							<div class="browse_button">
+								<input type="hidden" id="mdb_file_name"/>
+								<img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a></img>
+								<input type="file" id="fileToUpload" name="fileToUpload" onchange="fileToUpload_path.value =fileToUpload.value; mdbfilecheck(); return false;" style="font-size: 50px;cursor: pointer;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px" />
+							</div>
+						<%end%> 
+			 		 </td>
+				</tr>
+				<tr>
+				  <td class="width_110">
+					  <label>MCF File: </label>
+				  </td>
+				  <td class="width_180">
+						<input type="text" class="width_180" name="fileToUpload1_path" id="fileToUpload1_path" disabled="true" >
+				  </td>
+				  <td class="width_80">
+						<div class="browse_button">
+							<img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a></img>
+							<input type="file" id="fileToUpload1" name="fileToUpload1" onchange="fileToUpload1_path.value =fileToUpload1.value; mcffilecheck(); return false;" style="font-size: 50px;cursor: pointer;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px" />
+						</div>
+				  </td>
+				</tr>
+				<tr>
+					<td class="width_110">
+						<label>Mnemonic File:</label>
+					</td>
+					<td class="width_180">
+						<input type="text" class="width_180" name="fileToUpload2_path" id="fileToUpload2_path" disabled="true" >
+					</td>
+					<td class="width_80">
+						<div class="browse_button">
+							<img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a></img>
+							<input type="file" id="fileToUpload3" name="fileToUpload3" onchange="fileToUpload2_path.value =fileToUpload3.value; xmlfilecheck(); return false;" style="font-size: 50px;cursor: pointer;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px" />
+						</div>
+					</td>
+				</tr>
+			</table>
+			</div>
+			<div id="nonappliancemodelcontent" class="nonappliancemodelcontent" style="height:90px;">
+			<table class="width_370">
+				<tr>
+					<td class="width_110">
+							<label>MCF File: </label>
+					</td>
+					<td class="width_180">
+						<input type="text" class="width_180" name="fileToUpload11_path" id="fileToUpload11_path" disabled="true" >
+					</td>
+					<td class="width_80">
+						<div class="browse_button">
+							<img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a></img>
+							<input type="file" id="fileToUpload11" name="fileToUpload11" onchange="fileToUpload11_path.value =fileToUpload11.value; mcffilecheck1(); return false;" style="font-size: 50px;cursor: pointer;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px" />
+						</div>
+					</td>
+				</tr>
+			</table>
+			</div>
+		</div>
+		<div class="padding_top_10_space"></div>
+		<div class="padding_left_100_margin_5">
+		    <%= link_to(image_tag('/images/File_upload_form_button.png'), "javascript: void(0)", :id => "upload_apandnonapmcf" , :class => "upload_apandnonapmcf") %>
+		</div>
+	  </form>
+</div>

@@ -1,0 +1,74 @@
+<div id="divselectcontent">
+	<input type="hidden" name="q_no" id="q_no" value=<%=@ques_num%> />
+</div>
+
+<div id="cdlanserr"></div>
+<%if @ans_err_str!=nil %>
+	<h3 class="ans_err_str"><%= @ans_err_str %></h3>
+<%end%>
+
+<%if @answered_question_answers!=nil %>
+	<div class="floatleft width100">
+		<div class="floatleft width100 padtop_15" id="cdl_message">
+			<table>		
+				<%@answered_question_answers.each do |answered_question_answer| %>
+					<tr>
+						<td>
+							<div id="congif_top_icons"><img class="sizenw" src="/images/check.png"/></div>
+						</td>
+						<td><%= answered_question_answer[:Question_Text] %></td>
+						<%if answered_question_answer[:Question_Type] == 1 %>
+						 	<td><%= answered_question_answer[:Question_Title] %></td>
+						<%else%>
+							 <td><%= answered_question_answer[:Answer_Value] %></td>
+						<%end%>
+					</tr>	
+				<%end%> 
+			</table>	
+		</div>
+	</div>	
+<%else%>
+	<div class="floatleft width100 padtop_15" id="cdl_message"></div>
+<%end%>
+<% if(@current_question!= nil) %>
+	<div class="floatleft width100">
+		<div class="floatleft width100 padtop_15">
+			<table>
+				<tr>
+					<td>
+						<div id="congif_top_icons"><img class="sizenw" src="/images/button_stop_blue.png"/></div>
+					</td>
+					<td>
+						<div class="config_panel_left"><%= @current_question.Question_Text %></div>
+					</td>
+					<%if @current_question.Question_Type==1 %>
+						<td>
+							<div class="config_panel_right"><%=select_tag("answer_ID", options_for_select(@answer_options.map{|u| [u.Option_Text,u.Answer_Value]}, @answer_options.map{@current_question.Answer_Default.to_i}), :class =>"contentCSPsel") %></div>
+						</td>
+					<%else%>
+						<td>
+							<div>
+								<input type="hidden" name="ans_minval" id="ans_minval" value=<%=@current_question.Answer_Min%> />
+								<input type="hidden" name="ans_maxval" id="ans_maxval" value=<%=@current_question.Answer_Max%> />
+							</div>
+						</td>
+						<td>
+							<% 
+								answer = @current_question.Answer_Default.to_i
+								
+								if answer < @current_question.Answer_Min.to_i || answer > @current_question.Answer_Max.to_i
+									answer = @current_question.Answer_Min.to_i
+								end 
+							%>
+							<div class="config_panel_right"><%= text_field_tag "answer_ID", answer, :class => "contentCSPsel", :onKeyup => "ans_validation_num(this)" %></div>
+					 		<div id="cdl_ss" class="errormesg" name="cdl_ss"></div>
+						</td>
+					<%end%>
+				</tr>
+			</div>
+		</div>
+	</div>
+	<input type="hidden" id="show_prev_next" value="1" />
+<% else %>
+	<input type="hidden" id="show_prev_next" value="0" />
+<%end%>

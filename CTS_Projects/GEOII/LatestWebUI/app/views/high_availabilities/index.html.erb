@@ -1,0 +1,42 @@
+<div id="site_content" style="margin-bottom:10px;float: left;width:100%;">
+    <%= render(:partial => "navigation_links") %>
+    <div id="message"></div>
+    <div id="high_availability_form">
+        <%= render(:partial => "form") %>
+    </div>
+</div>
+<!-- Overriding the imported CSS from content.css file -->
+<style type="text/css">
+    .content_bar_small_width {
+        width: 627px;
+    }
+    
+    .ui-spinner {
+        width: 189px;
+        box-shadow: none;
+    }
+    
+    .ui-spinner-up, .ui-spinner-down {
+        height: 50% !important;
+        border-radius: 0;
+    }
+    
+    #error_explanation {
+        float: left;
+        margin-left: 15px;
+        min-height: 20px;
+        padding: 0;
+    }
+	
+	#error_explanation h3 {
+		 padding: 5px 5px 5px 0;
+	}
+    
+    #message {
+        display: none;
+        color: greenYellow;
+        height: 15px;
+        padding-left: 9px;
+        padding-top: 10px;
+    }
+</style>

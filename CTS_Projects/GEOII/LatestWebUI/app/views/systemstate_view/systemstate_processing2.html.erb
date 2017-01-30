@@ -1,0 +1,9 @@
+
+<%= periodically_call_remote :url => { :controller => 'systemstate_view', :action => 'systemstate_process', :id => @id}, :frequency => 1, :sucess => "hidePopWin2();" %>
+
+
+<%= image_tag("ajax-loader.gif") %> Loading Please wait
+
+
+
+

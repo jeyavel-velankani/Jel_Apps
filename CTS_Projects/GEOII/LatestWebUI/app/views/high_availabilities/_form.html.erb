@@ -1,0 +1,57 @@
+<% form_tag("", :id => "high_availability_form", :class => "high_availability_form") do %>
+<%= render 'enabled_parameter' %>
+<div id="high_availability_parameters" style="display:none;">
+    <% index = 1 %>
+    <% @group_parameters.each_pair do |key, group_parameters| %>
+    <% group_parameters = @group_parameters[index - 1] %>
+    <div class='connection_information' style="<%= 'border:none' if index == 12 %>">
+        <h3>Connection <%= index %></h3>
+        <div style="margin-top:10px;">
+        </div>
+        <% group_parameters.each do |group_parameter| %>
+        <div id="module_update" style="padding-left:10px;">
+            <div id="serial_outer" class="serial_outer">
+                <div class="serialleft contentCSPlabel text_type">
+                    <%= get_label(group_parameter[:title]) %>
+                </div>
+                <div class="serialright text_type">
+                    <%= get_field(group_parameter[:type], group_parameter[:title].first, @selected_type) %>
+                </div>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    <% index += 1 %>
+    <% end %>
+</div>
+<% end %>
+<script type="text/javascript">
+    var enabled_parameter = $(".enabled_param").val()
+    /* where 103 is the value for HA enabled. 
+     * If 103, display the form else hide it.
+     */
+    if (enabled_parameter == 103) {
+        $("#high_availability_parameters").show()
+        window.parent.document.getElementById("iframe").style.height = "2345px";
+        window.parent.document.getElementById("contentcontents").style.height = "2365px";
+    }
+    else {
+        $("#high_availability_parameters").hide()
+        window.parent.document.getElementById("iframe").style.height = "600px";
+        window.parent.document.getElementById("contentcontents").style.height = "650px";
+    }
+    
+    //Applying stepper to integer fields
+    $(".integer_only").each(function(index){
+        var min = $(this).attr('min');
+        var max = $(this).attr('max');
+        var step = $(this).attr('step');
+        
+        $(this).spinner({
+            decimals: 0,
+            min: min,
+            max: max,
+            stepping: step
+        });
+    });
+</script>

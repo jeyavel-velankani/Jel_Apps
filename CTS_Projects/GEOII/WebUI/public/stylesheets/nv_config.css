@@ -1,0 +1,349 @@
+/************ parameters ************/
+.nv_config_message_wrapper{
+	height:25px;
+}
+.message{
+	height:25px;
+}
+.nv_row{
+	height: 40px;
+	width: 770px;
+}
+.nv_title{
+	color: #F2F2F2;
+	float:left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;	
+	height: 20px;
+	width: 220px;
+}
+.dv_input,.nv_error,.nv_rc2keycrc{
+	color: #FFF380;
+	float:left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;	
+	height: 20px;
+	margin: 0px 10px;
+	padding:0px;
+	width: 200px;
+}
+.dv_input input,
+.dv_input select{
+	color: #FFF;
+	background-color: #444;
+	border: 1px solid #888;
+	box-sizing: border-box;
+	height:25px;
+	margin:0px;
+	padding:0px;
+	width: 200px;
+}
+
+
+.nv_config_wrapper{
+	width:905px;
+}
+/************ generic view ************/
+.nv_config_generic_wrapper{
+	margin:5px 10px;
+}
+/************ channles table ************/
+.nv_config_channels_wrapper{
+	min-width: 150px;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+.pagination{
+	clear:both;
+	float:left;
+	width:100%;
+}
+.pagination .current{
+	background: none repeat scroll 0 0 #CFD638;
+	border: 1px solid #CFD638;
+	color: #E4E4E4;
+	font-style: normal;
+	font-weight: bold;
+}
+.pagination a, .pagination span{
+	display: block;
+	float: left;
+	margin-right: 1px;
+	padding: 4px 6px;
+}
+.pagination .active{
+	border: 1px solid #9AAFE5;
+	color: #E4E4E4;
+	text-decoration: none;
+	cursor: pointer;
+}
+.channels_selection_table_wrapper{
+	width:200px;
+	font-size: 12px;
+}
+
+.channels_selection_table_wrapper_digital{
+	width:250px;
+	font-size: 12px;
+}
+.channels_selection table {
+	float: left;
+	font-weight: 700;
+	border-collapse: collapse;
+}
+.channels_selection table td {
+	color: #E4E4E4;
+	font-family: Arial;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	text-align: center;
+	border: 1px solid #787878;
+	height:25px;
+}
+.dark_row{
+	background-color: #424242;
+	color:#fff;
+	height: 25px;
+}
+.light_row{
+	background-color: #515151;
+	color:#fff;
+	height: 25px;
+}
+.selected_row{
+	background-color: #CFD638 !important;
+	color: #000 !important;
+}
+.nv_channel{
+	width: 25px;
+}
+.nv_name{
+	width: 169px;
+}
+
+.nv_name_digital{
+	width: 140px;
+}
+.nv_arrow,
+.nv_io_assignment_arrow,
+.sear_mod_arrow{
+	cursor:pointer;
+	width: 25px;
+}
+
+.nv_config_channels_right_wrapper{
+	float: left;
+	width: 695px;
+	margin: 0px 0px 0px 10px;
+}
+.nv_config_channels_right_wrapper_digital{
+	float: left;
+	width: 645px;
+	margin: 0px 0px 0px 10px;
+}
+.nv_config_channels_content_wrapper{
+	width:100%;
+}
+.nv_date_row{
+	height: 40px;
+	width: 770px;
+}
+.site_info_time {
+	margin:0px;
+	padding:0px;
+	width: 61px !important;
+}
+.dv_date_input{
+	color: #FFF380;
+	float:left;
+	font-size: 13px;
+	font-family: Arial;
+	font-style: normal;
+	font-weight: normal;	
+	height: 25px;
+	margin: 0px 0px 0px 10px;
+	padding:0px;
+	width: 230px;
+}
+.dv_date_input input{
+	color: #FFF;
+	background-color: #444;
+	border: 1px solid #888;
+	box-sizing: border-box;
+	float: left;
+	height:25px;
+	margin:0px;
+	padding:0px;
+	width: 200px;
+}
+.dv_date_input img{
+	height:20px;
+	margin:2px 0px 0px 5px;
+	width:20px;
+}
+.ptc_icon{
+	width: 20px;
+	height: 20px;
+	float: left;
+}
+.is_default{
+	color:#F2F2F2;
+	width: 13px;
+	float: left;
+	margin: 6px 0px;
+}
+.nv_multi_line{
+	float: left;
+	width: 200px;
+}
+
+
+
+
+.sscc_tab_selected{
+	background-image: url('/images/Tab_selected.png');
+}
+.sscc_tab{
+	background-repeat: no-repeat;
+	cursor:pointer;
+	font-family: Arial;
+	font-size: 12px;
+	font-weight: bold;
+	height:35px;
+	padding: 0px 2px;
+	text-align: center;
+	width:95px;
+}
+.sscc_tab_hover{
+	background-image: url('/images/Tab_selected.png');
+}
+.sscc_tab_off{
+	background-image: url('/images/Tab.png');
+}
+.sscc_disable{
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+.left_content {
+  border-right-width: 0px !important;
+}
+.right_content{
+  border-left: 1px solid #CFD638;
+}
+.sscc_wrapper{
+  position: relative;
+  right: 10px;
+  border-top: 1px solid #CFD638;
+  width: 774px;
+}
+.sscc_list{
+  color: #E4E4E4;
+  background-color: #424242;
+  width: 200px;
+  border: 1px solid #787878;
+  padding: 0px;
+  margin: 0px 10px 0px 0px;
+  float: left;
+  border-collapse:collapse;
+
+}
+.sscc_list th.header_edge{
+  text-align: center;
+  background-color: #515151;
+  border-color: #787878;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  margin: 0 auto;
+  padding: 0px;
+  width: 30px;
+}
+.sscc_list th.header_center {
+  background-color: #515151;
+  margin: 0 auto;
+  padding: 0px;
+  width: 138px;
+  border-color: #787878;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  text-align: center;
+}
+
+.sscc_list .sort{
+  text-align: center;
+  border-color: #787878;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px;
+  width: 30px;
+}
+.sscc_list .name{
+  margin: 0 auto;
+  padding: 0px;
+  width: 138px;
+  border-color: #787878;
+  border-width: 1px 1px 0px 1px;
+  border-style: solid;
+  text-align: left;
+}
+.sscc_list .sscc_get_button_parent{
+  text-align: center;
+  border-color: #787878;
+  border-width: 1px 0 0 0;
+  border-style: solid;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px;
+  width: 30px;
+}
+.sscc_list  tr{
+  border-collapse: collapse;
+  height: 26px;
+}
+.sscc_list td.odd_row{
+  background-color: #515151;
+}
+.sscc_list .button_get_sscc{
+  cursor: pointer;
+} 
+.sscc_info{
+	width: 490px;
+}
+.sscc_info tr,.sscc_info td{
+	height: 40px;
+  margin:0px;
+  padding:0px;
+}
+.sscc_info .sscc_info_title{
+  color:#fff;
+  padding-right: 5px;
+}
+.sscc_info input[type=text]{
+  background-color: #515151;
+  border: 1px solid #787878;
+  clear: both;
+  color: white;
+  height: 15px;
+  width: 175px;
+  padding: 5px;
+}
+.sscc_info select{
+  background-color: #515151;
+  color: white;
+  border: 1px solid #787878;
+  margin-right: 6px;
+  width: 187px;
+  height: 25px;
+}
+.sscc_error{
+  color:#fff;
+  font-size: 12px;
+}

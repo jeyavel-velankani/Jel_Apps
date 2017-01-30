@@ -1,0 +1,123 @@
+<% if params[:auto_refresh].blank? %>
+<div class="floatleft width100 padtop_15" id="div-one">
+<% end %>
+	<div class="general_stat">
+		<table cellspacing="0" cellpadding="0" width="80%" border="0">
+			<thead>
+				<tr>				
+					<td  width="50"></td>		
+					<% stat_names = { 'HB-BEACON' => 'Beaconing', 'PTC-GPS' => 'GPS Present', 'PTC-CLASSD' => 'ClassD Connection'} %>
+					    <% if @ptc_gen_stat['HB-BEACON'].blank? %> 
+							<td ><img src='/images/led/gray.png' alt=""/></td>
+							<td width="150" class="general_stat_text"><%= stat_names['HB-BEACON'] %></td>
+					  	<% else %>
+					  		<td>
+							<% if (@ptc_gen_stat['HB-BEACON'].stat_value == 0) %>
+								<img src='/images/led/gray.png' alt=""/>
+							<% else %>
+								<% if (@ptc_gen_stat['HB-BTTL'] && @ptc_gen_stat['HB-BTTL'].stat_value == 0) %>
+			  		 				<img src='/images/led/yellow.png' alt=""/>
+								<% else %>
+			  		 				<img src='/images/led/green.png' alt=""/>
+								<% end %>
+							<% end %>
+							</td>
+							<td width="150" class="general_stat_text"><%= stat_names['HB-BEACON'] %></td>
+						<% end %>
+
+						<td  width="50" ></td>
+						<% if @ptc_gen_stat['PTC-GPS'].nil? %>
+							<td ><img src='/images/led/red.png' alt=""/></td >
+							<td width="150" class="general_stat_text"><%= stat_names['PTC-GPS'] %></td>
+						<% else %>
+							<td >
+							<% case @ptc_gen_stat['PTC-GPS'].stat_value 
+								 when 0 %>
+			  		 				<img src='/images/led/red.png' alt=""/>
+								<% when 2 %>
+			  		 				<img src='/images/led/yellow.png' alt=""/>
+								<% else %>
+									<img src='/images/led/green.png' alt=""/>
+							<% end %>
+							</td>
+							<td width="150" class="general_stat_text"><%= stat_names['PTC-GPS'] %></td>
+						<% end %>
+
+						<td  width="50" ></td>
+						
+							<% if @ptc_gen_stat['PTC-CLASSD'].nil? %>
+								<td><img src='/images/led/red.png' alt=""/></td>
+								<td width="150" class="general_stat_text"><%= stat_names['HB-BEACON'] %></td>
+							<% else %>
+								<td>
+									<% if (@ptc_gen_stat['PTC-CLASSD'].stat_value == 0)%> 
+					  		 			<img src='/images/led/red.png' alt=""/>
+									<% elsif (@ptc_gen_stat['PTC-CLASSD'].stat_value == 1)%> 
+					  		 			<img src='/images/led/green.png' alt=""/>
+									<% else %>
+										<img src='/images/led/yellow.png' alt=""/>
+									<% end %>
+
+								</td>
+								<td width="150" class="general_stat_text"><%= stat_names['PTC-CLASSD'] %></td>				
+							<% end %>
+						</td>
+				 </tr>
+			</thead>
+		</table>
+	</div>
+	<div>	
+		<table cellspacing="0" cellpadding="0" width="80%" border="0" class="logtable">
+		<thead>
+			<tr>
+			  <th class="title" width="220">Object</th>
+			  <th class="title" width="160">Status</th>
+			  <th class="title" width="70">PTC Code</th>
+			  <th class="title" width="150">Time</th>
+			</tr>
+		</thead>
+		<tbody>
+		  <% z=0 %>
+			<% @ptc_status.each do |ptcstatus| %>
+         <% z += 1%>
+         <% txt_color = (Time.now - Time.at(ptcstatus.time))/60 > 5 ? 'grey_text' : 'white_text' %>
+			  <tr>
+			    <td class="trnwclass padleft_18 txtblckcolor left ">
+			      <strong><span class="<%= txt_color %>"><%=h ptcstatus.object_name %>:</span></strong>
+			    </td>
+			    <td><span class="<%= txt_color %>"><%=h ptcstatus.object_state %></span></td>
+			    <td><span class="<%= txt_color %>"><%=h ptcstatus.ptc_msg_code %></span></td>
+          <td>
+            <span class="<%= txt_color %>">
+              <%=h Time.at(ptcstatus.time).strftime("%d-%b-%Y %H:%M:%S") %>
+              &nbsp;
+              <% if (Time.now - Time.at(ptcstatus.time))/60 > 5 %>
+                <img src='/images/time_go.png' alt=""/>
+              <% end %>
+            </span>
+          </td>
+			  </tr>
+			<% end%>
+			<%if z < 7
+        (7 - z).times do |i|%>
+        <tr>
+          <td class="txtleft">&nbsp;</td>
+          <td class="txtleft">&nbsp;</td>
+          <td class="txtleft">&nbsp;</td>
+          <td class="txtleft">&nbsp;</td>
+          <td class="txtleft">&nbsp;</td>
+          <td class="txtleft">&nbsp;</td>
+        </tr>
+      <% end
+      end %>
+      
+		</tbody>
+		</table>
+	</div>
+<% if params[:auto_refresh].blank? %>
+</div>
+<% end %>
+
+<script>
+  $('.logtable').flexigrid({width: "90%", height:'auto',striped:false});
+</script>

@@ -1,0 +1,20 @@
+<%= stylesheet_link_tag 'statistics'%>
+<%= javascript_include_tag "statistics" %>
+
+<!-- -------------------- C O N T R O L   B A R -------------------- -->
+<div id="mainbar">
+  <%= render :partial => "main_control_bar" %>
+</div>
+
+<!-- -------------------- H I D D E N   D A T A -------------------- -->
+<div class="clear">
+  <%= hidden_field_tag 'current_request_id', 0 %>
+  <%= hidden_field_tag 'atcs_address', @atcs_address %>
+</div>
+
+<div id='status_info'>
+</div>
+
+<!-- -------------------- S T A T I S T I C S   D A T A -------------------- -->
+<div id='stats_table'>
+</div>

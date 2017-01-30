@@ -1,0 +1,74 @@
+<chassis_label>
+<label channel="0">Maint Call</label>
+<label channel="1">IN 1.1</label>
+<label channel="2">IN 1.2</label>
+<label channel="3">OUT 1.2</label>
+<label channel="4">OUT 1.1</label>
+
+<label channel="5">TRK2 CHK1</label>
+<label channel="6">TRK2 RCV2</label>
+<label channel="7">TRK2 RCV1</label>
+<label channel="8">SP 2.1</label>
+<label channel="9">IN 2.2</label>
+<label channel="10">IN 2.1</label>
+<label channel="11">OUT 2.2</label>
+<label channel="12">OUT 2.1</label>
+
+<label channel="13">TRK3 CHK1</label>
+<label channel="14">TRK3 RCV2</label>
+<label channel="15">TRK3 RCV1</label>
+<label channel="16">SP 3.1</label>
+<label channel="17">IN 3.2</label>
+<label channel="18">IN 3.1</label>
+<label channel="19">OUT 3.2</label>
+<label channel="20">OUT 3.1</label>
+
+<label channel="21">TRK4 CHK1</label>
+<label channel="22">TRK4 RCV2</label>
+<label channel="23">TRK4 RCV1</label>
+<label channel="24">SP 4.1</label>
+<label channel="25">IN 4.2</label>
+<label channel="26">IN 4.1</label>
+<label channel="27">OUT 4.2</label>
+<label channel="28">OUT 4.1</label>
+
+<label channel="29">TRK5 CHK1</label>
+<label channel="30">TRK5 RCV2</label>
+<label channel="31">TRK5 RCV1</label>
+<label channel="32">SP 5.1</label>
+<label channel="33">IN 5.2</label>
+<label channel="34">IN 5.1</label>
+<label channel="35">OUT 5.2</label>
+<label channel="36">OUT 5.1</label>
+
+<label channel="37">TRK6 CHK1</label>
+<label channel="38">TRK6 RCV2</label>
+<label channel="39">TRK6 RCV1</label>
+<label channel="40">SP 6.1</label>
+
+<label channel="41">IN 6.2</label>
+<label channel="42">IN 6.1</label>
+<label channel="43">OUT 6.2</label>
+<label channel="44">OUT 6.1</label>
+
+<label channel="45">IN 8.5</label>
+<label channel="46">IN 8.4</label>
+<label channel="47">IN 8.3</label>
+<label channel="48">IN 8.2</label>
+<label channel="49">IN 8.1</label>
+<label channel="50">2GC</label>
+
+<label channel="51">IN 7.5</label>
+<label channel="52">IN 7.4</label>
+<label channel="53">IN 7.3</label>
+<label channel="54">IN 7.2</label>
+<label channel="55">IN 7.1</label>
+<label channel="56">1GC</label>
+<label channel="57">2BELL</label>
+<label channel="58">1BELL</label>
+<label channel="59">Main Power</label>
+<label channel="60">Stby Power</label>
+<label channel="61">Ext DI1</label>
+<label channel="62">Ext DI2</label>
+
+</chassis_label>

@@ -1,0 +1,28 @@
+<ul id="viunonvital_error_container" class="pad_5_list_style"></ul>
+<% unless @nonvital_parameters.blank? %>
+<input type="hidden" id="hd_site_name" value="<%= session[:s_name]%>" />
+<input type="hidden" id="hd_atcs_addr" value="<%= session[:atcs_address] %>" />
+<input type="hidden" id="hd_mile_post" value="<%= session[:m_post] %>" />
+<input type="hidden" id="hd_dot_number" value="<%= session[:dot_num] %>" />
+<div class="padtop_5_left_10 viu_non_vital_wrapper">
+	<% @nonvital_params_names = {}
+	   @nonvital_parameters.each do |nvparams|%>
+		<%= Get_nonvitalconfig_parameters(nvparams)%>
+	<% end%>
+	<% if @enumerator_expressions != nil 
+		 @enumerator_expressions.each do |name,value| %>
+			<input type="hidden" id="<%=name%>" value="<%=value%>"/>
+		<% end
+	 end %>
+</div>
+<% nvital_params_hash_obj = read_cfgdef_xml(@nonvital_params_names, tag_name) %>
+<script>
+	var nvital_params_json_obj = JSON.parse('<%= nvital_params_hash_obj.to_json%>');
+	$(document).ready(function(){
+		jQuery.each(nvital_params_json_obj, function(name, parameters) {
+			$('#'+name).closest('.nv_row').append("<div class='nv_error' id='" + name + "_error' style='display:none'></div>");
+		});
+		$('.viu_non_vital_wrapper').custom_scroll(430);  
+	});
+</script>
+<% end %>

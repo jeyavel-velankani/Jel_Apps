@@ -1,0 +1,19 @@
+.toplogo{
+    position		: absolute;
+}
+
+.toplogo img{
+    position: absolute;
+	top: -30px;
+}
+.copyright_wrapper{
+    margin-top: 40px;
+    width: 100%;
+}
+.copyrighttxt {
+    font-family: Arial;
+    font-size: 11px;
+    color: #CCCCCC;
+    width:100%;
+    padding:10px 0px 15px 10px;
+}

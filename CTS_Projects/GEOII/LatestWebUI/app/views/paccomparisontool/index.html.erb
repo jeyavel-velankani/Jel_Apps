@@ -1,0 +1,61 @@
+<%= javascript_include_tag 'jquery.form', 'paccomparisontool' %>
+<form name="gcp_site_config_import_form" action="/paccomparisontool/merge_data" id ="gcp_site_config_import_form" class='gcp_site_config_import_form' method="POST" enctype="multipart/form-data" >
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>" />
+	<%= GenericHelper.toolbar({'start_merge' => 'compare_mouse_over.png' , 'save_comparison_report' => 'Downloadmouseover.png'},'unlock') %>
+	<div id="mergetoolcontent" class="mergetoolcontent">
+    <div class="clear"></div>
+	<table><ul></ul>
+        <tr>
+            <div>
+                <td>
+                    <label id="lbluserinstallationname" class="lbl_text">Select PACfile 1 : </label>
+                </td>
+                <td>
+                    <%=select_tag("selected_pac1_path", "<option selected=\"selected\">Select PAC1</option>"+options_for_select(@pac_files.map{|x| [File.basename(x),x]}),:class =>"contentCSPsel_pac_comp" ,:disabled =>false) %>
+                    <input type="hidden" name="uploaded_pac1_path" id="uploaded_pac1_path" />
+                </td>
+            </div>
+            <td>
+            <div class="pad_left25">	
+                <div class="browse_button_area">
+                    <img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a>
+                    </img>
+                    <input type="file" id="fileUploadPac1" name="fileUploadPac1" style="font-size: 50px;cursor: pointer;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px; left: -20px"/>
+                </div>
+				</div>
+            </td>
+        </tr>
+    </table>
+	<div class="clear"></div>
+    <table>
+        <tr>
+            <div>
+                <td>
+                    <label id="lbluserinstallationname" class="lbl_text"> Select PACfile 2 : </label>
+                </td>
+                <td>
+                    <%=select_tag("selected_pac2_path","<option selected=\"selected\">Select PAC2</option>"+options_for_select(@pac_files.map{|x| [File.basename(x),x]}),:class =>"contentCSPsel_pac_comp" ,:disabled =>false) %>
+                    <input type="hidden" name="uploaded_pac2_path" id="uploaded_pac2_path" />
+                </td>
+            </div>
+            <td>
+            	<div class="pad_left25">	
+                <div class="browse_button_area">
+                    <img src="/images/Browse-mouse-over.png"><a href="javascript: void(0)" style="color:black;font-weight:bold;"></a>
+                    </img>
+                    <input type="file" id="fileUploadPac2" name="fileUploadPac2" style="font-size: 50px;cursor: pointer;  width: 120px; opacity: 0;filter:alpha(opacity: 0);  position: relative; top: -40px;; left: -20px"/>
+                </div>
+                </div>
+				</td>
+            </tr>
+            </table>
+            <div id="comparisonerrormessage" name="comparisonerrormessage" class="comparisonerrormessage">
+            </div>
+        </div>
+   </div>
+</form>
+<div id="report_update" class="reportcontentCS">
+    <div id="mycontent" class="mycontent">
+	   <%= render :partial=>'paccomparison' %>
+    </div>
+</div>

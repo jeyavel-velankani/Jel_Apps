@@ -1,0 +1,26 @@
+<div>
+  <%= hidden_field_tag 'request_id', @simplerequest.id %>
+  <%= hidden_field_tag 'request_for_all', (@request_for_all || false) %>
+  <%= hidden_field_tag 'log_type_id', (@log_type_id) %>
+  
+  <p style="text-align:center">  <%= image_tag("ajax-loader.gif") %> <br>Loading Please wait....</p>
+</div>                                                                                                                                    
+<script>
+ clearTimeout(t);
+ function check_new_logs(){
+   var t = setTimeout(function(){
+     var req_id = $('#request_id').val();
+     var req_all = $('#request_for_all').val();
+     var log_id = $('#log_type_id').val();
+     var searchon = $('#search_on').val();
+     var query = $('#query').val();
+     
+     
+     if(req_id){
+       $.get('/logreplies/check_new_logs', {log_type_id:log_id, request_id:req_id, request_for_all:req_all, search_on:searchon, q:query}, function(data){
+         $('#log_update').html(data);
+       });
+   }}, 3000)
+ }
+ check_new_logs();
+</script>

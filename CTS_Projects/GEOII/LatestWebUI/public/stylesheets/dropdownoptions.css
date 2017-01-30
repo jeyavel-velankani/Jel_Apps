@@ -1,0 +1,29 @@
+#dropdownsubmenu{
+    background-color: #595651;
+    border-width: 1px 1px 0px;
+    border-style: solid;
+    border-color: black;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 18px;
+    font-family: Arial;
+    width: 100px;
+    z-index: 100;
+    position: absolute;
+	list-style: none outside none !important;
+}
+#dropdownsubmenu li{
+    border-bottom: 1px solid black;
+    font-weight: bold;
+    text-indent: 5px;
+    padding: 1px 0;
+	list-style: none outside none !important;
+
+}
+#dropdownsubmenu li:hover {
+	list-style: none outside none !important;
+    background: #CFD638;
+    color: black;
+}
