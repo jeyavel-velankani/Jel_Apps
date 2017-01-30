@@ -1,7 +1,0 @@
-<div class="setup_wizard_overview">Overview</div>
-<% @templates_list.each do |template| %>
-	<div class="template_lable setup_wizard_menu_link" page_name="<%= template.page_name %>" >
-		<%= template.page_name %>
-	</div>
-<% end %>
-<input type="hidden" value="<%= @selected_template.page_name %>" id="first_template_name" />

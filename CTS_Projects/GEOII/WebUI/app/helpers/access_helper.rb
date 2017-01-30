@@ -1,3 +1,0 @@
-module AccessHelper
-  
-end

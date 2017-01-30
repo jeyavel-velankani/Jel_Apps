@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  log_type_id: 1
-  log_name: MyString
-
-two:
-  log_type_id: 1
-  log_name: MyString
