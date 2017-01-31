@@ -1,0 +1,968 @@
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:45:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 18ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-08 14:45:24 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.0ms)
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:45:25 +0530
+Processing by ChatRoomsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-08 14:45:25 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 12238ms (Views: 12227.8ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 11597ms (Views: 11596.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-12-08 14:45:52 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 153ms (Views: 151.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-08 14:46:01 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VMiCDA2XN5rRhmelVrjE55yp43XhMFukgVXzZ32FbNts7Ul1p/jTcGOVLmjrsxIPfSqBqiOieYQb5BwFcpjPuQ==", "user"=>{"email"=>"jeyavel.natesan@velankani.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'jeyavel.natesan@velankani.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('jeyavel.natesan@velankani.com', '$2a$11$OCeGXIFAy3Mmc0KgHgzfqevqAa.xBK.Gfi2QR.qTu81P.5Y73AkPC', '2016-12-08 09:16:02', '2016-12-08 09:16:02')[0m
+  [1m[35m (25.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE `users` SET `sign_in_count` = 1, `current_sign_in_at` = '2016-12-08 09:16:02', `last_sign_in_at` = '2016-12-08 09:16:02', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_ip` = '127.0.0.1' WHERE `users`.`id` = 1[0m
+  [1m[35m (29.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 238ms (ActiveRecord: 56.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:46:02 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (22.9ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 168ms (Views: 137.4ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/chat_rooms/new" for 127.0.0.1 at 2016-12-08 14:46:03 +0530
+Processing by ChatRoomsController#new as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/new.html.erb within layouts/application
+  Rendered chat_rooms/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 154ms (Views: 141.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/chat_rooms" for 127.0.0.1 at 2016-12-08 14:46:06 +0530
+Processing by ChatRoomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"452WTTOC6uJ4HG5QimCpzX9DdQx3uxgOefuKSZss9KHbuF00me0OCMoPJ503a38lnsAX07UpOi7jSmUrlDFXww==", "chat_room"=>{"title"=>"my friends"}, "commit"=>"Add!"}
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `chat_rooms` (`title`, `user_id`, `created_at`, `updated_at`) VALUES ('my friends', 1, '2016-12-08 09:16:06', '2016-12-08 09:16:06')[0m
+  [1m[35m (101.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/chat_rooms
+Completed 302 Found in 129ms (ActiveRecord: 104.2ms)
+
+
+Started GET "/chat_rooms" for 127.0.0.1 at 2016-12-08 14:46:06 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.7ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 145ms (Views: 141.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:46:07 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 143ms (Views: 122.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 14:46:07 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:46:07 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [jeyavel.natesan@velankani.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMQ)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+Started POST "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:46:11 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/chat_rooms/1"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [55 times] (257.4ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (21.0ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1174.2ms)
+[ActionCable] [jeyavel.natesan@velankani.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:46:12 +0530
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel stopped streaming from chat_rooms_1_channel
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 14:46:36 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:46:36 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [jeyavel.natesan@velankani.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMQ)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:46:45 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 117ms (Views: 111.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 14:46:45 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:46:45 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [jeyavel.natesan@velankani.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMQ)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+Started POST "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:46:49 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/chat_rooms/1"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [55 times] (345.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (4402.9ms)
+[ActionCable] [jeyavel.natesan@velankani.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:46:54 +0530
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel stopped streaming from chat_rooms_1_channel
+Started POST "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:46:54 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/chat_rooms/1"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [55 times] (216.2ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (1421.0ms)
+[ActionCable] [jeyavel.natesan@velankani.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:46:56 +0530
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel stopped streaming from chat_rooms_1_channel
+Started GET "/chat_rooms" for 127.0.0.1 at 2016-12-08 14:48:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.6ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 931ms (Views: 898.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:48:15 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 205ms (Views: 163.4ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 14:48:15 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:48:15 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [jeyavel.natesan@velankani.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMQ)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel#send_message({"message"=>"hai", "chat_room_id"=>1})
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('hai', 1, 1, '2016-12-08 09:18:18', '2016-12-08 09:18:18')[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (77.1ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [jeyavel.natesan@velankani.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: 8462de92-9dbe-426e-8baf-a85d96ba9282) to Async(default) with arguments: #<GlobalID:0x007fd2f5a868d8 @uri=#<URI::GID gid://jel-ap-is/Message/1>>
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [8462de92-9dbe-426e-8baf-a85d96ba9282] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fd2f5c32538 @uri=#<URI::GID gid://jel-ap-is/Message/1>>
+[ActiveJob] [MessageBroadcastJob] [8462de92-9dbe-426e-8baf-a85d96ba9282]   [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [8462de92-9dbe-426e-8baf-a85d96ba9282] Performed MessageBroadcastJob from Async(default) in 45.68ms
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel#send_message({"message"=>"ghjgh", "chat_room_id"=>1})
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('ghjgh', 1, 1, '2016-12-08 09:18:23', '2016-12-08 09:18:23')[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (52.3ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [jeyavel.natesan@velankani.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: fbb76ba8-7510-4b04-a8a2-c9d618fe072b) to Async(default) with arguments: #<GlobalID:0x007fd2f617e028 @uri=#<URI::GID gid://jel-ap-is/Message/2>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 2 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [fbb76ba8-7510-4b04-a8a2-c9d618fe072b] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007fd2f61bff50 @uri=#<URI::GID gid://jel-ap-is/Message/2>>
+[ActiveJob] [MessageBroadcastJob] [fbb76ba8-7510-4b04-a8a2-c9d618fe072b]   [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [fbb76ba8-7510-4b04-a8a2-c9d618fe072b] Performed MessageBroadcastJob from Async(default) in 19.8ms
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:48:40 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.7ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 157ms (Views: 153.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:48:44 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  Rendered chat_rooms/show.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (Missing partial messages/_message with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/JelAPI/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/bundler/gems/activeadmin-a932d56b156e/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/kaminari-0.17.0/app/views"
+):
+    1: <h1><%= @chat_room.title %></h1>
+    2: 
+    3: <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+    4:   <%= render @chat_room.messages %>
+    5: </div>
+    6: 
+    7: <%= form_for @message, url: '#' do |f| %>
+  
+app/views/chat_rooms/show.html.erb:4:in `_app_views_chat_rooms_show_html_erb__3955501991424625799_70272109636040'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.1ms)
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:49:43 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  Rendered chat_rooms/show.html.erb within layouts/application (4.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (Missing partial messages/_message with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/JelAPI/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/bundler/gems/activeadmin-a932d56b156e/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/kaminari-0.17.0/app/views"
+):
+    1: <h1><%= @chat_room.title %></h1>
+    2: 
+    3: <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+    4:   <%= render @chat_room.messages %>
+    5: </div>
+    6: 
+    7: <hr>
+  
+app/views/chat_rooms/show.html.erb:4:in `_app_views_chat_rooms_show_html_erb__3955501991424625799_70272040370220'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.3ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (21.7ms)
+[ActionCable] [jeyavel.natesan@velankani.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:49:43 +0530
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel stopped streaming from chat_rooms_1_channel
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:50:03 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.6ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 131ms (Views: 126.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:50:05 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  Rendered chat_rooms/show.html.erb within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error (Missing partial messages/_message with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :arb, :coffee, :jbuilder]}. Searched in:
+  * "/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/JelAPI/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/devise-4.2.0/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/bundler/gems/activeadmin-a932d56b156e/app/views"
+  * "/home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/kaminari-0.17.0/app/views"
+):
+    1: <h1><%= @chat_room.title %></h1>
+    2: 
+    3: <div id="messages" data-chat-room-id="<%= @chat_room.id %>">
+    4:   <%= render @chat_room.messages %>
+    5: </div>
+    6: 
+    7: <hr>
+  
+app/views/chat_rooms/show.html.erb:4:in `_app_views_chat_rooms_show_html_erb__3955501991424625799_70272020656860'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.2ms)
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:52:20 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.6ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 367ms (Views: 336.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:52:22 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.3ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of messages/_message.html.erb [2 times] (6.7ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 198ms (Views: 166.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 14:52:22 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:52:22 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [jeyavel.natesan@velankani.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMQ)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel#send_message({"message"=>"gfdg", "chat_room_id"=>1})
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('gfdg', 1, 1, '2016-12-08 09:22:27', '2016-12-08 09:22:27')[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (35.8ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [jeyavel.natesan@velankani.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: 7bb45f60-e8c1-4c37-bb85-f2b323135687) to Async(default) with arguments: #<GlobalID:0x007f8e26c1b770 @uri=#<URI::GID gid://jel-ap-is/Message/3>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 3 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [7bb45f60-e8c1-4c37-bb85-f2b323135687] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f8e26c3f058 @uri=#<URI::GID gid://jel-ap-is/Message/3>>
+[ActiveJob] [MessageBroadcastJob] [7bb45f60-e8c1-4c37-bb85-f2b323135687]   [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [7bb45f60-e8c1-4c37-bb85-f2b323135687]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [7bb45f60-e8c1-4c37-bb85-f2b323135687]   Rendered messages/_message.html.erb (2.9ms)
+[ActiveJob] [MessageBroadcastJob] [7bb45f60-e8c1-4c37-bb85-f2b323135687] [ActionCable] Broadcasting to chat_rooms_1_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">jeyavel.natesan at 09:22:27 08 December 2016 says</span><br>\n          gfdg\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [7bb45f60-e8c1-4c37-bb85-f2b323135687] Performed MessageBroadcastJob from Async(default) in 15.55ms
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <... (via streamed from chat_rooms_1_channel)
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:52:34 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.9ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 165ms (Views: 161.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chat_rooms/new" for 127.0.0.1 at 2016-12-08 14:52:35 +0530
+Processing by ChatRoomsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/new.html.erb within layouts/application
+  Rendered chat_rooms/new.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 168ms (Views: 165.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:53:01 +0530
+Processing by ChatRoomsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-08 14:53:02 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 136ms (Views: 133.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2016-12-08 14:53:07 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 135ms (Views: 134.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2016-12-08 14:53:42 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1SFXWvbru1NFx0SdH3fuuJ9DQzgrzbmmUtSJ1Xp2Om4FqP8NbSdEltvKs/28pmXYcH1upqxGNgi7X5pCwTHz+Q==", "user"=>{"email"=>"admin@chat.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'admin@chat.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('admin@chat.com', '$2a$11$bOJCJnkYx43S6SmNouxR5O7oYnk40/wp3hQX3/LYJMYl.OHGqCoIK', '2016-12-08 09:23:43', '2016-12-08 09:23:43')[0m
+  [1m[35m (56.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (30.3ms)[0m  [1m[33mUPDATE `users` SET `sign_in_count` = 1, `current_sign_in_at` = '2016-12-08 09:23:43', `last_sign_in_at` = '2016-12-08 09:23:43', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_ip` = '127.0.0.1' WHERE `users`.`id` = 2[0m
+  [1m[35m (49.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 318ms (ActiveRecord: 137.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:53:43 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.6ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 126ms (Views: 122.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 14:53:47 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of messages/_message.html.erb [3 times] (4.7ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 130ms (Views: 123.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 14:53:48 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:53:48 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [admin@chat.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMg)
+[ActionCable] [admin@chat.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [admin@chat.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+[ActionCable] [admin@chat.com] ChatRoomsChannel#send_message({"message"=>"hi", "chat_room_id"=>1})
+[ActionCable] [admin@chat.com]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [admin@chat.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('hi', 2, 1, '2016-12-08 09:23:53', '2016-12-08 09:23:53')[0m
+[ActionCable] [admin@chat.com]   [1m[35m (59.0ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [admin@chat.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: 4ecdd8f3-3904-4f43-9a0f-8ea423055dbf) to Async(default) with arguments: #<GlobalID:0x007f8e244f1f28 @uri=#<URI::GID gid://jel-ap-is/Message/4>>
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 4 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [4ecdd8f3-3904-4f43-9a0f-8ea423055dbf] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f8e24499530 @uri=#<URI::GID gid://jel-ap-is/Message/4>>
+[ActiveJob] [MessageBroadcastJob] [4ecdd8f3-3904-4f43-9a0f-8ea423055dbf]   [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [4ecdd8f3-3904-4f43-9a0f-8ea423055dbf]   [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [4ecdd8f3-3904-4f43-9a0f-8ea423055dbf]   Rendered messages/_message.html.erb (3.1ms)
+[ActiveJob] [MessageBroadcastJob] [4ecdd8f3-3904-4f43-9a0f-8ea423055dbf] [ActionCable] Broadcasting to chat_rooms_1_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"admin\" src=\"https://www.gravatar.com/avatar/56292194e219853152a78d10b9d5f6cf?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">admin at 09:23:53 08 December 2016 says</span><br>\n          hi\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [4ecdd8f3-3904-4f43-9a0f-8ea423055dbf] Performed MessageBroadcastJob from Async(default) in 11.79ms
+[ActionCable] [admin@chat.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"admin\" src=\"https://www.gravatar.com/avatar/56292194e219853152a78d10b9d5f6cf?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"... (via streamed from chat_rooms_1_channel)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"admin\" src=\"https://www.gravatar.com/avatar/56292194e219853152a78d10b9d5f6cf?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"... (via streamed from chat_rooms_1_channel)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel#send_message({"message"=>"epadi iruka admin?\n", "chat_room_id"=>1})
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('epadi iruka admin?\n', 1, 1, '2016-12-08 09:24:13', '2016-12-08 09:24:13')[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (28.7ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [jeyavel.natesan@velankani.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: e370142b-82a8-4377-a763-90637fca2a62) to Async(default) with arguments: #<GlobalID:0x007f8e242a3d20 @uri=#<URI::GID gid://jel-ap-is/Message/5>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 5 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [e370142b-82a8-4377-a763-90637fca2a62] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f8e2426efd0 @uri=#<URI::GID gid://jel-ap-is/Message/5>>
+[ActiveJob] [MessageBroadcastJob] [e370142b-82a8-4377-a763-90637fca2a62]   [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [e370142b-82a8-4377-a763-90637fca2a62]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [e370142b-82a8-4377-a763-90637fca2a62]   Rendered messages/_message.html.erb (2.6ms)
+[ActiveJob] [MessageBroadcastJob] [e370142b-82a8-4377-a763-90637fca2a62] [ActionCable] Broadcasting to chat_rooms_1_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">jeyavel.natesan at 09:24:13 08 December 2016 says</span><br>\n          epadi iruka admin?\n\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [e370142b-82a8-4377-a763-90637fca2a62] Performed MessageBroadcastJob from Async(default) in 10.12ms
+[ActionCable] [admin@chat.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <... (via streamed from chat_rooms_1_channel)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <... (via streamed from chat_rooms_1_channel)
+[ActionCable] [admin@chat.com] ChatRoomsChannel#send_message({"message"=>"i am fine jel\n", "chat_room_id"=>1})
+[ActionCable] [admin@chat.com]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [admin@chat.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('i am fine jel\n', 2, 1, '2016-12-08 09:24:21', '2016-12-08 09:24:21')[0m
+[ActionCable] [admin@chat.com]   [1m[35m (55.7ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [admin@chat.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: 36876a10-06be-4aff-bc0c-8334f8e637bc) to Async(default) with arguments: #<GlobalID:0x007f8e2414de30 @uri=#<URI::GID gid://jel-ap-is/Message/6>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 6 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [36876a10-06be-4aff-bc0c-8334f8e637bc] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f8e24120ca0 @uri=#<URI::GID gid://jel-ap-is/Message/6>>
+[ActiveJob] [MessageBroadcastJob] [36876a10-06be-4aff-bc0c-8334f8e637bc]   [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [36876a10-06be-4aff-bc0c-8334f8e637bc]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [36876a10-06be-4aff-bc0c-8334f8e637bc]   Rendered messages/_message.html.erb (2.7ms)
+[ActiveJob] [MessageBroadcastJob] [36876a10-06be-4aff-bc0c-8334f8e637bc] [ActionCable] Broadcasting to chat_rooms_1_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"admin\" src=\"https://www.gravatar.com/avatar/56292194e219853152a78d10b9d5f6cf?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">admin at 09:24:21 08 December 2016 says</span><br>\n          i am fine jel\n\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [36876a10-06be-4aff-bc0c-8334f8e637bc] Performed MessageBroadcastJob from Async(default) in 10.72ms
+[ActionCable] [admin@chat.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"admin\" src=\"https://www.gravatar.com/avatar/56292194e219853152a78d10b9d5f6cf?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"... (via streamed from chat_rooms_1_channel)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"admin\" src=\"https://www.gravatar.com/avatar/56292194e219853152a78d10b9d5f6cf?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"... (via streamed from chat_rooms_1_channel)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel#send_message({"message"=>"hghjg", "chat_room_id"=>1})
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('hghjg', 1, 1, '2016-12-08 09:25:12', '2016-12-08 09:25:12')[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (30.9ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [jeyavel.natesan@velankani.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: 217e4a43-d113-4bd6-92d6-4da56af4e182) to Async(default) with arguments: #<GlobalID:0x007f8e3021d9a8 @uri=#<URI::GID gid://jel-ap-is/Message/7>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 7 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [217e4a43-d113-4bd6-92d6-4da56af4e182] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f8e301f5638 @uri=#<URI::GID gid://jel-ap-is/Message/7>>
+[ActiveJob] [MessageBroadcastJob] [217e4a43-d113-4bd6-92d6-4da56af4e182]   [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [217e4a43-d113-4bd6-92d6-4da56af4e182]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [217e4a43-d113-4bd6-92d6-4da56af4e182]   Rendered messages/_message.html.erb (2.9ms)
+[ActiveJob] [MessageBroadcastJob] [217e4a43-d113-4bd6-92d6-4da56af4e182] [ActionCable] Broadcasting to chat_rooms_1_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">jeyavel.natesan at 09:25:12 08 December 2016 says</span><br>\n          hghjg\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+[ActionCable] [admin@chat.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <... (via streamed from chat_rooms_1_channel)
+[ActiveJob] [MessageBroadcastJob] [217e4a43-d113-4bd6-92d6-4da56af4e182] Performed MessageBroadcastJob from Async(default) in 13.29ms
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <... (via streamed from chat_rooms_1_channel)
+Started GET "/" for 127.0.0.1 at 2016-12-08 14:58:58 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.8ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 131ms (Views: 127.7ms | ActiveRecord: 0.8ms)
+
+
+[ActionCable] [jeyavel.natesan@velankani.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 14:58:58 +0530
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel stopped streaming from chat_rooms_1_channel
+Started POST "/2.0/jel-api1" for 127.0.0.1 at 2016-12-08 14:59:21 +0530
+Processing by Catalog::CatalogController#jel_api1 as JSON
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started POST "/2.0/jel-api1" for 127.0.0.1 at 2016-12-08 14:59:55 +0530
+Processing by Catalog::CatalogController#jel_api1 as JSON
+Completed 200 OK in 8988ms (Views: 0.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 15:00:04 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:00:04 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [admin@chat.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMg)
+[ActionCable] [admin@chat.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [admin@chat.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+Started GET "/" for 127.0.0.1 at 2016-12-08 15:04:38 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.4ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 108ms (Views: 94.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 15:04:45 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:04:45 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [admin@chat.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMg)
+[ActionCable] [admin@chat.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [admin@chat.com] ChatRoomsChannel is streaming from chat_rooms_1_channel
+Started GET "/" for 127.0.0.1 at 2016-12-08 15:05:00 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.8ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 149ms (Views: 145.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 15:11:52 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [1 times] (0.6ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 398ms (Views: 367.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/chat_rooms/new" for 127.0.0.1 at 2016-12-08 15:12:06 +0530
+Processing by ChatRoomsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/new.html.erb within layouts/application
+  Rendered chat_rooms/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 187ms (Views: 183.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/chat_rooms" for 127.0.0.1 at 2016-12-08 15:12:09 +0530
+Processing by ChatRoomsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tizUXhh2bw/eIN8aC2va9vTy3FUZas3u98rbgafREAaOCR8nshmL5Wwzlte2YAweFXG+itv4785tezTjqMyzZA==", "chat_room"=>{"title"=>"dd"}, "commit"=>"Add!"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `chat_rooms` (`title`, `user_id`, `created_at`, `updated_at`) VALUES ('dd', 1, '2016-12-08 09:42:09', '2016-12-08 09:42:09')[0m
+  [1m[35m (106.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/chat_rooms
+Completed 302 Found in 137ms (ActiveRecord: 107.3ms)
+
+
+Started GET "/chat_rooms" for 127.0.0.1 at 2016-12-08 15:12:09 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [2 times] (0.8ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 171ms (Views: 167.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/chat_rooms/2" for 127.0.0.1 at 2016-12-08 15:12:10 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 2 LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 2[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  Rendered collection of templates [0 times] (0.0ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 173ms (Views: 150.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 15:12:10 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:12:11 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [jeyavel.natesan@velankani.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMQ)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is streaming from chat_rooms_2_channel
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel#send_message({"message"=>"sss", "chat_room_id"=>2})
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('sss', 1, 2, '2016-12-08 09:42:14', '2016-12-08 09:42:14')[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (81.4ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [jeyavel.natesan@velankani.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: cc7f5b26-e9a2-4b13-b82c-03300716815d) to Async(default) with arguments: #<GlobalID:0x007f128303d698 @uri=#<URI::GID gid://jel-ap-is/Message/8>>
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 8 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [cc7f5b26-e9a2-4b13-b82c-03300716815d] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f12833d0710 @uri=#<URI::GID gid://jel-ap-is/Message/8>>
+[ActiveJob] [MessageBroadcastJob] [cc7f5b26-e9a2-4b13-b82c-03300716815d]   [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 2 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [cc7f5b26-e9a2-4b13-b82c-03300716815d]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [cc7f5b26-e9a2-4b13-b82c-03300716815d]   Rendered messages/_message.html.erb (3.6ms)
+[ActiveJob] [MessageBroadcastJob] [cc7f5b26-e9a2-4b13-b82c-03300716815d] [ActionCable] Broadcasting to chat_rooms_2_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">jeyavel.natesan at 09:42:14 08 December 2016 says</span><br>\n          sss\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [cc7f5b26-e9a2-4b13-b82c-03300716815d] Performed MessageBroadcastJob from Async(default) in 17.75ms
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <... (via streamed from chat_rooms_2_channel)
+Started GET "/chat_rooms/1" for 127.0.0.1 at 2016-12-08 15:12:21 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.2ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 1 LIMIT 1[0m
+  [1m[36mMessage Load (0.2ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 1[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of messages/_message.html.erb [7 times] (8.6ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 130ms (Views: 124.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/chat_rooms/" for 127.0.0.1 at 2016-12-08 15:12:24 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [2 times] (0.8ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 127ms (Views: 123.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/chat_rooms/2" for 127.0.0.1 at 2016-12-08 15:12:26 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 2 LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 2[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered collection of messages/_message.html.erb [1 times] (6.1ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 141ms (Views: 133.8ms | ActiveRecord: 1.6ms)
+
+
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel#send_message({"message"=>"dfdf", "chat_room_id"=>2})
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `messages` (`body`, `user_id`, `chat_room_id`, `created_at`, `updated_at`) VALUES ('dfdf', 1, 2, '2016-12-08 09:42:42', '2016-12-08 09:42:42')[0m
+[ActionCable] [jeyavel.natesan@velankani.com]   [1m[35m (29.6ms)[0m  [1m[35mCOMMIT[0m
+[ActionCable] [jeyavel.natesan@velankani.com] [ActiveJob] Enqueued MessageBroadcastJob (Job ID: 118f77e4-8071-4ff7-8f0d-a608c433d117) to Async(default) with arguments: #<GlobalID:0x007f1280f76f90 @uri=#<URI::GID gid://jel-ap-is/Message/9>>
+  [1m[36mMessage Load (0.5ms)[0m  [1m[34mSELECT  `messages`.* FROM `messages` WHERE `messages`.`id` = 9 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [118f77e4-8071-4ff7-8f0d-a608c433d117] Performing MessageBroadcastJob from Async(default) with arguments: #<GlobalID:0x007f1280e80258 @uri=#<URI::GID gid://jel-ap-is/Message/9>>
+[ActiveJob] [MessageBroadcastJob] [118f77e4-8071-4ff7-8f0d-a608c433d117]   [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 2 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [118f77e4-8071-4ff7-8f0d-a608c433d117]   [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+[ActiveJob] [MessageBroadcastJob] [118f77e4-8071-4ff7-8f0d-a608c433d117]   Rendered messages/_message.html.erb (2.6ms)
+[ActiveJob] [MessageBroadcastJob] [118f77e4-8071-4ff7-8f0d-a608c433d117] [ActionCable] Broadcasting to chat_rooms_2_channel: {:message=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <p class=\"card-text\">\n          <span class=\"text-muted\">jeyavel.natesan at 09:42:42 08 December 2016 says</span><br>\n          dfdf\n        </p>\n      </div>\n    </div>\n\n  </div>\n</div>"}
+[ActiveJob] [MessageBroadcastJob] [118f77e4-8071-4ff7-8f0d-a608c433d117] Performed MessageBroadcastJob from Async(default) in 10.46ms
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel transmitting {"message"=>"<div class=\"card\">\n  <div class=\"card-block\">\n    <div class=\"row\">\n      <div class=\"col-md-1\">\n        <img alt=\"jeyavel.natesan\" src=\"https://www.gravatar.com/avatar/7585e6e80f7483ffb090fd2e071bb762?s=40\" />\n      </div>\n      <div class=\"col-md-11\">\n        <... (via streamed from chat_rooms_2_channel)
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 15:12:43 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:12:43 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [admin@chat.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMg)
+[ActionCable] [admin@chat.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [admin@chat.com] ChatRoomsChannel is streaming from chat_rooms_2_channel
+[ActionCable] [admin@chat.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:12:48 +0530
+[ActionCable] [admin@chat.com] ChatRoomsChannel stopped streaming from chat_rooms_2_channel
+Started GET "/chat_rooms/2" for 127.0.0.1 at 2016-12-08 15:12:48 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 2 LIMIT 1[0m
+  [1m[36mMessage Load (0.7ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 2[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of messages/_message.html.erb [2 times] (3.9ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 158ms (Views: 151.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 15:12:48 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:12:48 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: keep-alive, Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [admin@chat.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMg)
+[ActionCable] [admin@chat.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [admin@chat.com] ChatRoomsChannel is streaming from chat_rooms_2_channel
+[ActionCable] [admin@chat.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:12:54 +0530
+[ActionCable] [admin@chat.com] ChatRoomsChannel stopped streaming from chat_rooms_2_channel
+[ActionCable] [jeyavel.natesan@velankani.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 15:12:57 +0530
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel stopped streaming from chat_rooms_2_channel
+Started GET "/" for 127.0.0.1 at 2016-12-08 15:27:39 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 0  in 24ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 15:27:40 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 0  in 2ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 15:28:24 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.4ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [2 times] (0.7ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 415ms (Views: 382.1ms | ActiveRecord: 3.5ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-12-08 15:28:33 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8Dgu88pHGhEWkJPCFBDpkSEq4TLro77/HH5FOadsVbnIHeWKYCj++6SD2g+pGz95wKmD7SkxnN+Gz6pbqHH22w=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 15:28:33 +0530
+Processing by ChatRoomsController#index as HTML
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-08 15:28:33 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (17.2ms)
+Completed 200 OK in 168ms (Views: 165.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-08 15:29:04 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 143ms (Views: 129.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 16:41:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by ChatRoomsController#index as HTML
+Completed 401 Unauthorized in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-08 16:41:03 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 3320ms (Views: 3304.4ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2016-12-08 16:41:20 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B9gzbH8YOYqrlaG1WedLwgugGa5GOi/0LFxgTCeHRPdsmtohfMiSBt1a2X5yH8pxEyzKbL/IQkloA8QzzlVQBg==", "user"=>{"email"=>"jeyavel.natesan@velankani.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'jeyavel.natesan@velankani.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2016-12-08 11:11:21', `sign_in_count` = 2, `updated_at` = '2016-12-08 11:11:21' WHERE `users`.`id` = 1[0m
+  [1m[35m (27.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 409ms (ActiveRecord: 28.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 16:41:21 +0530
+Processing by ChatRoomsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering chat_rooms/index.html.erb within layouts/application
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT `chat_rooms`.* FROM `chat_rooms`[0m
+  Rendered collection of chat_rooms/_chat_room.html.erb [2 times] (0.6ms)
+  Rendered chat_rooms/index.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 118ms (Views: 111.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/chat_rooms/2" for 127.0.0.1 at 2016-12-08 16:41:27 +0530
+Processing by ChatRoomsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mChatRoom Load (0.3ms)[0m  [1m[34mSELECT  `chat_rooms`.* FROM `chat_rooms` WHERE `chat_rooms`.`id` = 2 LIMIT 1[0m
+  [1m[36mMessage Load (0.4ms)[0m  [1m[34mSELECT `messages`.* FROM `messages` WHERE `messages`.`chat_room_id` = 2[0m
+  Rendering chat_rooms/show.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of messages/_message.html.erb [2 times] (6.7ms)
+  Rendered chat_rooms/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 174ms (Views: 138.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/cable" for 127.0.0.1 at 2016-12-08 16:41:27 +0530
+Started GET "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 16:41:27 +0530
+Successfully upgraded to WebSocket (REQUEST_METHOD: GET, HTTP_CONNECTION: Upgrade, HTTP_UPGRADE: websocket)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+[ActionCable] [jeyavel.natesan@velankani.com] Registered connection (Z2lkOi8vamVsLWFwLWlzL1VzZXIvMQ)
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is transmitting the subscription confirmation
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel is streaming from chat_rooms_2_channel
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2016-12-08 16:45:30 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"z9DHenJVKDn8TDqjrLxFZQcJnmcaS9Xc7ab1yPV9peDGd+Hup2Wq+paiD7fPkT3swaTRSYyg3IIrOFEL2Gb2xg=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-12-08 16:45:30 +0530
+Processing by ChatRoomsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2016-12-08 16:45:30 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 121ms (Views: 119.7ms | ActiveRecord: 0.0ms)
+
+
+[ActionCable] [jeyavel.natesan@velankani.com] Finished "/cable/" [WebSocket] for 127.0.0.1 at 2016-12-08 16:45:30 +0530
+[ActionCable] [jeyavel.natesan@velankani.com] ChatRoomsChannel stopped streaming from chat_rooms_2_channel

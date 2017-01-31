@@ -1,0 +1,163 @@
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank sponsor_specified_id, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank name, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank description, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank spship_type, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank/invalid auto_activation, should fail with invalid_spship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank start_time, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank end_time, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank quota_bytes_total, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank sdx_mno_id, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with blank recipient_type, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with recipient_type='proprietary_id', if user_id or control_app_id is blank, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with recipient_type='restricted_msisdn', if msisdn or control_app_id is blank, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/blank_test.rb:  test "with recipient_type='unrestricted_msisdn', if msisdn is blank, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/general_test.rb:  test "without correct session_id (non-existing sponsor), should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//create_sponsorship/general_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//create_sponsorship/general_test.rb:  test "with valid params, but with inactive sponsor, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//create_sponsorship/general_test.rb:  test "with inactive mno, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/general_test.rb:  test "with inactive control_app, should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/general_test.rb:  test "without sponsorship_info, should return invalid_sponsorship_info" do
+test/integration/sponsor_apis//create_sponsorship/general_test.rb:  test "with all valid params, should create a sponsorship, and create a txn receipt" do
+test/integration/sponsor_apis//create_sponsorship/time_test.rb:  test "with start_time='0', should create spship with start_time=~spship.created_time" do
+test/integration/sponsor_apis//create_sponsorship/time_test.rb:  test "with end_time='0', should create spship with end_time=NULL, and can_expire=false" do
+test/integration/sponsor_apis//create_sponsorship/time_test.rb:  test "with start_time='0' and end_time='0', should create spship with start_time=~spship's created time, end_time=NULL, and can_expire=false" do
+test/integration/sponsor_apis//get_sponsorship_id_test.rb:  test "without correct session_id (non-existing sponsor), should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//get_sponsorship_id_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//get_sponsorship_id_test.rb:  test "with valid params, but with inactive sponsor, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//get_sponsorship_id_test.rb:  test "with all valid params, should get a list of sponsorship ids" do
+test/integration/sponsor_apis//get_sponsorship_id_test.rb:  test "with all valid params, but with invalid sponsor_specified_id, sponsorship_list should be nil" do
+test/integration/sponsor_apis//read_sponsorship/common_test.rb:  test "without correct session_id (non-existing sponsor), should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//read_sponsorship/common_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//read_sponsorship/common_test.rb:  test "with valid params, but with inactive sponsor, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//read_sponsorship/general_test.rb:  test "with blank spship id and blank recipient info, should fail with invalid_request" do
+test/integration/sponsor_apis//read_sponsorship/general_test.rb:  test "with valid spship id, but that doesn't belong to this sponsor and blank recipient info, should fail with invalid_sponsorship_id" do
+test/integration/sponsor_apis//read_sponsorship/general_test.rb:  test "with blank spship id and valid recipient info, should return all sponsorships matching the recipient info, created by this sponsor" do
+test/integration/sponsor_apis//read_sponsorship/general_test.rb:  test "with blank spship id and valid recipient info, but no matching spships for this sponsor, return invalid_recipient_info" do
+test/integration/sponsor_apis//read_sponsorship/general_test.rb:  test "with valid spship id, and valid recipient info, find the spship that matches spship id first, and then check if the recipient info details also match. If matched, return success" do
+test/integration/sponsor_apis//read_sponsorship/general_test.rb:  test "with valid spship id, and valid recipient info, find the spship that matches spship id first, and then check if the recipient info details also match. If did not match, return invalid_recipient_info" do
+test/integration/sponsor_apis//read_sponsorship/general_test.rb:  test "assert all response params: with valid spship_id (and blank recipient_info), should return the matching spship" do
+test/integration/sponsor_apis//read_sponsorship/time_test.rb:  test "with an unexpirable spship, should return end_time as '0'" do
+test/integration/sponsor_apis//sponsor_login_test.rb:  test "should return invalid_username with non-existent username" do
+test/integration/sponsor_apis//sponsor_login_test.rb:  test "should return invalid_password with wrong password" do
+test/integration/sponsor_apis//sponsor_login_test.rb:  test "should return invalid_machineid with wrong machine_id" do
+test/integration/sponsor_apis//sponsor_session_test.rb:  test "should return 'Invalid SessionId' if the login is valid but the session expired" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "without correct session_id (non-existing sponsor), should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with valid params, but with inactive sponsor, should fail with 'Invalid session_id'" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with invalid spship_id(123abc), should fail with invalid_sponsorship_id" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with spship_id of some other sponsor, should fail with invalid_sponsorship_id" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with invalid quota_increment (some str), should fail with invalid_quota_increment" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with invalid quota_increment (<=0), should fail with invalid_quota_increment" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with valid quota_increment, but invalid end_time(some str), should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with valid quota_increment, but invalid end_time(earlier than start_time), should fail with invalid_sponsorship_info" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with valid spship_id, quota_increment, end_time(0), the spship is updated successfully" do
+test/integration/sponsor_apis//topup_sponsorship/general_test.rb:  test "with valid spship_id, quota_increment, end_time(some time), the spship is updated successfully" do
+test/integration/subscriber_apis//activate_sponsorships/general_test.rb:  test "without correct session_id (non-existing subscriber), should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//activate_sponsorships/general_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//activate_sponsorships/general_test.rb:  test "with valid params, but with inactive subscriber, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//activate_sponsorships/general_test.rb:  test "without activate_sponsorships_list param, should fail with 'Invalid sponsorship_id'" do
+test/integration/subscriber_apis//activate_sponsorships/general_test.rb:  test "with valid params, but with sponsorship ids of some other subscriber, should fail with 'Invalid sponsorship_id'" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with created, but expired and unupdated spship, should return 'invalid_state', should expire but not activate" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with created spship, should return 'invalid_state', should not activate" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with retrieved, but expired and unupdated spship, should return 'invalid_state', should expire but not activate" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with retrieved spship, should return 'success', should activate" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with activated, but expired and unupdated spship, should return 'invalid_state', should expire but not activate (again)" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with activated spship, should return 'success', should remain activated" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with deactivated, but expired and unupdated spship, should return 'invalid_state', should expire but not activate" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with deactivated spship, should return 'success', should activate" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with consumed spships (both valid and expired), should return 'invalid_state', should remain consumed" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "with expired spship, should return 'invalid_state', should remain expired" do
+test/integration/subscriber_apis//activate_sponsorships/state_machine_test.rb:  test "(mix of varied states) With these spship ids in request: created(unexpired), created(expired), consumed, expired-and-updated, expired-and-not-updated and a valid spship - the response should be  'invalid_state', but the valid spship should be activated, and expired-and-not-updated spship should be expired" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "without correct session_id (non-existing subscriber), should fail with 'Invalid sesison_id'" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "with valid params, but with inactive subscriber, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "updates are present" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "updates are not present" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "no information available" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "if last_retrieved_at is blank, we return 'YES' if subscriber has spships" do
+test/integration/subscriber_apis//check_for_sponsorship_updates_test.rb:  test "if last_retrieved_at is blank, we return 'NO' if subscriber has no spships" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "without correct session_id (non-existing subscriber), should fail with 'Invalid sesison_id'" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "with valid params, but with inactive subscriber, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "without deactivate_sponsorships_list param, should fail with 'Invalid sponsorship_id'" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "with deactivate_sponsorships_list param, but with non-existent sponsorship_quota, should fail with 'Invalid quota_info'" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "with deactivate_sponsorships_list param, but with non-existent quota_usage_reproted, should fail with 'Invalid quota_info'" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "with valid params, but with sponsorship ids of some other subscriber, should fail with 'Invalid sponsorship_id'" do
+test/integration/subscriber_apis//deactivate_sponsorships/general_test.rb:  test "with valid params, the sponsorships mentioned in the request should get deactivated, and the corresponding quota usage updated (and the subscriber's sponsorships NOT mentioned in the request shouldn't be deactivated, nor their quota usage should be updated)" do
+test/integration/subscriber_apis//deactivate_sponsorships/quota_info_test.rb:  test "quota info test: when reported usage is less than existing quota_usage_reported, then log error and don't update spship quota, return invalid_quota_info" do
+test/integration/subscriber_apis//deactivate_sponsorships/quota_info_test.rb:  test "quota info test: when reported usage is greater than the spship's quota_bytes_total, then log error, cap the spship's reported quota_bytes to that of the total quota_bytes, and change state as 'consumed', return invalid_state" do
+test/integration/subscriber_apis//deactivate_sponsorships/quota_info_test.rb:  test "quota info test: when reported usage is equal to the total quota_bytes total, then cap the spship's reported quota_bytes to that of the total quota_bytes, and change state as 'consumed', and return invalid_state" do
+test/integration/subscriber_apis//deactivate_sponsorships/state_machine_test.rb:  test "with created spship list item, should return invalid_state, should not deactivate, should remain created, but can update quota info if valid" do
+test/integration/subscriber_apis//deactivate_sponsorships/state_machine_test.rb:  test "with retrieved spship list item, should return invalid_state, should not deactivate, should remain retrieved, but can update quota info if valid" do
+test/integration/subscriber_apis//deactivate_sponsorships/state_machine_test.rb:  test "with activated spship list item, should return success, should deactivate, but can update quota info if valid" do
+test/integration/subscriber_apis//deactivate_sponsorships/state_machine_test.rb:  test "with deactivated spship list item, should return invalid_state, should remain deactivated, but can update quota info if valid" do
+test/integration/subscriber_apis//deactivate_sponsorships/state_machine_test.rb:  test "with consumed spship list item, should return invalid_state, should remain consumed, but can update quota info if valid" do
+test/integration/subscriber_apis//deactivate_sponsorships/state_machine_test.rb:  test "with expired spship list item, should return invalid_state, should remain expired, but can update quota info if valid" do
+test/integration/subscriber_apis//register/common_test.rb:  test "without auth_token, should fail with 'Invalid auth-token'" do
+test/integration/subscriber_apis//register/common_test.rb:  test "without subscriber info, should fail with 'Invalid subscriber_info'" do
+test/integration/subscriber_apis//register/common_test.rb:  test "without a valid machine_id, should fail with 'Invalid machine_id'" do
+test/integration/subscriber_apis//register/complete_test.rb:  test "full registration: with correct params, with authcode, should complete register" do
+test/integration/subscriber_apis//register/complete_test.rb:  test "with invalid auth_code, should fail with 'Invalid auth_code'" do
+test/integration/subscriber_apis//register/complete_test.rb:  test "full registration: with invalid subscriber info, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with correct params, without authcode, should register a subscriber partially" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with invalid subscriber info - control app id, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with invalid subscriber info - user_id_type, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with invalid subscriber info - user_id_type == 'proprietary_id' - user_id and control_app_id not present, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with invalid subscriber info - user_id_type == 'proprietary_id' - user_id or control_app_id not present, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with invalid subscriber info - user_id_type == 'restricted_msisdn' - msisdn and control_app_id not present, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with invalid subscriber info - user_id_type == 'restricted_msisdn' - msisdn or control_app_id not present, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//register/partial_test.rb:  test "partial registration: with invalid subscriber info - user_id_type == 'unrestricted_msisdn' - msisdn not present, should fail with 'Invalid subscriber_info '" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "without correct session_id (non-existing subscriber), should fail with 'Invalid sesison_id'" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "with valid params, but with inactive subscriber, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "without sponsorship_quota_list param, should fail with 'Invalid sponsorship_id'" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "with sponsorship_quota_list param, but with non-existent sponsorship_quota, should fail with 'Invalid quota_info'" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "with sponsorship_quota_list param, but with non-existent quota_usage_reproted, should fail with 'Invalid quota_info'" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "with valid params, but with sponsorship ids of some other subscriber, should fail with 'Invalid sponsorship_id'" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/general_test.rb:  test "quota info test: when reported usage is less than existing quota_usage_reported, then log error and don't update spship quota, return invalid_sponsorship_quota" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/sponsorship_updates_test.rb:  test "with activated spship list item, should return success, can update quota info if valid - sponsorship_updates should be 'YES' if there are updates to be taken" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/sponsorship_updates_test.rb:  test "with activated spship list item, should return success, can update quota info if valid - sponsorship_updates should be 'NO' if there are no updates to be taken" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/sponsorship_updates_test.rb:  test "with created spship list item, should return invalid_state, but can update quota info if valid - sponsorship_updates should be 'NO' if there are no updates to be taken" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/sponsorship_updates_test.rb:  test "with created spship list item, should return invalid_state, but can update quota info if valid - sponsorship_updates should be 'YES' if there are updates to be taken" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/state_machine_test.rb:  test "with created spship list item, should return invalid_state, but can update quota info if valid" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/state_machine_test.rb:  test "with retrieved spship list item, should return invalid_state, but can update quota info if valid" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/state_machine_test.rb:  test "with activated spship list item, should return success, can update quota info if valid" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/state_machine_test.rb:  test "with deactivated spship list item, should return invalid_state, should remain deactivated, but can update quota info if valid" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/state_machine_test.rb:  test "with consumed spship list item, should return invalid_state, should remain consumed, but can update quota info if valid" do
+test/integration/subscriber_apis//report_sponsorship_quotas_usage/state_machine_test.rb:  test "with expired spship list item, should return invalid_state, should remain expired, but can update quota info if valid" do
+test/integration/subscriber_apis//retrieve_sponsorships/general_test.rb:  test "without correct session_id (non-existing subscriber), should fail with 'Invalid sesison_id'" do
+test/integration/subscriber_apis//retrieve_sponsorships/general_test.rb:  test "with correct but expired session_id, should fail with 'Invalid session_id'" do
+test/integration/subscriber_apis//retrieve_sponsorships/general_test.rb:  test "with optional quota_report_list, with invalid quota info - empty sponsorship_id - should return invalid_quota_info, but retrieve the spships" do
+test/integration/subscriber_apis//retrieve_sponsorships/general_test.rb:  test "with optional quota_report_list, with invalid quota info - empty quota_usage_reported - should silently return invalid_quota_info, but retrieve the spships" do
+test/integration/subscriber_apis//retrieve_sponsorships/general_test.rb:  test "with optional quota_report_list, with valid input, sponsorships should be returned - and the corresponding sponsorships' quota should be updated" do
+test/integration/subscriber_apis//retrieve_sponsorships/general_test.rb:  test "without optional quota_report_list, with valid input, should return all sponsorships of a given subscriber ||| shouldn't be able to access other subscribers' sponsorships - the returned sponsorships should only belong to the logged in subscriber" do
+test/integration/subscriber_apis//retrieve_sponsorships/quota_info_test.rb:  test "quota info test: when reported usage is less than existing quota_usage_reported, then log error and don't update spship quota, and proceed to report spships, return invalid_quota_info error though" do
+test/integration/subscriber_apis//retrieve_sponsorships/quota_info_test.rb:  test "quota info test: when reported usage is greater than the spship's quota_bytes_total, then log error, cap the spship's reported quota_bytes to that of the total quota_bytes, and change state as 'consumed', and proceed to report spships" do
+test/integration/subscriber_apis//retrieve_sponsorships/quota_info_test.rb:  test "quota info test: when reported usage is equal to the total quota_bytes total, then cap the spship's reported quota_bytes to that of the total quota_bytes, and change state as 'consumed', and proceed to report spships" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "state machine: with valid input, with a created-spship, status should be retrieved" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "state machine: with valid input, with an already-retrieved-spship, status should be retrieved" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "state machine: with valid input, with an activated-spship, status should remain activated" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "state machine: with valid input, with a deactivated-spship, status should be deactivated" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "state machine: with valid input, with a consumed-spship, status should be consumed" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "state machine: with valid input, with an expired-but-not-updated spship, status should be expired" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "state machine: with valid input, with an expired-spship, status should be expired" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "with quota info that represents a spship that's created, and with large reported usage, should become consumed" do
+test/integration/subscriber_apis//retrieve_sponsorships/state_machine_test.rb:  test "with quota info that represents a spship that's deactivated, and with large reported usage, should become consumed" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "successful login: user_id_type == 'proprietary id'" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "failed login: user_id_type == 'proprietary id'" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "successful login: user_id_type == 'restricted msisdn'" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "failed login: user_id_type == 'restricted msisdn'" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "successful login: user_id_type == 'unrestricted msisdn'" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "failed login: user_id_type == 'unrestricted msisdn'" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "with correct subscriber info, but with incorrect auth_token, should fail with Invalid auth_token" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "with correct subscriber info, correct auth_token, but with incorrect machine_id, should fail with 'Invalid machine_id'" do
+test/integration/subscriber_apis//subscriber_login_test.rb:  test "without subscriber info, should fail with 'Invalid subscriber_info'" do
+test/integration/call_data_record//consumed_sponsorship_test.rb:  test "sponsorship CONSUMED event: should attempt to create a CDR when a sponsorship is consumed" do
+test/integration/call_data_record//create_sponsorship_test.rb:  test "sponsorship CREATE event: should attempt to create CDR when a sponsorship is created using create-sponsorship api" do
+test/integration/call_data_record//create_sponsorship_test.rb:  test "sponsorship CREATE event: should not create CDR when the create-sponsorship api fails for some reason" do
+test/integration/call_data_record//expired_sponsorship_test.rb:  test "sponsorship EXPIRED event: should attempt to create a CDR when a sponsorship is expired" do
+test/integration/call_data_record//first_activate_test.rb:  test "sponsorship FIRST_ACTIVATE event: using the activate-sponsorships api: should attempt to create a CDR when a sponsorship is activated for the first time, and NOT when it is activated thereafter" do
+test/integration/call_data_record//first_retrieve_test.rb:  test "sponsorship FIRST_RETRIEVE event: should attempt to create a CDR when a sponsorship is first retrieved, and NOT when it is retrieved thereafter" do
+test/integration/call_data_record//first_retrieve_test.rb:  test "sponsorship FIRST_RETRIEVE event: using the retrieve-sponsorships api: should attempt to create a CDR when a sponsorship is first retrieved, and NOT when it is retrieved thereafter" do
+test/integration/call_data_record//report_usage_test.rb:  test "sponsorship REPORT_USAGE event: should attempt to create a CDR when a sponsorship's usage is reported via any api (retrieve, deactivate, report apis etc)" do
+test/integration/claimed_and_unclaimed_bytes//claimed_unclaimed_workflow_test.rb:  test "workflow" do

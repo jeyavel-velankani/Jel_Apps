@@ -1,0 +1,643 @@
+# Logfile created on 2016-12-06 14:45:03 +0530 by logger.rb/54362
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:45:03 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [1a74fb1d] Running /usr/bin/env mkdir -p /tmp/jel_api/ as jeyavel.natesan@10.0.24.19
+ DEBUG [1a74fb1d] Command: /usr/bin/env mkdir -p /tmp/jel_api/
+  INFO [1a74fb1d] Finished in 43.623 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jel_api/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jel_api/git-ssh.sh 100.0%
+  INFO [6437b10b] Running /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh as jeyavel.natesan@10.0.24.19
+ DEBUG [6437b10b] Command: /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh
+  INFO [6437b10b] Finished in 0.046 seconds with exit status 0 (successful).
+  INFO [721923ee] Running /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git as jeyavel.natesan@10.0.24.19
+ DEBUG [721923ee] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git )
+ DEBUG [721923ee] 	752a9a1025e50346946cb95cf2f53beb42e36b73	refs/heads/master
+  INFO [721923ee] Finished in 3.351 seconds with exit status 0 (successful).
+  INFO [e58be697] Running /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [e58be697] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases
+ DEBUG [e58be697] 	mkdir: cannot create directory ‘/var/www/jel_api’: Permission denied
+mkdir: cannot create directory ‘/var/www/jel_api’: Permission denied
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:48:16 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4e9c5ed9] Running /usr/bin/env mkdir -p /tmp/jel_api/ as jeyavel.natesan@10.0.24.19
+ DEBUG [4e9c5ed9] Command: /usr/bin/env mkdir -p /tmp/jel_api/
+  INFO [4e9c5ed9] Finished in 6.620 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jel_api/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jel_api/git-ssh.sh 100.0%
+  INFO [9e7f5512] Running /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh as jeyavel.natesan@10.0.24.19
+ DEBUG [9e7f5512] Command: /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh
+  INFO [9e7f5512] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [26e1e2dc] Running /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git as jeyavel.natesan@10.0.24.19
+ DEBUG [26e1e2dc] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git )
+ DEBUG [26e1e2dc] 	752a9a1025e50346946cb95cf2f53beb42e36b73	refs/heads/master
+  INFO [26e1e2dc] Finished in 4.116 seconds with exit status 0 (successful).
+  INFO [340bcd12] Running /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [340bcd12] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases
+  INFO [340bcd12] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [232e6ce4] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [232e6ce4] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system
+  INFO [232e6ce4] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [15e6883a] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/config as jeyavel.natesan@10.0.24.19
+ DEBUG [15e6883a] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/config
+  INFO [15e6883a] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [d4589317] Running [ -f /var/www/jel_api/shared/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [d4589317] Command: [ -f /var/www/jel_api/shared/config/database.yml ]
+ DEBUG [d4589317] Finished in 0.005 seconds with exit status 1 (failed).
+ ERROR linked file /var/www/jel_api/shared/config/database.yml does not exist on 10.0.24.19
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:52:22 +0530 cap production setup:upload_config
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading config/database.yml 0.0%
+  INFO Uploading config/database.yml 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:53:13 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [4a86f2db] Running /usr/bin/env mkdir -p /tmp/jel_api/ as jeyavel.natesan@10.0.24.19
+ DEBUG [4a86f2db] Command: /usr/bin/env mkdir -p /tmp/jel_api/
+  INFO [4a86f2db] Finished in 5.583 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jel_api/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jel_api/git-ssh.sh 100.0%
+  INFO [bb95c2d0] Running /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh as jeyavel.natesan@10.0.24.19
+ DEBUG [bb95c2d0] Command: /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh
+  INFO [bb95c2d0] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [c211c24a] Running /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git as jeyavel.natesan@10.0.24.19
+ DEBUG [c211c24a] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git )
+ DEBUG [c211c24a] 	752a9a1025e50346946cb95cf2f53beb42e36b73	refs/heads/master
+  INFO [c211c24a] Finished in 3.624 seconds with exit status 0 (successful).
+  INFO [6935b304] Running /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [6935b304] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases
+  INFO [6935b304] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [4e44387d] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [4e44387d] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system
+  INFO [4e44387d] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [e7fed086] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/config as jeyavel.natesan@10.0.24.19
+ DEBUG [e7fed086] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/config
+  INFO [e7fed086] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [e3a564f3] Running [ -f /var/www/jel_api/shared/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [e3a564f3] Command: [ -f /var/www/jel_api/shared/config/database.yml ]
+ DEBUG [e3a564f3] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [479539e2] Running [ -f /var/www/jel_api/shared/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [479539e2] Command: [ -f /var/www/jel_api/shared/config/secrets.yml ]
+ DEBUG [479539e2] Finished in 0.005 seconds with exit status 1 (failed).
+ ERROR linked file /var/www/jel_api/shared/config/secrets.yml does not exist on 10.0.24.19
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:55:04 +0530 cap production setup:upload_config
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading config/database.yml 0.0%
+  INFO Uploading config/database.yml 100.0%
+ DEBUG Uploading config/secrets.yml 0.0%
+  INFO Uploading config/secrets.yml 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:58:29 +0530 cap production setup:upload_config
+  INFO ---------------------------------------------------------------------------
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:59:10 +0530 cap production setup:upload_config
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading config/database.yml 0.0%
+  INFO Uploading config/database.yml 100.0%
+ DEBUG Uploading config/secrets.yml 0.0%
+  INFO Uploading config/secrets.yml 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 14:59:14 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [075e8cb0] Running /usr/bin/env mkdir -p /tmp/jel_api/ as jeyavel.natesan@10.0.24.19
+ DEBUG [075e8cb0] Command: /usr/bin/env mkdir -p /tmp/jel_api/
+  INFO [075e8cb0] Finished in 0.246 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jel_api/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jel_api/git-ssh.sh 100.0%
+  INFO [62612bf9] Running /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh as jeyavel.natesan@10.0.24.19
+ DEBUG [62612bf9] Command: /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh
+  INFO [62612bf9] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [e58e6ac4] Running /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git as jeyavel.natesan@10.0.24.19
+ DEBUG [e58e6ac4] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git )
+ DEBUG [e58e6ac4] 	752a9a1025e50346946cb95cf2f53beb42e36b73	refs/heads/master
+  INFO [e58e6ac4] Finished in 3.836 seconds with exit status 0 (successful).
+  INFO [1b126f13] Running /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [1b126f13] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases
+  INFO [1b126f13] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [f69172c5] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [f69172c5] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system
+  INFO [f69172c5] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [e22fdd6e] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/config as jeyavel.natesan@10.0.24.19
+ DEBUG [e22fdd6e] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/config
+  INFO [e22fdd6e] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [ae16d8e3] Running [ -f /var/www/jel_api/shared/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [ae16d8e3] Command: [ -f /var/www/jel_api/shared/config/database.yml ]
+ DEBUG [ae16d8e3] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [2951463e] Running [ -f /var/www/jel_api/shared/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [2951463e] Command: [ -f /var/www/jel_api/shared/config/secrets.yml ]
+ DEBUG [2951463e] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [32988da5] Running [ -f /var/www/jel_api/current/REVISION ] as jeyavel.natesan@10.0.24.19
+ DEBUG [32988da5] Command: [ -f /var/www/jel_api/current/REVISION ]
+ DEBUG [32988da5] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [1d91b11d] Running [ -f /var/www/jel_api/repo/HEAD ] as jeyavel.natesan@10.0.24.19
+ DEBUG [1d91b11d] Command: [ -f /var/www/jel_api/repo/HEAD ]
+ DEBUG [1d91b11d] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [69013191] Running if test ! -d /var/www/jel_api; then echo "Directory does not exist '/var/www/jel_api'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [69013191] Command: if test ! -d /var/www/jel_api; then echo "Directory does not exist '/var/www/jel_api'" 1>&2; false; fi
+ DEBUG [69013191] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [394662e2] Running /usr/bin/env git clone --mirror git@github.com:jeyavel-velankani/JelAPI.git /var/www/jel_api/repo as jeyavel.natesan@10.0.24.19
+ DEBUG [394662e2] Command: cd /var/www/jel_api && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git clone --mirror git@github.com:jeyavel-velankani/JelAPI.git /var/www/jel_api/repo )
+ DEBUG [394662e2] 	Cloning into bare repository '/var/www/jel_api/repo'...
+  INFO [394662e2] Finished in 6.098 seconds with exit status 0 (successful).
+ DEBUG [396b9b72] Running if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [396b9b72] Command: if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi
+ DEBUG [396b9b72] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [4b70d355] Running /usr/bin/env git remote update --prune as jeyavel.natesan@10.0.24.19
+ DEBUG [4b70d355] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [4b70d355] 	Fetching origin
+  INFO [4b70d355] Finished in 3.519 seconds with exit status 0 (successful).
+ DEBUG [14e62c13] Running if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [14e62c13] Command: if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi
+ DEBUG [14e62c13] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [7b57772f] Running /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206092919 as jeyavel.natesan@10.0.24.19
+ DEBUG [7b57772f] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206092919 )
+  INFO [7b57772f] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [6a1a3815] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/jel_api/releases/20161206092919 as jeyavel.natesan@10.0.24.19
+ DEBUG [6a1a3815] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/jel_api/releases/20161206092919 )
+  INFO [6a1a3815] Finished in 0.157 seconds with exit status 0 (successful).
+ DEBUG [2493287b] Running if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [2493287b] Command: if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi
+ DEBUG [2493287b] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [1808931a] Running /usr/bin/env git rev-list --max-count=1 master as jeyavel.natesan@10.0.24.19
+ DEBUG [1808931a] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [1808931a] 	752a9a1025e50346946cb95cf2f53beb42e36b73
+ DEBUG [1808931a] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [8b0b7fd1] Running if test ! -d /var/www/jel_api/releases/20161206092919; then echo "Directory does not exist '/var/www/jel_api/releases/20161206092919'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [8b0b7fd1] Command: if test ! -d /var/www/jel_api/releases/20161206092919; then echo "Directory does not exist '/var/www/jel_api/releases/20161206092919'" 1>&2; false; fi
+ DEBUG [8b0b7fd1] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [e42b8dc3] Running /usr/bin/env echo "752a9a1025e50346946cb95cf2f53beb42e36b73" >> REVISION as jeyavel.natesan@10.0.24.19
+ DEBUG [e42b8dc3] Command: cd /var/www/jel_api/releases/20161206092919 && /usr/bin/env echo "752a9a1025e50346946cb95cf2f53beb42e36b73" >> REVISION
+  INFO [e42b8dc3] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [934a1fec] Running /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206092919/config as jeyavel.natesan@10.0.24.19
+ DEBUG [934a1fec] Command: /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206092919/config
+  INFO [934a1fec] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [0cc9091b] Running [ -L /var/www/jel_api/releases/20161206092919/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [0cc9091b] Command: [ -L /var/www/jel_api/releases/20161206092919/config/database.yml ]
+ DEBUG [0cc9091b] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [b310f955] Running [ -f /var/www/jel_api/releases/20161206092919/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [b310f955] Command: [ -f /var/www/jel_api/releases/20161206092919/config/database.yml ]
+ DEBUG [b310f955] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [7bd6639b] Running /usr/bin/env rm /var/www/jel_api/releases/20161206092919/config/database.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [7bd6639b] Command: /usr/bin/env rm /var/www/jel_api/releases/20161206092919/config/database.yml
+  INFO [7bd6639b] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [0685c6e0] Running /usr/bin/env ln -s /var/www/jel_api/shared/config/database.yml /var/www/jel_api/releases/20161206092919/config/database.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [0685c6e0] Command: /usr/bin/env ln -s /var/www/jel_api/shared/config/database.yml /var/www/jel_api/releases/20161206092919/config/database.yml
+  INFO [0685c6e0] Finished in 0.019 seconds with exit status 0 (successful).
+ DEBUG [8c68c300] Running [ -L /var/www/jel_api/releases/20161206092919/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [8c68c300] Command: [ -L /var/www/jel_api/releases/20161206092919/config/secrets.yml ]
+ DEBUG [8c68c300] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [b0dc46ac] Running [ -f /var/www/jel_api/releases/20161206092919/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [b0dc46ac] Command: [ -f /var/www/jel_api/releases/20161206092919/config/secrets.yml ]
+ DEBUG [b0dc46ac] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [fd400157] Running /usr/bin/env rm /var/www/jel_api/releases/20161206092919/config/secrets.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [fd400157] Command: /usr/bin/env rm /var/www/jel_api/releases/20161206092919/config/secrets.yml
+  INFO [fd400157] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [e2d684e8] Running /usr/bin/env ln -s /var/www/jel_api/shared/config/secrets.yml /var/www/jel_api/releases/20161206092919/config/secrets.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [e2d684e8] Command: /usr/bin/env ln -s /var/www/jel_api/shared/config/secrets.yml /var/www/jel_api/releases/20161206092919/config/secrets.yml
+  INFO [e2d684e8] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [23a6f913] Running /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206092919 /var/www/jel_api/releases/20161206092919/tmp /var/www/jel_api/releases/20161206092919/public as jeyavel.natesan@10.0.24.19
+ DEBUG [23a6f913] Command: /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206092919 /var/www/jel_api/releases/20161206092919/tmp /var/www/jel_api/releases/20161206092919/public
+  INFO [23a6f913] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [388c5e3d] Running [ -L /var/www/jel_api/releases/20161206092919/log ] as jeyavel.natesan@10.0.24.19
+ DEBUG [388c5e3d] Command: [ -L /var/www/jel_api/releases/20161206092919/log ]
+ DEBUG [388c5e3d] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [da069490] Running [ -d /var/www/jel_api/releases/20161206092919/log ] as jeyavel.natesan@10.0.24.19
+ DEBUG [da069490] Command: [ -d /var/www/jel_api/releases/20161206092919/log ]
+ DEBUG [da069490] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [607694fb] Running /usr/bin/env rm -rf /var/www/jel_api/releases/20161206092919/log as jeyavel.natesan@10.0.24.19
+ DEBUG [607694fb] Command: /usr/bin/env rm -rf /var/www/jel_api/releases/20161206092919/log
+  INFO [607694fb] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [a369b0be] Running /usr/bin/env ln -s /var/www/jel_api/shared/log /var/www/jel_api/releases/20161206092919/log as jeyavel.natesan@10.0.24.19
+ DEBUG [a369b0be] Command: /usr/bin/env ln -s /var/www/jel_api/shared/log /var/www/jel_api/releases/20161206092919/log
+  INFO [a369b0be] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [34d81721] Running [ -L /var/www/jel_api/releases/20161206092919/tmp/pids ] as jeyavel.natesan@10.0.24.19
+ DEBUG [34d81721] Command: [ -L /var/www/jel_api/releases/20161206092919/tmp/pids ]
+ DEBUG [34d81721] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [f1cab30b] Running [ -d /var/www/jel_api/releases/20161206092919/tmp/pids ] as jeyavel.natesan@10.0.24.19
+ DEBUG [f1cab30b] Command: [ -d /var/www/jel_api/releases/20161206092919/tmp/pids ]
+ DEBUG [f1cab30b] Finished in 0.003 seconds with exit status 1 (failed).
+  INFO [d22dbeb1] Running /usr/bin/env ln -s /var/www/jel_api/shared/tmp/pids /var/www/jel_api/releases/20161206092919/tmp/pids as jeyavel.natesan@10.0.24.19
+ DEBUG [d22dbeb1] Command: /usr/bin/env ln -s /var/www/jel_api/shared/tmp/pids /var/www/jel_api/releases/20161206092919/tmp/pids
+  INFO [d22dbeb1] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [83fb32f8] Running [ -L /var/www/jel_api/releases/20161206092919/tmp/cache ] as jeyavel.natesan@10.0.24.19
+ DEBUG [83fb32f8] Command: [ -L /var/www/jel_api/releases/20161206092919/tmp/cache ]
+ DEBUG [83fb32f8] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [d5c9bc19] Running [ -d /var/www/jel_api/releases/20161206092919/tmp/cache ] as jeyavel.natesan@10.0.24.19
+ DEBUG [d5c9bc19] Command: [ -d /var/www/jel_api/releases/20161206092919/tmp/cache ]
+ DEBUG [d5c9bc19] Finished in 0.003 seconds with exit status 0 (successful).
+  INFO [32e2e508] Running /usr/bin/env rm -rf /var/www/jel_api/releases/20161206092919/tmp/cache as jeyavel.natesan@10.0.24.19
+ DEBUG [32e2e508] Command: /usr/bin/env rm -rf /var/www/jel_api/releases/20161206092919/tmp/cache
+  INFO [32e2e508] Finished in 0.019 seconds with exit status 0 (successful).
+  INFO [0cf8c0a9] Running /usr/bin/env ln -s /var/www/jel_api/shared/tmp/cache /var/www/jel_api/releases/20161206092919/tmp/cache as jeyavel.natesan@10.0.24.19
+ DEBUG [0cf8c0a9] Command: /usr/bin/env ln -s /var/www/jel_api/shared/tmp/cache /var/www/jel_api/releases/20161206092919/tmp/cache
+  INFO [0cf8c0a9] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [00fb2027] Running [ -L /var/www/jel_api/releases/20161206092919/tmp/sockets ] as jeyavel.natesan@10.0.24.19
+ DEBUG [00fb2027] Command: [ -L /var/www/jel_api/releases/20161206092919/tmp/sockets ]
+ DEBUG [00fb2027] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [e276ac56] Running [ -d /var/www/jel_api/releases/20161206092919/tmp/sockets ] as jeyavel.natesan@10.0.24.19
+ DEBUG [e276ac56] Command: [ -d /var/www/jel_api/releases/20161206092919/tmp/sockets ]
+ DEBUG [e276ac56] Finished in 0.003 seconds with exit status 1 (failed).
+  INFO [d8c67e67] Running /usr/bin/env ln -s /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/releases/20161206092919/tmp/sockets as jeyavel.natesan@10.0.24.19
+ DEBUG [d8c67e67] Command: /usr/bin/env ln -s /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/releases/20161206092919/tmp/sockets
+  INFO [d8c67e67] Finished in 0.003 seconds with exit status 0 (successful).
+ DEBUG [68fbee25] Running [ -L /var/www/jel_api/releases/20161206092919/public/system ] as jeyavel.natesan@10.0.24.19
+ DEBUG [68fbee25] Command: [ -L /var/www/jel_api/releases/20161206092919/public/system ]
+ DEBUG [68fbee25] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [ff67a9d1] Running [ -d /var/www/jel_api/releases/20161206092919/public/system ] as jeyavel.natesan@10.0.24.19
+ DEBUG [ff67a9d1] Command: [ -d /var/www/jel_api/releases/20161206092919/public/system ]
+ DEBUG [ff67a9d1] Finished in 0.004 seconds with exit status 1 (failed).
+  INFO [81fdff30] Running /usr/bin/env ln -s /var/www/jel_api/shared/public/system /var/www/jel_api/releases/20161206092919/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [81fdff30] Command: /usr/bin/env ln -s /var/www/jel_api/shared/public/system /var/www/jel_api/releases/20161206092919/public/system
+  INFO [81fdff30] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [17d77192] Running /usr/bin/env ln -s /var/www/jel_api/releases/20161206092919 /var/www/jel_api/releases/current as jeyavel.natesan@10.0.24.19
+ DEBUG [17d77192] Command: /usr/bin/env ln -s /var/www/jel_api/releases/20161206092919 /var/www/jel_api/releases/current
+  INFO [17d77192] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [146ac768] Running /usr/bin/env mv /var/www/jel_api/releases/current /var/www/jel_api as jeyavel.natesan@10.0.24.19
+ DEBUG [146ac768] Command: /usr/bin/env mv /var/www/jel_api/releases/current /var/www/jel_api
+  INFO [146ac768] Finished in 0.025 seconds with exit status 0 (successful).
+ DEBUG [89e20f34] Running /usr/bin/env ls -xtr /var/www/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [89e20f34] Command: /usr/bin/env ls -xtr /var/www/jel_api/releases
+ DEBUG [89e20f34] 	20161206092919
+ DEBUG [89e20f34] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [4a72c73d] Running if test ! -d /var/www/jel_api/releases; then echo "Directory does not exist '/var/www/jel_api/releases'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [4a72c73d] Command: if test ! -d /var/www/jel_api/releases; then echo "Directory does not exist '/var/www/jel_api/releases'" 1>&2; false; fi
+ DEBUG [4a72c73d] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [21a663c1] Running /usr/bin/env echo "Branch master (at 752a9a1025e50346946cb95cf2f53beb42e36b73) deployed as release 20161206092919 by jeyavel.natesan" >> /var/www/jel_api/revisions.log as jeyavel.natesan@10.0.24.19
+ DEBUG [21a663c1] Command: cd /var/www/jel_api/releases && /usr/bin/env echo "Branch master (at 752a9a1025e50346946cb95cf2f53beb42e36b73) deployed as release 20161206092919 by jeyavel.natesan" >> /var/www/jel_api/revisions.log
+  INFO [21a663c1] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 16:19:24 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [d6a671cd] Running /usr/bin/env mkdir -p /tmp/jel_api/ as jeyavel.natesan@10.0.24.19
+ DEBUG [d6a671cd] Command: /usr/bin/env mkdir -p /tmp/jel_api/
+  INFO [d6a671cd] Finished in 1.417 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jel_api/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jel_api/git-ssh.sh 100.0%
+  INFO [d65b8b68] Running /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh as jeyavel.natesan@10.0.24.19
+ DEBUG [d65b8b68] Command: /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh
+  INFO [d65b8b68] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [e26d37ad] Running /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git as jeyavel.natesan@10.0.24.19
+ DEBUG [e26d37ad] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git )
+ DEBUG [e26d37ad] 	d589e76010c2c1b35e12155ded65c417906abe81	refs/heads/master
+  INFO [e26d37ad] Finished in 3.779 seconds with exit status 0 (successful).
+  INFO [1915e652] Running /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [1915e652] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared /var/www/jel_api/releases
+  INFO [1915e652] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [801bdfc1] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [801bdfc1] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/log /var/www/jel_api/shared/tmp/pids /var/www/jel_api/shared/tmp/cache /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/shared/public/system
+  INFO [801bdfc1] Finished in 0.044 seconds with exit status 0 (successful).
+  INFO [1aee21e5] Running /usr/bin/env mkdir -p /var/www/jel_api/shared/config as jeyavel.natesan@10.0.24.19
+ DEBUG [1aee21e5] Command: /usr/bin/env mkdir -p /var/www/jel_api/shared/config
+  INFO [1aee21e5] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [43d4afb9] Running [ -f /var/www/jel_api/shared/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [43d4afb9] Command: [ -f /var/www/jel_api/shared/config/database.yml ]
+ DEBUG [43d4afb9] Finished in 0.010 seconds with exit status 0 (successful).
+ DEBUG [263f8108] Running [ -f /var/www/jel_api/shared/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [263f8108] Command: [ -f /var/www/jel_api/shared/config/secrets.yml ]
+ DEBUG [263f8108] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [fcf092ec] Running [ -f /var/www/jel_api/current/REVISION ] as jeyavel.natesan@10.0.24.19
+ DEBUG [fcf092ec] Command: [ -f /var/www/jel_api/current/REVISION ]
+ DEBUG [fcf092ec] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [387116d3] Running /usr/bin/env cat /var/www/jel_api/current/REVISION 2>/dev/null as jeyavel.natesan@10.0.24.19
+ DEBUG [387116d3] Command: /usr/bin/env cat /var/www/jel_api/current/REVISION 2>/dev/null
+ DEBUG [387116d3] 	752a9a1025e50346946cb95cf2f53beb42e36b73
+ DEBUG [387116d3] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG [bba2642f] Running [ -f /var/www/jel_api/repo/HEAD ] as jeyavel.natesan@10.0.24.19
+ DEBUG [bba2642f] Command: [ -f /var/www/jel_api/repo/HEAD ]
+ DEBUG [bba2642f] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/jel_api/repo
+ DEBUG [f2e6c7ae] Running if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [f2e6c7ae] Command: if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi
+ DEBUG [f2e6c7ae] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [6fa322bf] Running /usr/bin/env git remote update --prune as jeyavel.natesan@10.0.24.19
+ DEBUG [6fa322bf] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [6fa322bf] 	Fetching origin
+ DEBUG [6fa322bf] 	From github.com:jeyavel-velankani/JelAPI
+   752a9a1..d589e76  master     -> master
+  INFO [6fa322bf] Finished in 4.680 seconds with exit status 0 (successful).
+ DEBUG [40d8e6f2] Running if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [40d8e6f2] Command: if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi
+ DEBUG [40d8e6f2] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [55344107] Running /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206104930 as jeyavel.natesan@10.0.24.19
+ DEBUG [55344107] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206104930 )
+  INFO [55344107] Finished in 0.015 seconds with exit status 0 (successful).
+  INFO [9d6b7ba9] Running /usr/bin/env git archive master | tar -x -f - -C /var/www/jel_api/releases/20161206104930 as jeyavel.natesan@10.0.24.19
+ DEBUG [9d6b7ba9] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /var/www/jel_api/releases/20161206104930 )
+  INFO [9d6b7ba9] Finished in 0.110 seconds with exit status 0 (successful).
+ DEBUG [1ac1e7e9] Running if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [1ac1e7e9] Command: if test ! -d /var/www/jel_api/repo; then echo "Directory does not exist '/var/www/jel_api/repo'" 1>&2; false; fi
+ DEBUG [1ac1e7e9] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [d19effb5] Running /usr/bin/env git rev-list --max-count=1 master as jeyavel.natesan@10.0.24.19
+ DEBUG [d19effb5] Command: cd /var/www/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [d19effb5] 	d589e76010c2c1b35e12155ded65c417906abe81
+ DEBUG [d19effb5] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [b3019d9a] Running if test ! -d /var/www/jel_api/releases/20161206104930; then echo "Directory does not exist '/var/www/jel_api/releases/20161206104930'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [b3019d9a] Command: if test ! -d /var/www/jel_api/releases/20161206104930; then echo "Directory does not exist '/var/www/jel_api/releases/20161206104930'" 1>&2; false; fi
+ DEBUG [b3019d9a] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [8e80cedc] Running /usr/bin/env echo "d589e76010c2c1b35e12155ded65c417906abe81" >> REVISION as jeyavel.natesan@10.0.24.19
+ DEBUG [8e80cedc] Command: cd /var/www/jel_api/releases/20161206104930 && /usr/bin/env echo "d589e76010c2c1b35e12155ded65c417906abe81" >> REVISION
+  INFO [8e80cedc] Finished in 0.025 seconds with exit status 0 (successful).
+  INFO [16b69a99] Running /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206104930/config as jeyavel.natesan@10.0.24.19
+ DEBUG [16b69a99] Command: /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206104930/config
+  INFO [16b69a99] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [56ae3191] Running [ -L /var/www/jel_api/releases/20161206104930/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [56ae3191] Command: [ -L /var/www/jel_api/releases/20161206104930/config/database.yml ]
+ DEBUG [56ae3191] Finished in 0.005 seconds with exit status 1 (failed).
+ DEBUG [ea2bea23] Running [ -f /var/www/jel_api/releases/20161206104930/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [ea2bea23] Command: [ -f /var/www/jel_api/releases/20161206104930/config/database.yml ]
+ DEBUG [ea2bea23] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [9d9b3d17] Running /usr/bin/env rm /var/www/jel_api/releases/20161206104930/config/database.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [9d9b3d17] Command: /usr/bin/env rm /var/www/jel_api/releases/20161206104930/config/database.yml
+  INFO [9d9b3d17] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [c9ee8617] Running /usr/bin/env ln -s /var/www/jel_api/shared/config/database.yml /var/www/jel_api/releases/20161206104930/config/database.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [c9ee8617] Command: /usr/bin/env ln -s /var/www/jel_api/shared/config/database.yml /var/www/jel_api/releases/20161206104930/config/database.yml
+  INFO [c9ee8617] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [0f9e1c35] Running [ -L /var/www/jel_api/releases/20161206104930/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [0f9e1c35] Command: [ -L /var/www/jel_api/releases/20161206104930/config/secrets.yml ]
+ DEBUG [0f9e1c35] Finished in 0.007 seconds with exit status 1 (failed).
+ DEBUG [8272df2d] Running [ -f /var/www/jel_api/releases/20161206104930/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [8272df2d] Command: [ -f /var/www/jel_api/releases/20161206104930/config/secrets.yml ]
+ DEBUG [8272df2d] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [57404eae] Running /usr/bin/env rm /var/www/jel_api/releases/20161206104930/config/secrets.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [57404eae] Command: /usr/bin/env rm /var/www/jel_api/releases/20161206104930/config/secrets.yml
+  INFO [57404eae] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [bd3e5901] Running /usr/bin/env ln -s /var/www/jel_api/shared/config/secrets.yml /var/www/jel_api/releases/20161206104930/config/secrets.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [bd3e5901] Command: /usr/bin/env ln -s /var/www/jel_api/shared/config/secrets.yml /var/www/jel_api/releases/20161206104930/config/secrets.yml
+  INFO [bd3e5901] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [98fbc164] Running /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206104930 /var/www/jel_api/releases/20161206104930/tmp /var/www/jel_api/releases/20161206104930/public as jeyavel.natesan@10.0.24.19
+ DEBUG [98fbc164] Command: /usr/bin/env mkdir -p /var/www/jel_api/releases/20161206104930 /var/www/jel_api/releases/20161206104930/tmp /var/www/jel_api/releases/20161206104930/public
+  INFO [98fbc164] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [4238b619] Running [ -L /var/www/jel_api/releases/20161206104930/log ] as jeyavel.natesan@10.0.24.19
+ DEBUG [4238b619] Command: [ -L /var/www/jel_api/releases/20161206104930/log ]
+ DEBUG [4238b619] Finished in 0.005 seconds with exit status 1 (failed).
+ DEBUG [fe2657d1] Running [ -d /var/www/jel_api/releases/20161206104930/log ] as jeyavel.natesan@10.0.24.19
+ DEBUG [fe2657d1] Command: [ -d /var/www/jel_api/releases/20161206104930/log ]
+ DEBUG [fe2657d1] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [2fd53598] Running /usr/bin/env rm -rf /var/www/jel_api/releases/20161206104930/log as jeyavel.natesan@10.0.24.19
+ DEBUG [2fd53598] Command: /usr/bin/env rm -rf /var/www/jel_api/releases/20161206104930/log
+  INFO [2fd53598] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [d4a6d972] Running /usr/bin/env ln -s /var/www/jel_api/shared/log /var/www/jel_api/releases/20161206104930/log as jeyavel.natesan@10.0.24.19
+ DEBUG [d4a6d972] Command: /usr/bin/env ln -s /var/www/jel_api/shared/log /var/www/jel_api/releases/20161206104930/log
+  INFO [d4a6d972] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [5f3ce0a5] Running [ -L /var/www/jel_api/releases/20161206104930/tmp/pids ] as jeyavel.natesan@10.0.24.19
+ DEBUG [5f3ce0a5] Command: [ -L /var/www/jel_api/releases/20161206104930/tmp/pids ]
+ DEBUG [5f3ce0a5] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [92b167ef] Running [ -d /var/www/jel_api/releases/20161206104930/tmp/pids ] as jeyavel.natesan@10.0.24.19
+ DEBUG [92b167ef] Command: [ -d /var/www/jel_api/releases/20161206104930/tmp/pids ]
+ DEBUG [92b167ef] Finished in 0.004 seconds with exit status 1 (failed).
+  INFO [50b6a06e] Running /usr/bin/env ln -s /var/www/jel_api/shared/tmp/pids /var/www/jel_api/releases/20161206104930/tmp/pids as jeyavel.natesan@10.0.24.19
+ DEBUG [50b6a06e] Command: /usr/bin/env ln -s /var/www/jel_api/shared/tmp/pids /var/www/jel_api/releases/20161206104930/tmp/pids
+  INFO [50b6a06e] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [b4b3e574] Running [ -L /var/www/jel_api/releases/20161206104930/tmp/cache ] as jeyavel.natesan@10.0.24.19
+ DEBUG [b4b3e574] Command: [ -L /var/www/jel_api/releases/20161206104930/tmp/cache ]
+ DEBUG [b4b3e574] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [99c47d3c] Running [ -d /var/www/jel_api/releases/20161206104930/tmp/cache ] as jeyavel.natesan@10.0.24.19
+ DEBUG [99c47d3c] Command: [ -d /var/www/jel_api/releases/20161206104930/tmp/cache ]
+ DEBUG [99c47d3c] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [5f3ab847] Running /usr/bin/env rm -rf /var/www/jel_api/releases/20161206104930/tmp/cache as jeyavel.natesan@10.0.24.19
+ DEBUG [5f3ab847] Command: /usr/bin/env rm -rf /var/www/jel_api/releases/20161206104930/tmp/cache
+  INFO [5f3ab847] Finished in 0.024 seconds with exit status 0 (successful).
+  INFO [62a4444e] Running /usr/bin/env ln -s /var/www/jel_api/shared/tmp/cache /var/www/jel_api/releases/20161206104930/tmp/cache as jeyavel.natesan@10.0.24.19
+ DEBUG [62a4444e] Command: /usr/bin/env ln -s /var/www/jel_api/shared/tmp/cache /var/www/jel_api/releases/20161206104930/tmp/cache
+  INFO [62a4444e] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [0f9fd382] Running [ -L /var/www/jel_api/releases/20161206104930/tmp/sockets ] as jeyavel.natesan@10.0.24.19
+ DEBUG [0f9fd382] Command: [ -L /var/www/jel_api/releases/20161206104930/tmp/sockets ]
+ DEBUG [0f9fd382] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [a379ee5a] Running [ -d /var/www/jel_api/releases/20161206104930/tmp/sockets ] as jeyavel.natesan@10.0.24.19
+ DEBUG [a379ee5a] Command: [ -d /var/www/jel_api/releases/20161206104930/tmp/sockets ]
+ DEBUG [a379ee5a] Finished in 0.003 seconds with exit status 1 (failed).
+  INFO [b0f8c565] Running /usr/bin/env ln -s /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/releases/20161206104930/tmp/sockets as jeyavel.natesan@10.0.24.19
+ DEBUG [b0f8c565] Command: /usr/bin/env ln -s /var/www/jel_api/shared/tmp/sockets /var/www/jel_api/releases/20161206104930/tmp/sockets
+  INFO [b0f8c565] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [c7039dab] Running [ -L /var/www/jel_api/releases/20161206104930/public/system ] as jeyavel.natesan@10.0.24.19
+ DEBUG [c7039dab] Command: [ -L /var/www/jel_api/releases/20161206104930/public/system ]
+ DEBUG [c7039dab] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [db832074] Running [ -d /var/www/jel_api/releases/20161206104930/public/system ] as jeyavel.natesan@10.0.24.19
+ DEBUG [db832074] Command: [ -d /var/www/jel_api/releases/20161206104930/public/system ]
+ DEBUG [db832074] Finished in 0.003 seconds with exit status 1 (failed).
+  INFO [8f39ea3a] Running /usr/bin/env ln -s /var/www/jel_api/shared/public/system /var/www/jel_api/releases/20161206104930/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [8f39ea3a] Command: /usr/bin/env ln -s /var/www/jel_api/shared/public/system /var/www/jel_api/releases/20161206104930/public/system
+  INFO [8f39ea3a] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [f4e00e5d] Running /usr/bin/env ln -s /var/www/jel_api/releases/20161206104930 /var/www/jel_api/releases/current as jeyavel.natesan@10.0.24.19
+ DEBUG [f4e00e5d] Command: /usr/bin/env ln -s /var/www/jel_api/releases/20161206104930 /var/www/jel_api/releases/current
+  INFO [f4e00e5d] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [a5c72031] Running /usr/bin/env mv /var/www/jel_api/releases/current /var/www/jel_api as jeyavel.natesan@10.0.24.19
+ DEBUG [a5c72031] Command: /usr/bin/env mv /var/www/jel_api/releases/current /var/www/jel_api
+  INFO [a5c72031] Finished in 0.011 seconds with exit status 0 (successful).
+ DEBUG [b5aadb18] Running /usr/bin/env ls -xtr /var/www/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [b5aadb18] Command: /usr/bin/env ls -xtr /var/www/jel_api/releases
+ DEBUG [b5aadb18] 	20161206092919	20161206104930
+ DEBUG [b5aadb18] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [76524939] Running if test ! -d /var/www/jel_api/releases; then echo "Directory does not exist '/var/www/jel_api/releases'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [76524939] Command: if test ! -d /var/www/jel_api/releases; then echo "Directory does not exist '/var/www/jel_api/releases'" 1>&2; false; fi
+ DEBUG [76524939] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [1e668d86] Running /usr/bin/env echo "Branch master (at d589e76010c2c1b35e12155ded65c417906abe81) deployed as release 20161206104930 by jeyavel.natesan" >> /var/www/jel_api/revisions.log as jeyavel.natesan@10.0.24.19
+ DEBUG [1e668d86] Command: cd /var/www/jel_api/releases && /usr/bin/env echo "Branch master (at d589e76010c2c1b35e12155ded65c417906abe81) deployed as release 20161206104930 by jeyavel.natesan" >> /var/www/jel_api/revisions.log
+  INFO [1e668d86] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 18:28:20 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [76f26cc8] Running /usr/bin/env mkdir -p /tmp/jel_api/ as jeyavel.natesan@10.0.24.19
+ DEBUG [76f26cc8] Command: /usr/bin/env mkdir -p /tmp/jel_api/
+  INFO [76f26cc8] Finished in 1.077 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jel_api/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jel_api/git-ssh.sh 100.0%
+  INFO [17ac24b1] Running /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh as jeyavel.natesan@10.0.24.19
+ DEBUG [17ac24b1] Command: /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh
+  INFO [17ac24b1] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [9d5f2524] Running /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git as jeyavel.natesan@10.0.24.19
+ DEBUG [9d5f2524] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git )
+ DEBUG [9d5f2524] 	d589e76010c2c1b35e12155ded65c417906abe81	refs/heads/master
+  INFO [9d5f2524] Finished in 3.667 seconds with exit status 0 (successful).
+  INFO [83e3af82] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared /home/local/BLR/jeyavel.natesan/apps/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [83e3af82] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared /home/local/BLR/jeyavel.natesan/apps/jel_api/releases
+  INFO [83e3af82] Finished in 0.057 seconds with exit status 0 (successful).
+  INFO [647a136e] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/log /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/pids /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/cache /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/sockets /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [647a136e] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/log /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/pids /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/cache /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/sockets /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/public/system
+  INFO [647a136e] Finished in 0.069 seconds with exit status 0 (successful).
+  INFO [4fd36f05] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config as jeyavel.natesan@10.0.24.19
+ DEBUG [4fd36f05] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config
+  INFO [4fd36f05] Finished in 0.013 seconds with exit status 0 (successful).
+ DEBUG [0d99542d] Running [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [0d99542d] Command: [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/database.yml ]
+ DEBUG [0d99542d] Finished in 0.005 seconds with exit status 1 (failed).
+ ERROR linked file /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/database.yml does not exist on 10.0.24.19
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 18:29:20 +0530 cap production setup:upload_config
+  INFO ---------------------------------------------------------------------------
+ DEBUG Uploading config/database.yml 0.0%
+  INFO Uploading config/database.yml 100.0%
+ DEBUG Uploading config/secrets.yml 0.0%
+  INFO Uploading config/secrets.yml 100.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-12-06 18:29:23 +0530 cap production deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [f55566e0] Running /usr/bin/env mkdir -p /tmp/jel_api/ as jeyavel.natesan@10.0.24.19
+ DEBUG [f55566e0] Command: /usr/bin/env mkdir -p /tmp/jel_api/
+  INFO [f55566e0] Finished in 0.221 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jel_api/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jel_api/git-ssh.sh 100.0%
+  INFO [87698eaf] Running /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh as jeyavel.natesan@10.0.24.19
+ DEBUG [87698eaf] Command: /usr/bin/env chmod +rx /tmp/jel_api/git-ssh.sh
+  INFO [87698eaf] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [ec7d67e0] Running /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git as jeyavel.natesan@10.0.24.19
+ DEBUG [ec7d67e0] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:jeyavel-velankani/JelAPI.git )
+ DEBUG [ec7d67e0] 	d589e76010c2c1b35e12155ded65c417906abe81	refs/heads/master
+  INFO [ec7d67e0] Finished in 3.607 seconds with exit status 0 (successful).
+  INFO [fb9785dd] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared /home/local/BLR/jeyavel.natesan/apps/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [fb9785dd] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared /home/local/BLR/jeyavel.natesan/apps/jel_api/releases
+  INFO [fb9785dd] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [8b66af3e] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/log /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/pids /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/cache /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/sockets /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [8b66af3e] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/log /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/pids /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/cache /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/sockets /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/public/system
+  INFO [8b66af3e] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [9d660747] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config as jeyavel.natesan@10.0.24.19
+ DEBUG [9d660747] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config
+  INFO [9d660747] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [f88651bc] Running [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [f88651bc] Command: [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/database.yml ]
+ DEBUG [f88651bc] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [b6d17888] Running [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [b6d17888] Command: [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/secrets.yml ]
+ DEBUG [b6d17888] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [8a583f86] Running [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/current/REVISION ] as jeyavel.natesan@10.0.24.19
+ DEBUG [8a583f86] Command: [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/current/REVISION ]
+ DEBUG [8a583f86] Finished in 0.005 seconds with exit status 1 (failed).
+ DEBUG [45a96c9b] Running [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/repo/HEAD ] as jeyavel.natesan@10.0.24.19
+ DEBUG [45a96c9b] Command: [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/repo/HEAD ]
+ DEBUG [45a96c9b] Finished in 0.005 seconds with exit status 1 (failed).
+ DEBUG [a481932c] Running if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [a481932c] Command: if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api'" 1>&2; false; fi
+ DEBUG [a481932c] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [55478e46] Running /usr/bin/env git clone --mirror git@github.com:jeyavel-velankani/JelAPI.git /home/local/BLR/jeyavel.natesan/apps/jel_api/repo as jeyavel.natesan@10.0.24.19
+ DEBUG [55478e46] Command: cd /home/local/BLR/jeyavel.natesan/apps/jel_api && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git clone --mirror git@github.com:jeyavel-velankani/JelAPI.git /home/local/BLR/jeyavel.natesan/apps/jel_api/repo )
+ DEBUG [55478e46] 	Cloning into bare repository '/home/local/BLR/jeyavel.natesan/apps/jel_api/repo'...
+  INFO [55478e46] Finished in 6.295 seconds with exit status 0 (successful).
+ DEBUG [98a4f290] Running if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/repo; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [98a4f290] Command: if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/repo; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/repo'" 1>&2; false; fi
+ DEBUG [98a4f290] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [cc62758a] Running /usr/bin/env git remote update --prune as jeyavel.natesan@10.0.24.19
+ DEBUG [cc62758a] Command: cd /home/local/BLR/jeyavel.natesan/apps/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [cc62758a] 	Fetching origin
+  INFO [cc62758a] Finished in 3.464 seconds with exit status 0 (successful).
+ DEBUG [0a9861c2] Running if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/repo; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [0a9861c2] Command: if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/repo; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/repo'" 1>&2; false; fi
+ DEBUG [0a9861c2] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [b4a32bd2] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 as jeyavel.natesan@10.0.24.19
+ DEBUG [b4a32bd2] Command: cd /home/local/BLR/jeyavel.natesan/apps/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 )
+  INFO [b4a32bd2] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [7e098f86] Running /usr/bin/env git archive master | tar -x -f - -C /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 as jeyavel.natesan@10.0.24.19
+ DEBUG [7e098f86] Command: cd /home/local/BLR/jeyavel.natesan/apps/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git archive master | tar -x -f - -C /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 )
+  INFO [7e098f86] Finished in 0.148 seconds with exit status 0 (successful).
+ DEBUG [0760eb7e] Running if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/repo; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/repo'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [0760eb7e] Command: if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/repo; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/repo'" 1>&2; false; fi
+ DEBUG [0760eb7e] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [c09ac9f3] Running /usr/bin/env git rev-list --max-count=1 master as jeyavel.natesan@10.0.24.19
+ DEBUG [c09ac9f3] Command: cd /home/local/BLR/jeyavel.natesan/apps/jel_api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jel_api/git-ssh.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [c09ac9f3] 	d589e76010c2c1b35e12155ded65c417906abe81
+ DEBUG [c09ac9f3] Finished in 0.008 seconds with exit status 0 (successful).
+ DEBUG [2955afd5] Running if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [2955afd5] Command: if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927'" 1>&2; false; fi
+ DEBUG [2955afd5] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [d1bdd978] Running /usr/bin/env echo "d589e76010c2c1b35e12155ded65c417906abe81" >> REVISION as jeyavel.natesan@10.0.24.19
+ DEBUG [d1bdd978] Command: cd /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 && /usr/bin/env echo "d589e76010c2c1b35e12155ded65c417906abe81" >> REVISION
+  INFO [d1bdd978] Finished in 0.017 seconds with exit status 0 (successful).
+  INFO [143a0506] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config as jeyavel.natesan@10.0.24.19
+ DEBUG [143a0506] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config
+  INFO [143a0506] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [fc59a633] Running [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [fc59a633] Command: [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml ]
+ DEBUG [fc59a633] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [15c4d1f2] Running [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [15c4d1f2] Command: [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml ]
+ DEBUG [15c4d1f2] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [6cb5d978] Running /usr/bin/env rm /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [6cb5d978] Command: /usr/bin/env rm /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml
+  INFO [6cb5d978] Finished in 0.007 seconds with exit status 0 (successful).
+  INFO [beb14bbf] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/database.yml /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [beb14bbf] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/database.yml /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/database.yml
+  INFO [beb14bbf] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [3e8640f3] Running [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [3e8640f3] Command: [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml ]
+ DEBUG [3e8640f3] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [f33ac28d] Running [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml ] as jeyavel.natesan@10.0.24.19
+ DEBUG [f33ac28d] Command: [ -f /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml ]
+ DEBUG [f33ac28d] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [0cad9453] Running /usr/bin/env rm /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [0cad9453] Command: /usr/bin/env rm /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml
+  INFO [0cad9453] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [06fc7b05] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/secrets.yml /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml as jeyavel.natesan@10.0.24.19
+ DEBUG [06fc7b05] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/config/secrets.yml /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/config/secrets.yml
+  INFO [06fc7b05] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [e459ace1] Running /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public as jeyavel.natesan@10.0.24.19
+ DEBUG [e459ace1] Command: /usr/bin/env mkdir -p /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public
+  INFO [e459ace1] Finished in 0.006 seconds with exit status 0 (successful).
+ DEBUG [5ceba418] Running [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log ] as jeyavel.natesan@10.0.24.19
+ DEBUG [5ceba418] Command: [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log ]
+ DEBUG [5ceba418] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [6cfbd955] Running [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log ] as jeyavel.natesan@10.0.24.19
+ DEBUG [6cfbd955] Command: [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log ]
+ DEBUG [6cfbd955] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [bab969e1] Running /usr/bin/env rm -rf /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log as jeyavel.natesan@10.0.24.19
+ DEBUG [bab969e1] Command: /usr/bin/env rm -rf /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log
+  INFO [bab969e1] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [ba2589a0] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/log /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log as jeyavel.natesan@10.0.24.19
+ DEBUG [ba2589a0] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/log /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/log
+  INFO [ba2589a0] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [afec1fc7] Running [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/pids ] as jeyavel.natesan@10.0.24.19
+ DEBUG [afec1fc7] Command: [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/pids ]
+ DEBUG [afec1fc7] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [4919136d] Running [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/pids ] as jeyavel.natesan@10.0.24.19
+ DEBUG [4919136d] Command: [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/pids ]
+ DEBUG [4919136d] Finished in 0.004 seconds with exit status 1 (failed).
+  INFO [880caf9b] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/pids /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/pids as jeyavel.natesan@10.0.24.19
+ DEBUG [880caf9b] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/pids /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/pids
+  INFO [880caf9b] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [8dfdd600] Running [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache ] as jeyavel.natesan@10.0.24.19
+ DEBUG [8dfdd600] Command: [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache ]
+ DEBUG [8dfdd600] Finished in 0.004 seconds with exit status 1 (failed).
+ DEBUG [78b5d721] Running [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache ] as jeyavel.natesan@10.0.24.19
+ DEBUG [78b5d721] Command: [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache ]
+ DEBUG [78b5d721] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [a6ec40be] Running /usr/bin/env rm -rf /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache as jeyavel.natesan@10.0.24.19
+ DEBUG [a6ec40be] Command: /usr/bin/env rm -rf /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache
+  INFO [a6ec40be] Finished in 0.022 seconds with exit status 0 (successful).
+  INFO [106155c8] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/cache /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache as jeyavel.natesan@10.0.24.19
+ DEBUG [106155c8] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/cache /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/cache
+  INFO [106155c8] Finished in 0.005 seconds with exit status 0 (successful).
+ DEBUG [71509c52] Running [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/sockets ] as jeyavel.natesan@10.0.24.19
+ DEBUG [71509c52] Command: [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/sockets ]
+ DEBUG [71509c52] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [145f6700] Running [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/sockets ] as jeyavel.natesan@10.0.24.19
+ DEBUG [145f6700] Command: [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/sockets ]
+ DEBUG [145f6700] Finished in 0.004 seconds with exit status 1 (failed).
+  INFO [d759615d] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/sockets /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/sockets as jeyavel.natesan@10.0.24.19
+ DEBUG [d759615d] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/tmp/sockets /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/tmp/sockets
+  INFO [d759615d] Finished in 0.004 seconds with exit status 0 (successful).
+ DEBUG [56385bf8] Running [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public/system ] as jeyavel.natesan@10.0.24.19
+ DEBUG [56385bf8] Command: [ -L /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public/system ]
+ DEBUG [56385bf8] Finished in 0.003 seconds with exit status 1 (failed).
+ DEBUG [266c6063] Running [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public/system ] as jeyavel.natesan@10.0.24.19
+ DEBUG [266c6063] Command: [ -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public/system ]
+ DEBUG [266c6063] Finished in 0.004 seconds with exit status 1 (failed).
+  INFO [29c8c8f7] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/public/system /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public/system as jeyavel.natesan@10.0.24.19
+ DEBUG [29c8c8f7] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/shared/public/system /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927/public/system
+  INFO [29c8c8f7] Finished in 0.006 seconds with exit status 0 (successful).
+  INFO [7e314aaa] Running /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/current as jeyavel.natesan@10.0.24.19
+ DEBUG [7e314aaa] Command: /usr/bin/env ln -s /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/20161206125927 /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/current
+  INFO [7e314aaa] Finished in 0.005 seconds with exit status 0 (successful).
+  INFO [6a73fff7] Running /usr/bin/env mv /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/current /home/local/BLR/jeyavel.natesan/apps/jel_api as jeyavel.natesan@10.0.24.19
+ DEBUG [6a73fff7] Command: /usr/bin/env mv /home/local/BLR/jeyavel.natesan/apps/jel_api/releases/current /home/local/BLR/jeyavel.natesan/apps/jel_api
+  INFO [6a73fff7] Finished in 0.023 seconds with exit status 0 (successful).
+ DEBUG [e63ad6f1] Running /usr/bin/env ls -xtr /home/local/BLR/jeyavel.natesan/apps/jel_api/releases as jeyavel.natesan@10.0.24.19
+ DEBUG [e63ad6f1] Command: /usr/bin/env ls -xtr /home/local/BLR/jeyavel.natesan/apps/jel_api/releases
+ DEBUG [e63ad6f1] 	20161206125927
+ DEBUG [e63ad6f1] Finished in 0.007 seconds with exit status 0 (successful).
+ DEBUG [2f37b641] Running if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/releases'" 1>&2; false; fi as jeyavel.natesan@10.0.24.19
+ DEBUG [2f37b641] Command: if test ! -d /home/local/BLR/jeyavel.natesan/apps/jel_api/releases; then echo "Directory does not exist '/home/local/BLR/jeyavel.natesan/apps/jel_api/releases'" 1>&2; false; fi
+ DEBUG [2f37b641] Finished in 0.004 seconds with exit status 0 (successful).
+  INFO [111496f7] Running /usr/bin/env echo "Branch master (at d589e76010c2c1b35e12155ded65c417906abe81) deployed as release 20161206125927 by jeyavel.natesan" >> /home/local/BLR/jeyavel.natesan/apps/jel_api/revisions.log as jeyavel.natesan@10.0.24.19
+ DEBUG [111496f7] Command: cd /home/local/BLR/jeyavel.natesan/apps/jel_api/releases && /usr/bin/env echo "Branch master (at d589e76010c2c1b35e12155ded65c417906abe81) deployed as release 20161206125927 by jeyavel.natesan" >> /home/local/BLR/jeyavel.natesan/apps/jel_api/revisions.log
+  INFO [111496f7] Finished in 0.005 seconds with exit status 0 (successful).
