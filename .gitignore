@@ -2,7 +2,7 @@
 capybara-*.html
 .rspec
 /log
-/tmp
+*/tmp
 
 ## Environment normalization:
 /.bundle
