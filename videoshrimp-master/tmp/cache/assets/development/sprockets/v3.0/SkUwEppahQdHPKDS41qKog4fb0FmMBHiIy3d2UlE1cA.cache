@@ -1,0 +1,49 @@
+I"K(function() {
+  $(function() {
+    var add_notifications, auth_key, notification_channel;
+    if ($("#user-notifications").length) {
+      auth_key = $("#user-notifications").attr("data-pn-auth-key");
+      notification_channel = $("#user-notifications").attr('data-pn-notification-channel');
+      add_notifications = function(msg) {
+        var i, len, notification, notification_html, ref, results;
+        ref = msg[0];
+        results = [];
+        for (i = 0, len = ref.length; i < len; i++) {
+          notification = ref[i];
+          switch (notification.event) {
+            case 'published':
+              notification_html = "<li><a href='/" + notification.scope + "/" + notification.id + "'>";
+              notification_html += "Your video " + notification.name + " has been published";
+              notification_html += "</a></li>";
+              results.push($("#user-notifications .dropdown-menu").prepend(notification_html));
+              break;
+            default:
+              results.push(void 0);
+          }
+        }
+        return results;
+      };
+      window.pubnub = PUBNUB.init({
+        subscribe_key: "",
+        publish_key: "",
+        auth_key: auth_key
+      });
+      window.pubnub.history({
+        channel: notification_channel,
+        count: 10,
+        reverse: false,
+        callback: function(msg) {
+          return add_notifications(msg);
+        }
+      });
+      return window.pubnub.subscribe({
+        channel: notification_channel,
+        callback: function(msg) {
+          return add_notifications(msg);
+        }
+      });
+    }
+  });
+
+}).call(this);
+:ET

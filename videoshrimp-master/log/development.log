@@ -1,0 +1,237 @@
+  [1m[36m (85.5ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (98.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20151117181300)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20151117181300"]]
+  [1m[36m (85.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateVideos (20151117181620)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.3ms)[0m  [1mCREATE TABLE "videos" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "video_file_file_name" varchar, "video_file_content_type" varchar, "video_file_file_size" integer, "video_file_updated_at" datetime, "thumbnail_file_name" varchar, "thumbnail_content_type" varchar, "thumbnail_file_size" integer, "thumbnail_updated_at" datetime, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE  INDEX "index_videos_on_user_id" ON "videos" ("user_id")
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20151117181620"]]
+  [1m[35m (80.4ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_videos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_videos_on_user_id' AND type='index'
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_videos_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_videos_on_user_id' AND type='index'
+[0m
+DEPRECATION WARNING: You didn't set `secret_key_base`. Read the upgrade documentation to learn more about this new config option. (called from service at /home/local/BLR/jeyavel.natesan/.rubies/ruby-2.3.1/lib/ruby/2.3.0/webrick/httpserver.rb:140)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-31 15:43:12 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VideosController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 401 Unauthorized in 55ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-31 15:43:12 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise (105.5ms)
+Completed 200 OK in 3461ms (Views: 3442.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/application.self-716e4e72640d4ed868cefd85993fae91a93a56c3dac2883eb2e0ff912cb17e7c.css?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/mylists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/notifications.self-bd01d83719f456837902323c1ba372d1e1a3c9b7fb65217fe4fed54f95887476.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2017-01-31 15:43:16 +0530
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-01-31 15:43:19 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (33.4ms)
+Completed 200 OK in 132ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-01-31 15:43:34 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eGhz8njhebMoLy8pP1Xp10JqTJOeyU/4HyAVd5XcSR+fVijF7ghYJDSyZdA22qeGeOHewGKjn5Mn4yyXVaFgYQ==", "user"=>{"email"=>"jeyavelnkl@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jeyavelnkl@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "jeyavelnkl@gmail.com"], ["encrypted_password", "$2a$10$XsFdCgPlCFQx3b0ybfMmfuJHfnD1d82/qhxNfookbVnWoq5o4X6oW"], ["created_at", "2017-01-31 10:13:34.899064"], ["updated_at", "2017-01-31 10:13:34.899064"]]
+  [1m[35m (94.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "last_sign_in_ip" = ?, "current_sign_in_ip" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2017-01-31 10:13:34.995595"], ["current_sign_in_at", "2017-01-31 10:13:34.995595"], ["last_sign_in_ip", "127.0.0.1"], ["current_sign_in_ip", "127.0.0.1"], ["sign_in_count", 1], ["updated_at", "2017-01-31 10:13:34.996531"], ["id", 1]]
+  [1m[36m (79.4ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 497ms (ActiveRecord: 174.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-31 15:43:35 +0530
+Processing by VideosController#index as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mVideo Load (0.2ms)[0m  [1mSELECT "videos".* FROM "videos"[0m
+  Rendered videos/index.haml within layouts/application (4.3ms)
+Completed 200 OK in 83ms (Views: 74.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mylists/video_list" for 127.0.0.1 at 2017-01-31 15:43:37 +0530
+Processing by MylistsController#video_list as HTML
+  [1m[35mVideo Load (0.2ms)[0m  SELECT "videos".* FROM "videos"
+  Rendered mylists/video_list.html.erb within layouts/application (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+Completed 200 OK in 139ms (Views: 81.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos" for 127.0.0.1 at 2017-01-31 15:43:50 +0530
+Processing by VideosController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mVideo Load (0.2ms)[0m  [1mSELECT "videos".* FROM "videos"[0m
+  Rendered videos/index.haml within layouts/application (1.3ms)
+Completed 200 OK in 90ms (Views: 87.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos/new" for 127.0.0.1 at 2017-01-31 15:43:52 +0530
+Processing by VideosController#new as HTML
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  Rendered videos/new.haml within layouts/application (32.7ms)
+Completed 200 OK in 135ms (Views: 121.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/videos" for 127.0.0.1 at 2017-01-31 15:44:02 +0530
+Processing by VideosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jim+HyKfDVQ9Xgky2ErxbPecqxgSkH5cikfidjiC8QRpF+UotHYswyHDQ8vRxb89zRc5S+76rjeyhNuW+P/Yeg==", "video"=>{"name"=>"myvideo", "video_file"=>#<ActionDispatch::Http::UploadedFile:0x007f3c6f42c040 @tempfile=#<Tempfile:/tmp/RackMultipart20170131-1385-whhboe.mp4>, @original_filename="SampleVideo_1280x720_1mb.mp4", @content_type="video/mp4", @headers="Content-Disposition: form-data; name=\"video[video_file]\"; filename=\"SampleVideo_1280x720_1mb.mp4\"\r\nContent-Type: video/mp4\r\n">}, "commit"=>"Upload Video"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "videos" ("video_file_file_name", "video_file_content_type", "video_file_file_size", "video_file_updated_at", "name", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["video_file_file_name", "SampleVideo_1280x720_1mb.mp4"], ["video_file_content_type", "video/mp4"], ["video_file_file_size", 1055736], ["video_file_updated_at", "2017-01-31 10:14:02.594565"], ["name", "myvideo"], ["created_at", "2017-01-31 10:14:02.597685"], ["updated_at", "2017-01-31 10:14:02.597685"]]
+  [1m[35m (177.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/videos/1
+Completed 302 Found in 196ms (ActiveRecord: 177.4ms)
+
+
+Started GET "/videos/1" for 127.0.0.1 at 2017-01-31 15:44:02 +0530
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mVideo Load (0.2ms)[0m  SELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered videos/show.haml within layouts/application (2.6ms)
+Completed 200 OK in 89ms (Views: 66.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videos" for 127.0.0.1 at 2017-01-31 15:44:12 +0530
+Processing by VideosController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mVideo Load (0.5ms)[0m  SELECT "videos".* FROM "videos"
+  Rendered videos/index.haml within layouts/application (2.5ms)
+Completed 200 OK in 76ms (Views: 73.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mylists/video_list" for 127.0.0.1 at 2017-01-31 15:44:15 +0530
+Processing by MylistsController#video_list as HTML
+  [1m[36mVideo Load (0.3ms)[0m  [1mSELECT "videos".* FROM "videos"[0m
+  Rendered mylists/video_list.html.erb within layouts/application (1.5ms)
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+Completed 200 OK in 137ms (Views: 73.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videos/1" for 127.0.0.1 at 2017-01-31 15:44:20 +0530
+Processing by VideosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35mVideo Load (0.1ms)[0m  SELECT  "videos".* FROM "videos" WHERE "videos"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered videos/show.haml within layouts/application (1.4ms)
+Completed 200 OK in 139ms (Views: 137.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-01-31 15:44:31 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iyBbhCrAJBijuCu+65Z8gyxTzS9IlNp3dvI7zk6IPndsHgCzvCkFj78lYUfiGTLSFthffLT+ChxOMQIujvUXCQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 28ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-01-31 15:44:31 +0530
+Processing by VideosController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-31 15:44:31 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise (12.3ms)
+Completed 200 OK in 78ms (Views: 77.0ms | ActiveRecord: 0.0ms)
