@@ -1,0 +1,30 @@
+  
+<div style = "position: absolute;top: 25%;left: 25%; border-style: groove;border-color: black;">
+  <%= form_for @student, html: { multipart: true } do |f| %>
+    <table>
+      <caption style="background-color:grey">
+        Create New Student
+      </caption>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :blood_group %></td>
+        <td><%= f.text_field :blood_group %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :department %><br></td>
+        <td><%= f.text_field :department %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :image %></td>
+        <td><%= f.file_field :image %></td>
+      </tr>
+      <tr colspan="3">
+        <td><%= f.submit %></td>
+      <tr>
+    </table>
+  <% end %>
+  <%= link_to 'Back', students_path %>
+</div>

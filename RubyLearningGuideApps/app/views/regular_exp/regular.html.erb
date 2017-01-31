@@ -1,0 +1,101 @@
+<script>
+//validate function for email
+function validateForm() {
+
+    var x = document.getElementById("Email").value;
+    var atpos = x.indexOf("@");
+    var dotpos = x.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=x.length) {
+        alert("Not a valid e-mail address");
+        return false;
+    }
+}
+
+//validate function for email regular expresssion
+function validateEmail() 
+{
+    var email = document.getElementById("Email").value; 
+    //var re = /\S+@\S+\.\S+/;
+    var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!email.length)
+    	alert("Email Field is Blank")
+    else
+    document.getElementById('email_output').value = re.test(email);;
+
+}
+
+//validate function for phone
+function validatePhone() 
+{
+    var number = document.getElementById("number").value; 
+    //var re = /\S+@\S+\.\S+/;
+    var re = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+    if (!number.length)
+    	alert("Number Field is Blank")
+    else
+    document.getElementById('number_output').value = re.test(number);;
+
+}
+
+//validate function for oddEven
+function oddEven(){
+	var x = document.getElementById("num").value;
+	if (isNaN(x))
+		alert("Please Enter a Number");
+	else if (x == 0)
+		alert("The number is zero");
+	else if (x%2==0)
+		document.getElementById('odd_even_output').value = "even";
+	else
+	document.getElementById('odd_even_output').value = "odd";
+
+}
+
+
+//validate function for currency check
+function currencyCheck()
+{
+	var number = document.getElementById("amount").value; 
+    //var re = /\S+@\S+\.\S+/;
+    var re = /^-?(?:0|[1-9]\d{0,2}(?:,?\d{3})*)(?:\.\d+)?$/;
+    if (!number.length)
+    	alert("Field is Blank")
+    else
+    document.getElementById('currency_output').value = re.test(number);;
+}
+
+
+</script>
+
+<h1>Regular Expression Examples</h1>
+<div>
+<%= label_tag "Email" %>
+<%= text_field_tag "Email", "" %>
+<%= button_tag "Email Validate" , onclick:"validateEmail();"  %>
+<%= text_field_tag "email_output" ,""%>
+</div>
+
+<h1>Checking Odd or Even</h1>
+<div>
+<%= label_tag "Enetr a number" %>
+<%= text_field_tag "num", "" %>
+<%= button_tag "Check" , onclick:"oddEven();"  %>
+<%= text_field_tag "odd_even_output" ,""%>
+</div>
+
+<h1>Checking US phone number</h1>
+<div>
+<%= label_tag "Enetr US Phone Number" %>
+<%= text_field_tag "number", "" %>
+<%= button_tag "Test" , onclick:"validatePhone();"  %>
+<%= text_field_tag "number_output" ,""%>
+</div>
+
+<h1>Checking the curency format</h1>
+<div>
+<%= label_tag "Enetr the currency amount" %>
+<%= text_field_tag "amount", "" %>
+<%= button_tag "Test" , onclick:"currencyCheck();"  %>
+<%= text_field_tag "currency_output" ,""%>
+</div>
+

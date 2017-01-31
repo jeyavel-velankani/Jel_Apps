@@ -1,0 +1,19 @@
+<% page_header "Match #{@match.uid} <small>#{@match.started_at}</small>" %>
+
+<h2 class="<%= @match.winner.downcase %>"><%= @match.winner %> won</h2>
+
+<p>
+  <i class="glyphicon glyphicon-thumbs-up"></i> <%= @match.likes %>
+  <i class="glyphicon glyphicon-thumbs-down"></i> <%= @match.dislikes %>
+</p>
+
+<ul>
+  <li><strong>Mode:</strong> <%= @match.mode %></li>
+  <li><strong>Type:</strong> <%= @match.match_type %></li>
+  <li><strong>Duration:</strong> <%= @match.duration %></li>
+  <li><strong>First blood:</strong> <%= @match.first_blood %></li>
+</ul>
+
+<%= render 'details_table', players: @players[true], team: 'radiant' %>
+
+<%= render 'details_table', players: @players[false], team: 'dire' %>

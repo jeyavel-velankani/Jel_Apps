@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <strong>RollNo:</strong>
+  <%= @student.id %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @student.name %>
+</p>
+
+<p>
+  <strong>Blood group:</strong>
+  <%= @student.blood_group %>
+</p>
+
+<p>
+  <strong>Dept:</strong>
+  <%= @student.dept %>
+</p>
+<p>
+  <strong>Avatar:</strong>
+  <%= image_tag @student.avatar.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_student_path(@student) %> |
+<%= link_to 'Back', students_path %>
+

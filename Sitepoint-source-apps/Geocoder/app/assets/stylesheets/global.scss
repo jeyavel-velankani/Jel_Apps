@@ -1,0 +1,48 @@
+
+footer {
+  margin-top: 40px;
+}
+
+header {
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+#map2 {
+  height: 500px;
+}
+
+#map {
+  height: 700px;
+  width: 50%;
+}
+
+
+#right-panel {
+	font-family: 'Roboto','sans-serif';
+	line-height: 30px;
+	padding-left: 5px;
+}
+
+#right-panel select, #right-panel input {
+	font-size: 15px;
+}
+
+#right-panel select {
+	width: 100%;
+}
+
+#right-panel i {
+	font-size: 12px;
+}
+
+#right-panel {
+	height: 700px;
+	float: right;
+	width: 390px;
+	overflow: auto;
+}

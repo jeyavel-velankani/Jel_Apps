@@ -1,0 +1,27 @@
+<%= form_for(student) do |f| %>
+  <table>
+      <caption style="background-color:grey">
+        Editing Students
+      </caption>
+      <tr>
+        <td><%= f.label :name %></td>
+        <td><%= f.text_field :name %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :blood_group %></td>
+        <td><%= f.text_field :blood_group %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :department %><br></td>
+        <td><%= f.text_field :department %></td>
+      </tr>
+      <tr>
+        <td><%= f.label :image %></td>
+        <td><%= f.file_field :image %></td>
+      </tr>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+   </table>
+<% end %>
