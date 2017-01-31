@@ -54,3 +54,5 @@ group :development do
   gem 'spring'
 end
 
+
+gem 'rails-settings-cached', '~> 0.4.0'

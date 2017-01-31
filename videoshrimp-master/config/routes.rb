@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :audios
+  
+  # root 'audios#index'
+  
   root 'videos#index'
   resources :videos
   get '/videos/:id/like' => 'videos#like'
@@ -10,6 +14,11 @@ Rails.application.routes.draw do
   get '/mylists/video_list'=> 'mylists#video_list'
   get '/mylists/index'=> 'mylists#index'
 
+  resources :settings, except: [:show, :new, :edit]
+
+  get '/sync_repo/:id', to: 'audios#sync_repo', as: :sync_repo
+  get '/stream/:id', to: 'audios#stream', as: :stream
+  
   # mount Sidekiq::Web => '/sidekiq'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
