@@ -1,0 +1,1406 @@
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-01-31 17:35:16 +0530
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.0ms)
+Started GET "/" for 127.0.0.1 at 2017-01-31 17:35:22 +0530
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (24.6ms)
+Started GET "/" for 127.0.0.1 at 2017-01-31 17:35:22 +0530
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.1) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.1) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.1) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.1) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.1) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.1) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (18.3ms)
+  [1m[35m (92.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (106.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateSettings (20170125115641)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+DEPRECATION WARNING: Directly inheriting from ActiveRecord::Migration is deprecated. Please specify the Rails release the migration was written for:
+
+  class CreateSettings < ActiveRecord::Migration[4.2] (called from load at /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/bin/rake:23)
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "settings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "var" varchar NOT NULL, "value" text, "thing_id" integer, "thing_type" varchar(30), "created_at" datetime, "updated_at" datetime)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_settings_on_thing_type_and_thing_id_and_var" ON "settings" ("thing_type", "thing_id", "var")[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170125115641"]]
+  [1m[35m (97.6ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateAudios (20170125120037)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "audios" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170125120037"]]
+  [1m[35m (78.5ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddFieldsToAudios (20170125120120)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "audios" ADD "name" varchar[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "audios" ADD "path" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_audios_on_name" ON "audios" ("name")[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170125120120"]]
+  [1m[35m (105.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-01-31 12:05:39 UTC], ["updated_at", 2017-01-31 12:05:39 UTC]]
+  [1m[35m (158.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_audios_on_name' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_audios_on_name' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_settings_on_thing_type_and_thing_id_and_var' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_settings_on_thing_type_and_thing_id_and_var' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2017-01-31 17:35:49 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "settings" ("var", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["var", "repositories"], ["value", "--- []\n"], ["created_at", 2017-01-31 12:05:49 UTC], ["updated_at", 2017-01-31 12:05:49 UTC]]
+  [1m[35m (123.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering audios/index.html.erb within layouts/application
+  Rendered audios/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25600ms (Views: 25369.2ms | ActiveRecord: 125.1ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:36:15 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [19 times] (27.2ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (22.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (83.4ms)
+Started GET "/audios/new" for 127.0.0.1 at 2017-01-31 17:36:37 +0530
+Processing by AudiosController#new as HTML
+  Rendering audios/new.html.erb within layouts/application
+  Rendered audios/_form.html.erb (45.7ms)
+  Rendered audios/new.html.erb within layouts/application (46.5ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `audio' for #<#<Class:0x0055c099aeebb0>:0x007f11d8846688>):
+    1: <%= form_for(audio) do |f| %>
+    2:   <% if audio.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(audio.errors.count, "error") %> prohibited this audio from being saved:</h2>
+  
+app/views/audios/_form.html.erb:1:in `_app_views_audios__form_html_erb___1821018913420734667_69857311967940'
+app/views/audios/new.html.erb:3:in `_app_views_audios_new_html_erb___2447513536565330366_69857311864900'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.7ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.4ms)
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:37:00 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.5ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  Rendered audios/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 98ms (Views: 93.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:37:00 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [19 times] (4.6ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.6ms)
+Started GET "/settings" for 127.0.0.1 at 2017-01-31 17:37:04 +0530
+Processing by SettingsController#index as HTML
+  [1m[36mSettings Load (0.4ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering settings/index.html.erb within layouts/application
+  Rendered settings/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 78ms (Views: 75.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:37:04 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [19 times] (4.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.6ms)
+Started POST "/settings/index" for 127.0.0.1 at 2017-01-31 17:37:14 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/settings/index"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [19 times] (5.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.3ms)
+Started GET "/settings/index" for 127.0.0.1 at 2017-01-31 17:38:06 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/settings/index"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (8.3ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.4ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (43.4ms)
+Started GET "/settings" for 127.0.0.1 at 2017-01-31 17:38:12 +0530
+Processing by SettingsController#index as HTML
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering settings/index.html.erb within layouts/application
+  Rendered settings/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 122ms (Views: 108.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:38:12 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (6.1ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (32.2ms)
+Started POST "/settings" for 127.0.0.1 at 2017-01-31 17:38:15 +0530
+Processing by SettingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lhqgq6592i2L0ZnXqD7mREJ/kinOXBCc5qJpn7F5uEVPw+v95uhjUB70P9JgEVtkur4QoUqUn+kEM17i4VJ77A==", "settings"=>{"repositories"=>["/audios"]}, "commit"=>"Save Settings"}
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "settings" SET "value" = ?, "updated_at" = ? WHERE "settings"."id" = ?[0m  [["value", "---\n- \"/audios\"\n"], ["updated_at", 2017-01-31 12:08:15 UTC], ["id", 1]]
+  [1m[35m (266.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/settings
+Completed 302 Found in 279ms (ActiveRecord: 268.0ms)
+
+
+Started GET "/settings" for 127.0.0.1 at 2017-01-31 17:38:15 +0530
+Processing by SettingsController#index as HTML
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering settings/index.html.erb within layouts/application
+  Rendered settings/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 91ms (Views: 88.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:38:16 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (5.6ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (33.1ms)
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:38:25 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 107ms (Views: 100.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:38:26 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [24 times] (5.5ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.9ms)
+Started GET "/sync_repo/0" for 127.0.0.1 at 2017-01-31 17:38:29 +0530
+Processing by AudiosController#sync_repo as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mSettings Load (0.5ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/audios
+Completed 302 Found in 32ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:38:29 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 96ms (Views: 92.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:38:31 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 116ms (Views: 112.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:41:48 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.1ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 113ms (Views: 102.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:41:48 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (4.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.6ms)
+Started GET "/settings" for 127.0.0.1 at 2017-01-31 17:41:53 +0530
+Processing by SettingsController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering settings/index.html.erb within layouts/application
+  Rendered settings/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 100ms (Views: 96.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:41:53 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (5.2ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (30.5ms)
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:42:02 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 86ms (Views: 82.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sync_repo/0" for 127.0.0.1 at 2017-01-31 17:42:04 +0530
+Processing by AudiosController#sync_repo as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mSettings Load (0.4ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/audios
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:42:04 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 105ms (Views: 100.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sync_repo/0" for 127.0.0.1 at 2017-01-31 17:44:03 +0530
+Processing by AudiosController#sync_repo as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 1.0ms)
+
+
+  
+NoMethodError (undefined method `rooto' for Rails:Module):
+  
+app/controllers/audios_controller.rb:69:in `sync_repo'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.7ms)
+Started GET "/sync_repo/0" for 127.0.0.1 at 2017-01-31 17:44:13 +0530
+Processing by AudiosController#sync_repo as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."name" = ? LIMIT ?[0m  [["name", "Allegro from Duet in C Major.mp3"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "audios" ("created_at", "updated_at", "name", "path") VALUES (?, ?, ?, ?)[0m  [["created_at", 2017-01-31 12:14:14 UTC], ["updated_at", 2017-01-31 12:14:14 UTC], ["name", "Allegro from Duet in C Major.mp3"], ["path", "/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3"]]
+  [1m[35m (182.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."name" = ? LIMIT ?[0m  [["name", "Yuddham Sei - Life (Goes On) Theme.mp3"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "audios" ("created_at", "updated_at", "name", "path") VALUES (?, ?, ?, ?)[0m  [["created_at", 2017-01-31 12:14:14 UTC], ["updated_at", 2017-01-31 12:14:14 UTC], ["name", "Yuddham Sei - Life (Goes On) Theme.mp3"], ["path", "/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Yuddham Sei - Life (Goes On) Theme.mp3"]]
+  [1m[35m (184.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/audios
+Completed 302 Found in 409ms (ActiveRecord: 368.3ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:44:14 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 82ms (Views: 79.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:44:14 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (4.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.3ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (64.0ms)
+Started GET "/audios/1" for 127.0.0.1 at 2017-01-31 17:44:17 +0530
+Processing by AudiosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.6ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering audios/show.html.erb within layouts/application
+  Rendered audios/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 111ms (Views: 107.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:44:18 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.4ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.4ms)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.7ms)
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:44:26 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.3ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (2.8ms)
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:44:26 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.4ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.4ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+Completed 200 OK in 188ms (Views: 184.1ms | ActiveRecord: 0.6ms)
+
+
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.6ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (25.6ms)
+Started GET "/audios/2" for 127.0.0.1 at 2017-01-31 17:44:28 +0530
+Processing by AudiosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAudio Load (0.4ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering audios/show.html.erb within layouts/application
+  Rendered audios/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 102ms (Views: 99.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stream/2" for 127.0.0.1 at 2017-01-31 17:44:28 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Yuddham Sei - Life (Goes On) Theme.mp3 (0.2ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Yuddham Sei - Life (Goes On) Theme.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.8ms)
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:44:30 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.8ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+Started GET "/stream/2" for 127.0.0.1 at 2017-01-31 17:44:30 +0530
+  Rendering audios/index.html.erb within layouts/application
+Processing by AudiosController#stream as */*
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Parameters: {"id"=>"2"}
+  Rendered audios/index.html.erb within layouts/application (2.3ms)
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Yuddham Sei - Life (Goes On) Theme.mp3 (0.3ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Yuddham Sei - Life (Goes On) Theme.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+Completed 200 OK in 156ms (Views: 148.6ms | ActiveRecord: 1.0ms)
+
+
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.8ms)
+Started GET "/audios/1" for 127.0.0.1 at 2017-01-31 17:44:32 +0530
+Processing by AudiosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering audios/show.html.erb within layouts/application
+  Rendered audios/show.html.erb within layouts/application (1.1ms)
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:44:32 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.3ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:44:32 +0530
+  
+Processing by AudiosController#stream as */*
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  Parameters: {"id"=>"1"}
+  
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+app/controllers/audios_controller.rb:89:in `stream'
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.3ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+Completed 200 OK in 197ms (Views: 194.6ms | ActiveRecord: 0.2ms)
+
+
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:44:32 +0530
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+Processing by AudiosController#stream as */*
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Parameters: {"id"=>"1"}
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.9ms)
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.2ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.9ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (20.1ms)
+Started GET "/audios/1/edit" for 127.0.0.1 at 2017-01-31 17:44:33 +0530
+Processing by AudiosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering audios/edit.html.erb within layouts/application
+  Rendered audios/edit.html.erb within layouts/application (1.6ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.1ms)
+
+
+  
+SyntaxError (/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/app/views/audios/edit.html.erb:31: syntax error, unexpected '<', expecting ')'
+    </div>
+     ^
+/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/app/views/audios/edit.html.erb:32: unknown regexp options - dv
+/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/app/views/audios/edit.html.erb:35: syntax error, unexpected '<', expecting ')'
+<br/><br/>'.freeze;@output_buffer.to_s
+ ^
+/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/app/views/audios/edit.html.erb:35: unterminated string meets end of file):
+  
+app/views/audios/edit.html.erb:31: syntax error, unexpected '<', expecting ')'
+app/views/audios/edit.html.erb:32: unknown regexp options - dv
+app/views/audios/edit.html.erb:35: syntax error, unexpected '<', expecting ')'
+app/views/audios/edit.html.erb:35: unterminated string meets end of file
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (7.0ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (23.9ms)
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:44:33 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.3ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.7ms)
+Started GET "/audios/1/edit" for 127.0.0.1 at 2017-01-31 17:44:51 +0530
+Processing by AudiosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering audios/edit.html.erb within layouts/application
+  Rendered audios/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 101ms (Views: 99.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:44:52 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (4.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.5ms)
+Started PATCH "/audios/1" for 127.0.0.1 at 2017-01-31 17:45:09 +0530
+Processing by AudiosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5xvaFzlyPust91kQo1r1WrnGfGihUl9fywE44OQlEts+wpFBceeHlrjS/xVrdUh6QQf+4CWa0CopkA+dtA7Rcg==", "audio"=>{"name"=>"Allegro from Duet in C Major.mp3", "path"=>"/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3"}, "commit"=>"Save Audio File", "id"=>"1"}
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/audios/1
+Completed 302 Found in 3ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/audios/1" for 127.0.0.1 at 2017-01-31 17:45:09 +0530
+Processing by AudiosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering audios/show.html.erb within layouts/application
+  Rendered audios/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 88ms (Views: 86.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:45:10 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (4.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.3ms)
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:45:10 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.2ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.9ms)
+Started GET "/audios/1" for 127.0.0.1 at 2017-01-31 17:45:16 +0530
+Processing by AudiosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering audios/show.html.erb within layouts/application
+  Rendered audios/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 115ms (Views: 112.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:45:16 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (5.2ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.5ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (31.3ms)
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:45:16 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.2ms)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionController::MissingFile (Cannot read file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3):
+  
+app/controllers/audios_controller.rb:89:in `stream'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.4ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.2ms)
+Started GET "/audios/1" for 127.0.0.1 at 2017-01-31 17:46:36 +0530
+Processing by AudiosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering audios/show.html.erb within layouts/application
+  Rendered audios/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 103ms (Views: 91.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/javascripts/vendor/modernizr.js" for 127.0.0.1 at 2017-01-31 17:46:37 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/javascripts/vendor/modernizr.js"):
+  
+actionpack (5.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.2) lib/puma/configuration.rb:225:in `call'
+puma (3.6.2) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.2) lib/puma/server.rb:415:in `process_client'
+puma (3.6.2) lib/puma/server.rb:275:in `block in run'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `call'
+puma (3.6.2) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered collection of /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [16 times] (4.6ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.2.4/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (29.6ms)
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:46:37 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.1ms)
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:46:55 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.3ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 120ms (Views: 104.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/stream/1" for 127.0.0.1 at 2017-01-31 17:46:55 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Allegro from Duet in C Major.mp3 (0.2ms)
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/sync_repo/0" for 127.0.0.1 at 2017-01-31 17:46:57 +0530
+Processing by AudiosController#sync_repo as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  [1m[36mAudio Load (0.3ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."name" = ? LIMIT ?[0m  [["name", "Allegro from Duet in C Major.mp3"], ["LIMIT", 1]]
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."name" = ? LIMIT ?[0m  [["name", "Yuddham Sei - Life (Goes On) Theme.mp3"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/audios
+Completed 302 Found in 16ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:46:57 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.2ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 91ms (Views: 87.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:47:00 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 118ms (Views: 114.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/audios/2" for 127.0.0.1 at 2017-01-31 17:47:05 +0530
+Processing by AudiosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering audios/show.html.erb within layouts/application
+  Rendered audios/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 96ms (Views: 94.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/stream/2" for 127.0.0.1 at 2017-01-31 17:47:05 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mAudio Load (0.1ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Yuddham Sei - Life (Goes On) Theme.mp3 (0.1ms)
+Completed 200 OK in 1ms (ActiveRecord: 0.1ms)
+
+
+Started GET "/audios" for 127.0.0.1 at 2017-01-31 17:47:13 +0530
+Processing by AudiosController#index as HTML
+  [1m[36mSettings Load (0.3ms)[0m  [1m[34mSELECT  "settings".* FROM "settings" WHERE (thing_type is NULL and thing_id is NULL) AND "settings"."var" = ? ORDER BY "settings"."id" ASC LIMIT ?[0m  [["var", "repositories"], ["LIMIT", 1]]
+  Rendering audios/index.html.erb within layouts/application
+  [1m[36mAudio Load (0.2ms)[0m  [1m[34mSELECT "audios".* FROM "audios"[0m
+  Rendered audios/index.html.erb within layouts/application (2.5ms)
+Started GET "/stream/2" for 127.0.0.1 at 2017-01-31 17:47:13 +0530
+Processing by AudiosController#stream as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mAudio Load (0.5ms)[0m  [1m[34mSELECT  "audios".* FROM "audios" WHERE "audios"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Sent file /home/local/BLR/jeyavel.natesan/Jel-Work/Jel_Apps/audiopila-rails/audios/Yuddham Sei - Life (Goes On) Theme.mp3 (0.3ms)
+Completed 200 OK in 2ms (ActiveRecord: 0.5ms)
+
+
+Completed 200 OK in 90ms (Views: 86.0ms | ActiveRecord: 0.5ms)
+
+

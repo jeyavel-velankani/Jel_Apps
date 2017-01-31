@@ -65,7 +65,7 @@ class AudiosController < ApplicationController
   # GET /sync_repo/:id
   def sync_repo
     repo = Settings.repositories[params[:id].to_i]
-
+    repo = "#{Rails.root}#{repo}"
     files = `find #{repo} -name "*.mp3" -o -name "*.m4a" -o -name "*.ogg"`
     files = files.split("\n")
 
@@ -83,9 +83,9 @@ class AudiosController < ApplicationController
 
   def stream
     audio = Audio.find(params[:id])
-    puts 'audio.path'+audio.path
+    # puts 'audio.path'+audio.path
     if audio
-      send_file "#{Rails.root}#{audio.path}"
+      send_file audio.path
     end
   end
   
