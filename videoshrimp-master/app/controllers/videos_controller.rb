@@ -1,3 +1,4 @@
+
 class VideosController < ApplicationController
   before_action :authenticate_user!
   before_action :set_video, only: [:show, :edit, :like, :dislike]
@@ -5,6 +6,7 @@ class VideosController < ApplicationController
   # All published videos
   def index
     @videos = Video.all
+    
   end
 
   def show

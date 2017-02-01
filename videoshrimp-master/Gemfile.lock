@@ -1,3 +1,9 @@
+GIT
+  remote: git@github.com:jeyavel-velankani/welcomedog.git
+  revision: b6615f7362e4082829b5564f4cfcb91b1fda2128
+  specs:
+    welcomedog (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -205,6 +211,7 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
+  welcomedog!
 
 BUNDLED WITH
-   1.13.6
+   1.14.3
