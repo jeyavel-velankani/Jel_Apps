@@ -1,0 +1,95 @@
+<div class="heroes-inner heroes-years">
+  <ul class="heroes-collection grid">
+    <li class="heroes-collection-hero grid-box one-whole lap-one-half portable-one-third">
+      <a href="http://railscasts.com/"><img alt="Ryan Bates" src="/assets/USA.jpg" width="100" height="100" />
+      <strong>Jeyavel Natesan</strong>
+      </a>
+    </li>
+    <!-- <li class="heroes-collection-hero grid-box one-whole lap-one-half portable-one-third">
+      <a href="http://railscasts.com/"><img alt="Ryan Bates" src="/assets/USA.jpg" width="100" height="100" />
+      <strong>Jeyavel Natesan</strong>
+      </a>
+    </li>
+    <li class="heroes-collection-hero grid-box one-whole lap-one-half portable-one-third">
+      <a href="http://railscasts.com/"><img alt="Ryan Bates" src="/assets/USA.jpg" width="100" height="100" />
+      <strong>Jeyavel Natesan</strong>
+      </a>
+    </li>
+    <li class="heroes-collection-hero grid-box one-whole lap-one-half portable-one-third">
+      <a href="http://railscasts.com/"><img alt="Ryan Bates" src="/assets/USA.jpg" width="100" height="100" />
+      <strong>Jeyavel Natesan</strong>
+      </a>
+    </li>
+    <li class="heroes-collection-hero grid-box one-whole lap-one-half portable-one-third">
+      <a href="http://railscasts.com/"><img alt="Ryan Bates" src="/assets/USA.jpg" width="100" height="100" />
+      <strong>Jeyavel Natesan</strong>
+      </a>
+    </li> -->
+  </ul>
+</div>
+
+
+<!-- <div class="primary">
+  <img src="/assets/USA.jpg" alt="HTML5 Icon" style="width:140px;height:140px;">
+</div>
+<strong>Jeyavel Natesan</strong>
+ -->
+<style type="text/css">
+.primary {
+  cursor: pointer;
+}
+
+.primary img {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  /* Firefox 10+, Firefox on Android */
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: gray;
+  /* IE 6-9 */
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+.primary:hover img {
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: none;
+  filter: none;
+}
+
+</style>
+
+<%= form_for(message) do |f| %>
+  <% if message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% message.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+  <%= recaptcha_tags theme: 'dark'%>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

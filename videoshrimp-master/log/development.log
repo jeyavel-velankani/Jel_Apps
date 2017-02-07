@@ -3673,3 +3673,180 @@ Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde4
 
 
 Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2017-02-01 15:01:29 +0530
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 16:26:00 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by VideosController#index as HTML
+Completed 401 Unauthorized in 25ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 16:26:01 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise (132.1ms)
+Completed 200 OK in 988ms (Views: 968.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+Processing by VideosController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise (28.7ms)
+Completed 200 OK in 212ms (Views: 208.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+
+
+Started GET "/assets/application.self-716e4e72640d4ed868cefd85993fae91a93a56c3dac2883eb2e0ff912cb17e7c.css?body=1" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+
+
+Started GET "/assets/audios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+
+
+Started GET "/assets/mylists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:02 +0530
+
+
+Started GET "/assets/notifications.self-bd01d83719f456837902323c1ba372d1e1a3c9b7fb65217fe4fed54f95887476.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:03 +0530
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:03 +0530
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2017-02-06 16:26:03 +0530
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-06 16:26:11 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"N9vhdDwf8tRGrRM90hd490aW0P6t+7HsZTvFlf07+ogBC6+YkOneFrLQWlJ1VfFHd1A4CMzPepYX81rQe1aVTA==", "user"=>{"email"=>"jeyavelnkl@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."email" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["email", "jeyavelnkl@gmail.com"]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.9ms)[0m  UPDATE "users" SET "last_sign_in_at" = ?, "current_sign_in_at" = ?, "sign_in_count" = ?, "updated_at" = ? WHERE "users"."id" = ?  [["last_sign_in_at", "2017-02-01 05:47:00.168155"], ["current_sign_in_at", "2017-02-06 10:56:11.745673"], ["sign_in_count", 5], ["updated_at", "2017-02-06 10:56:11.748455"], ["id", 1]]
+  [1m[36m (115.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 488ms (ActiveRecord: 127.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 16:26:11 +0530
+Processing by VideosController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36mVideo Load (0.4ms)[0m  [1mSELECT "videos".* FROM "videos"[0m
+  Rendered videos/index.haml within layouts/application (21.7ms)
+Completed 200 OK in 160ms (Views: 129.7ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-02-06 16:26:26 +0530
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BDv+SN/Afwv+paefDTAHWgm6lJvdRAo5cbPEkm6H+b4sz/6+D54ZMipi6Vt6fzMuZiYY2kS9hsjfD/74CDgRIw=="}
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 30ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-06 16:26:26 +0530
+Processing by VideosController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-06 16:26:26 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/devise (20.1ms)
+Completed 200 OK in 103ms (Views: 101.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 16:26:33 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (39.7ms)
+Completed 200 OK in 142ms (Views: 139.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 16:28:22 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (31.0ms)
+Completed 200 OK in 129ms (Views: 126.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/audios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/application.self-716e4e72640d4ed868cefd85993fae91a93a56c3dac2883eb2e0ff912cb17e7c.css?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/mylists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/notifications.self-bd01d83719f456837902323c1ba372d1e1a3c9b7fb65217fe4fed54f95887476.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2017-02-06 16:28:23 +0530
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-06 16:30:03 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (23.3ms)
+Completed 200 OK in 112ms (Views: 109.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-716e4e72640d4ed868cefd85993fae91a93a56c3dac2883eb2e0ff912cb17e7c.css?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/audios.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/bootstrap.self-6c92f650931beefe48977f272b7015d6b9b45da8b09831ebf88e05193c12d355.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/notifications.self-bd01d83719f456837902323c1ba372d1e1a3c9b7fb65217fe4fed54f95887476.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/mylists.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/videos.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2017-02-06 16:30:04 +0530

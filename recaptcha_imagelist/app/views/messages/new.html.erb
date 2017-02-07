@@ -1,0 +1,14 @@
+<style>
+body {
+    background-image: url("/assets/img_tree.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 200px;
+    background-attachment: fixed;
+}
+</style>
+<h1>New Message</h1>
+
+<%= render 'form', message: @message %>
+
+<%= link_to 'Back', messages_path %>
