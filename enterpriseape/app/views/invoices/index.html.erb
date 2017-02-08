@@ -1,0 +1,47 @@
+<div class="row">
+  <h1>Listing invoices</h1>
+  <div class="pull-right range-query">
+    <%= form_tag invoices_path, method: :get do %>
+      <%= text_field_tag 'search[date_from]', @search.date_from %>
+      <%= text_field_tag 'search[date_to]', @search.date_to %>
+      <%= submit_tag 'Search', class: 'btn search-button' %>
+    <% end %>
+  </div>
+</div>
+
+<div class="media">
+  <div class="media-body">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Company</th>
+          <th>Tax</th>
+          <th>Salesperson</th>
+          <th>Status</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <% @invoices.each do |invoice| %>
+          <tr>
+            <td><%= invoice.date.strftime("%Y-%m-%d") %></td>
+            <td><%= invoice.company %></td>
+            <td><%= invoice.tax %></td>
+            <td><%= invoice.employee.name %></td>
+            <td><%= invoice.status_type %></td>
+            <td><%= link_to 'Show', invoice, class: 'btn btn-mini' %></td>
+            <td><%= link_to 'Edit', edit_invoice_path(invoice), class: 'btn btn-mini btn-success' %></td>
+            <td><%= link_to 'Destroy', invoice, method: :delete, class: 'btn btn-mini btn-danger', data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<br>
+
+<%= link_to 'New Invoice', new_invoice_path %>
