@@ -1,0 +1,425 @@
+  [1m[35m (116.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (92.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateAuthors (20161205085548)
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "authors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161205085548"]]
+  [1m[35m (90.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePosts (20161205085552)
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "body" text, "author_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mselect sqlite_version(*)[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE  INDEX "index_posts_on_author_id" ON "posts" ("author_id")[0m
+  [1m[35mSQL (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161205085552"]]
+  [1m[35m (81.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to DeviseCreateUsers (20161205094600)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161205094600"]]
+  [1m[35m (103.4ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUidToUsers (20161205100502)
+  [1m[35m (0.7ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_uid" ON "users" ("uid")[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20161205100502"]]
+  [1m[35m (76.2ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateArticles (20170210102851)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "articles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "text" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20170210102851"]]
+  [1m[35m (78.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", 2017-02-10 10:29:09 UTC], ["updated_at", 2017-02-10 10:29:09 UTC]]
+  [1m[35m (77.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_posts_on_author_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_posts_on_author_id' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_uid' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_uid' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (1.0ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/search" for 127.0.0.1 at 2017-02-10 16:07:44 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SearchController#search as HTML
+Completed 401 Unauthorized in 183ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-02-10 16:07:44 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (52.3ms)
+Completed 200 OK in 1192ms (Views: 1170.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-02-10 16:07:55 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H9J8DA5tcjB0reWwhEylBcSZT7D3E3Tgqsgs0AbbElQMOih0GUFCI/Ewdysq2Br2B8h85tniFY9HaekI0Hs/4Q==", "user"=>{"email"=>"jeyavelnkl@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jeyavelnkl@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 46ms (ActiveRecord: 3.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H9J8DA5tcjB0reWwhEylBcSZT7D3E3Tgqsgs0AbbElQMOih0GUFCI/Ewdysq2Br2B8h85tniFY9HaekI0Hs/4Q==", "user"=>{"email"=>"jeyavelnkl@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 430ms (Views: 42.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-02-10 16:08:00 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 67ms (Views: 65.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-02-10 16:08:08 +0530
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"aMvm7sbnoicAf33CAAiiYh3vHHebERATEKdEMzXVC80jU/GvhEjTs911nvzegV2ohWzBoIxSmVUeZ/0HT656Tg==", "user"=>{"email"=>"jeyavelnkl@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (1.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "jeyavelnkl@gmail.com"], ["LIMIT", 1]]
+  Query Trace > app/models/user.rb:14:in `block in generate_uid'
+     from app/models/user.rb:12:in `loop'
+     from app/models/user.rb:12:in `generate_uid'
+     from app/models/user.rb:7:in `block in <class:User>'
+  [1m[36mUser Exists (2.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."uid" = ? LIMIT ?[0m  [["uid", "e434fb78f6dd52df2adbc68b3d3c3b13"], ["LIMIT", 1]]
+  [1m[35mSQL (3.9ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "uid") VALUES (?, ?, ?, ?, ?)[0m  [["email", "jeyavelnkl@gmail.com"], ["encrypted_password", "$2a$11$ZGzju78Mc8B2lQ0ra7KlXOWzAkqqE/.fz5wEl1Em5QufKXntn2/FG"], ["created_at", 2017-02-10 10:38:08 UTC], ["updated_at", 2017-02-10 10:38:08 UTC], ["uid", "e434fb78f6dd52df2adbc68b3d3c3b13"]]
+  [1m[35m (123.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (2.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.0ms)[0m  [1m[33mUPDATE "users" SET "sign_in_count" = ?, "current_sign_in_at" = ?, "last_sign_in_at" = ?, "current_sign_in_ip" = ?, "last_sign_in_ip" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["sign_in_count", 1], ["current_sign_in_at", 2017-02-10 10:38:08 UTC], ["last_sign_in_at", 2017-02-10 10:38:08 UTC], ["current_sign_in_ip", "127.0.0.1"], ["last_sign_in_ip", "127.0.0.1"], ["updated_at", 2017-02-10 10:38:08 UTC], ["id", 1]]
+  [1m[35m (79.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/search
+Completed 302 Found in 509ms (ActiveRecord: 216.8ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2017-02-10 16:08:09 +0530
+Processing by SearchController#search as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 39ms (Views: 28.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=hi" for 127.0.0.1 at 2017-02-10 16:08:16 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"hi"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (7.1ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 2.3ms)
+
+
+  
+ActionView::Template::Error (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+     9: <% end %>
+    10: 
+    11: <ul>
+    12:   <% @articles.each do |article| %>
+    13:     <li>
+    14:       <h3>
+    15:         <%= link_to article.title, controller: "articles", action: "show", id: article._id%>
+  
+app/views/search/search.html.erb:12:in `_app_views_search_search_html_erb___3066057508745348025_70288213828380'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (20.8ms)
+Started GET "/" for 127.0.0.1 at 2017-02-10 16:14:43 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 60ms (Views: 33.6ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-02-10 16:14:44 +0530
+Processing by HomeController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=hi" for 127.0.0.1 at 2017-02-10 16:14:53 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"hi"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 143ms (ActiveRecord: 2.0ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/models/article.rb:32:in `<top (required)>'
+app/controllers/search_controller.rb:6:in `search'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (22.9ms)
+Started GET "/search?utf8=%E2%9C%93&q=hi" for 127.0.0.1 at 2017-02-10 16:19:13 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"hi"}
+  [1m[36mUser Load (214.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Query Trace > app/models/article.rb:37:in `<top (required)>'
+     from app/controllers/search_controller.rb:6:in `search'
+  [1m[36mArticle Load (17.2ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (577.6ms)
+Completed 200 OK in 9251ms (Views: 2854.0ms | ActiveRecord: 235.0ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=hi" for 127.0.0.1 at 2017-02-10 16:19:33 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"hi"}
+  [1m[36mUser Load (543.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (298.3ms)
+Completed 200 OK in 1427ms (Views: 803.2ms | ActiveRecord: 543.1ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-02-10 16:22:57 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (165.7ms)
+Completed 200 OK in 2377ms (Views: 2280.5ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2017-02-10 16:23:32 +0530
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"L2i2aMtq4MDg2r02Uh0EFDBsZaj3OS4wkS+YOXaSJK48gOIQ3EbQ02VHL638ibvn8z1W/tnIT198jl3hoDIJGw==", "article"=>{"title"=>"Jeyavel", "text"=>"saadjgaj my name ur name how are you welcome and do the what ever u want and play"}, "commit"=>"Save Article"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 144ms (ActiveRecord: 2.8ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/models/article.rb:32:in `<top (required)>'
+app/controllers/articles_controller.rb:14:in `create'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.9ms)
+Started GET "/articles" for 127.0.0.1 at 2017-02-10 16:24:14 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (713.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 9671ms (ActiveRecord: 713.7ms)
+
+
+  
+Faraday::ConnectionFailed (Failed to open TCP connection to localhost:9200 (Connection refused - connect(2) for "localhost" port 9200)):
+  
+app/models/article.rb:32:in `<top (required)>'
+app/controllers/articles_controller.rb:3:in `index'
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (830.4ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (81.2ms)
+  Rendering /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (127.6ms)
+  Rendered /home/local/BLR/jeyavel.natesan/.gem/ruby/2.3.1/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (1206.0ms)
+Started GET "/articles" for 127.0.0.1 at 2017-02-10 16:24:58 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (50.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Query Trace > app/models/article.rb:37:in `<top (required)>'
+     from app/controllers/articles_controller.rb:3:in `index'
+  [1m[36mArticle Load (99.7ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" ORDER BY "articles"."id" ASC LIMIT ?[0m  [["LIMIT", 1000]]
+  Rendering articles/index.html.erb within layouts/application
+  Query Trace > app/views/articles/index.html.erb:4:in `_app_views_articles_index_html_erb___476918387867348493_70164949165200'
+  [1m[36mArticle Load (2.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (417.4ms)
+Completed 200 OK in 5915ms (Views: 3404.0ms | ActiveRecord: 153.7ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-02-10 16:25:09 +0530
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (366.7ms)
+Completed 200 OK in 575ms (Views: 550.0ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2017-02-10 16:25:21 +0530
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SaZQQalIoAg611QCDhlFSu43MaB3s1eUWfvu1XIV1ZQ7uUgLcZZxDNbGrGnrWcHWCnYRTFiVxgn/ZMN8+1lCeg==", "article"=>{"title"=>"Jeyavel", "text"=>"fmsdf nmdfdfb dsfdskhf"}, "commit"=>"Save Article"}
+  [1m[36mUser Load (52.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Query Trace > app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (12.1ms)[0m  [1m[36mbegin transaction[0m
+  Query Trace > app/controllers/articles_controller.rb:15:in `create'
+  [1m[35mSQL (258.0ms)[0m  [1m[32mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Jeyavel"], ["text", "fmsdf nmdfdfb dsfdskhf"], ["created_at", 2017-02-10 10:55:21 UTC], ["updated_at", 2017-02-10 10:55:21 UTC]]
+  Query Trace > app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (413.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles/1
+Completed 302 Found in 2101ms (ActiveRecord: 736.0ms)
+
+
+Started GET "/articles/1" for 127.0.0.1 at 2017-02-10 16:25:24 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Query Trace > app/controllers/articles_controller.rb:7:in `show'
+  [1m[36mArticle Load (51.4ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 3418ms (Views: 94.0ms | ActiveRecord: 52.8ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-02-10 16:25:33 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  Query Trace > app/views/articles/index.html.erb:4:in `_app_views_articles_index_html_erb___476918387867348493_47345934719380'
+  [1m[36mArticle Load (1.6ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 78ms (Views: 72.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/articles/new" for 127.0.0.1 at 2017-02-10 16:25:41 +0530
+Processing by ArticlesController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 120ms (Views: 116.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/articles" for 127.0.0.1 at 2017-02-10 16:25:52 +0530
+Processing by ArticlesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JaF8TPvrhN3TJ5MUcNBrAi+a0fKpUKcB2ZS1FFGhvBpXvmQGIzVV2T82a3+VkO+ey9vxHoZ2Npx/C5i92O0r9A==", "article"=>{"title"=>"dhanvika", "text"=>"dhanvika"}, "commit"=>"Save Article"}
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Query Trace > app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (1.3ms)[0m  [1m[36mbegin transaction[0m
+  Query Trace > app/controllers/articles_controller.rb:15:in `create'
+  [1m[35mSQL (74.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "text", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "dhanvika"], ["text", "dhanvika"], ["created_at", 2017-02-10 10:55:52 UTC], ["updated_at", 2017-02-10 10:55:52 UTC]]
+  Query Trace > app/controllers/articles_controller.rb:15:in `create'
+  [1m[35m (202.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/articles/2
+Completed 302 Found in 559ms (ActiveRecord: 279.9ms)
+
+
+Started GET "/articles/2" for 127.0.0.1 at 2017-02-10 16:25:52 +0530
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Query Trace > app/controllers/articles_controller.rb:7:in `show'
+  [1m[36mArticle Load (1.0ms)[0m  [1m[34mSELECT  "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 106ms (Views: 101.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/articles" for 127.0.0.1 at 2017-02-10 16:25:54 +0530
+Processing by ArticlesController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering articles/index.html.erb within layouts/application
+  Query Trace > app/views/articles/index.html.erb:4:in `_app_views_articles_index_html_erb___476918387867348493_70164973049320'
+  [1m[36mArticle Load (2.0ms)[0m  [1m[34mSELECT "articles".* FROM "articles"[0m
+  Rendered articles/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 55ms (Views: 49.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/search" for 127.0.0.1 at 2017-02-10 16:26:06 +0530
+Processing by SearchController#search as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (222.2ms)
+Completed 200 OK in 429ms (Views: 362.7ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=Jeyavel" for 127.0.0.1 at 2017-02-10 16:26:12 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"Jeyavel"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (460.6ms)
+Completed 200 OK in 492ms (Views: 487.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=Dhanvika" for 127.0.0.1 at 2017-02-10 16:26:20 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"Dhanvika"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 137ms (Views: 84.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/search?utf8=%E2%9C%93&q=Amutha" for 127.0.0.1 at 2017-02-10 16:26:27 +0530
+Processing by SearchController#search as HTML
+  Parameters: {"utf8"=>"✓", "q"=>"Amutha"}
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering search/search.html.erb within layouts/application
+  Rendered search/search.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 250ms (Views: 153.1ms | ActiveRecord: 1.6ms)
+
+
