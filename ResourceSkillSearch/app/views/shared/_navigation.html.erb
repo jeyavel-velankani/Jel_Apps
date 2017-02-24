@@ -1,0 +1,25 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">VLS Resource Skill Search Portal</a>
+    </div>
+    <div class="nav navbar-nav navbar-right">
+      <% if user_signed_in? %>
+        Signed in as <%= current_user.email %>. Not You?
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <%else%>
+        <%= link_to "Sign up", new_user_registration_path %>  or <%= link_to "Sign in", new_user_session_path %>
+      <%end%>
+    </div>
+    <!-- <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+          <li><a href="#">Login</a></li>
+          <li class="divider"></li>
+          <li><%= link_to 'Create a todo', "" %></li>
+        </ul>
+      </li>
+    </ul> -->
+  </div>
+</nav>
